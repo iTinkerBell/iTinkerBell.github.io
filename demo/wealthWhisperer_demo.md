@@ -6,4 +6,4 @@
 
 ![WealthWhisperer](../images/image2.png)
 
-[Back to Index](../index.md) | [Previous: OmniAI Demo](./omniAI_demo.md) | [Next: Stock.Service Demo](./stockService_demo.md)
+[Back to Index](../index.md) | [Previous: OmniAI Demo](./omniAI_demo.md) | [Next: Stock Service Demo](./stockService_demo.md)

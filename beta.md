@@ -1,4 +1,4 @@
-# Beta Release Details
+# Beta Repositories
 
 The M2M Beta release includes:
 
@@ -13,4 +13,4 @@ Source code for the beta release can be found at:
 - [Front end](https://github.com/bottha123/DecenTrust-front/)
 - [Back end](https://github.com/bottha123/DecenTrust-back/)
 
-[Back to Index](./index.md) | [Previous: JSON Web Tokens (JWTs)](../core/jwt.md) | [Next: Demo](./demo.md)
+[Back to Index](./index.md) | [Next: Core Technologies](./core_technologies.md)

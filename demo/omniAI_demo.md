@@ -6,4 +6,4 @@
 
 ![OmniAI](../images/image1.png)
 
-[Back to Index](../index.md) | [Previous: Demo](../demo.md) | [Next: WealthWhisperer Demo](./wealthWhisperer_demo.md)
+[Back to Index](../index.md) | [Previous: Demos](../demo.md) | [Next: WealthWhisperer Demo](./wealthWhisperer_demo.md)
