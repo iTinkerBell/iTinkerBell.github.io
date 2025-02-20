@@ -1,0 +1,28 @@
+remote_theme: pages-themes/cayman@v0.2.0
+plugins:
+- jekyll-remote-theme
+- jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+title: M2M Technical Documentation
+description: Technical documentation for M2M's AI-to-AI connectivity platform
+show_downloads: false
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+include:
+  - "*.md"
+  - "**/*.md"
