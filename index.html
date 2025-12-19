@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Library Usage Analysis</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #718096;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .version-list {
+            display: grid;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .version-card {
+            background: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 24px;
+            text-decoration: none;
+            color: #2d3748;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+        }
+
+        .version-card:hover {
+            border-color: #667eea;
+            background: #edf2f7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.2);
+        }
+
+        .version-card.latest {
+            border-color: #48bb78;
+            background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+        }
+
+        .version-card.latest:hover {
+            border-color: #38a169;
+            box-shadow: 0 8px 20px rgba(72, 187, 120, 0.3);
+        }
+
+        .version-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+
+        .version-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .version-badge {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .version-badge.latest {
+            background: #48bb78;
+        }
+
+        .version-description {
+            color: #718096;
+            font-size: 0.95rem;
+            text-align: left;
+            margin-top: 8px;
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .version-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Boost Library Usage Analysis</h1>
+        <p class="subtitle">Comprehensive analysis and statistics of Boost C++ Library usage across GitHub repositories</p>
+
+        <div class="version-list">
+            <a href="v1.90/index.html" class="version-card latest">
+                <div class="version-header">
+                    <span class="version-number">Boost 1.90</span>
+                    <span class="version-badge latest">Latest</span>
+                </div>
+                <div class="version-description">
+                    View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost 1.90.
+                </div>
+            </a>
+
+            <!-- Future versions will be added here -->
+            <!-- Example for when 1.91 is available:
+            <a href="v1.91/index.html" class="version-card latest">
+                <div class="version-header">
+                    <span class="version-number">Boost 1.91</span>
+                    <span class="version-badge latest">Latest</span>
+                </div>
+                <div class="version-description">
+                    View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost 1.91.
+                </div>
+            </a>
+            <a href="v1.90/index.html" class="version-card">
+                <div class="version-header">
+                    <span class="version-number">Boost 1.90</span>
+                </div>
+                <div class="version-description">
+                    View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost 1.90.
+                </div>
+            </a>
+            -->
+        </div>
+
+        <div class="footer">
+            <p>Select a Boost version to view its usage analysis dashboard</p>
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect to latest version (optional - comment out if you want users to choose)
+        // Uncomment the following lines to enable auto-redirect:
+        /*
+        const latestVersion = 'v1.90';
+        const currentPath = window.location.pathname;
+        if (currentPath === '/' || currentPath.endsWith('/index.html')) {
+            // Only redirect if we're at the root index
+            const pathParts = currentPath.split('/').filter(p => p);
+            if (pathParts.length === 0 || (pathParts.length === 1 && pathParts[0] === 'index.html')) {
+                window.location.href = latestVersion + '/index.html';
+            }
+        }
+        */
+    </script>
+</body>
+</html>

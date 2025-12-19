@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Library Usage Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .panel {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .panel h2 {
+            margin-top: 0;
+            color: #2d3748;
+        }
+        .chart-container {
+            margin: 20px 0;
+            height: 420px;
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .tables-container-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .tables-container-3 {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+            align-items: start;
+        }
+        .tables-container-3 > div {
+            min-width: 0;
+        }
+        .tables-container-3 table {
+            width: 100%;
+            table-layout: fixed;
+        }
+        .tables-container-3 th, .tables-container-3 td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .tables-container-3-wrapper {
+            overflow-x: auto;
+        }
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 8px 16px;
+            margin-top: 12px;
+        }
+        .library-item {
+            padding: 6px 10px;
+            border: 1px solid #eee;
+            border-radius: 6px;
+            background: #fafafa;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        @media (max-width: 1200px) {
+            .tables-container-3 {
+                grid-template-columns: 1fr;
+            }
+            .tables-container-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-bottom: 10px;">
+        <a href="../index.html" style="color: #666; text-decoration: none; font-size: 0.9rem;">← Back to Version Selector</a>
+    </div>
+    <h1>Boost Library Usage Dashboard</h1>
+    <p style="text-align: center; color: #666;">Data as of: December 17, 2025 | Boost 1.90</p>
+
+    <!-- Navigation -->
+    <nav style="text-align: center; margin: 20px 0; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <a href="index.html" style="margin: 0 15px; padding: 8px 16px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; display: inline-block;">Dashboard</a>
+        <a href="bsl_analysis.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">BSL Analysis</a>
+        <a href="data_to_release_note.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">Release Notes</a>
+    </nav>
+
+    <!-- Panel 1: Repository creation trends by year -->
+    <div class="panel">
+        <h2>New Repositories Using Boost Libraries by Year</h2>
+        <div class="chart-container">
+            <canvas id="reposByYearChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Panel 2: Repository creation by Boost version -->
+    <div class="panel">
+        <h2>New Repositories by Boost Version</h2>
+        <div class="chart-container">
+            <canvas id="reposByVersionChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Panel 3: Most and least used libraries -->
+    <div class="panel">
+        <h2>Most and Least Used Libraries</h2>
+        <div class="tables-container-2">
+            <div>
+                <h3>Top 20 Libraries</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Library</th>
+                            <th>Usage Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><a href="libraries/test.html">test</a></td>
+                            <td>42,530</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/algorithm.html">algorithm</a></td>
+                            <td>29,331</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/smart_ptr.html">smart_ptr</a></td>
+                            <td>26,095</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/filesystem.html">filesystem</a></td>
+                            <td>25,021</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/asio.html">asio</a></td>
+                            <td>20,979</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/thread.html">thread</a></td>
+                            <td>20,859</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/serialization.html">serialization</a></td>
+                            <td>20,786</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/config.html">config</a></td>
+                            <td>13,689</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/mpl.html">mpl</a></td>
+                            <td>13,422</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/python.html">python</a></td>
+                            <td>12,819</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/core.html">core</a></td>
+                            <td>11,273</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/bind.html">bind</a></td>
+                            <td>11,140</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/foreach.html">foreach</a></td>
+                            <td>10,629</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/lexical_cast.html">lexical_cast</a></td>
+                            <td>10,147</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/program_options.html">program_options</a></td>
+                            <td>9,729</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/type_traits.html">type_traits</a></td>
+                            <td>9,220</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/optional.html">optional</a></td>
+                            <td>8,752</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/spirit.html">spirit</a></td>
+                            <td>8,613</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/preprocessor.html">preprocessor</a></td>
+                            <td>8,260</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/graph.html">graph</a></td>
+                            <td>7,841</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div>
+                <h3>Least Used Libraries</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Library</th>
+                            <th>Usage Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><a href="libraries/poly_collection.html">poly_collection</a></td>
+                            <td>5</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/yap.html">yap</a></td>
+                            <td>6</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/parameter_python.html">parameter_python</a></td>
+                            <td>7</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/static_string.html">static_string</a></td>
+                            <td>7</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/cobalt.html">cobalt</a></td>
+                            <td>10</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/redis.html">redis</a></td>
+                            <td>11</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/lambda2.html">lambda2</a></td>
+                            <td>12</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/stl_interfaces.html">stl_interfaces</a></td>
+                            <td>15</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/safe_numerics.html">safe_numerics</a></td>
+                            <td>16</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/mysql.html">mysql</a></td>
+                            <td>30</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/tti.html">tti</a></td>
+                            <td>34</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/contract.html">contract</a></td>
+                            <td>35</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/property_map_parallel.html">property_map_parallel</a></td>
+                            <td>39</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/callable_traits.html">callable_traits</a></td>
+                            <td>43</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/convert.html">convert</a></td>
+                            <td>44</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/scope.html">scope</a></td>
+                            <td>44</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/conversion.html">conversion</a></td>
+                            <td>46</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/coroutine2.html">coroutine2</a></td>
+                            <td>55</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/describe.html">describe</a></td>
+                            <td>55</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/metaparse.html">metaparse</a></td>
+                            <td>56</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel 4: Top 20 repositories by star, by boost usage count, and by last created -->
+    <div class="panel">
+        <h2>Top 20 Repositories by Different Metrics</h2>
+        <div class="tables-container-3-wrapper">
+            <div class="tables-container-3">
+                <div>
+                    <h3>By Stars</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Repository</th>
+                                <th>Stars</th>
+                                <th>Usage Count</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><a href="https://github.com/bitcoin/bitcoin" target="_blank">bitcoin/bitcoin</a></td>
+                            <td>87,184</td>
+                            <td>139</td>
+                            <td>2010-12-19</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/opencv/opencv" target="_blank">opencv/opencv</a></td>
+                            <td>85,228</td>
+                            <td>1</td>
+                            <td>2012-07-19</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/WerWolv/ImHex" target="_blank">WerWolv/ImHex</a></td>
+                            <td>51,939</td>
+                            <td>2</td>
+                            <td>2020-11-10</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/Light-City/CPlusPlusThings" target="_blank">Light-City/CPlusPlusThings</a></td>
+                            <td>42,588</td>
+                            <td>2</td>
+                            <td>2019-07-14</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/BVLC/caffe" target="_blank">BVLC/caffe</a></td>
+                            <td>34,764</td>
+                            <td>21</td>
+                            <td>2013-09-12</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/carbon-language/carbon-lang" target="_blank">carbon-language/carbon-lang</a></td>
+                            <td>33,530</td>
+                            <td>3</td>
+                            <td>2020-04-27</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/TheAlgorithms/C-Plus-Plus" target="_blank">TheAlgorithms/C-Plus-Plus</a></td>
+                            <td>33,497</td>
+                            <td>1</td>
+                            <td>2016-07-16</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/LizardByte/Sunshine" target="_blank">LizardByte/Sunshine</a></td>
+                            <td>32,204</td>
+                            <td>74</td>
+                            <td>2021-12-15</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/facebook/folly" target="_blank">facebook/folly</a></td>
+                            <td>30,136</td>
+                            <td>129</td>
+                            <td>2012-06-01</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/dragonflydb/dragonfly" target="_blank">dragonflydb/dragonfly</a></td>
+                            <td>29,488</td>
+                            <td>16</td>
+                            <td>2021-12-11</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/shadps4-emu/shadPS4" target="_blank">shadps4-emu/shadPS4</a></td>
+                            <td>27,199</td>
+                            <td>51</td>
+                            <td>2022-10-24</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/ApolloAuto/apollo" target="_blank">ApolloAuto/apollo</a></td>
+                            <td>26,290</td>
+                            <td>115</td>
+                            <td>2017-07-04</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/ethereum/solidity" target="_blank">ethereum/solidity</a></td>
+                            <td>25,442</td>
+                            <td>298</td>
+                            <td>2015-08-17</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/changkun/modern-cpp-tutorial" target="_blank">changkun/modern-cpp-tutorial</a></td>
+                            <td>25,228</td>
+                            <td>2</td>
+                            <td>2016-08-19</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/c0re100/qBittorrent" target="_blank">c0re100/qBittorrent</a></td>
+                            <td>24,522</td>
+                            <td>8</td>
+                            <td>2017-03-14</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/arendst/Sonoff-Tasmota" target="_blank">arendst/Sonoff-Tasmota</a></td>
+                            <td>23,947</td>
+                            <td>4</td>
+                            <td>2017-01-28</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/baidu/Paddle" target="_blank">baidu/Paddle</a></td>
+                            <td>23,501</td>
+                            <td>19</td>
+                            <td>2016-08-15</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/PaddlePaddle/Paddle" target="_blank">PaddlePaddle/Paddle</a></td>
+                            <td>23,488</td>
+                            <td>1</td>
+                            <td>2016-08-15</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/NixOS/nixpkgs" target="_blank">NixOS/nixpkgs</a></td>
+                            <td>22,765</td>
+                            <td>6</td>
+                            <td>2012-06-04</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/GreaterFire/trojan" target="_blank">GreaterFire/trojan</a></td>
+                            <td>19,571</td>
+                            <td>22</td>
+                            <td>2017-10-21</td>
+                        </tr>
+
+                    </tbody>
+
+                    </table>
+                </div>
+                <div>
+                    <h3>By Boost Usage Count</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Repository</th>
+                                <th>Stars</th>
+                                <th>Usage Count</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><a href="https://github.com/MisterTea/HyperNEAT" target="_blank">MisterTea/HyperNEAT</a></td>
+                            <td>98</td>
+                            <td>31,086</td>
+                            <td>2011-08-23</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/dato-code/GraphLab-Create-SDK" target="_blank">dato-code/GraphLab-Create-SDK</a></td>
+                            <td>148</td>
+                            <td>10,759</td>
+                            <td>2014-11-24</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/deweylab/RSEM" target="_blank">deweylab/RSEM</a></td>
+                            <td>455</td>
+                            <td>4,207</td>
+                            <td>2011-02-09</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/steinwurf/boost" target="_blank">steinwurf/boost</a></td>
+                            <td>36</td>
+                            <td>3,852</td>
+                            <td>2013-05-06</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/microcai/boost" target="_blank">microcai/boost</a></td>
+                            <td>23</td>
+                            <td>3,371</td>
+                            <td>2016-08-10</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/bumptop/BumpTop" target="_blank">bumptop/BumpTop</a></td>
+                            <td>616</td>
+                            <td>3,204</td>
+                            <td>2014-10-25</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/kismetwireless/kismet" target="_blank">kismetwireless/kismet</a></td>
+                            <td>1,970</td>
+                            <td>3,173</td>
+                            <td>2016-09-20</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/ALPSim/ALPS" target="_blank">ALPSim/ALPS</a></td>
+                            <td>18</td>
+                            <td>2,333</td>
+                            <td>2024-08-30</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/GPlates/GPlates" target="_blank">GPlates/GPlates</a></td>
+                            <td>134</td>
+                            <td>1,876</td>
+                            <td>2023-08-01</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/mantidproject/mantid" target="_blank">mantidproject/mantid</a></td>
+                            <td>226</td>
+                            <td>1,821</td>
+                            <td>2011-10-17</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/JaneliaSciComp/osgpyplusplus" target="_blank">JaneliaSciComp/osgpyplusplus</a></td>
+                            <td>19</td>
+                            <td>1,786</td>
+                            <td>2014-09-02</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/zk1556/Chat_Server_Boost" target="_blank">zk1556/Chat_Server_Boost</a></td>
+                            <td>125</td>
+                            <td>1,669</td>
+                            <td>2024-03-24</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/Open-Transport/synthese" target="_blank">Open-Transport/synthese</a></td>
+                            <td>24</td>
+                            <td>1,478</td>
+                            <td>2013-12-02</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/UCLOrengoGroup/cath-tools" target="_blank">UCLOrengoGroup/cath-tools</a></td>
+                            <td>66</td>
+                            <td>1,393</td>
+                            <td>2015-07-21</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/CGAL/cgal" target="_blank">CGAL/cgal</a></td>
+                            <td>5,658</td>
+                            <td>1,363</td>
+                            <td>2014-10-01</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/boostorg/graph" target="_blank">boostorg/graph</a></td>
+                            <td>367</td>
+                            <td>1,344</td>
+                            <td>2013-01-13</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/wabiverse/SwiftUSD" target="_blank">wabiverse/SwiftUSD</a></td>
+                            <td>85</td>
+                            <td>1,315</td>
+                            <td>2023-10-13</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/fabsig/GPBoost" target="_blank">fabsig/GPBoost</a></td>
+                            <td>643</td>
+                            <td>1,278</td>
+                            <td>2020-04-03</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/amazon-science/MO-LightGBM" target="_blank">amazon-science/MO-LightGBM</a></td>
+                            <td>14</td>
+                            <td>1,278</td>
+                            <td>2025-02-11</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/pdeitel/CPlusPlusHowToProgram11e" target="_blank">pdeitel/CPlusPlusHowToProgram11e</a></td>
+                            <td>102</td>
+                            <td>1,242</td>
+                            <td>2022-04-13</td>
+                        </tr>
+
+                    </tbody>
+
+                    </table>
+                </div>
+                <div>
+                    <h3>Most Recently Created</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Repository</th>
+                                <th>Stars</th>
+                                <th>Usage Count</th>
+                                <th>Created</th>
+                            </tr>
+                        </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><a href="https://github.com/xoxor4d/gta4-rtx" target="_blank">xoxor4d/gta4-rtx</a></td>
+                            <td>255</td>
+                            <td>2</td>
+                            <td>2025-11-27</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/ZJU-PL/lotus" target="_blank">ZJU-PL/lotus</a></td>
+                            <td>11</td>
+                            <td>131</td>
+                            <td>2025-11-13</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/Gerrylgr/trajectory_optimization" target="_blank">Gerrylgr/trajectory_optimization</a></td>
+                            <td>11</td>
+                            <td>10</td>
+                            <td>2025-11-10</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/GREAT-WHU/GREAT-FGO" target="_blank">GREAT-WHU/GREAT-FGO</a></td>
+                            <td>48</td>
+                            <td>12</td>
+                            <td>2025-11-09</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/jupyter-xeus/xeus-haskell" target="_blank">jupyter-xeus/xeus-haskell</a></td>
+                            <td>53</td>
+                            <td>0</td>
+                            <td>2025-11-08</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/peakyquest/perception_vault" target="_blank">peakyquest/perception_vault</a></td>
+                            <td>20</td>
+                            <td>9</td>
+                            <td>2025-11-07</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/Snapchat/Valdi" target="_blank">Snapchat/Valdi</a></td>
+                            <td>15,843</td>
+                            <td>22</td>
+                            <td>2025-11-06</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/pose-only-vision/PoSDK" target="_blank">pose-only-vision/PoSDK</a></td>
+                            <td>27</td>
+                            <td>11</td>
+                            <td>2025-11-06</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/dairycowp/YOPO-ROS2" target="_blank">dairycowp/YOPO-ROS2</a></td>
+                            <td>20</td>
+                            <td>280</td>
+                            <td>2025-11-06</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/Mq-b/Lab2QRCode" target="_blank">Mq-b/Lab2QRCode</a></td>
+                            <td>11</td>
+                            <td>6</td>
+                            <td>2025-11-03</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/tum-pf/dropd-slam" target="_blank">tum-pf/dropd-slam</a></td>
+                            <td>16</td>
+                            <td>33</td>
+                            <td>2025-10-30</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/gaoxiang12/lightning-lm" target="_blank">gaoxiang12/lightning-lm</a></td>
+                            <td>1,228</td>
+                            <td>5</td>
+                            <td>2025-10-29</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/kaima2022/SUE-Sim" target="_blank">kaima2022/SUE-Sim</a></td>
+                            <td>26</td>
+                            <td>6</td>
+                            <td>2025-10-27</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/NKI-AI/fastslide" target="_blank">NKI-AI/fastslide</a></td>
+                            <td>32</td>
+                            <td>5</td>
+                            <td>2025-10-26</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/Fortiphyd/GRFICSv3" target="_blank">Fortiphyd/GRFICSv3</a></td>
+                            <td>27</td>
+                            <td>194</td>
+                            <td>2025-10-21</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/oceanbase/seekdb" target="_blank">oceanbase/seekdb</a></td>
+                            <td>1,678</td>
+                            <td>40</td>
+                            <td>2025-10-21</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/meta-pytorch/torchcomms" target="_blank">meta-pytorch/torchcomms</a></td>
+                            <td>301</td>
+                            <td>2</td>
+                            <td>2025-10-20</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/proroklab/lagat" target="_blank">proroklab/lagat</a></td>
+                            <td>13</td>
+                            <td>18</td>
+                            <td>2025-10-20</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/samaaron/supersonic" target="_blank">samaaron/supersonic</a></td>
+                            <td>119</td>
+                            <td>17</td>
+                            <td>2025-10-20</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/vanstrong12138/GraspGen" target="_blank">vanstrong12138/GraspGen</a></td>
+                            <td>12</td>
+                            <td>1</td>
+                            <td>2025-10-20</td>
+                        </tr>
+
+                    </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel 5: Most Active Libraries (Recent vs Past Activity) -->
+    <div class="panel">
+        <h2>Most Active Libraries (Recent vs Past Activity)</h2>
+        <p style="color: #666; margin-top: 0;">
+            This analysis compares library usage in the last <strong>5 years</strong> with historical usage patterns.
+            Libraries with higher recent activity relative to past activity demonstrate growing adoption trends.
+        </p>
+        <div class="tables-container-2">
+            <div>
+                <h3>Top 20 Most Active Libraries</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Library</th>
+                            <th>Recent Usage</th>
+                            <th>Past Usage</th>
+                            <th>Total Usage</th>
+                            <th>Activity Ratio</th>
+                            <th>Activity %</th>
+                            <th>Activity Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><a href="libraries/sort.html">sort</a></td>
+                            <td>415</td>
+                            <td>7</td>
+                            <td>422</td>
+                            <td>51.88</td>
+                            <td>98.3%</td>
+                            <td>5101.451</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/asio.html">asio</a></td>
+                            <td>14,523</td>
+                            <td>6,456</td>
+                            <td>20,979</td>
+                            <td>2.25</td>
+                            <td>69.2%</td>
+                            <td>155.703</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/compute.html">compute</a></td>
+                            <td>2,277</td>
+                            <td>137</td>
+                            <td>2,414</td>
+                            <td>16.50</td>
+                            <td>94.3%</td>
+                            <td>1556.359</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/nowide.html">nowide</a></td>
+                            <td>1,631</td>
+                            <td>15</td>
+                            <td>1,646</td>
+                            <td>101.94</td>
+                            <td>99.1%</td>
+                            <td>10100.854</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/pfr.html">pfr</a></td>
+                            <td>243</td>
+                            <td>2</td>
+                            <td>245</td>
+                            <td>81.00</td>
+                            <td>99.2%</td>
+                            <td>8033.878</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/outcome.html">outcome</a></td>
+                            <td>238</td>
+                            <td>1</td>
+                            <td>239</td>
+                            <td>119.00</td>
+                            <td>99.6%</td>
+                            <td>11850.209</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/container_hash.html">container_hash</a></td>
+                            <td>1,344</td>
+                            <td>124</td>
+                            <td>1,468</td>
+                            <td>10.75</td>
+                            <td>91.6%</td>
+                            <td>984.379</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/uuid.html">uuid</a></td>
+                            <td>2,157</td>
+                            <td>921</td>
+                            <td>3,078</td>
+                            <td>2.34</td>
+                            <td>70.1%</td>
+                            <td>163.946</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/process.html">process</a></td>
+                            <td>1,138</td>
+                            <td>110</td>
+                            <td>1,248</td>
+                            <td>10.25</td>
+                            <td>91.2%</td>
+                            <td>934.861</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/algorithm.html">algorithm</a></td>
+                            <td>17,986</td>
+                            <td>11,345</td>
+                            <td>29,331</td>
+                            <td>1.59</td>
+                            <td>61.3%</td>
+                            <td>97.207</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/graph.html">graph</a></td>
+                            <td>3,809</td>
+                            <td>4,032</td>
+                            <td>7,841</td>
+                            <td>0.94</td>
+                            <td>48.6%</td>
+                            <td>45.880</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/format.html">format</a></td>
+                            <td>3,887</td>
+                            <td>2,316</td>
+                            <td>6,203</td>
+                            <td>1.68</td>
+                            <td>62.7%</td>
+                            <td>105.124</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/log.html">log</a></td>
+                            <td>4,114</td>
+                            <td>2,454</td>
+                            <td>6,568</td>
+                            <td>1.68</td>
+                            <td>62.6%</td>
+                            <td>104.965</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/fiber.html">fiber</a></td>
+                            <td>448</td>
+                            <td>76</td>
+                            <td>524</td>
+                            <td>5.82</td>
+                            <td>85.5%</td>
+                            <td>497.432</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/lexical_cast.html">lexical_cast</a></td>
+                            <td>4,892</td>
+                            <td>5,255</td>
+                            <td>10,147</td>
+                            <td>0.93</td>
+                            <td>48.2%</td>
+                            <td>44.872</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/system.html">system</a></td>
+                            <td>1,085</td>
+                            <td>673</td>
+                            <td>1,758</td>
+                            <td>1.61</td>
+                            <td>61.7%</td>
+                            <td>99.353</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/json.html">json</a></td>
+                            <td>566</td>
+                            <td>0</td>
+                            <td>566</td>
+                            <td>566.00</td>
+                            <td>100.0%</td>
+                            <td>56600.000</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/serialization.html">serialization</a></td>
+                            <td>13,826</td>
+                            <td>6,960</td>
+                            <td>20,786</td>
+                            <td>1.99</td>
+                            <td>66.5%</td>
+                            <td>132.115</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/type_index.html">type_index</a></td>
+                            <td>140</td>
+                            <td>52</td>
+                            <td>192</td>
+                            <td>2.64</td>
+                            <td>72.9%</td>
+                            <td>192.610</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/dynamic_bitset.html">dynamic_bitset</a></td>
+                            <td>705</td>
+                            <td>459</td>
+                            <td>1,164</td>
+                            <td>1.53</td>
+                            <td>60.6%</td>
+                            <td>92.826</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div>
+                <h3>Least Active Libraries</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Library</th>
+                            <th>Recent Usage</th>
+                            <th>Past Usage</th>
+                            <th>Total Usage</th>
+                            <th>Activity Ratio</th>
+                            <th>Activity %</th>
+                            <th>Activity Score</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td><a href="libraries/chrono.html">chrono</a></td>
+                            <td>480</td>
+                            <td>758</td>
+                            <td>1,238</td>
+                            <td>0.63</td>
+                            <td>38.8%</td>
+                            <td>24.520</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/wave.html">wave</a></td>
+                            <td>44</td>
+                            <td>401</td>
+                            <td>445</td>
+                            <td>0.11</td>
+                            <td>9.9%</td>
+                            <td>1.082</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/ptr_container.html">ptr_container</a></td>
+                            <td>202</td>
+                            <td>514</td>
+                            <td>716</td>
+                            <td>0.39</td>
+                            <td>28.2%</td>
+                            <td>11.066</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/vmd.html">vmd</a></td>
+                            <td>37</td>
+                            <td>35</td>
+                            <td>72</td>
+                            <td>1.03</td>
+                            <td>51.4%</td>
+                            <td>52.816</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/function_types.html">function_types</a></td>
+                            <td>70</td>
+                            <td>267</td>
+                            <td>337</td>
+                            <td>0.26</td>
+                            <td>20.8%</td>
+                            <td>5.425</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/foreach.html">foreach</a></td>
+                            <td>2,659</td>
+                            <td>7,970</td>
+                            <td>10,629</td>
+                            <td>0.33</td>
+                            <td>25.0%</td>
+                            <td>8.345</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/type_erasure.html">type_erasure</a></td>
+                            <td>52</td>
+                            <td>375</td>
+                            <td>427</td>
+                            <td>0.14</td>
+                            <td>12.2%</td>
+                            <td>1.684</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/typeof.html">typeof</a></td>
+                            <td>45</td>
+                            <td>289</td>
+                            <td>334</td>
+                            <td>0.16</td>
+                            <td>13.5%</td>
+                            <td>2.091</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/gil.html">gil</a></td>
+                            <td>218</td>
+                            <td>417</td>
+                            <td>635</td>
+                            <td>0.52</td>
+                            <td>34.3%</td>
+                            <td>17.905</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/leaf.html">leaf</a></td>
+                            <td>70</td>
+                            <td>0</td>
+                            <td>70</td>
+                            <td>70.00</td>
+                            <td>100.0%</td>
+                            <td>7000.000</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/hof.html">hof</a></td>
+                            <td>59</td>
+                            <td>2</td>
+                            <td>61</td>
+                            <td>19.67</td>
+                            <td>96.7%</td>
+                            <td>1902.186</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/python.html">python</a></td>
+                            <td>6,129</td>
+                            <td>6,690</td>
+                            <td>12,819</td>
+                            <td>0.92</td>
+                            <td>47.8%</td>
+                            <td>43.796</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/coroutine.html">coroutine</a></td>
+                            <td>61</td>
+                            <td>105</td>
+                            <td>166</td>
+                            <td>0.58</td>
+                            <td>36.7%</td>
+                            <td>21.147</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/assign.html">assign</a></td>
+                            <td>1,306</td>
+                            <td>3,374</td>
+                            <td>4,680</td>
+                            <td>0.39</td>
+                            <td>27.9%</td>
+                            <td>10.799</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/statechart.html">statechart</a></td>
+                            <td>123</td>
+                            <td>258</td>
+                            <td>381</td>
+                            <td>0.47</td>
+                            <td>32.3%</td>
+                            <td>15.332</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/flyweight.html">flyweight</a></td>
+                            <td>36</td>
+                            <td>117</td>
+                            <td>153</td>
+                            <td>0.31</td>
+                            <td>23.5%</td>
+                            <td>7.178</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/xpressive.html">xpressive</a></td>
+                            <td>50</td>
+                            <td>190</td>
+                            <td>240</td>
+                            <td>0.26</td>
+                            <td>20.8%</td>
+                            <td>5.454</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/spirit.html">spirit</a></td>
+                            <td>1,891</td>
+                            <td>6,722</td>
+                            <td>8,613</td>
+                            <td>0.28</td>
+                            <td>22.0%</td>
+                            <td>6.175</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/graph_parallel.html">graph_parallel</a></td>
+                            <td>103</td>
+                            <td>195</td>
+                            <td>298</td>
+                            <td>0.53</td>
+                            <td>34.6%</td>
+                            <td>18.164</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="libraries/proto.html">proto</a></td>
+                            <td>47</td>
+                            <td>565</td>
+                            <td>612</td>
+                            <td>0.08</td>
+                            <td>7.7%</td>
+                            <td>0.638</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel 6: All Libraries -->
+    <div class="panel">
+        <h2>All Libraries</h2>
+        <p style="color: #666; margin-top: 0;">Click on any library to view detailed statistics.</p>
+        <div class="library-grid">
+            <div class="library-item"><a href="libraries/accumulators.html">accumulators</a></div>
+            <div class="library-item"><a href="libraries/algorithm.html">algorithm</a></div>
+            <div class="library-item"><a href="libraries/align.html">align</a></div>
+            <div class="library-item"><a href="libraries/any.html">any</a></div>
+            <div class="library-item"><a href="libraries/array.html">array</a></div>
+            <div class="library-item"><a href="libraries/asio.html">asio</a></div>
+            <div class="library-item"><a href="libraries/assert.html">assert</a></div>
+            <div class="library-item"><a href="libraries/assign.html">assign</a></div>
+            <div class="library-item"><a href="libraries/atomic.html">atomic</a></div>
+            <div class="library-item"><a href="libraries/beast.html">beast</a></div>
+            <div class="library-item"><a href="libraries/bimap.html">bimap</a></div>
+            <div class="library-item"><a href="libraries/bind.html">bind</a></div>
+            <div class="library-item"><a href="libraries/bloom.html">bloom</a></div>
+            <div class="library-item"><a href="libraries/callable_traits.html">callable_traits</a></div>
+            <div class="library-item"><a href="libraries/charconv.html">charconv</a></div>
+            <div class="library-item"><a href="libraries/chrono.html">chrono</a></div>
+            <div class="library-item"><a href="libraries/circular_buffer.html">circular_buffer</a></div>
+            <div class="library-item"><a href="libraries/cobalt.html">cobalt</a></div>
+            <div class="library-item"><a href="libraries/compat.html">compat</a></div>
+            <div class="library-item"><a href="libraries/compatibility.html">compatibility</a></div>
+            <div class="library-item"><a href="libraries/compressed_pair.html">compressed_pair</a></div>
+            <div class="library-item"><a href="libraries/compute.html">compute</a></div>
+            <div class="library-item"><a href="libraries/concept_check.html">concept_check</a></div>
+            <div class="library-item"><a href="libraries/config.html">config</a></div>
+            <div class="library-item"><a href="libraries/container.html">container</a></div>
+            <div class="library-item"><a href="libraries/container_hash.html">container_hash</a></div>
+            <div class="library-item"><a href="libraries/context.html">context</a></div>
+            <div class="library-item"><a href="libraries/contract.html">contract</a></div>
+            <div class="library-item"><a href="libraries/conversion.html">conversion</a></div>
+            <div class="library-item"><a href="libraries/convert.html">convert</a></div>
+            <div class="library-item"><a href="libraries/core.html">core</a></div>
+            <div class="library-item"><a href="libraries/coroutine.html">coroutine</a></div>
+            <div class="library-item"><a href="libraries/coroutine2.html">coroutine2</a></div>
+            <div class="library-item"><a href="libraries/crc.html">crc</a></div>
+            <div class="library-item"><a href="libraries/date_time.html">date_time</a></div>
+            <div class="library-item"><a href="libraries/describe.html">describe</a></div>
+            <div class="library-item"><a href="libraries/detail.html">detail</a></div>
+            <div class="library-item"><a href="libraries/dll.html">dll</a></div>
+            <div class="library-item"><a href="libraries/dynamic_bitset.html">dynamic_bitset</a></div>
+            <div class="library-item"><a href="libraries/enable_if.html">enable_if</a></div>
+            <div class="library-item"><a href="libraries/endian.html">endian</a></div>
+            <div class="library-item"><a href="libraries/exception.html">exception</a></div>
+            <div class="library-item"><a href="libraries/fiber.html">fiber</a></div>
+            <div class="library-item"><a href="libraries/filesystem.html">filesystem</a></div>
+            <div class="library-item"><a href="libraries/flyweight.html">flyweight</a></div>
+            <div class="library-item"><a href="libraries/foreach.html">foreach</a></div>
+            <div class="library-item"><a href="libraries/format.html">format</a></div>
+            <div class="library-item"><a href="libraries/function.html">function</a></div>
+            <div class="library-item"><a href="libraries/function_types.html">function_types</a></div>
+            <div class="library-item"><a href="libraries/functional.html">functional</a></div>
+            <div class="library-item"><a href="libraries/functional_factory.html">functional_factory</a></div>
+            <div class="library-item"><a href="libraries/functional_forward.html">functional_forward</a></div>
+            <div class="library-item"><a href="libraries/functional_overloaded_function.html">functional_overloaded_function</a></div>
+            <div class="library-item"><a href="libraries/fusion.html">fusion</a></div>
+            <div class="library-item"><a href="libraries/geometry.html">geometry</a></div>
+            <div class="library-item"><a href="libraries/gil.html">gil</a></div>
+            <div class="library-item"><a href="libraries/graph.html">graph</a></div>
+            <div class="library-item"><a href="libraries/graph_parallel.html">graph_parallel</a></div>
+            <div class="library-item"><a href="libraries/hana.html">hana</a></div>
+            <div class="library-item"><a href="libraries/hash2.html">hash2</a></div>
+            <div class="library-item"><a href="libraries/heap.html">heap</a></div>
+            <div class="library-item"><a href="libraries/histogram.html">histogram</a></div>
+            <div class="library-item"><a href="libraries/hof.html">hof</a></div>
+            <div class="library-item"><a href="libraries/icl.html">icl</a></div>
+            <div class="library-item"><a href="libraries/in_place_factory.html">in_place_factory</a></div>
+            <div class="library-item"><a href="libraries/integer.html">integer</a></div>
+            <div class="library-item"><a href="libraries/interprocess.html">interprocess</a></div>
+            <div class="library-item"><a href="libraries/interval.html">interval</a></div>
+            <div class="library-item"><a href="libraries/intrusive.html">intrusive</a></div>
+            <div class="library-item"><a href="libraries/io.html">io</a></div>
+            <div class="library-item"><a href="libraries/iostreams.html">iostreams</a></div>
+            <div class="library-item"><a href="libraries/iterator.html">iterator</a></div>
+            <div class="library-item"><a href="libraries/json.html">json</a></div>
+            <div class="library-item"><a href="libraries/lambda.html">lambda</a></div>
+            <div class="library-item"><a href="libraries/lambda2.html">lambda2</a></div>
+            <div class="library-item"><a href="libraries/leaf.html">leaf</a></div>
+            <div class="library-item"><a href="libraries/lexical_cast.html">lexical_cast</a></div>
+            <div class="library-item"><a href="libraries/local_function.html">local_function</a></div>
+            <div class="library-item"><a href="libraries/locale.html">locale</a></div>
+            <div class="library-item"><a href="libraries/lockfree.html">lockfree</a></div>
+            <div class="library-item"><a href="libraries/log.html">log</a></div>
+            <div class="library-item"><a href="libraries/math.html">math</a></div>
+            <div class="library-item"><a href="libraries/metaparse.html">metaparse</a></div>
+            <div class="library-item"><a href="libraries/minmax.html">minmax</a></div>
+            <div class="library-item"><a href="libraries/move.html">move</a></div>
+            <div class="library-item"><a href="libraries/mp11.html">mp11</a></div>
+            <div class="library-item"><a href="libraries/mpi.html">mpi</a></div>
+            <div class="library-item"><a href="libraries/mpl.html">mpl</a></div>
+            <div class="library-item"><a href="libraries/mqtt5.html">mqtt5</a></div>
+            <div class="library-item"><a href="libraries/msm.html">msm</a></div>
+            <div class="library-item"><a href="libraries/multi_array.html">multi_array</a></div>
+            <div class="library-item"><a href="libraries/multi_index.html">multi_index</a></div>
+            <div class="library-item"><a href="libraries/multiprecision.html">multiprecision</a></div>
+            <div class="library-item"><a href="libraries/mysql.html">mysql</a></div>
+            <div class="library-item"><a href="libraries/nowide.html">nowide</a></div>
+            <div class="library-item"><a href="libraries/numeric_conversion.html">numeric_conversion</a></div>
+            <div class="library-item"><a href="libraries/odeint.html">odeint</a></div>
+            <div class="library-item"><a href="libraries/open_method.html">open_method</a></div>
+            <div class="library-item"><a href="libraries/operators.html">operators</a></div>
+            <div class="library-item"><a href="libraries/optional.html">optional</a></div>
+            <div class="library-item"><a href="libraries/outcome.html">outcome</a></div>
+            <div class="library-item"><a href="libraries/parameter.html">parameter</a></div>
+            <div class="library-item"><a href="libraries/parameter_python.html">parameter_python</a></div>
+            <div class="library-item"><a href="libraries/parser.html">parser</a></div>
+            <div class="library-item"><a href="libraries/pfr.html">pfr</a></div>
+            <div class="library-item"><a href="libraries/phoenix.html">phoenix</a></div>
+            <div class="library-item"><a href="libraries/poly_collection.html">poly_collection</a></div>
+            <div class="library-item"><a href="libraries/polygon.html">polygon</a></div>
+            <div class="library-item"><a href="libraries/pool.html">pool</a></div>
+            <div class="library-item"><a href="libraries/predef.html">predef</a></div>
+            <div class="library-item"><a href="libraries/preprocessor.html">preprocessor</a></div>
+            <div class="library-item"><a href="libraries/process.html">process</a></div>
+            <div class="library-item"><a href="libraries/program_options.html">program_options</a></div>
+            <div class="library-item"><a href="libraries/property_map.html">property_map</a></div>
+            <div class="library-item"><a href="libraries/property_map_parallel.html">property_map_parallel</a></div>
+            <div class="library-item"><a href="libraries/property_tree.html">property_tree</a></div>
+            <div class="library-item"><a href="libraries/proto.html">proto</a></div>
+            <div class="library-item"><a href="libraries/ptr_container.html">ptr_container</a></div>
+            <div class="library-item"><a href="libraries/python.html">python</a></div>
+            <div class="library-item"><a href="libraries/qvm.html">qvm</a></div>
+            <div class="library-item"><a href="libraries/random.html">random</a></div>
+            <div class="library-item"><a href="libraries/range.html">range</a></div>
+            <div class="library-item"><a href="libraries/ratio.html">ratio</a></div>
+            <div class="library-item"><a href="libraries/rational.html">rational</a></div>
+            <div class="library-item"><a href="libraries/redis.html">redis</a></div>
+            <div class="library-item"><a href="libraries/ref.html">ref</a></div>
+            <div class="library-item"><a href="libraries/regex.html">regex</a></div>
+            <div class="library-item"><a href="libraries/result_of.html">result_of</a></div>
+            <div class="library-item"><a href="libraries/safe_numerics.html">safe_numerics</a></div>
+            <div class="library-item"><a href="libraries/scope.html">scope</a></div>
+            <div class="library-item"><a href="libraries/scope_exit.html">scope_exit</a></div>
+            <div class="library-item"><a href="libraries/serialization.html">serialization</a></div>
+            <div class="library-item"><a href="libraries/signals2.html">signals2</a></div>
+            <div class="library-item"><a href="libraries/smart_ptr.html">smart_ptr</a></div>
+            <div class="library-item"><a href="libraries/sort.html">sort</a></div>
+            <div class="library-item"><a href="libraries/spirit.html">spirit</a></div>
+            <div class="library-item"><a href="libraries/stacktrace.html">stacktrace</a></div>
+            <div class="library-item"><a href="libraries/statechart.html">statechart</a></div>
+            <div class="library-item"><a href="libraries/static_assert.html">static_assert</a></div>
+            <div class="library-item"><a href="libraries/static_string.html">static_string</a></div>
+            <div class="library-item"><a href="libraries/stl_interfaces.html">stl_interfaces</a></div>
+            <div class="library-item"><a href="libraries/string_algo.html">string_algo</a></div>
+            <div class="library-item"><a href="libraries/string_view.html">string_view</a></div>
+            <div class="library-item"><a href="libraries/swap.html">swap</a></div>
+            <div class="library-item"><a href="libraries/system.html">system</a></div>
+            <div class="library-item"><a href="libraries/test.html">test</a></div>
+            <div class="library-item"><a href="libraries/thread.html">thread</a></div>
+            <div class="library-item"><a href="libraries/throw_exception.html">throw_exception</a></div>
+            <div class="library-item"><a href="libraries/timer.html">timer</a></div>
+            <div class="library-item"><a href="libraries/tokenizer.html">tokenizer</a></div>
+            <div class="library-item"><a href="libraries/tribool.html">tribool</a></div>
+            <div class="library-item"><a href="libraries/tti.html">tti</a></div>
+            <div class="library-item"><a href="libraries/tuple.html">tuple</a></div>
+            <div class="library-item"><a href="libraries/type_erasure.html">type_erasure</a></div>
+            <div class="library-item"><a href="libraries/type_index.html">type_index</a></div>
+            <div class="library-item"><a href="libraries/type_traits.html">type_traits</a></div>
+            <div class="library-item"><a href="libraries/typeof.html">typeof</a></div>
+            <div class="library-item"><a href="libraries/ublas.html">ublas</a></div>
+            <div class="library-item"><a href="libraries/units.html">units</a></div>
+            <div class="library-item"><a href="libraries/unordered.html">unordered</a></div>
+            <div class="library-item"><a href="libraries/url.html">url</a></div>
+            <div class="library-item"><a href="libraries/utility.html">utility</a></div>
+            <div class="library-item"><a href="libraries/uuid.html">uuid</a></div>
+            <div class="library-item"><a href="libraries/value_initialized.html">value_initialized</a></div>
+            <div class="library-item"><a href="libraries/variant.html">variant</a></div>
+            <div class="library-item"><a href="libraries/variant2.html">variant2</a></div>
+            <div class="library-item"><a href="libraries/vmd.html">vmd</a></div>
+            <div class="library-item"><a href="libraries/wave.html">wave</a></div>
+            <div class="library-item"><a href="libraries/winapi.html">winapi</a></div>
+            <div class="library-item"><a href="libraries/xpressive.html">xpressive</a></div>
+            <div class="library-item"><a href="libraries/yap.html">yap</a></div>
+        </div>
+    </div>
+
+    <script>
+
+        new Chart(document.getElementById('reposByYearChart'), {
+            type: 'bar',
+            data: {
+                labels: ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+                datasets: [{
+                    label: 'Repository Count',
+                    data: [19, 54, 138, 247, 400, 655, 979, 1078, 841, 722, 379, 402, 678, 612, 758, 869, 783, 362],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+
+        new Chart(document.getElementById('reposByVersionChart'), {
+            type: 'bar',
+            data: {
+                labels: ["1.30.0", "1.32.0", "1.33.0", "1.33.1", "1.34.0", "1.34.1", "1.35.0", "1.36.0", "1.37.0", "1.38.0", "1.39.0", "1.40.0", "1.41.0", "1.42.0", "1.43.0", "1.44.0", "1.45.0", "1.46.0", "1.46.1", "1.47.0", "1.48.0", "1.49.0", "1.50.0", "1.51.0", "1.52.0", "1.53.0", "1.54.0", "1.55.0", "1.56.0", "1.57.0", "1.58.0", "1.59.0", "1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0"],
+                datasets: [{
+                    label: 'Repository Count',
+                    data: [10, 2, 3, 3, 4, 5, 12, 34, 14, 18, 23, 51, 22, 43, 36, 54, 73, 38, 63, 102, 99, 146, 74, 77, 112, 268, 305, 696, 271, 403, 369, 369, 357, 286, 170, 252, 225, 46, 166, 143, 128, 130, 142, 162, 144, 213, 223, 226, 207, 195, 194, 217, 258, 276, 280, 310, 284, 277, 266, 229, 205, 137, 74],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            autoSkip: true,
+                            maxRotation: 90,
+                            minRotation: 45
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

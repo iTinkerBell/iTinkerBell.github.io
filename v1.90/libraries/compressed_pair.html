@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>compressed_pair - Boost Library Usage Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .panel {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .panel h2 {
+            margin-top: 0;
+            color: #2d3748;
+        }
+        .chart-container {
+            margin: 20px 0;
+            height: 380px;
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+        .panel-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        .panel-row .chart-container {
+            margin: 0;
+        }
+        .panel-row table {
+            margin: 0;
+        }
+        @media (max-width: 1100px) {
+            .panel-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="../index.html">← Back to Dashboard</a>
+    </div>
+    <h1>compressed_pair</h1>
+
+    <!-- Panel 1: Internal Consumers -->
+    <div class="panel">
+        <h2>Internal Consumers</h2>
+        <div class="panel-row">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="4">Dependent Libraries (Latest Version: 1.90.0)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                <tr>
+                    <td colspan="4">No dependent libraries found</td>
+                </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="dependentsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel 2: External Consumers -->
+    <div class="panel">
+        <h2>External Consumers</h2>
+        <div class="panel-row">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Repository</th>
+                            <th>Stars</th>
+                            <th>Usage Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                <tr>
+                    <td colspan="3">No repositories found</td>
+                </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="usageChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel 3: Contribution -->
+    <div class="panel">
+        <h2>Contribution</h2>
+        <div class="panel-row">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contributor</th>
+                            <th>Commit Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                <tr>
+                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
+                </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="commitChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        new Chart(document.getElementById('dependentsChart'), {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Dependent Count',
+                    data: [],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            autoSkip: true,
+                            maxRotation: 90,
+                            minRotation: 45
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        
+        new Chart(document.getElementById('usageChart'), {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Usage Count',
+                    data: [],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        
+        new Chart(document.getElementById('commitChart'), {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Commit Count',
+                    data: [],
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+    </script>
+</body>
+</html>

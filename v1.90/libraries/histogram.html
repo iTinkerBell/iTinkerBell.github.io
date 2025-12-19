@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>histogram - Boost Library Usage Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .panel {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .panel h2 {
+            margin-top: 0;
+            color: #2d3748;
+        }
+        .chart-container {
+            margin: 20px 0;
+            height: 380px;
+        }
+        canvas {
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+        }
+        .panel-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+        .panel-row .chart-container {
+            margin: 0;
+        }
+        .panel-row table {
+            margin: 0;
+        }
+        @media (max-width: 1100px) {
+            .panel-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f0f0;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="back-link">
+        <a href="../index.html">← Back to Dashboard</a>
+    </div>
+    <h1>histogram</h1>
+
+    <!-- Panel 1: Internal Consumers -->
+    <div class="panel">
+        <h2>Internal Consumers</h2>
+        <div class="panel-row">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="4">Dependent Libraries (Latest Version: 1.90.0)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                <tr>
+                    <td colspan="4">No dependent libraries found</td>
+                </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="dependentsChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel 2: External Consumers -->
+    <div class="panel">
+        <h2>External Consumers</h2>
+        <div class="panel-row">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Repository</th>
+                            <th>Stars</th>
+                            <th>Usage Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                <tr>
+                    <td><a href="https://github.com/nelhage/rules_boost" target="_blank">nelhage/rules_boost</a></td>
+                    <td>301</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/AliceO2Group/AliceO2" target="_blank">AliceO2Group/AliceO2</a></td>
+                    <td>114</td>
+                    <td>30</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/postech-dblab-iitp/turbograph-v3" target="_blank">postech-dblab-iitp/turbograph-v3</a></td>
+                    <td>45</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/3dct/open_iA" target="_blank">3dct/open_iA</a></td>
+                    <td>43</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/steinwurf/boost" target="_blank">steinwurf/boost</a></td>
+                    <td>36</td>
+                    <td>20</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/thaler-lab/Wasserstein" target="_blank">thaler-lab/Wasserstein</a></td>
+                    <td>28</td>
+                    <td>226</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/quimortiz/dynobench" target="_blank">quimortiz/dynobench</a></td>
+                    <td>27</td>
+                    <td>1</td>
+                </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="usageChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel 3: Contribution -->
+    <div class="panel">
+        <h2>Contribution</h2>
+        <div class="panel-row">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Contributor</th>
+                            <th>Commit Count</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                <tr>
+                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
+                </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="chart-container">
+                <canvas id="commitChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        new Chart(document.getElementById('dependentsChart'), {
+            type: 'bar',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Dependent Count',
+                    data: [],
+                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            autoSkip: true,
+                            maxRotation: 90,
+                            minRotation: 45
+                        }
+                    },
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        
+        new Chart(document.getElementById('usageChart'), {
+            type: 'bar',
+            data: {
+                labels: ["2019", "2021", "2022", "2024", "2025"],
+                datasets: [{
+                    label: 'Usage Count',
+                    data: [20, 92, 166, 2, 1],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+        
+        new Chart(document.getElementById('commitChart'), {
+            type: 'bar',
+            data: {
+                labels: ["1.60", "1.61", "1.62", "1.63", "1.64", "1.65", "1.66", "1.67", "1.68", "1.69", "1.70", "1.71", "1.72", "1.73", "1.74", "1.75", "1.76", "1.77", "1.78", "1.79", "1.80", "1.81", "1.85", "1.88", "1.89"],
+                datasets: [{
+                    label: 'Commit Count',
+                    data: [58, 243, 9, 264, 51, 130, 45, 226, 486, 248, 122, 71, 43, 16, 14, 12, 13, 12, 1, 10, 5, 11, 6, 7, 1],
+                    backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    
+    </script>
+</body>
+</html>

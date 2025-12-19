@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boost Software License (BSL-1.0) Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+      .chart-container {
+        background: white;
+        padding: 20px;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      canvas {
+        max-height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin-bottom: 10px;">
+        <a href="../index.html" style="color: #666; text-decoration: none; font-size: 0.9rem;">← Back to Version Selector</a>
+    </div>
+    <h1>Boost Software License (BSL-1.0) Analysis</h1>
+
+    <!-- Navigation -->
+    <nav style="text-align: center; margin: 20px 0; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <a href="index.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">Dashboard</a>
+        <a href="bsl_analysis.html" style="margin: 0 15px; padding: 8px 16px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; display: inline-block;">BSL Analysis</a>
+        <a href="data_to_release_note.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">Release Notes</a>
+    </nav>
+
+    <div class="chart-container">
+      <h2 style="text-align: center">Boost Software License Adoption</h2>
+      <div style="margin-bottom: 20px; text-align: center">
+        <p><strong>Total repositories using BSL-1.0:</strong> 42,581</p>
+        <p><strong>Repositories created since Boost 1.89.0:</strong> 4,383</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px">
+        <div>
+          <h3>Top 10 Repositories (All)</h3>
+          <table style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr style="background-color: #f0f0f0">
+                <th
+                  style="padding: 8px; text-align: left; border: 1px solid #ddd"
+                >
+                  Repository
+                </th>
+                <th
+                  style="
+                    padding: 8px;
+                    text-align: right;
+                    border: 1px solid #ddd;
+                  "
+                >
+                  Stars
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="https://github.com/catchorg/Catch2" target="_blank"
+                    >catchorg/catch2</a
+                  >
+                </td>
+                <td>20,017</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/philsquared/Catch" target="_blank"
+                    >philsquared/catch</a
+                  >
+                </td>
+                <td>19,858</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://onnxruntime.ai" target="_blank"
+                    >microsoft/onnxruntime</a
+                  >
+                </td>
+                <td>18,397</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/apache/arrow" target="_blank"
+                    >apache/arrow</a
+                  >
+                </td>
+                <td>16,226</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/davisking/dlib" target="_blank"
+                    >davisking/dlib</a
+                  >
+                </td>
+                <td>14,259</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://scipy.org" target="_blank">scipy/scipy</a>
+                </td>
+                <td>14,149</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="http://webjars.org" target="_blank"
+                    >jquery/jquery-mobile</a
+                  >
+                </td>
+                <td>9,643</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/pocoproject/poco" target="_blank"
+                    >pocoproject/poco</a
+                  >
+                </td>
+                <td>8,462</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/tdlib/td" target="_blank"
+                    >tdlib/td</a
+                  >
+                </td>
+                <td>8,286</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/boostorg/boost" target="_blank"
+                    >boostorg/boost</a
+                  >
+                </td>
+                <td>8,183</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div>
+          <h3>Top 10 Repositories (Since Boost 1.89.0)</h3>
+          <table style="width: 100%; border-collapse: collapse">
+            <thead>
+              <tr style="background-color: #f0f0f0">
+                <th
+                  style="padding: 8px; text-align: left; border: 1px solid #ddd"
+                >
+                  Repository
+                </th>
+                <th
+                  style="
+                    padding: 8px;
+                    text-align: right;
+                    border: 1px solid #ddd;
+                  "
+                >
+                  Stars
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <a href="https://github.com/NVIDIA/cccl" target="_blank"
+                    >nvidia/cccl</a
+                  >
+                </td>
+                <td>2,054</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/mrexodia/x86-real-mode-bootloader"
+                    target="_blank"
+                    >mrexodia/x86-real-mode-bootloader</a
+                  >
+                </td>
+                <td>38</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/Zeyk0ytb/KiongaHotJava"
+                    target="_blank"
+                    >zeyk0ytb/kiongahotjava</a
+                  >
+                </td>
+                <td>37</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/Zeyk0ytb/DiamondDashBot"
+                    target="_blank"
+                    >zeyk0ytb/diamonddashbot</a
+                  >
+                </td>
+                <td>37</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/DiamondDashb/mydogsgotno"
+                    target="_blank"
+                    >diamonddashb/mydogsgotno</a
+                  >
+                </td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/boostorg/spirit_x4"
+                    target="_blank"
+                    >boostorg/spirit_x4</a
+                  >
+                </td>
+                <td>28</td>
+              </tr>
+              <tr>
+                <td>
+                  <a href="https://github.com/yawmole/IRCBot" target="_blank"
+                    >yawmole/ircbot</a
+                  >
+                </td>
+                <td>28</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/gustavo8163781/Particle-Pioneer-Testnet-bot"
+                    target="_blank"
+                    >gustavo8163781/particle-pioneer-testnet-bot</a
+                  >
+                </td>
+                <td>28</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/globalevangelical/Discord-Autobot"
+                    target="_blank"
+                    >globalevangelical/discord-autobot</a
+                  >
+                </td>
+                <td>27</td>
+              </tr>
+              <tr>
+                <td>
+                  <a
+                    href="https://github.com/Appemma/TitanNode-Auto-Bot"
+                    target="_blank"
+                    >appemma/titannode-auto-bot</a
+                  >
+                </td>
+                <td>27</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <h2>BSL-1.0 Projects by Year</h2>
+      <canvas id="yearChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h2>BSL-1.0 Projects by Quarter</h2>
+      <canvas id="quarterChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+      <h2>BSL-1.0 Projects by Boost Version</h2>
+      <canvas id="versionChart"></canvas>
+    </div>
+
+    <script>
+      // Chart data
+      const yearData = {
+        labels: ["2020", "2021", "2022", "2023", "2024", "2025"],
+        datasets: [
+          {
+            label: "Created",
+            data: [2736, 5757, 5856, 7479, 6928, 9984],
+            borderColor: "rgb(75, 192, 192)",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            tension: 0.1,
+          },
+        ],
+      };
+
+      const quarterData = {
+        labels: [
+          "2020-Q1",
+          "2020-Q2",
+          "2020-Q3",
+          "2020-Q4",
+          "2021-Q1",
+          "2021-Q2",
+          "2021-Q3",
+          "2021-Q4",
+          "2022-Q1",
+          "2022-Q2",
+          "2022-Q3",
+          "2022-Q4",
+          "2023-Q1",
+          "2023-Q2",
+          "2023-Q3",
+          "2023-Q4",
+          "2024-Q1",
+          "2024-Q2",
+          "2024-Q3",
+          "2024-Q4",
+          "2025-Q1",
+          "2025-Q2",
+          "2025-Q3",
+          "2025-Q4",
+        ],
+        datasets: [
+          {
+            label: "Created",
+            data: [
+              160, 269, 1003, 1304, 1350, 1393, 1534, 1480, 1602, 1475, 1474,
+              1305, 1626, 2173, 1866, 1814, 1960, 1662, 1674, 1632, 2033, 2383,
+              3152, 2416,
+            ],
+            borderColor: "rgb(75, 192, 192)",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            tension: 0.1,
+          },
+        ],
+      };
+
+      const versionData = {
+        labels: [
+          "boost-1.73.0",
+          "boost-1.74.0",
+          "boost-1.75.0",
+          "boost-1.76.0",
+          "boost-1.77.0",
+          "boost-1.78.0",
+          "boost-1.79.0",
+          "boost-1.80.0",
+          "boost-1.81.0",
+          "boost-1.82.0",
+          "boost-1.83.0",
+          "boost-1.84.0",
+          "boost-1.85.0",
+          "boost-1.86.0",
+          "boost-1.87.0",
+          "boost-1.88.0",
+          "boost-1.89.0",
+        ],
+        datasets: [
+          {
+            label: "Created",
+            data: [
+              652, 1403, 2013, 1753, 1946, 1738, 2382, 2056, 2081, 2741, 2297,
+              2768, 2071, 2282, 2451, 3516, 4383,
+            ],
+            borderColor: "rgb(75, 192, 192)",
+            backgroundColor: "rgba(75, 192, 192, 0.2)",
+            tension: 0.1,
+          },
+        ],
+      };
+
+      // Chart configurations
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              precision: 0,
+            },
+          },
+        },
+        plugins: {
+          legend: {
+            display: true,
+            position: "top",
+          },
+          tooltip: {
+            mode: "index",
+            intersect: false,
+          },
+        },
+      };
+
+      // Create charts
+      new Chart(document.getElementById("yearChart"), {
+        type: "line",
+        data: yearData,
+        options: chartOptions,
+      });
+
+      new Chart(document.getElementById("quarterChart"), {
+        type: "line",
+        data: quarterData,
+        options: chartOptions,
+      });
+
+      new Chart(document.getElementById("versionChart"), {
+        type: "line",
+        data: versionData,
+        options: {
+          ...chartOptions,
+          scales: {
+            ...chartOptions.scales,
+            x: {
+              ticks: {
+                maxRotation: 45,
+                minRotation: 45,
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

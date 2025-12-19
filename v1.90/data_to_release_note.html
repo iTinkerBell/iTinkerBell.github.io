@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boost Library Usage Analysis: Repositories with 10+ Stars</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .chart-container {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        canvas {
+            max-height: 400px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-bottom: 10px;">
+        <a href="../index.html" style="color: #666; text-decoration: none; font-size: 0.9rem;">← Back to Version Selector</a>
+    </div>
+    <h1>Boost Library Usage Analysis: Repositories with 10+ Stars</h1>
+
+    <!-- Navigation -->
+    <nav style="text-align: center; margin: 20px 0; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <a href="index.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">Dashboard</a>
+        <a href="bsl_analysis.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">BSL Analysis</a>
+        <a href="data_to_release_note.html" style="margin: 0 15px; padding: 8px 16px; background: #0066cc; color: white; text-decoration: none; border-radius: 4px; display: inline-block;">Release Notes</a>
+    </nav>
+
+
+    <div class="chart-container">
+        <h2 style="text-align: center;">Repository Overview</h2>
+        <div style="margin-bottom: 20px; text-align: center;">
+            <p><strong>Total repositories with 10+ stars:</strong> 6,183</p>
+            <p><strong>Repositories created since Boost 1.89.0 (August 14, 2025):</strong> 1,643</p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <h3>Top 10 Repositories (All)</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: #f0f0f0;">
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Repository</th>
+                            <th style="padding: 8px; text-align: right; border: 1px solid #ddd;">Stars</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/bitcoin/bitcoin" target="_blank">bitcoin/bitcoin</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">87,184</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/opencv/opencv" target="_blank">opencv/opencv</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">85,228</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/Light-City/CPlusPlusThings" target="_blank">Light-City/CPlusPlusThings</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">42,588</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/BVLC/caffe" target="_blank">BVLC/caffe</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">34,764</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/TheAlgorithms/C-Plus-Plus" target="_blank">TheAlgorithms/C-Plus-Plus</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">33,497</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/facebook/folly" target="_blank">facebook/folly</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">30,136</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/ApolloAuto/apollo" target="_blank">ApolloAuto/apollo</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">26,290</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/changkun/modern-cpp-tutorial" target="_blank">changkun/modern-cpp-tutorial</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">25,228</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/PaddlePaddle/Paddle" target="_blank">PaddlePaddle/Paddle</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">23,488</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/google/filament" target="_blank">google/filament</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">19,171</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h3>Top 10 Repositories (Since Boost 1.89.0)</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background-color: #f0f0f0;">
+                            <th style="padding: 8px; text-align: left; border: 1px solid #ddd;">Repository</th>
+                            <th style="padding: 8px; text-align: right; border: 1px solid #ddd;">Stars</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/bitcoin/bitcoin" target="_blank">bitcoin/bitcoin</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">87,184</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/opencv/opencv" target="_blank">opencv/opencv</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">85,228</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/TheAlgorithms/C-Plus-Plus" target="_blank">TheAlgorithms/C-Plus-Plus</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">33,497</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/facebook/folly" target="_blank">facebook/folly</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">30,136</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/ApolloAuto/apollo" target="_blank">ApolloAuto/apollo</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">26,290</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/PaddlePaddle/Paddle" target="_blank">PaddlePaddle/Paddle</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">23,488</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/google/filament" target="_blank">google/filament</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">19,171</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/swoole/swoole-src" target="_blank">swoole/swoole-src</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">18,809</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/alibaba/weex" target="_blank">alibaba/weex</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">18,707</td>
+                        </tr>
+
+                        <tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;"><a href="https://github.com/microsoft/onnxruntime" target="_blank">microsoft/onnxruntime</a></td>
+                            <td style="padding: 8px; text-align: right; border: 1px solid #ddd;">18,634</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="chart-container">
+        <h2>Repositories with 10+ Stars by Year</h2>
+        <canvas id="yearChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Repositories with 10+ Stars by Quarter</h2>
+        <canvas id="quarterChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h2>Repositories with 10+ Stars by Boost Version</h2>
+        <canvas id="versionChart"></canvas>
+    </div>
+
+    <script>
+        // Chart data
+        const yearData = {
+            labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+            datasets: [
+                {
+                    label: "Repositories",
+                    data: [183, 151, 305, 1516, 1318, 2710],
+                    borderColor: "rgb(75, 192, 192)",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    tension: 0.1,
+                },
+            ],
+        };
+
+        const quarterData = {
+            labels: ['2020-Q1', '2020-Q2', '2020-Q3', '2020-Q4', '2021-Q1', '2021-Q2', '2021-Q3', '2021-Q4', '2022-Q1', '2022-Q2', '2022-Q3', '2022-Q4', '2023-Q1', '2023-Q2', '2023-Q3', '2023-Q4', '2024-Q1', '2024-Q2', '2024-Q3', '2024-Q4', '2025-Q1', '2025-Q2', '2025-Q3', '2025-Q4'],
+            datasets: [
+                {
+                    label: "Repositories",
+                    data: [34, 51, 44, 54, 36, 38, 43, 34, 35, 40, 43, 187, 387, 395, 349, 385, 307, 346, 348, 317, 366, 482, 577, 1285],
+                    borderColor: "rgb(75, 192, 192)",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    tension: 0.1,
+                },
+            ],
+        };
+
+        const versionData = {
+            labels: ['boost-1.72.0', 'boost-1.73.0', 'boost-1.74.0', 'boost-1.75.0', 'boost-1.76.0', 'boost-1.77.0', 'boost-1.78.0', 'boost-1.79.0', 'boost-1.80.0', 'boost-1.81.0', 'boost-1.82.0', 'boost-1.83.0', 'boost-1.84.0', 'boost-1.85.0', 'boost-1.86.0', 'boost-1.87.0', 'boost-1.88.0', 'boost-1.89.0', 'boost-1.90.0'],
+            datasets: [
+                {
+                    label: "Repositories",
+                    data: [45, 61, 70, 52, 52, 46, 53, 49, 148, 503, 505, 508, 435, 480, 404, 486, 645, 1493, 148],
+                    borderColor: "rgb(75, 192, 192)",
+                    backgroundColor: "rgba(75, 192, 192, 0.2)",
+                    tension: 0.1,
+                },
+            ],
+        };
+
+        // Chart configurations
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        precision: 0,
+                    },
+                },
+            },
+            plugins: {
+                legend: {
+                    display: true,
+                    position: "top",
+                },
+                tooltip: {
+                    mode: "index",
+                    intersect: false,
+                },
+            },
+        };
+
+        // Create charts
+        new Chart(document.getElementById("yearChart"), {
+            type: "line",
+            data: yearData,
+            options: chartOptions,
+        });
+
+        new Chart(document.getElementById("quarterChart"), {
+            type: "line",
+            data: quarterData,
+            options: chartOptions,
+        });
+
+        new Chart(document.getElementById("versionChart"), {
+            type: "line",
+            data: versionData,
+            options: {
+                ...chartOptions,
+                scales: {
+                    ...chartOptions.scales,
+                    x: {
+                        ticks: {
+                            maxRotation: 45,
+                            minRotation: 45,
+                        },
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>
