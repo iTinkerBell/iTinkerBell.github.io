@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mpl - Boost Library Usage Dashboard</title>
+    <title>mpl - Boost Library Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body {
@@ -101,16 +101,25 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                <tr>
-                    <td colspan="4">No dependent libraries found</td>
-                </tr>
+<tr><td><a href="accumulators.html">accumulators</a></td><td><a href="algorithm.html">algorithm</a></td><td><a href="bimap.html">bimap</a></td><td><a href="chrono.html">chrono</a></td></tr>
+<tr><td><a href="compute.html">compute</a></td><td><a href="contract.html">contract</a></td><td><a href="convert.html">convert</a></td><td><a href="flyweight.html">flyweight</a></td></tr>
+<tr><td><a href="foreach.html">foreach</a></td><td><a href="function_types.html">function_types</a></td><td><a href="functional.html">functional</a></td><td><a href="fusion.html">fusion</a></td></tr>
+<tr><td><a href="geometry.html">geometry</a></td><td><a href="graph.html">graph</a></td><td><a href="graph_parallel.html">graph_parallel</a></td><td><a href="hana.html">hana</a></td></tr>
+<tr><td><a href="icl.html">icl</a></td><td><a href="iostreams.html">iostreams</a></td><td><a href="iterator.html">iterator</a></td><td><a href="lambda.html">lambda</a></td></tr>
+<tr><td><a href="local_function.html">local_function</a></td><td><a href="log.html">log</a></td><td><a href="metaparse.html">metaparse</a></td><td><a href="mpi.html">mpi</a></td></tr>
+<tr><td><a href="msm.html">msm</a></td><td><a href="multi_array.html">multi_array</a></td><td><a href="multi_index.html">multi_index</a></td><td><a href="parameter.html">parameter</a></td></tr>
+<tr><td><a href="parameter_python.html">parameter_python</a></td><td><a href="phoenix.html">phoenix</a></td><td><a href="poly_collection.html">poly_collection</a></td><td><a href="property_map.html">property_map</a></td></tr>
+<tr><td><a href="property_map_parallel.html">property_map_parallel</a></td><td><a href="property_tree.html">property_tree</a></td><td><a href="proto.html">proto</a></td><td><a href="ptr_container.html">ptr_container</a></td></tr>
+<tr><td><a href="python.html">python</a></td><td><a href="range.html">range</a></td><td><a href="serialization.html">serialization</a></td><td><a href="signals2.html">signals2</a></td></tr>
+<tr><td><a href="spirit.html">spirit</a></td><td><a href="statechart.html">statechart</a></td><td><a href="test.html">test</a></td><td><a href="tti.html">tti</a></td></tr>
+<tr><td><a href="type_erasure.html">type_erasure</a></td><td><a href="units.html">units</a></td><td><a href="variant.html">variant</a></td><td><a href="wave.html">wave</a></td></tr>
+<tr><td><a href="xpressive.html">xpressive</a></td><td></td><td></td><td></td></tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependentsChart"></canvas>
+                <canvas id="dependencyChart"></canvas>
             </div>
         </div>
     </div>
@@ -128,7 +137,6 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -192,7 +200,6 @@
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -201,9 +208,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribution -->
+    <!-- Panel 3: Contribute -->
     <div class="panel">
-        <h2>Contribution</h2>
+        <h2>Contribute</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -213,15 +220,14 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
+                    <td>Sergey Chebotarev</td>
+                    <td>1</td>
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -231,16 +237,16 @@
     </div>
 
     <script>
-        
-        new Chart(document.getElementById('dependentsChart'), {
+        // Dependency Chart
+        new Chart(document.getElementById('dependencyChart'), {
             type: 'bar',
             data: {
-                labels: [],
+                labels: ["1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Dependent Count',
-                    data: [],
+                    data: [70, 70, 69, 61, 60, 60, 59, 56, 56, 55, 53, 54, 54, 54, 52, 52, 52, 52, 51, 51, 51, 50, 50, 49, 49],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgb(75, 192, 192)',
                     borderWidth: 1
                 }]
             },
@@ -265,8 +271,8 @@
                 }
             }
         });
-    
-        
+
+        // Usage Chart
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
@@ -293,8 +299,8 @@
                 }
             }
         });
-    
-        
+
+        // Commit Chart
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
@@ -303,7 +309,7 @@
                     label: 'Commit Count',
                     data: [2, 28, 27, 19, 20, 10, 9, 3, 6, 4, 4, 6, 6, 1, 1, 2, 2, 2, 3, 3, 2, 6, 1, 1, 2, 10, 1, 6, 5, 1],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 1
                 }]
             },
@@ -321,7 +327,6 @@
                 }
             }
         });
-    
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>beast - Boost Library Usage Dashboard</title>
+    <title>beast - Boost Library Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body {
@@ -101,16 +101,13 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                <tr>
-                    <td colspan="4">No dependent libraries found</td>
-                </tr>
+<tr><td><a href="mqtt5.html">mqtt5</a></td><td></td><td></td><td></td></tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependentsChart"></canvas>
+                <canvas id="dependencyChart"></canvas>
             </div>
         </div>
     </div>
@@ -128,7 +125,6 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -192,7 +188,6 @@
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -201,9 +196,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribution -->
+    <!-- Panel 3: Contribute -->
     <div class="panel">
-        <h2>Contribution</h2>
+        <h2>Contribute</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -213,15 +208,24 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
+                    <td>Mohammad Nejati</td>
+                    <td>16</td>
+                </tr>
+
+                <tr>
+                    <td>dvtate</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>biljazovic</td>
+                    <td>1</td>
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -231,16 +235,16 @@
     </div>
 
     <script>
-        
-        new Chart(document.getElementById('dependentsChart'), {
+        // Dependency Chart
+        new Chart(document.getElementById('dependencyChart'), {
             type: 'bar',
             data: {
-                labels: [],
+                labels: ["1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Dependent Count',
-                    data: [],
+                    data: [1, 1, 1],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgb(75, 192, 192)',
                     borderWidth: 1
                 }]
             },
@@ -265,8 +269,8 @@
                 }
             }
         });
-    
-        
+
+        // Usage Chart
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
@@ -293,8 +297,8 @@
                 }
             }
         });
-    
-        
+
+        // Commit Chart
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
@@ -303,7 +307,7 @@
                     label: 'Commit Count',
                     data: [15, 82, 102, 63, 702, 197, 81, 70, 95, 354, 111, 67, 58, 64, 32, 32, 18, 16, 19, 34, 45, 32, 17, 20, 40, 45, 35, 16, 15, 18],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 1
                 }]
             },
@@ -321,7 +325,6 @@
                 }
             }
         });
-    
     </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>throw_exception - Boost Library Usage Dashboard</title>
+    <title>throw_exception - Boost Library Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body {
@@ -101,16 +101,29 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                <tr>
-                    <td colspan="4">No dependent libraries found</td>
-                </tr>
+<tr><td><a href="accumulators.html">accumulators</a></td><td><a href="algorithm.html">algorithm</a></td><td><a href="any.html">any</a></td><td><a href="array.html">array</a></td></tr>
+<tr><td><a href="asio.html">asio</a></td><td><a href="assign.html">assign</a></td><td><a href="beast.html">beast</a></td><td><a href="bimap.html">bimap</a></td></tr>
+<tr><td><a href="bloom.html">bloom</a></td><td><a href="chrono.html">chrono</a></td><td><a href="circular_buffer.html">circular_buffer</a></td><td><a href="cobalt.html">cobalt</a></td></tr>
+<tr><td><a href="compat.html">compat</a></td><td><a href="compute.html">compute</a></td><td><a href="conversion.html">conversion</a></td><td><a href="core.html">core</a></td></tr>
+<tr><td><a href="coroutine.html">coroutine</a></td><td><a href="date_time.html">date_time</a></td><td><a href="dll.html">dll</a></td><td><a href="dynamic_bitset.html">dynamic_bitset</a></td></tr>
+<tr><td><a href="exception.html">exception</a></td><td><a href="flyweight.html">flyweight</a></td><td><a href="format.html">format</a></td><td><a href="function.html">function</a></td></tr>
+<tr><td><a href="geometry.html">geometry</a></td><td><a href="graph.html">graph</a></td><td><a href="heap.html">heap</a></td><td><a href="histogram.html">histogram</a></td></tr>
+<tr><td><a href="integer.html">integer</a></td><td><a href="iostreams.html">iostreams</a></td><td><a href="json.html">json</a></td><td><a href="lexical_cast.html">lexical_cast</a></td></tr>
+<tr><td><a href="lockfree.html">lockfree</a></td><td><a href="log.html">log</a></td><td><a href="math.html">math</a></td><td><a href="mpi.html">mpi</a></td></tr>
+<tr><td><a href="multi_index.html">multi_index</a></td><td><a href="multiprecision.html">multiprecision</a></td><td><a href="mysql.html">mysql</a></td><td><a href="optional.html">optional</a></td></tr>
+<tr><td><a href="outcome.html">outcome</a></td><td><a href="pool.html">pool</a></td><td><a href="process.html">process</a></td><td><a href="program_options.html">program_options</a></td></tr>
+<tr><td><a href="property_map.html">property_map</a></td><td><a href="property_tree.html">property_tree</a></td><td><a href="random.html">random</a></td><td><a href="rational.html">rational</a></td></tr>
+<tr><td><a href="redis.html">redis</a></td><td><a href="regex.html">regex</a></td><td><a href="serialization.html">serialization</a></td><td><a href="signals2.html">signals2</a></td></tr>
+<tr><td><a href="smart_ptr.html">smart_ptr</a></td><td><a href="spirit.html">spirit</a></td><td><a href="static_string.html">static_string</a></td><td><a href="system.html">system</a></td></tr>
+<tr><td><a href="thread.html">thread</a></td><td><a href="tokenizer.html">tokenizer</a></td><td><a href="type_erasure.html">type_erasure</a></td><td><a href="type_index.html">type_index</a></td></tr>
+<tr><td><a href="unordered.html">unordered</a></td><td><a href="url.html">url</a></td><td><a href="utility.html">utility</a></td><td><a href="uuid.html">uuid</a></td></tr>
+<tr><td><a href="variant.html">variant</a></td><td><a href="wave.html">wave</a></td><td><a href="xpressive.html">xpressive</a></td><td></td></tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependentsChart"></canvas>
+                <canvas id="dependencyChart"></canvas>
             </div>
         </div>
     </div>
@@ -128,7 +141,6 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -192,7 +204,6 @@
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -201,9 +212,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribution -->
+    <!-- Panel 3: Contribute -->
     <div class="panel">
-        <h2>Contribution</h2>
+        <h2>Contribute</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -213,15 +224,14 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
+                    <td>Peter Dimov</td>
+                    <td>2</td>
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -231,16 +241,16 @@
     </div>
 
     <script>
-        
-        new Chart(document.getElementById('dependentsChart'), {
+        // Dependency Chart
+        new Chart(document.getElementById('dependencyChart'), {
             type: 'bar',
             data: {
-                labels: [],
+                labels: ["1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Dependent Count',
-                    data: [],
+                    data: [52, 53, 53, 53, 56, 55, 55, 57, 57, 58, 57, 56, 58, 60, 61, 62, 63, 63, 66, 65, 65, 66, 66, 67, 67],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgb(75, 192, 192)',
                     borderWidth: 1
                 }]
             },
@@ -265,8 +275,8 @@
                 }
             }
         });
-    
-        
+
+        // Usage Chart
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
@@ -293,8 +303,8 @@
                 }
             }
         });
-    
-        
+
+        // Commit Chart
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
@@ -303,7 +313,7 @@
                     label: 'Commit Count',
                     data: [6, 18, 1, 2, 1, 2, 3, 2, 29, 2, 3, 19, 14, 2, 1, 13, 2, 12, 14, 3, 3, 3, 2, 2, 6, 8, 5, 4, 2],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 1
                 }]
             },
@@ -321,7 +331,6 @@
                 }
             }
         });
-    
     </script>
 </body>
 </html>

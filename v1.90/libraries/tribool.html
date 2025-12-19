@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tribool - Boost Library Usage Dashboard</title>
+    <title>tribool - Boost Library Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body {
@@ -110,7 +110,7 @@
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependentsChart"></canvas>
+                <canvas id="dependencyChart"></canvas>
             </div>
         </div>
     </div>
@@ -128,7 +128,6 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -136,7 +135,6 @@
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -145,9 +143,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribution -->
+    <!-- Panel 3: Contribute -->
     <div class="panel">
-        <h2>Contribution</h2>
+        <h2>Contribute</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -157,7 +155,6 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -165,7 +162,6 @@
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -175,8 +171,8 @@
     </div>
 
     <script>
-        
-        new Chart(document.getElementById('dependentsChart'), {
+        // Dependency Chart
+        new Chart(document.getElementById('dependencyChart'), {
             type: 'bar',
             data: {
                 labels: [],
@@ -184,7 +180,7 @@
                     label: 'Dependent Count',
                     data: [],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgb(75, 192, 192)',
                     borderWidth: 1
                 }]
             },
@@ -209,8 +205,8 @@
                 }
             }
         });
-    
-        
+
+        // Usage Chart
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
@@ -237,17 +233,17 @@
                 }
             }
         });
-    
-        
+
+        // Commit Chart
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.54", "1.55", "1.56", "1.57", "1.62", "1.64", "1.66", "1.67", "1.68", "1.69", "1.70", "1.72", "1.75", "1.76", "1.79", "1.84", "1.85", "1.86", "1.87", "1.88"],
+                labels: [],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [2, 4, 2, 2, 2, 1, 3, 3, 6, 1, 2, 1, 3, 4, 3, 2, 6, 1, 3, 1],
+                    data: [],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 1
                 }]
             },
@@ -265,7 +261,6 @@
                 }
             }
         });
-    
     </script>
 </body>
 </html>

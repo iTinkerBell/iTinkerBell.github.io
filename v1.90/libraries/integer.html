@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>integer - Boost Library Usage Dashboard</title>
+    <title>integer - Boost Library Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body {
@@ -101,16 +101,17 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                <tr>
-                    <td colspan="4">No dependent libraries found</td>
-                </tr>
+<tr><td><a href="chrono.html">chrono</a></td><td><a href="geometry.html">geometry</a></td><td><a href="gil.html">gil</a></td><td><a href="graph.html">graph</a></td></tr>
+<tr><td><a href="iostreams.html">iostreams</a></td><td><a href="math.html">math</a></td><td><a href="mpi.html">mpi</a></td><td><a href="multi_index.html">multi_index</a></td></tr>
+<tr><td><a href="multiprecision.html">multiprecision</a></td><td><a href="pool.html">pool</a></td><td><a href="python.html">python</a></td><td><a href="random.html">random</a></td></tr>
+<tr><td><a href="rational.html">rational</a></td><td><a href="safe_numerics.html">safe_numerics</a></td><td><a href="serialization.html">serialization</a></td><td><a href="spirit.html">spirit</a></td></tr>
+<tr><td><a href="units.html">units</a></td><td><a href="variant.html">variant</a></td><td><a href="xpressive.html">xpressive</a></td><td></td></tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependentsChart"></canvas>
+                <canvas id="dependencyChart"></canvas>
             </div>
         </div>
     </div>
@@ -128,7 +129,6 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -192,7 +192,6 @@
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -201,9 +200,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribution -->
+    <!-- Panel 3: Contribute -->
     <div class="panel">
-        <h2>Contribution</h2>
+        <h2>Contribute</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -213,7 +212,6 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -221,8 +219,17 @@
                     <td>1</td>
                 </tr>
 
-                    </tbody>
+                <tr>
+                    <td>Lastique</td>
+                    <td>1</td>
+                </tr>
 
+                <tr>
+                    <td>Flamefire</td>
+                    <td>1</td>
+                </tr>
+
+                    </tbody>
                 </table>
             </div>
             <div class="chart-container">
@@ -232,16 +239,16 @@
     </div>
 
     <script>
-        
-        new Chart(document.getElementById('dependentsChart'), {
+        // Dependency Chart
+        new Chart(document.getElementById('dependencyChart'), {
             type: 'bar',
             data: {
-                labels: [],
+                labels: ["1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Dependent Count',
-                    data: [],
+                    data: [24, 25, 26, 27, 27, 27, 27, 28, 28, 28, 28, 28, 28, 28, 28, 27, 25, 25, 24, 24, 23, 21, 21, 20, 19],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgb(75, 192, 192)',
                     borderWidth: 1
                 }]
             },
@@ -266,8 +273,8 @@
                 }
             }
         });
-    
-        
+
+        // Usage Chart
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
@@ -294,8 +301,8 @@
                 }
             }
         });
-    
-        
+
+        // Commit Chart
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
@@ -304,7 +311,7 @@
                     label: 'Commit Count',
                     data: [4, 4, 14, 2, 15, 1, 2, 7, 33, 2, 6, 52, 7, 2, 3, 3, 8, 11, 1, 11, 6, 1, 5, 1, 2, 4, 1, 6, 4, 3, 1],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 1
                 }]
             },
@@ -322,7 +329,6 @@
                 }
             }
         });
-    
     </script>
 </body>
 </html>

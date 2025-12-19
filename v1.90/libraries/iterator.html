@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iterator - Boost Library Usage Dashboard</title>
+    <title>iterator - Boost Library Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
         body {
@@ -101,16 +101,21 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                <tr>
-                    <td colspan="4">No dependent libraries found</td>
-                </tr>
+<tr><td><a href="accumulators.html">accumulators</a></td><td><a href="algorithm.html">algorithm</a></td><td><a href="bimap.html">bimap</a></td><td><a href="compute.html">compute</a></td></tr>
+<tr><td><a href="filesystem.html">filesystem</a></td><td><a href="foreach.html">foreach</a></td><td><a href="geometry.html">geometry</a></td><td><a href="gil.html">gil</a></td></tr>
+<tr><td><a href="graph.html">graph</a></td><td><a href="graph_parallel.html">graph_parallel</a></td><td><a href="heap.html">heap</a></td><td><a href="icl.html">icl</a></td></tr>
+<tr><td><a href="iostreams.html">iostreams</a></td><td><a href="lambda.html">lambda</a></td><td><a href="locale.html">locale</a></td><td><a href="log.html">log</a></td></tr>
+<tr><td><a href="mpi.html">mpi</a></td><td><a href="multi_array.html">multi_array</a></td><td><a href="multi_index.html">multi_index</a></td><td><a href="poly_collection.html">poly_collection</a></td></tr>
+<tr><td><a href="process.html">process</a></td><td><a href="program_options.html">program_options</a></td><td><a href="property_map.html">property_map</a></td><td><a href="property_tree.html">property_tree</a></td></tr>
+<tr><td><a href="ptr_container.html">ptr_container</a></td><td><a href="python.html">python</a></td><td><a href="range.html">range</a></td><td><a href="serialization.html">serialization</a></td></tr>
+<tr><td><a href="signals2.html">signals2</a></td><td><a href="spirit.html">spirit</a></td><td><a href="test.html">test</a></td><td><a href="tokenizer.html">tokenizer</a></td></tr>
+<tr><td><a href="type_erasure.html">type_erasure</a></td><td><a href="wave.html">wave</a></td><td><a href="xpressive.html">xpressive</a></td><td></td></tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependentsChart"></canvas>
+                <canvas id="dependencyChart"></canvas>
             </div>
         </div>
     </div>
@@ -128,7 +133,6 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
@@ -192,7 +196,6 @@
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -201,9 +204,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribution -->
+    <!-- Panel 3: Contribute -->
     <div class="panel">
-        <h2>Contribution</h2>
+        <h2>Contribute</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -213,16 +216,24 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
-
                     <tbody>
 
                 <tr>
                     <td>Andrey Semashev</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <td>Lastique</td>
+                    <td>1</td>
+                </tr>
+
+                <tr>
+                    <td>Flamefire</td>
                     <td>1</td>
                 </tr>
 
                     </tbody>
-
                 </table>
             </div>
             <div class="chart-container">
@@ -232,16 +243,16 @@
     </div>
 
     <script>
-        
-        new Chart(document.getElementById('dependentsChart'), {
+        // Dependency Chart
+        new Chart(document.getElementById('dependencyChart'), {
             type: 'bar',
             data: {
-                labels: [],
+                labels: ["1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Dependent Count',
-                    data: [],
+                    data: [42, 39, 40, 39, 40, 39, 38, 38, 38, 38, 38, 37, 37, 37, 37, 37, 37, 37, 36, 36, 36, 35, 35, 35, 35],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgb(75, 192, 192)',
                     borderWidth: 1
                 }]
             },
@@ -266,8 +277,8 @@
                 }
             }
         });
-    
-        
+
+        // Usage Chart
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
@@ -294,8 +305,8 @@
                 }
             }
         });
-    
-        
+
+        // Commit Chart
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
@@ -304,7 +315,7 @@
                     label: 'Commit Count',
                     data: [27, 44, 8, 6, 5, 19, 2, 7, 6, 24, 59, 10, 8, 8, 4, 7, 9, 2, 2, 2, 15, 7, 9, 10, 5, 5, 7, 2, 7, 50, 13, 5, 1],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgb(255, 99, 132)',
                     borderWidth: 1
                 }]
             },
@@ -322,7 +333,6 @@
                 }
             }
         });
-    
     </script>
 </body>
 </html>
