@@ -3,34 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>config - Boost Library Dashboard</title>
+    <title>config - Boost Library Usage Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            max-width: 1400px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
         }
         .panel {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #ffffff;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.1);
         }
         .panel h2 {
             margin-top: 0;
+            margin-bottom: 20px;
+            color: #1a202c;
+            font-size: 1.6em;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        .panel h3 {
             color: #2d3748;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
         }
         .chart-container {
-            margin: 20px 0;
-            height: 380px;
+            margin: 25px 0;
+            height: 450px;
+            position: relative;
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
         }
         canvas {
             width: 100% !important;
@@ -48,11 +79,6 @@
         }
         .panel-row table {
             margin: 0;
-        }
-        @media (max-width: 1100px) {
-            .panel-row {
-                grid-template-columns: 1fr;
-            }
         }
         table {
             width: 100%;
@@ -81,6 +107,45 @@
         .back-link {
             margin-bottom: 20px;
         }
+        .back-link a {
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+        .back-link a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            text-decoration: none;
+            transform: translateX(-3px);
+        }
+        .depth-1 {
+            background-color: #dbeafe;
+        }
+        .depth-2 {
+            background-color: #d1fae5;
+        }
+        .depth-3, .depth-4, .depth-5 {
+            background-color: #fef3c7;
+        }
+        @media (max-width: 1200px) {
+            .panel-row {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 20px 15px;
+            }
+            .panel {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -92,55 +157,62 @@
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
+        <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
+            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
+            <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+        </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Dependent Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
                         </tr>
                     </thead>
                     <tbody>
-<tr><td><a href="accumulators.html">accumulators</a></td><td><a href="algorithm.html">algorithm</a></td><td><a href="align.html">align</a></td><td><a href="any.html">any</a></td></tr>
-<tr><td><a href="array.html">array</a></td><td><a href="asio.html">asio</a></td><td><a href="assert.html">assert</a></td><td><a href="assign.html">assign</a></td></tr>
-<tr><td><a href="atomic.html">atomic</a></td><td><a href="beast.html">beast</a></td><td><a href="bimap.html">bimap</a></td><td><a href="bind.html">bind</a></td></tr>
-<tr><td><a href="bloom.html">bloom</a></td><td><a href="charconv.html">charconv</a></td><td><a href="chrono.html">chrono</a></td><td><a href="circular_buffer.html">circular_buffer</a></td></tr>
-<tr><td><a href="cobalt.html">cobalt</a></td><td><a href="compat.html">compat</a></td><td><a href="compute.html">compute</a></td><td><a href="concept_check.html">concept_check</a></td></tr>
-<tr><td><a href="container.html">container</a></td><td><a href="container_hash.html">container_hash</a></td><td><a href="context.html">context</a></td><td><a href="contract.html">contract</a></td></tr>
-<tr><td><a href="conversion.html">conversion</a></td><td><a href="convert.html">convert</a></td><td><a href="core.html">core</a></td><td><a href="coroutine.html">coroutine</a></td></tr>
-<tr><td><a href="coroutine2.html">coroutine2</a></td><td><a href="date_time.html">date_time</a></td><td><a href="detail.html">detail</a></td><td><a href="dll.html">dll</a></td></tr>
-<tr><td><a href="dynamic_bitset.html">dynamic_bitset</a></td><td><a href="endian.html">endian</a></td><td><a href="exception.html">exception</a></td><td><a href="fiber.html">fiber</a></td></tr>
-<tr><td><a href="filesystem.html">filesystem</a></td><td><a href="flyweight.html">flyweight</a></td><td><a href="foreach.html">foreach</a></td><td><a href="format.html">format</a></td></tr>
-<tr><td><a href="function.html">function</a></td><td><a href="function_types.html">function_types</a></td><td><a href="functional.html">functional</a></td><td><a href="fusion.html">fusion</a></td></tr>
-<tr><td><a href="geometry.html">geometry</a></td><td><a href="gil.html">gil</a></td><td><a href="graph.html">graph</a></td><td><a href="graph_parallel.html">graph_parallel</a></td></tr>
-<tr><td><a href="hana.html">hana</a></td><td><a href="hash2.html">hash2</a></td><td><a href="heap.html">heap</a></td><td><a href="histogram.html">histogram</a></td></tr>
-<tr><td><a href="icl.html">icl</a></td><td><a href="integer.html">integer</a></td><td><a href="interprocess.html">interprocess</a></td><td><a href="intrusive.html">intrusive</a></td></tr>
-<tr><td><a href="io.html">io</a></td><td><a href="iostreams.html">iostreams</a></td><td><a href="iterator.html">iterator</a></td><td><a href="json.html">json</a></td></tr>
-<tr><td><a href="lambda.html">lambda</a></td><td><a href="lexical_cast.html">lexical_cast</a></td><td><a href="local_function.html">local_function</a></td><td><a href="locale.html">locale</a></td></tr>
-<tr><td><a href="lockfree.html">lockfree</a></td><td><a href="log.html">log</a></td><td><a href="math.html">math</a></td><td><a href="metaparse.html">metaparse</a></td></tr>
-<tr><td><a href="move.html">move</a></td><td><a href="mpi.html">mpi</a></td><td><a href="mpl.html">mpl</a></td><td><a href="msm.html">msm</a></td></tr>
-<tr><td><a href="multi_array.html">multi_array</a></td><td><a href="multi_index.html">multi_index</a></td><td><a href="multiprecision.html">multiprecision</a></td><td><a href="mysql.html">mysql</a></td></tr>
-<tr><td><a href="nowide.html">nowide</a></td><td><a href="open_method.html">open_method</a></td><td><a href="optional.html">optional</a></td><td><a href="outcome.html">outcome</a></td></tr>
-<tr><td><a href="parameter.html">parameter</a></td><td><a href="phoenix.html">phoenix</a></td><td><a href="poly_collection.html">poly_collection</a></td><td><a href="polygon.html">polygon</a></td></tr>
-<tr><td><a href="pool.html">pool</a></td><td><a href="process.html">process</a></td><td><a href="program_options.html">program_options</a></td><td><a href="property_map.html">property_map</a></td></tr>
-<tr><td><a href="property_map_parallel.html">property_map_parallel</a></td><td><a href="property_tree.html">property_tree</a></td><td><a href="proto.html">proto</a></td><td><a href="ptr_container.html">ptr_container</a></td></tr>
-<tr><td><a href="python.html">python</a></td><td><a href="random.html">random</a></td><td><a href="range.html">range</a></td><td><a href="rational.html">rational</a></td></tr>
-<tr><td><a href="redis.html">redis</a></td><td><a href="regex.html">regex</a></td><td><a href="safe_numerics.html">safe_numerics</a></td><td><a href="scope.html">scope</a></td></tr>
-<tr><td><a href="scope_exit.html">scope_exit</a></td><td><a href="serialization.html">serialization</a></td><td><a href="signals2.html">signals2</a></td><td><a href="smart_ptr.html">smart_ptr</a></td></tr>
-<tr><td><a href="sort.html">sort</a></td><td><a href="spirit.html">spirit</a></td><td><a href="stacktrace.html">stacktrace</a></td><td><a href="statechart.html">statechart</a></td></tr>
-<tr><td><a href="static_assert.html">static_assert</a></td><td><a href="static_string.html">static_string</a></td><td><a href="stl_interfaces.html">stl_interfaces</a></td><td><a href="system.html">system</a></td></tr>
-<tr><td><a href="test.html">test</a></td><td><a href="thread.html">thread</a></td><td><a href="throw_exception.html">throw_exception</a></td><td><a href="timer.html">timer</a></td></tr>
-<tr><td><a href="tokenizer.html">tokenizer</a></td><td><a href="tti.html">tti</a></td><td><a href="tuple.html">tuple</a></td><td><a href="type_erasure.html">type_erasure</a></td></tr>
-<tr><td><a href="type_index.html">type_index</a></td><td><a href="type_traits.html">type_traits</a></td><td><a href="typeof.html">typeof</a></td><td><a href="units.html">units</a></td></tr>
-<tr><td><a href="unordered.html">unordered</a></td><td><a href="url.html">url</a></td><td><a href="utility.html">utility</a></td><td><a href="uuid.html">uuid</a></td></tr>
-<tr><td><a href="variant.html">variant</a></td><td><a href="variant2.html">variant2</a></td><td><a href="wave.html">wave</a></td><td><a href="winapi.html">winapi</a></td></tr>
-<tr><td><a href="xpressive.html">xpressive</a></td><td></td><td></td><td></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="accumulators.html" style="color: #3b82f6; font-weight: bold;">accumulators</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="algorithm.html" style="color: #3b82f6; font-weight: bold;">algorithm</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="align.html" style="color: #3b82f6; font-weight: bold;">align</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="any.html" style="color: #3b82f6; font-weight: bold;">any</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="array.html" style="color: #3b82f6; font-weight: bold;">array</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="asio.html" style="color: #3b82f6; font-weight: bold;">asio</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="assert.html" style="color: #3b82f6; font-weight: bold;">assert</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="assign.html" style="color: #3b82f6; font-weight: bold;">assign</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="atomic.html" style="color: #3b82f6; font-weight: bold;">atomic</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="beast.html" style="color: #3b82f6; font-weight: bold;">beast</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="bimap.html" style="color: #3b82f6; font-weight: bold;">bimap</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="bind.html" style="color: #3b82f6; font-weight: bold;">bind</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="bloom.html" style="color: #3b82f6; font-weight: bold;">bloom</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="charconv.html" style="color: #3b82f6; font-weight: bold;">charconv</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="chrono.html" style="color: #3b82f6; font-weight: bold;">chrono</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="circular_buffer.html" style="color: #3b82f6; font-weight: bold;">circular_buffer</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="cobalt.html" style="color: #3b82f6; font-weight: bold;">cobalt</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="compat.html" style="color: #3b82f6; font-weight: bold;">compat</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="compute.html" style="color: #3b82f6; font-weight: bold;">compute</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="concept_check.html" style="color: #3b82f6; font-weight: bold;">concept_check</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="container.html" style="color: #3b82f6; font-weight: bold;">container</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="container_hash.html" style="color: #3b82f6; font-weight: bold;">container_hash</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="context.html" style="color: #3b82f6; font-weight: bold;">context</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="contract.html" style="color: #3b82f6; font-weight: bold;">contract</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="conversion.html" style="color: #3b82f6; font-weight: bold;">conversion</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="convert.html" style="color: #3b82f6; font-weight: bold;">convert</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="core.html" style="color: #3b82f6; font-weight: bold;">core</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="coroutine.html" style="color: #3b82f6; font-weight: bold;">coroutine</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="coroutine2.html" style="color: #3b82f6; font-weight: bold;">coroutine2</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="date_time.html" style="color: #3b82f6; font-weight: bold;">date_time</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="detail.html" style="color: #3b82f6; font-weight: bold;">detail</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="dll.html" style="color: #3b82f6; font-weight: bold;">dll</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="dynamic_bitset.html" style="color: #3b82f6; font-weight: bold;">dynamic_bitset</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="endian.html" style="color: #3b82f6; font-weight: bold;">endian</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="exception.html" style="color: #3b82f6; font-weight: bold;">exception</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="fiber.html" style="color: #3b82f6; font-weight: bold;">fiber</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="filesystem.html" style="color: #3b82f6; font-weight: bold;">filesystem</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="flyweight.html" style="color: #3b82f6; font-weight: bold;">flyweight</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="foreach.html" style="color: #3b82f6; font-weight: bold;">foreach</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="format.html" style="color: #3b82f6; font-weight: bold;">format</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="function.html" style="color: #3b82f6; font-weight: bold;">function</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="function_types.html" style="color: #3b82f6; font-weight: bold;">function_types</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="functional.html" style="color: #3b82f6; font-weight: bold;">functional</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="fusion.html" style="color: #3b82f6; font-weight: bold;">fusion</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="geometry.html" style="color: #3b82f6; font-weight: bold;">geometry</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="gil.html" style="color: #3b82f6; font-weight: bold;">gil</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="graph.html" style="color: #3b82f6; font-weight: bold;">graph</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="graph_parallel.html" style="color: #3b82f6; font-weight: bold;">graph_parallel</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="hana.html" style="color: #3b82f6; font-weight: bold;">hana</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="hash2.html" style="color: #3b82f6; font-weight: bold;">hash2</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="heap.html" style="color: #3b82f6; font-weight: bold;">heap</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="histogram.html" style="color: #3b82f6; font-weight: bold;">histogram</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="icl.html" style="color: #3b82f6; font-weight: bold;">icl</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="integer.html" style="color: #3b82f6; font-weight: bold;">integer</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="interprocess.html" style="color: #3b82f6; font-weight: bold;">interprocess</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="interval.html" style="color: #3b82f6; font-weight: bold;">interval</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="intrusive.html" style="color: #3b82f6; font-weight: bold;">intrusive</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="io.html" style="color: #3b82f6; font-weight: bold;">io</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="iostreams.html" style="color: #3b82f6; font-weight: bold;">iostreams</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="iterator.html" style="color: #3b82f6; font-weight: bold;">iterator</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="json.html" style="color: #3b82f6; font-weight: bold;">json</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="lambda.html" style="color: #3b82f6; font-weight: bold;">lambda</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="lexical_cast.html" style="color: #3b82f6; font-weight: bold;">lexical_cast</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="local_function.html" style="color: #3b82f6; font-weight: bold;">local_function</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="locale.html" style="color: #3b82f6; font-weight: bold;">locale</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="lockfree.html" style="color: #3b82f6; font-weight: bold;">lockfree</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="log.html" style="color: #3b82f6; font-weight: bold;">log</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="math.html" style="color: #3b82f6; font-weight: bold;">math</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="metaparse.html" style="color: #3b82f6; font-weight: bold;">metaparse</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="move.html" style="color: #3b82f6; font-weight: bold;">move</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="mpi.html" style="color: #3b82f6; font-weight: bold;">mpi</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="mpl.html" style="color: #3b82f6; font-weight: bold;">mpl</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="msm.html" style="color: #3b82f6; font-weight: bold;">msm</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="multi_array.html" style="color: #3b82f6; font-weight: bold;">multi_array</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="multi_index.html" style="color: #3b82f6; font-weight: bold;">multi_index</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="multiprecision.html" style="color: #3b82f6; font-weight: bold;">multiprecision</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="mysql.html" style="color: #3b82f6; font-weight: bold;">mysql</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="nowide.html" style="color: #3b82f6; font-weight: bold;">nowide</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="numeric_conversion.html" style="color: #3b82f6; font-weight: bold;">numeric_conversion</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="open_method.html" style="color: #3b82f6; font-weight: bold;">open_method</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="optional.html" style="color: #3b82f6; font-weight: bold;">optional</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="outcome.html" style="color: #3b82f6; font-weight: bold;">outcome</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="parameter.html" style="color: #3b82f6; font-weight: bold;">parameter</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="phoenix.html" style="color: #3b82f6; font-weight: bold;">phoenix</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="poly_collection.html" style="color: #3b82f6; font-weight: bold;">poly_collection</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="polygon.html" style="color: #3b82f6; font-weight: bold;">polygon</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="pool.html" style="color: #3b82f6; font-weight: bold;">pool</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="process.html" style="color: #3b82f6; font-weight: bold;">process</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="program_options.html" style="color: #3b82f6; font-weight: bold;">program_options</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="property_map.html" style="color: #3b82f6; font-weight: bold;">property_map</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="property_map_parallel.html" style="color: #3b82f6; font-weight: bold;">property_map_parallel</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="property_tree.html" style="color: #3b82f6; font-weight: bold;">property_tree</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="proto.html" style="color: #3b82f6; font-weight: bold;">proto</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="ptr_container.html" style="color: #3b82f6; font-weight: bold;">ptr_container</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="python.html" style="color: #3b82f6; font-weight: bold;">python</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="random.html" style="color: #3b82f6; font-weight: bold;">random</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="range.html" style="color: #3b82f6; font-weight: bold;">range</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="rational.html" style="color: #3b82f6; font-weight: bold;">rational</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="redis.html" style="color: #3b82f6; font-weight: bold;">redis</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="regex.html" style="color: #3b82f6; font-weight: bold;">regex</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="safe_numerics.html" style="color: #3b82f6; font-weight: bold;">safe_numerics</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="scope.html" style="color: #3b82f6; font-weight: bold;">scope</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="scope_exit.html" style="color: #3b82f6; font-weight: bold;">scope_exit</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="serialization.html" style="color: #3b82f6; font-weight: bold;">serialization</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="signals2.html" style="color: #3b82f6; font-weight: bold;">signals2</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="sort.html" style="color: #3b82f6; font-weight: bold;">sort</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="spirit.html" style="color: #3b82f6; font-weight: bold;">spirit</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="stacktrace.html" style="color: #3b82f6; font-weight: bold;">stacktrace</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="statechart.html" style="color: #3b82f6; font-weight: bold;">statechart</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="static_assert.html" style="color: #3b82f6; font-weight: bold;">static_assert</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="static_string.html" style="color: #3b82f6; font-weight: bold;">static_string</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="stl_interfaces.html" style="color: #3b82f6; font-weight: bold;">stl_interfaces</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="system.html" style="color: #3b82f6; font-weight: bold;">system</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="test.html" style="color: #3b82f6; font-weight: bold;">test</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="thread.html" style="color: #3b82f6; font-weight: bold;">thread</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="throw_exception.html" style="color: #3b82f6; font-weight: bold;">throw_exception</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="timer.html" style="color: #3b82f6; font-weight: bold;">timer</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="tokenizer.html" style="color: #3b82f6; font-weight: bold;">tokenizer</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="tribool.html" style="color: #3b82f6; font-weight: bold;">tribool</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="tti.html" style="color: #3b82f6; font-weight: bold;">tti</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="tuple.html" style="color: #3b82f6; font-weight: bold;">tuple</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="type_erasure.html" style="color: #3b82f6; font-weight: bold;">type_erasure</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="type_index.html" style="color: #3b82f6; font-weight: bold;">type_index</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="type_traits.html" style="color: #3b82f6; font-weight: bold;">type_traits</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="typeof.html" style="color: #3b82f6; font-weight: bold;">typeof</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="units.html" style="color: #3b82f6; font-weight: bold;">units</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="unordered.html" style="color: #3b82f6; font-weight: bold;">unordered</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="url.html" style="color: #3b82f6; font-weight: bold;">url</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="utility.html" style="color: #3b82f6; font-weight: bold;">utility</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="uuid.html" style="color: #3b82f6; font-weight: bold;">uuid</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="variant.html" style="color: #3b82f6; font-weight: bold;">variant</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="variant2.html" style="color: #3b82f6; font-weight: bold;">variant2</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="wave.html" style="color: #3b82f6; font-weight: bold;">wave</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="winapi.html" style="color: #3b82f6; font-weight: bold;">winapi</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="xpressive.html" style="color: #3b82f6; font-weight: bold;">xpressive</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="mqtt5.html" style="color: #10b981; font-weight: normal;">mqtt5</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="parameter_python.html" style="color: #10b981; font-weight: normal;">parameter_python</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="parser.html" style="color: #10b981; font-weight: normal;">parser</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="yap.html" style="color: #10b981; font-weight: normal;">yap</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td></td></tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependencyChart"></canvas>
+                <canvas id="dependentsChart"></canvas>
             </div>
         </div>
     </div>
@@ -158,6 +230,7 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
+
                     <tbody>
 
                 <tr>
@@ -191,8 +264,20 @@
                 </tr>
 
                 <tr>
+                    <td><a href="https://github.com/scylladb/scylla" target="_blank">scylladb/scylla</a></td>
+                    <td>15,146</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
                     <td><a href="https://github.com/dogecoin/dogecoin" target="_blank">dogecoin/dogecoin</a></td>
                     <td>15,117</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/yahoo/pulsar" target="_blank">yahoo/pulsar</a></td>
+                    <td>15,014</td>
                     <td>2</td>
                 </tr>
 
@@ -208,19 +293,8 @@
                     <td>6</td>
                 </tr>
 
-                <tr>
-                    <td><a href="https://github.com/EOSIO/eos" target="_blank">EOSIO/eos</a></td>
-                    <td>11,243</td>
-                    <td>1</td>
-                </tr>
-
-                <tr>
-                    <td><a href="https://github.com/apache/thrift" target="_blank">apache/thrift</a></td>
-                    <td>10,854</td>
-                    <td>2</td>
-                </tr>
-
                     </tbody>
+
                 </table>
             </div>
             <div class="chart-container">
@@ -229,9 +303,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribute -->
+    <!-- Panel 3: Contribution -->
     <div class="panel">
-        <h2>Contribute</h2>
+        <h2>Contribution</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -241,34 +315,15 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
+
                     <tbody>
 
                 <tr>
-                    <td>Ruben Perez</td>
-                    <td>9</td>
-                </tr>
-
-                <tr>
-                    <td>John Maddock</td>
-                    <td>3</td>
-                </tr>
-
-                <tr>
-                    <td>Peter Dimov</td>
-                    <td>1</td>
-                </tr>
-
-                <tr>
-                    <td>Marshall Clow</td>
-                    <td>1</td>
-                </tr>
-
-                <tr>
-                    <td>Dmitry Arkhipov</td>
-                    <td>1</td>
+                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
                 </tr>
 
                     </tbody>
+
                 </table>
             </div>
             <div class="chart-container">
@@ -278,24 +333,72 @@
     </div>
 
     <script>
-        // Dependency Chart
-        new Chart(document.getElementById('dependencyChart'), {
+        
+        new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
                 labels: ["1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
-                    label: 'Dependent Count',
-                    data: [116, 118, 118, 118, 120, 121, 121, 122, 123, 124, 124, 125, 125, 125, 125, 126, 128, 129, 129, 131, 130, 130, 131, 133, 134],
-                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgb(75, 192, 192)',
-                    borderWidth: 1
+                    label: 'Primary Consumers',
+                    data: [117, 119, 119, 119, 121, 122, 122, 123, 124, 125, 125, 126, 126, 126, 126, 127, 129, 130, 130, 132, 131, 131, 132, 134, 135],
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
+                }, {
+                    label: 'Secondary Consumers',
+                    data: [118, 120, 121, 122, 124, 125, 125, 127, 128, 129, 128, 129, 129, 129, 129, 130, 131, 132, 133, 135, 134, 135, 137, 138, 139],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    borderColor: 'rgba(16, 185, 129, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
                 }]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
                 plugins: {
                     legend: {
-                        display: true
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 15,
+                            font: {
+                                size: 13,
+                                weight: '500'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 13
+                        },
+                        borderColor: 'rgba(255, 255, 255, 0.1)',
+                        borderWidth: 1,
+                        displayColors: true,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y.toLocaleString();
+                                }
+                                return label;
+                            }
+                        }
                     }
                 },
                 scales: {
@@ -303,24 +406,49 @@
                         ticks: {
                             autoSkip: true,
                             maxRotation: 90,
-                            minRotation: 45
+                            minRotation: 45,
+                            font: {
+                                size: 11
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
                         }
                     },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Consumer Count',
+                            font: {
+                                size: 12,
+                                weight: '600'
+                            }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            },
+                            font: {
+                                size: 11
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
                     }
                 }
             }
         });
-
-        // Usage Chart
+    
+        
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
                 labels: ["2003", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
                     label: 'Usage Count',
-                    data: [2, 2, 3, 3, 14, 45, 134, 255, 545, 700, 4183, 606, 585, 573, 431, 502, 422, 686, 885, 1121, 1061, 931],
+                    data: [2, 3, 3, 3, 14, 48, 138, 306, 633, 870, 4273, 679, 834, 606, 462, 521, 503, 775, 965, 1121, 1065, 951],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -340,8 +468,8 @@
                 }
             }
         });
-
-        // Commit Chart
+    
+        
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
@@ -350,7 +478,7 @@
                     label: 'Commit Count',
                     data: [20, 36, 104, 84, 26, 56, 32, 25, 24, 38, 53, 149, 59, 75, 19, 47, 44, 40, 31, 66, 21, 9, 85, 24, 29, 18, 20, 40, 15, 4, 17, 5, 2, 2, 2, 5, 15],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
                 }]
             },
@@ -368,6 +496,7 @@
                 }
             }
         });
+    
     </script>
 </body>
 </html>

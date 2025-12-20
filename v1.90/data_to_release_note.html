@@ -6,37 +6,82 @@
     <title>Boost Library Usage Analysis: Repositories with 10+ Stars</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            max-width: 1400px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
+        }
+        body > p {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 30px;
+            font-size: 0.95em;
         }
         .chart-container {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #ffffff;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .chart-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .chart-container h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: #1a202c;
+            font-size: 1.6em;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        .chart-container h3 {
+            color: #2d3748;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
         }
         canvas {
-            max-height: 400px;
+            width: 100% !important;
+            height: 100% !important;
+            display: block;
+            max-height: 450px;
         }
         table {
             width: 100%;
             border-collapse: collapse;
+            margin: 20px 0;
         }
         th, td {
-            padding: 8px;
-            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
         }
         th {
             background-color: #f0f0f0;
+            font-weight: 600;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
         }
         a {
             color: #0066cc;
@@ -45,11 +90,22 @@
         a:hover {
             text-decoration: underline;
         }
+        @media (max-width: 1200px) {
+            body {
+                padding: 20px 15px;
+            }
+            .chart-container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
     <div style="margin-bottom: 10px;">
-        <a href="../index.html" style="color: #666; text-decoration: none; font-size: 0.9rem;">← Back to Version Selector</a>
+        <a href="../index.html" style="color: rgba(255, 255, 255, 0.9); text-decoration: none; font-size: 0.9rem;">← Back to Version Selector</a>
     </div>
     <h1>Boost Library Usage Analysis: Repositories with 10+ Stars</h1>
 
@@ -62,7 +118,7 @@
 
 
     <div class="chart-container">
-        <h2 style="text-align: center;">Repository Overview</h2>
+        <h2>Repository Overview</h2>
         <div style="margin-bottom: 20px; text-align: center;">
             <p><strong>Total repositories with 10+ stars:</strong> 6,183</p>
             <p><strong>Repositories created since Boost 1.89.0 (August 14, 2025):</strong> 1,643</p>

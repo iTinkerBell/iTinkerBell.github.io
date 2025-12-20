@@ -3,34 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bimap - Boost Library Dashboard</title>
+    <title>bimap - Boost Library Usage Dashboard</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <style>
+        * {
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            max-width: 1400px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            max-width: 1600px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: #fff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            font-weight: 700;
         }
         .panel {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background: #ffffff;
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .panel:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15), 0 4px 8px rgba(0,0,0,0.1);
         }
         .panel h2 {
             margin-top: 0;
+            margin-bottom: 20px;
+            color: #1a202c;
+            font-size: 1.6em;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+        }
+        .panel h3 {
             color: #2d3748;
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
         }
         .chart-container {
-            margin: 20px 0;
-            height: 380px;
+            margin: 25px 0;
+            height: 450px;
+            position: relative;
+            background: #fafafa;
+            border-radius: 8px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
         }
         canvas {
             width: 100% !important;
@@ -48,11 +79,6 @@
         }
         .panel-row table {
             margin: 0;
-        }
-        @media (max-width: 1100px) {
-            .panel-row {
-                grid-template-columns: 1fr;
-            }
         }
         table {
             width: 100%;
@@ -81,6 +107,45 @@
         .back-link {
             margin-bottom: 20px;
         }
+        .back-link a {
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 500;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 6px;
+            display: inline-block;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+        .back-link a:hover {
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            text-decoration: none;
+            transform: translateX(-3px);
+        }
+        .depth-1 {
+            background-color: #dbeafe;
+        }
+        .depth-2 {
+            background-color: #d1fae5;
+        }
+        .depth-3, .depth-4, .depth-5 {
+            background-color: #fef3c7;
+        }
+        @media (max-width: 1200px) {
+            .panel-row {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 20px 15px;
+            }
+            .panel {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -92,22 +157,36 @@
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
+        <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
+            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
+            <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+        </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Dependent Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
                         </tr>
                     </thead>
                     <tbody>
-<tr><td><a href="graph.html">graph</a></td><td></td><td></td><td></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="graph.html" style="color: #3b82f6; font-weight: bold;">graph</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="geometry.html" style="color: #10b981; font-weight: normal;">geometry</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="graph_parallel.html" style="color: #10b981; font-weight: normal;">graph_parallel</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="mpi.html" style="color: #10b981; font-weight: normal;">mpi</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="python.html" style="color: #10b981; font-weight: normal;">python</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="numeric_conversion.html" style="color: #f59e0b; font-weight: normal;">numeric_conversion</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="parameter_python.html" style="color: #f59e0b; font-weight: normal;">parameter_python</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="property_map_parallel.html" style="color: #f59e0b; font-weight: normal;">property_map_parallel</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="accumulators.html" style="color: #ef4444; font-weight: normal;">accumulators</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="date_time.html" style="color: #ef4444; font-weight: normal;">date_time</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="iostreams.html" style="color: #ef4444; font-weight: normal;">iostreams</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="test.html" style="color: #ef4444; font-weight: normal;">test</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="xpressive.html" style="color: #ef4444; font-weight: normal;">xpressive</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="asio.html" style="color: #ef4444; font-weight: normal;">asio</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="icl.html" style="color: #ef4444; font-weight: normal;">icl</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="log.html" style="color: #ef4444; font-weight: normal;">log</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="thread.html" style="color: #ef4444; font-weight: normal;">thread</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="beast.html" style="color: #ef4444; font-weight: normal;">beast</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="cobalt.html" style="color: #ef4444; font-weight: normal;">cobalt</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="compute.html" style="color: #ef4444; font-weight: normal;">compute</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="contract.html" style="color: #ef4444; font-weight: normal;">contract</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="locale.html" style="color: #ef4444; font-weight: normal;">locale</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="mqtt5.html" style="color: #ef4444; font-weight: normal;">mqtt5</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="mysql.html" style="color: #ef4444; font-weight: normal;">mysql</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="process.html" style="color: #ef4444; font-weight: normal;">process</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="redis.html" style="color: #ef4444; font-weight: normal;">redis</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="spirit.html" style="color: #ef4444; font-weight: normal;">spirit</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="statechart.html" style="color: #ef4444; font-weight: normal;">statechart</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="type_erasure.html" style="color: #ef4444; font-weight: normal;">type_erasure</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="convert.html" style="color: #ef4444; font-weight: normal;">convert</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="poly_collection.html" style="color: #ef4444; font-weight: normal;">poly_collection</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="serialization.html" style="color: #ef4444; font-weight: normal;">serialization</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="wave.html" style="color: #ef4444; font-weight: normal;">wave</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="histogram.html" style="color: #ef4444; font-weight: normal;">histogram</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="msm.html" style="color: #ef4444; font-weight: normal;">msm</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="property_tree.html" style="color: #ef4444; font-weight: normal;">property_tree</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td></tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="chart-container">
-                <canvas id="dependencyChart"></canvas>
+                <canvas id="dependentsChart"></canvas>
             </div>
         </div>
     </div>
@@ -125,12 +204,25 @@
                             <th>Usage Count</th>
                         </tr>
                     </thead>
+
                     <tbody>
+
+                <tr>
+                    <td><a href="https://github.com/ray-project/ray" target="_blank">ray-project/ray</a></td>
+                    <td>40,407</td>
+                    <td>4</td>
+                </tr>
 
                 <tr>
                     <td><a href="https://github.com/ethereum/solidity" target="_blank">ethereum/solidity</a></td>
                     <td>25,442</td>
                     <td>1</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/scylladb/scylla" target="_blank">scylladb/scylla</a></td>
+                    <td>15,146</td>
+                    <td>2</td>
                 </tr>
 
                 <tr>
@@ -175,19 +267,8 @@
                     <td>1</td>
                 </tr>
 
-                <tr>
-                    <td><a href="https://github.com/NatronGitHub/Natron" target="_blank">NatronGitHub/Natron</a></td>
-                    <td>5,187</td>
-                    <td>4</td>
-                </tr>
-
-                <tr>
-                    <td><a href="https://github.com/clangen/musikcube" target="_blank">clangen/musikcube</a></td>
-                    <td>4,619</td>
-                    <td>1</td>
-                </tr>
-
                     </tbody>
+
                 </table>
             </div>
             <div class="chart-container">
@@ -196,9 +277,9 @@
         </div>
     </div>
 
-    <!-- Panel 3: Contribute -->
+    <!-- Panel 3: Contribution -->
     <div class="panel">
-        <h2>Contribute</h2>
+        <h2>Contribution</h2>
         <div class="panel-row">
             <div>
                 <table>
@@ -208,14 +289,15 @@
                             <th>Commit Count</th>
                         </tr>
                     </thead>
+
                     <tbody>
 
                 <tr>
-                    <td>JoaquÃ­n M. LÃ³pez MuÃ±oz</td>
-                    <td>1</td>
+                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
                 </tr>
 
                     </tbody>
+
                 </table>
             </div>
             <div class="chart-container">
@@ -225,24 +307,72 @@
     </div>
 
     <script>
-        // Dependency Chart
-        new Chart(document.getElementById('dependencyChart'), {
+        
+        new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
                 labels: ["1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
-                    label: 'Dependent Count',
+                    label: 'Primary Consumers',
                     data: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-                    backgroundColor: 'rgba(75, 192, 192, 0.6)',
-                    borderColor: 'rgb(75, 192, 192)',
-                    borderWidth: 1
+                    backgroundColor: 'rgba(59, 130, 246, 0.7)',
+                    borderColor: 'rgba(59, 130, 246, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
+                }, {
+                    label: 'Secondary Consumers',
+                    data: [61, 61, 61, 52, 53, 52, 51, 57, 57, 58, 58, 51, 50, 47, 46, 46, 41, 41, 43, 37, 36, 36, 36, 36, 36],
+                    backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                    borderColor: 'rgba(16, 185, 129, 1)',
+                    borderWidth: 2,
+                    borderRadius: 4
                 }]
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false
+                },
                 plugins: {
                     legend: {
-                        display: true
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 15,
+                            font: {
+                                size: 13,
+                                weight: '500'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                        padding: 12,
+                        titleFont: {
+                            size: 14,
+                            weight: 'bold'
+                        },
+                        bodyFont: {
+                            size: 13
+                        },
+                        borderColor: 'rgba(255, 255, 255, 0.1)',
+                        borderWidth: 1,
+                        displayColors: true,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) {
+                                    label += ': ';
+                                }
+                                if (context.parsed.y !== null) {
+                                    label += context.parsed.y.toLocaleString();
+                                }
+                                return label;
+                            }
+                        }
                     }
                 },
                 scales: {
@@ -250,24 +380,49 @@
                         ticks: {
                             autoSkip: true,
                             maxRotation: 90,
-                            minRotation: 45
+                            minRotation: 45,
+                            font: {
+                                size: 11
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
                         }
                     },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Consumer Count',
+                            font: {
+                                size: 12,
+                                weight: '600'
+                            }
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value.toLocaleString();
+                            },
+                            font: {
+                                size: 11
+                            }
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
                     }
                 }
             }
         });
-
-        // Usage Chart
+    
+        
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
-                labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+                labels: ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
                     label: 'Usage Count',
-                    data: [4, 4, 60, 16, 183, 18, 34, 45, 31, 44, 42, 62, 65, 59, 68, 94],
+                    data: [5, 4, 4, 61, 16, 186, 26, 37, 52, 43, 53, 42, 69, 67, 61, 68, 100],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -287,8 +442,8 @@
                 }
             }
         });
-
-        // Commit Chart
+    
+        
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
@@ -297,7 +452,7 @@
                     label: 'Commit Count',
                     data: [4, 2, 1, 2, 1, 2, 6, 2, 1, 8, 2, 1, 2, 1, 2, 5, 1, 13, 5, 4, 11, 8, 8, 1, 1],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
-                    borderColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
                 }]
             },
@@ -315,6 +470,7 @@
                 }
             }
         });
+    
     </script>
 </body>
 </html>
