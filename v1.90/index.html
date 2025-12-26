@@ -184,11 +184,11 @@
     </style>
 </head>
 <body>
-    <div style="margin-bottom: 10px;">
+        <div style="margin-bottom: 10px;">
         <a href="../index.html" style="color: #666; text-decoration: none; font-size: 0.9rem;">← Back to Version Selector</a>
     </div>
-    <h1>Boost Library Usage Dashboard</h1>
-    <p style="text-align: center; color: #666;">Data as of: 2025-12-21 01:16:16 UTC</p>
+<h1>Boost Library Usage Dashboard</h1>
+    <p style="text-align: center; color: #666;">Data as of: 2025-12-26 15:53:52 UTC</p>
 
     <!-- Navigation -->
     <nav style="text-align: center; margin: 20px 0; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -196,7 +196,6 @@
         <a href="bsl_analysis.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">BSL Analysis</a>
         <a href="data_to_release_note.html" style="margin: 0 15px; padding: 8px 16px; background: #f0f0f0; color: #333; text-decoration: none; border-radius: 4px; display: inline-block;">Release Notes</a>
     </nav>
-
     <!-- Panel 1: New Repositories Using Boost Libraries by Year -->
     <div class="panel">
         <h2>New Repositories Using Boost Libraries by Year</h2>
@@ -213,374 +212,54 @@
         </div>
     </div>
 
-    <!-- Panel 3: Most, Least and Never Used Libraries -->
+
+
+    <!-- Panel 3: Library Overview -->
     <div class="panel">
-        <h2>Most, Least and Never Used Libraries</h2>
-        <div class="tables-container-3-wrapper">
-            <div class="tables-container-3">
+        <h2>Library Overview</h2>
+        <div id="library-overview-container">
+            <div style="margin-bottom: 15px; display: flex; justify-content: flex-end;">
+                <label for="library-search" style="margin-right: 10px;">Search:</label>
+                <input type="text" id="library-search" placeholder="Filter libraries..." style="padding: 8px; width: 300px; border: 1px solid #ddd; border-radius: 4px;">
+            </div>
+            <table id="library-overview-table">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="name">Library <span class="sort-indicator">↕</span></th>
+                        <th class="sortable" data-sort="created_version">Created Version <span class="sort-indicator">↕</span></th>
+                        <th class="sortable" data-sort="repo_count">Repo Count <span class="sort-indicator">↕</span></th>
+                        <th class="sortable" data-sort="total_usage">Total Usage <span class="sort-indicator">↕</span></th>
+                        <th class="sortable" data-sort="recent_usage">Recent Usage <span class="sort-indicator">↕</span></th>
+                        <th class="sortable" data-sort="activity_score">Activity Score <span class="sort-indicator">↕</span></th>
+                        <th class="sortable" data-sort="average_stars">Average Stars <span class="sort-indicator">↕</span></th>
+                    </tr>
+                </thead>
+                <tbody id="library-overview-tbody">
+                </tbody>
+            </table>
+            <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                 <div>
-                    <h3>Most Used Libraries</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Library</th>
-                                <th>Usage Count</th>
-                            </tr>
-                        </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td><a href="libraries/test.html">test</a></td>
-                            <td>47,175</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/algorithm.html">algorithm</a></td>
-                            <td>32,114</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/smart_ptr.html">smart_ptr</a></td>
-                            <td>28,994</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/filesystem.html">filesystem</a></td>
-                            <td>27,426</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/thread.html">thread</a></td>
-                            <td>22,917</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/asio.html">asio</a></td>
-                            <td>21,889</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/serialization.html">serialization</a></td>
-                            <td>21,642</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/config.html">config</a></td>
-                            <td>14,733</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/python.html">python</a></td>
-                            <td>13,994</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/mpl.html">mpl</a></td>
-                            <td>13,663</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/bind.html">bind</a></td>
-                            <td>12,215</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/core.html">core</a></td>
-                            <td>11,988</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/foreach.html">foreach</a></td>
-                            <td>11,975</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/lexical_cast.html">lexical_cast</a></td>
-                            <td>10,936</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/program_options.html">program_options</a></td>
-                            <td>10,732</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/type_traits.html">type_traits</a></td>
-                            <td>9,625</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/spirit.html">spirit</a></td>
-                            <td>9,422</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/optional.html">optional</a></td>
-                            <td>8,986</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/preprocessor.html">preprocessor</a></td>
-                            <td>8,704</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/range.html">range</a></td>
-                            <td>8,412</td>
-                        </tr>
-
-                    </tbody>
-
-                    </table>
+                    <span id="library-pagination-info">Showing 1-20 of 171</span>
                 </div>
                 <div>
-                    <h3>Least Used Libraries</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Library</th>
-                                <th>Usage Count</th>
-                            </tr>
-                        </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td><a href="libraries/poly_collection.html">poly_collection</a></td>
-                            <td>5</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/yap.html">yap</a></td>
-                            <td>6</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/parameter_python.html">parameter_python</a></td>
-                            <td>7</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/static_string.html">static_string</a></td>
-                            <td>7</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/cobalt.html">cobalt</a></td>
-                            <td>10</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/redis.html">redis</a></td>
-                            <td>11</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/lambda2.html">lambda2</a></td>
-                            <td>12</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/safe_numerics.html">safe_numerics</a></td>
-                            <td>15</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/stl_interfaces.html">stl_interfaces</a></td>
-                            <td>24</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/mysql.html">mysql</a></td>
-                            <td>30</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/tti.html">tti</a></td>
-                            <td>34</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/contract.html">contract</a></td>
-                            <td>36</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/property_map_parallel.html">property_map_parallel</a></td>
-                            <td>39</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/convert.html">convert</a></td>
-                            <td>44</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/scope.html">scope</a></td>
-                            <td>45</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/conversion.html">conversion</a></td>
-                            <td>49</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/metaparse.html">metaparse</a></td>
-                            <td>56</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/coroutine2.html">coroutine2</a></td>
-                            <td>57</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/describe.html">describe</a></td>
-                            <td>58</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/parser.html">parser</a></td>
-                            <td>59</td>
-                        </tr>
-
-                    </tbody>
-
-                    </table>
+                    <button id="library-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                    <button id="library-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
                 </div>
-                <div>
-                    <h3>Never Used Libraries</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Library</th>
-                                <th>Created Version</th>
-                            </tr>
-                        </thead>
+            </div>
 
-                    <tbody>
-
-                        <tr>
-                            <td><a href="libraries/compatibility.html">compatibility</a></td>
-                            <td>1.21.2</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/operators.html">operators</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/compressed_pair.html">compressed_pair</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/value_initialized.html">value_initialized</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/ref.html">ref</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/ublas.html">ublas</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/in_place_factory.html">in_place_factory</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/result_of.html">result_of</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/functional_factory.html">functional_factory</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/functional_forward.html">functional_forward</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/functional_overloaded_function.html">functional_overloaded_function</a></td>
-                            <td>1.29.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/interval.html">interval</a></td>
-                            <td>1.30.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/tribool.html">tribool</a></td>
-                            <td>1.32.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/numeric_conversion.html">numeric_conversion</a></td>
-                            <td>1.32.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/minmax.html">minmax</a></td>
-                            <td>1.32.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/string_algo.html">string_algo</a></td>
-                            <td>1.32.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/odeint.html">odeint</a></td>
-                            <td>1.53.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/enable_if.html">enable_if</a></td>
-                            <td>1.56.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/swap.html">swap</a></td>
-                            <td>1.56.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/string_view.html">string_view</a></td>
-                            <td>1.78.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/bloom.html">bloom</a></td>
-                            <td>1.89.0</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/open_method.html">open_method</a></td>
-                            <td>1.90.0</td>
-                        </tr>
-
-                    </tbody>
-
-                    </table>
-                </div>
+            <div style="margin-top: 10px; padding: 10px; background-color: #f9f9f9; border-radius: 4px; font-size: 0.85em; color: #666;">
+                <ul style="margin: 0; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version in which this library was first introduced.</li>
+                    <li><strong>Repo Count:</strong> Number of repositories (>10 stars) that use this library.</li>
+                    <li><strong>Total Usage:</strong> Total number of times this library's headers are included across all repositories.</li>
+                    <li><strong>Recent Usage:</strong> Total Usage from the last 5 years compared to earlier years.</li>
+                    <li><strong>Activity Score:</strong> A composite metric that quantifies library adoption trends by comparing recent usage (last 5 years) to historical usage, with higher scores indicating growing adoption and lower scores indicating declining usage.</li>
+                    <li><strong>Average Stars:</strong> Average number of GitHub stars across repositories using this library.</li>
+                </ul>
             </div>
         </div>
     </div>
-
-    <!-- Panel 4: Top 20 repositories by star, by boost usage count, and by last created -->
+<!-- Panel 4: Top 20 repositories by star, by Total Boost Usage, and by last created -->
     <div class="panel">
         <h2>Top 20 Repositories by Different Metrics</h2>
         <div class="tables-container-3-wrapper">
@@ -592,7 +271,7 @@
                             <tr>
                                 <th>Repository</th>
                                 <th>Stars</th>
-                                <th>Usage Count</th>
+                                <th>Total Usage</th>
                                 <th>Created</th>
                             </tr>
                         </thead>
@@ -643,8 +322,8 @@
 
                         <tr>
                             <td><a href="https://github.com/qbittorrent/qBittorrent" target="_blank">qbittorrent/qBittorrent</a></td>
-                            <td>34,539</td>
-                            <td>1</td>
+                            <td>34,638</td>
+                            <td>2</td>
                             <td>2012-02-04</td>
                         </tr>
 
@@ -691,6 +370,20 @@
                         </tr>
 
                         <tr>
+                            <td><a href="https://github.com/rethinkdb/rethinkdb" target="_blank">rethinkdb/rethinkdb</a></td>
+                            <td>26,980</td>
+                            <td>32</td>
+                            <td>2012-10-30</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/notepad-plus-plus/notepad-plus-plus" target="_blank">notepad-plus-plus/notepad-plus-plus</a></td>
+                            <td>26,556</td>
+                            <td>0</td>
+                            <td>2015-03-28</td>
+                        </tr>
+
+                        <tr>
                             <td><a href="https://github.com/ApolloAuto/apollo" target="_blank">ApolloAuto/apollo</a></td>
                             <td>26,290</td>
                             <td>115</td>
@@ -725,39 +418,18 @@
                             <td>2017-01-28</td>
                         </tr>
 
-                        <tr>
-                            <td><a href="https://github.com/baidu/Paddle" target="_blank">baidu/Paddle</a></td>
-                            <td>23,501</td>
-                            <td>19</td>
-                            <td>2016-08-15</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/PaddlePaddle/Paddle" target="_blank">PaddlePaddle/Paddle</a></td>
-                            <td>23,488</td>
-                            <td>1</td>
-                            <td>2016-08-15</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/NixOS/nixpkgs" target="_blank">NixOS/nixpkgs</a></td>
-                            <td>22,765</td>
-                            <td>6</td>
-                            <td>2012-06-04</td>
-                        </tr>
-
                     </tbody>
 
                     </table>
                 </div>
                 <div>
-                    <h3>By Boost Usage Count</h3>
+                    <h3>By Total Boost Usage</h3>
                     <table>
                         <thead>
                             <tr>
                                 <th>Repository</th>
                                 <th>Stars</th>
-                                <th>Usage Count</th>
+                                <th>Total Usage</th>
                                 <th>Created</th>
                             </tr>
                         </thead>
@@ -814,6 +486,27 @@
                         </tr>
 
                         <tr>
+                            <td><a href="https://github.com/wallscavesurvey/walls" target="_blank">wallscavesurvey/walls</a></td>
+                            <td>23</td>
+                            <td>2,727</td>
+                            <td>2017-02-18</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/metrixplusplus/metrixplusplus" target="_blank">metrixplusplus/metrixplusplus</a></td>
+                            <td>82</td>
+                            <td>2,682</td>
+                            <td>2019-04-02</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/react-native-community/boost-for-react-native" target="_blank">react-native-community/boost-for-react-native</a></td>
+                            <td>88</td>
+                            <td>2,667</td>
+                            <td>2016-12-15</td>
+                        </tr>
+
+                        <tr>
                             <td><a href="https://github.com/ALPSim/ALPS" target="_blank">ALPSim/ALPS</a></td>
                             <td>18</td>
                             <td>2,333</td>
@@ -842,6 +535,20 @@
                         </tr>
 
                         <tr>
+                            <td><a href="https://github.com/qtplatz/qtplatz" target="_blank">qtplatz/qtplatz</a></td>
+                            <td>10</td>
+                            <td>1,726</td>
+                            <td>2010-06-09</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/boostorg/hana" target="_blank">boostorg/hana</a></td>
+                            <td>1,823</td>
+                            <td>1,674</td>
+                            <td>2014-05-17</td>
+                        </tr>
+
+                        <tr>
                             <td><a href="https://github.com/zk1556/Chat_Server_Boost" target="_blank">zk1556/Chat_Server_Boost</a></td>
                             <td>125</td>
                             <td>1,669</td>
@@ -863,45 +570,10 @@
                         </tr>
 
                         <tr>
-                            <td><a href="https://github.com/CGAL/cgal" target="_blank">CGAL/cgal</a></td>
-                            <td>5,658</td>
-                            <td>1,363</td>
-                            <td>2014-10-01</td>
-                        </tr>
-
-                        <tr>
                             <td><a href="https://github.com/boostorg/graph" target="_blank">boostorg/graph</a></td>
                             <td>367</td>
                             <td>1,344</td>
                             <td>2013-01-13</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/wabiverse/SwiftUSD" target="_blank">wabiverse/SwiftUSD</a></td>
-                            <td>85</td>
-                            <td>1,315</td>
-                            <td>2023-10-13</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/fabsig/GPBoost" target="_blank">fabsig/GPBoost</a></td>
-                            <td>643</td>
-                            <td>1,278</td>
-                            <td>2020-04-03</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/amazon-science/MO-LightGBM" target="_blank">amazon-science/MO-LightGBM</a></td>
-                            <td>14</td>
-                            <td>1,278</td>
-                            <td>2025-02-11</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/pdeitel/CPlusPlusHowToProgram11e" target="_blank">pdeitel/CPlusPlusHowToProgram11e</a></td>
-                            <td>102</td>
-                            <td>1,242</td>
-                            <td>2022-04-13</td>
                         </tr>
 
                     </tbody>
@@ -915,7 +587,7 @@
                             <tr>
                                 <th>Repository</th>
                                 <th>Stars</th>
-                                <th>Usage Count</th>
+                                <th>Total Usage</th>
                                 <th>Created</th>
                             </tr>
                         </thead>
@@ -924,22 +596,71 @@
 
                         <tr>
                             <td><a href="https://github.com/jmantra/jdrummer" target="_blank">jmantra/jdrummer</a></td>
-                            <td>44</td>
+                            <td>75</td>
                             <td>0</td>
                             <td>2025-12-14</td>
                         </tr>
 
                         <tr>
+                            <td><a href="https://github.com/SIE-Libraries/orbit" target="_blank">SIE-Libraries/orbit</a></td>
+                            <td>24</td>
+                            <td>3</td>
+                            <td>2025-12-14</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/inclusionAI/asystem-astate" target="_blank">inclusionAI/asystem-astate</a></td>
+                            <td>20</td>
+                            <td>1</td>
+                            <td>2025-12-03</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/YasiruDEX/Go2-Dynamic-Inspection" target="_blank">YasiruDEX/Go2-Dynamic-Inspection</a></td>
+                            <td>34</td>
+                            <td>18</td>
+                            <td>2025-12-03</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/moeleak/connecttool-qt" target="_blank">moeleak/connecttool-qt</a></td>
+                            <td>297</td>
+                            <td>0</td>
+                            <td>2025-12-02</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/JackJu-HIT/Ego-Planner-2D-ROS2" target="_blank">JackJu-HIT/Ego-Planner-2D-ROS2</a></td>
+                            <td>45</td>
+                            <td>14</td>
+                            <td>2025-11-29</td>
+                        </tr>
+
+                        <tr>
                             <td><a href="https://github.com/xoxor4d/gta4-rtx" target="_blank">xoxor4d/gta4-rtx</a></td>
-                            <td>271</td>
+                            <td>285</td>
                             <td>2</td>
                             <td>2025-11-27</td>
                         </tr>
 
                         <tr>
+                            <td><a href="https://github.com/mt-cly/ViP3DEdit" target="_blank">mt-cly/ViP3DEdit</a></td>
+                            <td>10</td>
+                            <td>18</td>
+                            <td>2025-11-27</td>
+                        </tr>
+
+                        <tr>
+                            <td><a href="https://github.com/soundondigital/ravennakit" target="_blank">soundondigital/ravennakit</a></td>
+                            <td>32</td>
+                            <td>81</td>
+                            <td>2025-11-26</td>
+                        </tr>
+
+                        <tr>
                             <td><a href="https://github.com/ZJU-PL/lotus" target="_blank">ZJU-PL/lotus</a></td>
-                            <td>11</td>
-                            <td>131</td>
+                            <td>12</td>
+                            <td>137</td>
                             <td>2025-11-13</td>
                         </tr>
 
@@ -965,8 +686,15 @@
                         </tr>
 
                         <tr>
+                            <td><a href="https://github.com/lisanna-dettwyler/nix-scheduler-hook" target="_blank">lisanna-dettwyler/nix-scheduler-hook</a></td>
+                            <td>21</td>
+                            <td>1</td>
+                            <td>2025-11-07</td>
+                        </tr>
+
+                        <tr>
                             <td><a href="https://github.com/peakyquest/perception_vault" target="_blank">peakyquest/perception_vault</a></td>
-                            <td>20</td>
+                            <td>23</td>
                             <td>9</td>
                             <td>2025-11-07</td>
                         </tr>
@@ -1006,62 +734,6 @@
                             <td>2025-10-30</td>
                         </tr>
 
-                        <tr>
-                            <td><a href="https://github.com/gaoxiang12/lightning-lm" target="_blank">gaoxiang12/lightning-lm</a></td>
-                            <td>1,228</td>
-                            <td>5</td>
-                            <td>2025-10-29</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/kaima2022/SUE-Sim" target="_blank">kaima2022/SUE-Sim</a></td>
-                            <td>26</td>
-                            <td>6</td>
-                            <td>2025-10-27</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/NKI-AI/fastslide" target="_blank">NKI-AI/fastslide</a></td>
-                            <td>32</td>
-                            <td>5</td>
-                            <td>2025-10-26</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/Fortiphyd/GRFICSv3" target="_blank">Fortiphyd/GRFICSv3</a></td>
-                            <td>27</td>
-                            <td>194</td>
-                            <td>2025-10-21</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/oceanbase/seekdb" target="_blank">oceanbase/seekdb</a></td>
-                            <td>1,678</td>
-                            <td>40</td>
-                            <td>2025-10-21</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/meta-pytorch/torchcomms" target="_blank">meta-pytorch/torchcomms</a></td>
-                            <td>301</td>
-                            <td>2</td>
-                            <td>2025-10-20</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/proroklab/lagat" target="_blank">proroklab/lagat</a></td>
-                            <td>13</td>
-                            <td>18</td>
-                            <td>2025-10-20</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="https://github.com/samaaron/supersonic" target="_blank">samaaron/supersonic</a></td>
-                            <td>121</td>
-                            <td>16</td>
-                            <td>2025-10-20</td>
-                        </tr>
-
                     </tbody>
 
                     </table>
@@ -1070,635 +742,696 @@
         </div>
     </div>
 
-    <!-- Panel 5: Most Active Libraries (Recent vs Past Activity) -->
-    <div class="panel">
-        <h2>Most Active Libraries (Recent vs Past Activity)</h2>
-        <p style="color: #666; margin-top: 0;">
-            Comparing library activity in the last <strong>5 years</strong> versus earlier years.
-            Libraries with higher recent activity relative to past activity indicate growing adoption.
-        </p>
-        <div class="tables-container-2">
-            <div>
-                <h3>Top 20 Most Active Libraries</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Library</th>
-                            <th>Recent Usage</th>
-                            <th>Past Usage</th>
-                            <th>Total Usage</th>
-                            <th>Activity Ratio</th>
-                            <th>Activity %</th>
-                            <th>Activity Score</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td><a href="libraries/sort.html">sort</a></td>
-                            <td>416</td>
-                            <td>7</td>
-                            <td>423</td>
-                            <td>52.00</td>
-                            <td>98.3%</td>
-                            <td>18.559</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/asio.html">asio</a></td>
-                            <td>14,731</td>
-                            <td>7,158</td>
-                            <td>21,889</td>
-                            <td>2.06</td>
-                            <td>67.3%</td>
-                            <td>16.025</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/compute.html">compute</a></td>
-                            <td>2,279</td>
-                            <td>138</td>
-                            <td>2,417</td>
-                            <td>16.40</td>
-                            <td>94.3%</td>
-                            <td>12.928</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/pfr.html">pfr</a></td>
-                            <td>243</td>
-                            <td>2</td>
-                            <td>245</td>
-                            <td>81.00</td>
-                            <td>99.2%</td>
-                            <td>10.998</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/nowide.html">nowide</a></td>
-                            <td>1,715</td>
-                            <td>27</td>
-                            <td>1,742</td>
-                            <td>61.25</td>
-                            <td>98.5%</td>
-                            <td>10.453</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/outcome.html">outcome</a></td>
-                            <td>250</td>
-                            <td>1</td>
-                            <td>251</td>
-                            <td>125.00</td>
-                            <td>99.6%</td>
-                            <td>10.400</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/container_hash.html">container_hash</a></td>
-                            <td>1,344</td>
-                            <td>125</td>
-                            <td>1,469</td>
-                            <td>10.67</td>
-                            <td>91.5%</td>
-                            <td>9.782</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/process.html">process</a></td>
-                            <td>1,169</td>
-                            <td>129</td>
-                            <td>1,298</td>
-                            <td>8.99</td>
-                            <td>90.1%</td>
-                            <td>9.192</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/uuid.html">uuid</a></td>
-                            <td>2,263</td>
-                            <td>1,037</td>
-                            <td>3,300</td>
-                            <td>2.18</td>
-                            <td>68.6%</td>
-                            <td>9.025</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/log.html">log</a></td>
-                            <td>4,284</td>
-                            <td>2,616</td>
-                            <td>6,900</td>
-                            <td>1.64</td>
-                            <td>62.1%</td>
-                            <td>8.802</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/graph.html">graph</a></td>
-                            <td>4,028</td>
-                            <td>4,283</td>
-                            <td>8,311</td>
-                            <td>0.94</td>
-                            <td>48.5%</td>
-                            <td>8.298</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/algorithm.html">algorithm</a></td>
-                            <td>19,182</td>
-                            <td>12,932</td>
-                            <td>32,114</td>
-                            <td>1.48</td>
-                            <td>59.7%</td>
-                            <td>8.292</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/format.html">format</a></td>
-                            <td>4,176</td>
-                            <td>2,609</td>
-                            <td>6,785</td>
-                            <td>1.60</td>
-                            <td>61.5%</td>
-                            <td>8.275</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/fiber.html">fiber</a></td>
-                            <td>459</td>
-                            <td>79</td>
-                            <td>538</td>
-                            <td>5.74</td>
-                            <td>85.3%</td>
-                            <td>7.753</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/system.html">system</a></td>
-                            <td>1,120</td>
-                            <td>715</td>
-                            <td>1,835</td>
-                            <td>1.56</td>
-                            <td>61.0%</td>
-                            <td>7.131</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/json.html">json</a></td>
-                            <td>564</td>
-                            <td>0</td>
-                            <td>564</td>
-                            <td>564.00</td>
-                            <td>100.0%</td>
-                            <td>7.407</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/lexical_cast.html">lexical_cast</a></td>
-                            <td>5,156</td>
-                            <td>5,780</td>
-                            <td>10,936</td>
-                            <td>0.89</td>
-                            <td>47.1%</td>
-                            <td>7.115</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/type_index.html">type_index</a></td>
-                            <td>142</td>
-                            <td>53</td>
-                            <td>195</td>
-                            <td>2.63</td>
-                            <td>72.8%</td>
-                            <td>7.018</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/beast.html">beast</a></td>
-                            <td>2,365</td>
-                            <td>291</td>
-                            <td>2,656</td>
-                            <td>8.10</td>
-                            <td>89.0%</td>
-                            <td>6.926</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/serialization.html">serialization</a></td>
-                            <td>14,146</td>
-                            <td>7,496</td>
-                            <td>21,642</td>
-                            <td>1.89</td>
-                            <td>65.4%</td>
-                            <td>6.752</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-            </div>
-            <div>
-                <h3>Bottom 20 Least Active Libraries</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Library</th>
-                            <th>Recent Usage</th>
-                            <th>Past Usage</th>
-                            <th>Total Usage</th>
-                            <th>Activity Ratio</th>
-                            <th>Activity %</th>
-                            <th>Activity Score</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                        <tr>
-                            <td><a href="libraries/chrono.html">chrono</a></td>
-                            <td>498</td>
-                            <td>813</td>
-                            <td>1,311</td>
-                            <td>0.61</td>
-                            <td>38.0%</td>
-                            <td>-1.049</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/vmd.html">vmd</a></td>
-                            <td>37</td>
-                            <td>35</td>
-                            <td>72</td>
-                            <td>1.03</td>
-                            <td>51.4%</td>
-                            <td>-1.071</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/function_types.html">function_types</a></td>
-                            <td>74</td>
-                            <td>279</td>
-                            <td>353</td>
-                            <td>0.26</td>
-                            <td>21.0%</td>
-                            <td>-1.163</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/ptr_container.html">ptr_container</a></td>
-                            <td>216</td>
-                            <td>575</td>
-                            <td>791</td>
-                            <td>0.38</td>
-                            <td>27.3%</td>
-                            <td>-1.250</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/callable_traits.html">callable_traits</a></td>
-                            <td>36</td>
-                            <td>25</td>
-                            <td>61</td>
-                            <td>1.38</td>
-                            <td>59.0%</td>
-                            <td>-1.263</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/gil.html">gil</a></td>
-                            <td>218</td>
-                            <td>426</td>
-                            <td>644</td>
-                            <td>0.51</td>
-                            <td>33.9%</td>
-                            <td>-1.265</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/type_erasure.html">type_erasure</a></td>
-                            <td>52</td>
-                            <td>377</td>
-                            <td>429</td>
-                            <td>0.14</td>
-                            <td>12.1%</td>
-                            <td>-1.283</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/typeof.html">typeof</a></td>
-                            <td>48</td>
-                            <td>291</td>
-                            <td>339</td>
-                            <td>0.16</td>
-                            <td>14.2%</td>
-                            <td>-1.337</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/foreach.html">foreach</a></td>
-                            <td>2,786</td>
-                            <td>9,189</td>
-                            <td>11,975</td>
-                            <td>0.30</td>
-                            <td>23.3%</td>
-                            <td>-1.412</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/leaf.html">leaf</a></td>
-                            <td>71</td>
-                            <td>0</td>
-                            <td>71</td>
-                            <td>71.00</td>
-                            <td>100.0%</td>
-                            <td>-1.491</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/flyweight.html">flyweight</a></td>
-                            <td>75</td>
-                            <td>124</td>
-                            <td>199</td>
-                            <td>0.60</td>
-                            <td>37.7%</td>
-                            <td>-1.619</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/hof.html">hof</a></td>
-                            <td>59</td>
-                            <td>2</td>
-                            <td>61</td>
-                            <td>19.67</td>
-                            <td>96.7%</td>
-                            <td>-1.665</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/coroutine.html">coroutine</a></td>
-                            <td>66</td>
-                            <td>113</td>
-                            <td>179</td>
-                            <td>0.58</td>
-                            <td>36.9%</td>
-                            <td>-1.764</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/statechart.html">statechart</a></td>
-                            <td>119</td>
-                            <td>277</td>
-                            <td>396</td>
-                            <td>0.43</td>
-                            <td>30.1%</td>
-                            <td>-1.877</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/spirit.html">spirit</a></td>
-                            <td>1,926</td>
-                            <td>7,496</td>
-                            <td>9,422</td>
-                            <td>0.26</td>
-                            <td>20.4%</td>
-                            <td>-1.886</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/python.html">python</a></td>
-                            <td>6,304</td>
-                            <td>7,690</td>
-                            <td>13,994</td>
-                            <td>0.82</td>
-                            <td>45.0%</td>
-                            <td>-1.888</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/assign.html">assign</a></td>
-                            <td>1,385</td>
-                            <td>3,935</td>
-                            <td>5,320</td>
-                            <td>0.35</td>
-                            <td>26.0%</td>
-                            <td>-2.024</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/xpressive.html">xpressive</a></td>
-                            <td>55</td>
-                            <td>200</td>
-                            <td>255</td>
-                            <td>0.27</td>
-                            <td>21.6%</td>
-                            <td>-2.106</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/proto.html">proto</a></td>
-                            <td>83</td>
-                            <td>565</td>
-                            <td>648</td>
-                            <td>0.15</td>
-                            <td>12.8%</td>
-                            <td>-2.691</td>
-                        </tr>
-
-                        <tr>
-                            <td><a href="libraries/wave.html">wave</a></td>
-                            <td>100</td>
-                            <td>411</td>
-                            <td>511</td>
-                            <td>0.24</td>
-                            <td>19.6%</td>
-                            <td>-4.422</td>
-                        </tr>
-
-                    </tbody>
-
-                </table>
-            </div>
-        </div>
-    </div>
-
-    <!-- Panel 6: All Libraries -->
+    <!-- Panel 5: All Libraries -->
     <div class="panel">
         <h2>All Libraries</h2>
-        <p style="color: #666; margin-top: 0;">Click on any library to view detailed statistics.</p>
+        <p style="color: #666; margin-top: 0;">Browse all Boost libraries. Click on any library name to view detailed statistics.</p>
         <div class="library-grid">
-            <div class="library-item"><a href="libraries/accumulators.html">accumulators</a></div>
-            <div class="library-item"><a href="libraries/algorithm.html">algorithm</a></div>
-            <div class="library-item"><a href="libraries/align.html">align</a></div>
-            <div class="library-item"><a href="libraries/any.html">any</a></div>
-            <div class="library-item"><a href="libraries/array.html">array</a></div>
-            <div class="library-item"><a href="libraries/asio.html">asio</a></div>
-            <div class="library-item"><a href="libraries/assert.html">assert</a></div>
-            <div class="library-item"><a href="libraries/assign.html">assign</a></div>
-            <div class="library-item"><a href="libraries/atomic.html">atomic</a></div>
-            <div class="library-item"><a href="libraries/beast.html">beast</a></div>
-            <div class="library-item"><a href="libraries/bimap.html">bimap</a></div>
-            <div class="library-item"><a href="libraries/bind.html">bind</a></div>
-            <div class="library-item"><a href="libraries/bloom.html">bloom</a></div>
-            <div class="library-item"><a href="libraries/callable_traits.html">callable_traits</a></div>
-            <div class="library-item"><a href="libraries/charconv.html">charconv</a></div>
-            <div class="library-item"><a href="libraries/chrono.html">chrono</a></div>
-            <div class="library-item"><a href="libraries/circular_buffer.html">circular_buffer</a></div>
-            <div class="library-item"><a href="libraries/cobalt.html">cobalt</a></div>
-            <div class="library-item"><a href="libraries/compat.html">compat</a></div>
-            <div class="library-item"><a href="libraries/compatibility.html">compatibility</a></div>
-            <div class="library-item"><a href="libraries/compressed_pair.html">compressed_pair</a></div>
-            <div class="library-item"><a href="libraries/compute.html">compute</a></div>
-            <div class="library-item"><a href="libraries/concept_check.html">concept_check</a></div>
-            <div class="library-item"><a href="libraries/config.html">config</a></div>
-            <div class="library-item"><a href="libraries/container.html">container</a></div>
-            <div class="library-item"><a href="libraries/container_hash.html">container_hash</a></div>
-            <div class="library-item"><a href="libraries/context.html">context</a></div>
-            <div class="library-item"><a href="libraries/contract.html">contract</a></div>
-            <div class="library-item"><a href="libraries/conversion.html">conversion</a></div>
-            <div class="library-item"><a href="libraries/convert.html">convert</a></div>
-            <div class="library-item"><a href="libraries/core.html">core</a></div>
-            <div class="library-item"><a href="libraries/coroutine.html">coroutine</a></div>
-            <div class="library-item"><a href="libraries/coroutine2.html">coroutine2</a></div>
-            <div class="library-item"><a href="libraries/crc.html">crc</a></div>
-            <div class="library-item"><a href="libraries/date_time.html">date_time</a></div>
-            <div class="library-item"><a href="libraries/describe.html">describe</a></div>
-            <div class="library-item"><a href="libraries/detail.html">detail</a></div>
-            <div class="library-item"><a href="libraries/dll.html">dll</a></div>
-            <div class="library-item"><a href="libraries/dynamic_bitset.html">dynamic_bitset</a></div>
-            <div class="library-item"><a href="libraries/enable_if.html">enable_if</a></div>
-            <div class="library-item"><a href="libraries/endian.html">endian</a></div>
-            <div class="library-item"><a href="libraries/exception.html">exception</a></div>
-            <div class="library-item"><a href="libraries/fiber.html">fiber</a></div>
-            <div class="library-item"><a href="libraries/filesystem.html">filesystem</a></div>
-            <div class="library-item"><a href="libraries/flyweight.html">flyweight</a></div>
-            <div class="library-item"><a href="libraries/foreach.html">foreach</a></div>
-            <div class="library-item"><a href="libraries/format.html">format</a></div>
-            <div class="library-item"><a href="libraries/function.html">function</a></div>
-            <div class="library-item"><a href="libraries/function_types.html">function_types</a></div>
-            <div class="library-item"><a href="libraries/functional.html">functional</a></div>
-            <div class="library-item"><a href="libraries/functional_factory.html">functional_factory</a></div>
-            <div class="library-item"><a href="libraries/functional_forward.html">functional_forward</a></div>
-            <div class="library-item"><a href="libraries/functional_overloaded_function.html">functional_overloaded_function</a></div>
-            <div class="library-item"><a href="libraries/fusion.html">fusion</a></div>
-            <div class="library-item"><a href="libraries/geometry.html">geometry</a></div>
-            <div class="library-item"><a href="libraries/gil.html">gil</a></div>
-            <div class="library-item"><a href="libraries/graph.html">graph</a></div>
-            <div class="library-item"><a href="libraries/graph_parallel.html">graph_parallel</a></div>
-            <div class="library-item"><a href="libraries/hana.html">hana</a></div>
-            <div class="library-item"><a href="libraries/hash2.html">hash2</a></div>
-            <div class="library-item"><a href="libraries/heap.html">heap</a></div>
-            <div class="library-item"><a href="libraries/histogram.html">histogram</a></div>
-            <div class="library-item"><a href="libraries/hof.html">hof</a></div>
-            <div class="library-item"><a href="libraries/icl.html">icl</a></div>
-            <div class="library-item"><a href="libraries/in_place_factory.html">in_place_factory</a></div>
-            <div class="library-item"><a href="libraries/integer.html">integer</a></div>
-            <div class="library-item"><a href="libraries/interprocess.html">interprocess</a></div>
-            <div class="library-item"><a href="libraries/interval.html">interval</a></div>
-            <div class="library-item"><a href="libraries/intrusive.html">intrusive</a></div>
-            <div class="library-item"><a href="libraries/io.html">io</a></div>
-            <div class="library-item"><a href="libraries/iostreams.html">iostreams</a></div>
-            <div class="library-item"><a href="libraries/iterator.html">iterator</a></div>
-            <div class="library-item"><a href="libraries/json.html">json</a></div>
-            <div class="library-item"><a href="libraries/lambda.html">lambda</a></div>
-            <div class="library-item"><a href="libraries/lambda2.html">lambda2</a></div>
-            <div class="library-item"><a href="libraries/leaf.html">leaf</a></div>
-            <div class="library-item"><a href="libraries/lexical_cast.html">lexical_cast</a></div>
-            <div class="library-item"><a href="libraries/local_function.html">local_function</a></div>
-            <div class="library-item"><a href="libraries/locale.html">locale</a></div>
-            <div class="library-item"><a href="libraries/lockfree.html">lockfree</a></div>
-            <div class="library-item"><a href="libraries/log.html">log</a></div>
-            <div class="library-item"><a href="libraries/math.html">math</a></div>
-            <div class="library-item"><a href="libraries/metaparse.html">metaparse</a></div>
-            <div class="library-item"><a href="libraries/minmax.html">minmax</a></div>
-            <div class="library-item"><a href="libraries/move.html">move</a></div>
-            <div class="library-item"><a href="libraries/mp11.html">mp11</a></div>
-            <div class="library-item"><a href="libraries/mpi.html">mpi</a></div>
-            <div class="library-item"><a href="libraries/mpl.html">mpl</a></div>
-            <div class="library-item"><a href="libraries/mqtt5.html">mqtt5</a></div>
-            <div class="library-item"><a href="libraries/msm.html">msm</a></div>
-            <div class="library-item"><a href="libraries/multi_array.html">multi_array</a></div>
-            <div class="library-item"><a href="libraries/multi_index.html">multi_index</a></div>
-            <div class="library-item"><a href="libraries/multiprecision.html">multiprecision</a></div>
-            <div class="library-item"><a href="libraries/mysql.html">mysql</a></div>
-            <div class="library-item"><a href="libraries/nowide.html">nowide</a></div>
-            <div class="library-item"><a href="libraries/numeric_conversion.html">numeric_conversion</a></div>
-            <div class="library-item"><a href="libraries/odeint.html">odeint</a></div>
-            <div class="library-item"><a href="libraries/open_method.html">open_method</a></div>
-            <div class="library-item"><a href="libraries/operators.html">operators</a></div>
-            <div class="library-item"><a href="libraries/optional.html">optional</a></div>
-            <div class="library-item"><a href="libraries/outcome.html">outcome</a></div>
-            <div class="library-item"><a href="libraries/parameter.html">parameter</a></div>
-            <div class="library-item"><a href="libraries/parameter_python.html">parameter_python</a></div>
-            <div class="library-item"><a href="libraries/parser.html">parser</a></div>
-            <div class="library-item"><a href="libraries/pfr.html">pfr</a></div>
-            <div class="library-item"><a href="libraries/phoenix.html">phoenix</a></div>
-            <div class="library-item"><a href="libraries/poly_collection.html">poly_collection</a></div>
-            <div class="library-item"><a href="libraries/polygon.html">polygon</a></div>
-            <div class="library-item"><a href="libraries/pool.html">pool</a></div>
-            <div class="library-item"><a href="libraries/predef.html">predef</a></div>
-            <div class="library-item"><a href="libraries/preprocessor.html">preprocessor</a></div>
-            <div class="library-item"><a href="libraries/process.html">process</a></div>
-            <div class="library-item"><a href="libraries/program_options.html">program_options</a></div>
-            <div class="library-item"><a href="libraries/property_map.html">property_map</a></div>
-            <div class="library-item"><a href="libraries/property_map_parallel.html">property_map_parallel</a></div>
-            <div class="library-item"><a href="libraries/property_tree.html">property_tree</a></div>
-            <div class="library-item"><a href="libraries/proto.html">proto</a></div>
-            <div class="library-item"><a href="libraries/ptr_container.html">ptr_container</a></div>
-            <div class="library-item"><a href="libraries/python.html">python</a></div>
-            <div class="library-item"><a href="libraries/qvm.html">qvm</a></div>
-            <div class="library-item"><a href="libraries/random.html">random</a></div>
-            <div class="library-item"><a href="libraries/range.html">range</a></div>
-            <div class="library-item"><a href="libraries/ratio.html">ratio</a></div>
-            <div class="library-item"><a href="libraries/rational.html">rational</a></div>
-            <div class="library-item"><a href="libraries/redis.html">redis</a></div>
-            <div class="library-item"><a href="libraries/ref.html">ref</a></div>
-            <div class="library-item"><a href="libraries/regex.html">regex</a></div>
-            <div class="library-item"><a href="libraries/result_of.html">result_of</a></div>
-            <div class="library-item"><a href="libraries/safe_numerics.html">safe_numerics</a></div>
-            <div class="library-item"><a href="libraries/scope.html">scope</a></div>
-            <div class="library-item"><a href="libraries/scope_exit.html">scope_exit</a></div>
-            <div class="library-item"><a href="libraries/serialization.html">serialization</a></div>
-            <div class="library-item"><a href="libraries/signals2.html">signals2</a></div>
-            <div class="library-item"><a href="libraries/smart_ptr.html">smart_ptr</a></div>
-            <div class="library-item"><a href="libraries/sort.html">sort</a></div>
-            <div class="library-item"><a href="libraries/spirit.html">spirit</a></div>
-            <div class="library-item"><a href="libraries/stacktrace.html">stacktrace</a></div>
-            <div class="library-item"><a href="libraries/statechart.html">statechart</a></div>
-            <div class="library-item"><a href="libraries/static_assert.html">static_assert</a></div>
-            <div class="library-item"><a href="libraries/static_string.html">static_string</a></div>
-            <div class="library-item"><a href="libraries/stl_interfaces.html">stl_interfaces</a></div>
-            <div class="library-item"><a href="libraries/string_algo.html">string_algo</a></div>
-            <div class="library-item"><a href="libraries/string_view.html">string_view</a></div>
-            <div class="library-item"><a href="libraries/swap.html">swap</a></div>
-            <div class="library-item"><a href="libraries/system.html">system</a></div>
-            <div class="library-item"><a href="libraries/test.html">test</a></div>
-            <div class="library-item"><a href="libraries/thread.html">thread</a></div>
-            <div class="library-item"><a href="libraries/throw_exception.html">throw_exception</a></div>
-            <div class="library-item"><a href="libraries/timer.html">timer</a></div>
-            <div class="library-item"><a href="libraries/tokenizer.html">tokenizer</a></div>
-            <div class="library-item"><a href="libraries/tribool.html">tribool</a></div>
-            <div class="library-item"><a href="libraries/tti.html">tti</a></div>
-            <div class="library-item"><a href="libraries/tuple.html">tuple</a></div>
-            <div class="library-item"><a href="libraries/type_erasure.html">type_erasure</a></div>
-            <div class="library-item"><a href="libraries/type_index.html">type_index</a></div>
-            <div class="library-item"><a href="libraries/type_traits.html">type_traits</a></div>
-            <div class="library-item"><a href="libraries/typeof.html">typeof</a></div>
-            <div class="library-item"><a href="libraries/ublas.html">ublas</a></div>
-            <div class="library-item"><a href="libraries/units.html">units</a></div>
-            <div class="library-item"><a href="libraries/unordered.html">unordered</a></div>
-            <div class="library-item"><a href="libraries/url.html">url</a></div>
-            <div class="library-item"><a href="libraries/utility.html">utility</a></div>
-            <div class="library-item"><a href="libraries/uuid.html">uuid</a></div>
-            <div class="library-item"><a href="libraries/value_initialized.html">value_initialized</a></div>
-            <div class="library-item"><a href="libraries/variant.html">variant</a></div>
-            <div class="library-item"><a href="libraries/variant2.html">variant2</a></div>
-            <div class="library-item"><a href="libraries/vmd.html">vmd</a></div>
-            <div class="library-item"><a href="libraries/wave.html">wave</a></div>
-            <div class="library-item"><a href="libraries/winapi.html">winapi</a></div>
-            <div class="library-item"><a href="libraries/xpressive.html">xpressive</a></div>
-            <div class="library-item"><a href="libraries/yap.html">yap</a></div>
+
+            <div class="library-item">
+                <a href="libraries/accumulators.html">accumulators</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/algorithm.html">algorithm</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/align.html">align</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/any.html">any</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/array.html">array</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/asio.html">asio</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/assert.html">assert</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/assign.html">assign</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/atomic.html">atomic</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/beast.html">beast</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/bimap.html">bimap</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/bind.html">bind</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/bloom.html">bloom</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/callable_traits.html">callable_traits</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/charconv.html">charconv</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/chrono.html">chrono</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/circular_buffer.html">circular_buffer</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/cobalt.html">cobalt</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/compat.html">compat</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/compatibility.html">compatibility</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/compressed_pair.html">compressed_pair</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/compute.html">compute</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/concept_check.html">concept_check</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/config.html">config</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/container.html">container</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/container_hash.html">container_hash</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/context.html">context</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/contract.html">contract</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/conversion.html">conversion</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/convert.html">convert</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/core.html">core</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/coroutine.html">coroutine</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/coroutine2.html">coroutine2</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/crc.html">crc</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/date_time.html">date_time</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/describe.html">describe</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/detail.html">detail</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/dll.html">dll</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/dynamic_bitset.html">dynamic_bitset</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/enable_if.html">enable_if</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/endian.html">endian</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/exception.html">exception</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/fiber.html">fiber</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/filesystem.html">filesystem</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/flyweight.html">flyweight</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/foreach.html">foreach</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/format.html">format</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/function.html">function</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/function_types.html">function_types</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/functional.html">functional</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/functional_factory.html">functional_factory</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/functional_forward.html">functional_forward</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/functional_overloaded_function.html">functional_overloaded_function</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/fusion.html">fusion</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/geometry.html">geometry</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/gil.html">gil</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/graph.html">graph</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/graph_parallel.html">graph_parallel</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/hana.html">hana</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/hash2.html">hash2</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/heap.html">heap</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/histogram.html">histogram</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/hof.html">hof</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/icl.html">icl</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/in_place_factory.html">in_place_factory</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/integer.html">integer</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/interprocess.html">interprocess</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/interval.html">interval</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/intrusive.html">intrusive</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/io.html">io</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/iostreams.html">iostreams</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/iterator.html">iterator</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/json.html">json</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/lambda.html">lambda</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/lambda2.html">lambda2</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/leaf.html">leaf</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/lexical_cast.html">lexical_cast</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/local_function.html">local_function</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/locale.html">locale</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/lockfree.html">lockfree</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/log.html">log</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/math.html">math</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/metaparse.html">metaparse</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/minmax.html">minmax</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/move.html">move</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/mp11.html">mp11</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/mpi.html">mpi</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/mpl.html">mpl</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/mqtt5.html">mqtt5</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/msm.html">msm</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/multi_array.html">multi_array</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/multi_index.html">multi_index</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/multiprecision.html">multiprecision</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/mysql.html">mysql</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/nowide.html">nowide</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/numeric_conversion.html">numeric_conversion</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/odeint.html">odeint</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/open_method.html">open_method</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/operators.html">operators</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/optional.html">optional</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/outcome.html">outcome</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/parameter.html">parameter</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/parameter_python.html">parameter_python</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/parser.html">parser</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/pfr.html">pfr</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/phoenix.html">phoenix</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/poly_collection.html">poly_collection</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/polygon.html">polygon</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/pool.html">pool</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/predef.html">predef</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/preprocessor.html">preprocessor</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/process.html">process</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/program_options.html">program_options</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/property_map.html">property_map</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/property_map_parallel.html">property_map_parallel</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/property_tree.html">property_tree</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/proto.html">proto</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/ptr_container.html">ptr_container</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/python.html">python</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/qvm.html">qvm</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/random.html">random</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/range.html">range</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/ratio.html">ratio</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/rational.html">rational</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/redis.html">redis</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/ref.html">ref</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/regex.html">regex</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/result_of.html">result_of</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/safe_numerics.html">safe_numerics</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/scope.html">scope</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/scope_exit.html">scope_exit</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/serialization.html">serialization</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/signals2.html">signals2</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/smart_ptr.html">smart_ptr</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/sort.html">sort</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/spirit.html">spirit</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/stacktrace.html">stacktrace</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/statechart.html">statechart</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/static_assert.html">static_assert</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/static_string.html">static_string</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/stl_interfaces.html">stl_interfaces</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/string_algo.html">string_algo</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/string_view.html">string_view</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/swap.html">swap</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/system.html">system</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/test.html">test</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/thread.html">thread</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/throw_exception.html">throw_exception</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/timer.html">timer</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/tokenizer.html">tokenizer</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/tribool.html">tribool</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/tti.html">tti</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/tuple.html">tuple</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/type_erasure.html">type_erasure</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/type_index.html">type_index</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/type_traits.html">type_traits</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/typeof.html">typeof</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/ublas.html">ublas</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/units.html">units</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/unordered.html">unordered</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/url.html">url</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/utility.html">utility</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/uuid.html">uuid</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/value_initialized.html">value_initialized</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/variant.html">variant</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/variant2.html">variant2</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/vmd.html">vmd</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/wave.html">wave</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/winapi.html">winapi</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/xpressive.html">xpressive</a>
+            </div>
+
+            <div class="library-item">
+                <a href="libraries/yap.html">yap</a>
+            </div>
+
         </div>
     </div>
 
@@ -1709,9 +1442,9 @@
             data: {
                 labels: ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
-                    label: 'Yearly Count',
+                    label: 'Year Total',
                     type: 'bar',
-                    data: [21, 61, 165, 286, 446, 768, 1118, 1251, 967, 803, 385, 417, 686, 617, 770, 880, 793, 369],
+                    data: [24, 67, 188, 326, 512, 897, 1239, 1414, 1118, 996, 598, 639, 750, 693, 842, 975, 889, 448],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 2,
@@ -1720,7 +1453,7 @@
                 }, {
                     label: 'Cumulative Total',
                     type: 'line',
-                    data: [21, 82, 247, 533, 979, 1747, 2865, 4116, 5083, 5886, 6271, 6688, 7374, 7991, 8761, 9641, 10434, 10803],
+                    data: [24, 91, 279, 605, 1117, 2014, 3253, 4667, 5785, 6781, 7379, 8018, 8768, 9461, 10303, 11278, 12167, 12615],
                     borderColor: 'rgba(255, 99, 132, 0.8)',
                     backgroundColor: 'transparent',
                     borderWidth: 3,
@@ -1790,7 +1523,7 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Yearly Count',
+                            text: 'Year Total',
                             font: {
                                 size: 12,
                                 weight: '600'
@@ -1853,11 +1586,11 @@
         new Chart(document.getElementById('reposByVersionChart'), {
             type: 'bar',
             data: {
-                labels: ["1.30.0", "1.32.0", "1.33.0", "1.33.1", "1.34.0", "1.34.1", "1.35.0", "1.36.0", "1.37.0", "1.38.0", "1.39.0", "1.40.0", "1.41.0", "1.42.0", "1.43.0", "1.44.0", "1.45.0", "1.46.0", "1.46.1", "1.47.0", "1.48.0", "1.49.0", "1.50.0", "1.51.0", "1.52.0", "1.53.0", "1.54.0", "1.55.0", "1.56.0", "1.57.0", "1.58.0", "1.59.0", "1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
+                labels: ["1.16.1", "1.17.0", "1.18.0", "1.18.2", "1.18.3", "1.19.0", "1.20.0", "1.20.1", "1.20.2", "1.21.0", "1.21.1", "1.21.2", "1.22.0", "1.23.0", "1.24.0", "1.25.0", "1.25.1", "1.26.0", "1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.30.1", "1.30.2", "1.31.0", "1.32.0", "1.33.0", "1.33.1", "1.34.0", "1.34.1", "1.35.0", "1.36.0", "1.37.0", "1.38.0", "1.39.0", "1.40.0", "1.41.0", "1.42.0", "1.43.0", "1.44.0", "1.45.0", "1.46.0", "1.46.1", "1.47.0", "1.48.0", "1.49.0", "1.50.0", "1.51.0", "1.52.0", "1.53.0", "1.54.0", "1.55.0", "1.56.0", "1.57.0", "1.58.0", "1.59.0", "1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
-                    label: 'Version Count',
+                    label: 'Version Total',
                     type: 'bar',
-                    data: [10, 2, 3, 3, 5, 5, 13, 39, 15, 20, 30, 55, 28, 50, 38, 58, 82, 44, 69, 110, 109, 162, 80, 84, 129, 303, 336, 750, 300, 448, 409, 401, 379, 313, 186, 271, 246, 49, 184, 159, 139, 140, 160, 185, 164, 220, 229, 233, 215, 200, 201, 219, 262, 284, 282, 316, 290, 286, 272, 237, 212, 142, 78, 1],
+                    data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 2, 3, 3, 6, 5, 14, 39, 17, 21, 33, 57, 30, 53, 40, 63, 86, 45, 75, 116, 121, 172, 85, 103, 163, 338, 357, 805, 318, 480, 445, 437, 418, 353, 205, 296, 278, 58, 235, 215, 183, 202, 215, 241, 220, 250, 244, 240, 237, 209, 215, 235, 278, 305, 301, 345, 317, 308, 297, 258, 242, 163, 92, 2],
                     backgroundColor: 'rgba(75, 192, 192, 0.6)',
                     borderColor: 'rgba(75, 192, 192, 1)',
                     borderWidth: 2,
@@ -1866,7 +1599,7 @@
                 }, {
                     label: 'Cumulative Total',
                     type: 'line',
-                    data: [10, 12, 15, 18, 23, 28, 41, 80, 95, 115, 145, 200, 228, 278, 316, 374, 456, 500, 569, 679, 788, 950, 1030, 1114, 1243, 1546, 1882, 2632, 2932, 3380, 3789, 4190, 4569, 4882, 5068, 5339, 5585, 5634, 5818, 5977, 6116, 6256, 6416, 6601, 6765, 6985, 7214, 7447, 7662, 7862, 8063, 8282, 8544, 8828, 9110, 9426, 9716, 10002, 10274, 10511, 10723, 10865, 10943, 10944],
+                    data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 11, 11, 13, 16, 19, 25, 30, 44, 83, 100, 121, 154, 211, 241, 294, 334, 397, 483, 528, 603, 719, 840, 1012, 1097, 1200, 1363, 1701, 2058, 2863, 3181, 3661, 4106, 4543, 4961, 5314, 5519, 5815, 6093, 6151, 6386, 6601, 6784, 6986, 7201, 7442, 7662, 7912, 8156, 8396, 8633, 8842, 9057, 9292, 9570, 9875, 10176, 10521, 10838, 11146, 11443, 11701, 11943, 12106, 12198, 12200],
                     borderColor: 'rgba(255, 159, 64, 0.8)',
                     backgroundColor: 'transparent',
                     borderWidth: 3,
@@ -1936,7 +1669,7 @@
                         beginAtZero: true,
                         title: {
                             display: true,
-                            text: 'Version Count',
+                            text: 'Version Total',
                             font: {
                                 size: 12,
                                 weight: '600'
@@ -1997,6 +1730,154 @@
                 }
             }
         });
+
+
+        const libraryData = [{"name": "accumulators", "created_version": "1.36.0", "removed_version": "", "total_usage": 2509, "recent_usage": 1338, "past_usage": 1171, "activity_score": 1.8035850163984712, "repo_count": 293, "earliest_commit": "2010-01-14T20:52:21+00:00", "latest_commit": "2025-12-06T11:37:36+00:00", "average_stars": 758}, {"name": "algorithm", "created_version": "1.50.0", "removed_version": "", "total_usage": 36133, "recent_usage": 22543, "past_usage": 13590, "activity_score": 4.076812838028677, "repo_count": 3911, "earliest_commit": "2006-11-16T00:12:37+00:00", "latest_commit": "2025-12-25T10:22:40+00:00", "average_stars": 696}, {"name": "align", "created_version": "1.56.0", "removed_version": "", "total_usage": 190, "recent_usage": 117, "past_usage": 73, "activity_score": 0.8658551825680411, "repo_count": 93, "earliest_commit": "2014-12-24T04:14:55Z", "latest_commit": "2025-12-12T11:54:02+00:00", "average_stars": 852}, {"name": "any", "created_version": "1.23.0", "removed_version": "", "total_usage": 1720, "recent_usage": 933, "past_usage": 787, "activity_score": 0.9104431862944489, "repo_count": 568, "earliest_commit": "2006-07-10T13:49:43Z", "latest_commit": "2025-12-22T21:08:15+00:00", "average_stars": 538}, {"name": "array", "created_version": "1.16.1", "removed_version": "", "total_usage": 5452, "recent_usage": 3919, "past_usage": 1533, "activity_score": 1.735140199695789, "repo_count": 908, "earliest_commit": "2008-07-07T23:21:20Z", "latest_commit": "2025-12-21T21:35:57+00:00", "average_stars": 321}, {"name": "asio", "created_version": "1.35.0", "removed_version": "", "total_usage": 24533, "recent_usage": 16943, "past_usage": 7590, "activity_score": 6.806459797686947, "repo_count": 2155, "earliest_commit": "2008-07-07T23:21:20Z", "latest_commit": "2025-12-25T10:22:40+00:00", "average_stars": 682}, {"name": "assert", "created_version": "1.56.0", "removed_version": "", "total_usage": 3353, "recent_usage": 1249, "past_usage": 2104, "activity_score": 1.278254240312497, "repo_count": 648, "earliest_commit": "2006-02-20T15:45:40+00:00", "latest_commit": "2025-12-18T01:32:38+00:00", "average_stars": 629}, {"name": "assign", "created_version": "1.32.0", "removed_version": "", "total_usage": 5972, "recent_usage": 1859, "past_usage": 4113, "activity_score": -0.3860724566323899, "repo_count": 770, "earliest_commit": "2008-02-02T06:01:08Z", "latest_commit": "2025-12-20T13:46:18+00:00", "average_stars": 202}, {"name": "atomic", "created_version": "1.53.0", "removed_version": "", "total_usage": 774, "recent_usage": 466, "past_usage": 308, "activity_score": 0.9618742569468777, "repo_count": 203, "earliest_commit": "2011-12-17T17:48:59+00:00", "latest_commit": "2025-12-23T04:25:51+00:00", "average_stars": 711}, {"name": "beast", "created_version": "1.66.0", "removed_version": "", "total_usage": 3058, "recent_usage": 2731, "past_usage": 327, "activity_score": 5.999008277200374, "repo_count": 309, "earliest_commit": "2017-11-06T02:49:32Z", "latest_commit": "2025-12-25T10:02:35+00:00", "average_stars": 669}, {"name": "bimap", "created_version": "1.35.0", "removed_version": "", "total_usage": 998, "recent_usage": 502, "past_usage": 496, "activity_score": 1.516304017257077, "repo_count": 310, "earliest_commit": "2009-07-27T14:08:41Z", "latest_commit": "2025-12-19T16:37:15+00:00", "average_stars": 709}, {"name": "bind", "created_version": "1.25.0", "removed_version": "", "total_usage": 13846, "recent_usage": 6165, "past_usage": 7681, "activity_score": 0.4612294518098751, "repo_count": 2428, "earliest_commit": "2006-02-16T21:14:52Z", "latest_commit": "2025-12-21T13:59:01+00:00", "average_stars": 325}, {"name": "bloom", "created_version": "1.89.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "callable_traits", "created_version": "1.29.0", "removed_version": "", "total_usage": 70, "recent_usage": 45, "past_usage": 25, "activity_score": 0.9650629595497164, "repo_count": 35, "earliest_commit": "2017-07-09T12:09:48+00:00", "latest_commit": "2025-11-23T23:50:54+00:00", "average_stars": 2114}, {"name": "charconv", "created_version": "1.85.0", "removed_version": "", "total_usage": 116, "recent_usage": 116, "past_usage": 0, "activity_score": 7.358640906470885, "repo_count": 3, "earliest_commit": "2023-01-13T20:47:55+00:00", "latest_commit": "2025-10-23T09:32:26+00:00", "average_stars": 281}, {"name": "chrono", "created_version": "1.47.0", "removed_version": "", "total_usage": 1463, "recent_usage": 599, "past_usage": 864, "activity_score": 0.09455768831651788, "repo_count": 554, "earliest_commit": "2011-08-02T13:27:09Z", "latest_commit": "2025-12-23T04:25:51+00:00", "average_stars": 391}, {"name": "circular_buffer", "created_version": "1.35.0", "removed_version": "", "total_usage": 1253, "recent_usage": 804, "past_usage": 449, "activity_score": 2.30878596558372, "repo_count": 616, "earliest_commit": "2008-04-22T21:24:32Z", "latest_commit": "2025-12-17T17:48:09+00:00", "average_stars": 776}, {"name": "cobalt", "created_version": "1.84.0", "removed_version": "", "total_usage": 10, "recent_usage": 10, "past_usage": 0, "activity_score": -0.391216884759257, "repo_count": 2, "earliest_commit": "2024-03-22T23:43:14+00:00", "latest_commit": "2024-11-14T10:20:20+00:00", "average_stars": 132}, {"name": "compat", "created_version": "1.83.0", "removed_version": "", "total_usage": 74, "recent_usage": 74, "past_usage": 0, "activity_score": 1.4038286774625346, "repo_count": 2, "earliest_commit": "2023-05-15T18:44:34+00:00", "latest_commit": "2025-11-01T17:45:39+00:00", "average_stars": 13}, {"name": "compatibility", "created_version": "1.21.2", "removed_version": "1.87.0", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "compressed_pair", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "compute", "created_version": "1.62.0", "removed_version": "", "total_usage": 2466, "recent_usage": 2313, "past_usage": 153, "activity_score": 8.119001947152535, "repo_count": 39, "earliest_commit": "2014-09-24T00:29:43+00:00", "latest_commit": "2025-08-20T02:57:11+00:00", "average_stars": 405}, {"name": "concept_check", "created_version": "1.18.0", "removed_version": "", "total_usage": 948, "recent_usage": 320, "past_usage": 628, "activity_score": 0.12930305663928057, "repo_count": 220, "earliest_commit": "2004-04-05T20:12:49Z", "latest_commit": "2025-11-27T12:42:25+00:00", "average_stars": 230}, {"name": "config", "created_version": "1.16.1", "removed_version": "", "total_usage": 16229, "recent_usage": 6248, "past_usage": 9981, "activity_score": 0.9251452822172779, "repo_count": 2140, "earliest_commit": "2003-01-14T19:56:42Z", "latest_commit": "2025-12-25T12:57:51+00:00", "average_stars": 417}, {"name": "container", "created_version": "1.33.0", "removed_version": "", "total_usage": 4410, "recent_usage": 3496, "past_usage": 914, "activity_score": 3.703239878131674, "repo_count": 605, "earliest_commit": "2013-02-23T19:53:51Z", "latest_commit": "2025-12-23T10:07:04+00:00", "average_stars": 823}, {"name": "container_hash", "created_version": "1.56.0", "removed_version": "", "total_usage": 1855, "recent_usage": 1691, "past_usage": 164, "activity_score": 4.755381659572911, "repo_count": 676, "earliest_commit": "2012-04-04T13:14:52+00:00", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 676}, {"name": "context", "created_version": "1.51.0", "removed_version": "", "total_usage": 154, "recent_usage": 94, "past_usage": 60, "activity_score": 2.063191172395716, "repo_count": 82, "earliest_commit": "2013-08-11T14:18:08+00:00", "latest_commit": "2025-12-15T10:28:31+00:00", "average_stars": 821}, {"name": "contract", "created_version": "1.67.0", "removed_version": "", "total_usage": 36, "recent_usage": 15, "past_usage": 21, "activity_score": -0.6208033251014471, "repo_count": 3, "earliest_commit": "2018-04-16T15:02:22Z", "latest_commit": "2023-03-31T14:29:50+00:00", "average_stars": 83}, {"name": "conversion", "created_version": "1.16.1", "removed_version": "", "total_usage": 74, "recent_usage": 38, "past_usage": 36, "activity_score": 3.3051120237781846, "repo_count": 37, "earliest_commit": "2006-06-21T03:57:14+00:00", "latest_commit": "2025-10-30T17:59:24+00:00", "average_stars": 822}, {"name": "convert", "created_version": "1.59.0", "removed_version": "", "total_usage": 120, "recent_usage": 114, "past_usage": 6, "activity_score": 1.0785161690236527, "repo_count": 22, "earliest_commit": "2018-06-05T06:23:49+00:00", "latest_commit": "2025-11-20T07:35:03+00:00", "average_stars": 456}, {"name": "core", "created_version": "1.56.0", "removed_version": "", "total_usage": 13120, "recent_usage": 5781, "past_usage": 7339, "activity_score": 1.965339646177387, "repo_count": 1433, "earliest_commit": "2005-11-28T20:55:34Z", "latest_commit": "2025-12-25T12:57:51+00:00", "average_stars": 363}, {"name": "coroutine", "created_version": "1.53.0", "removed_version": "", "total_usage": 187, "recent_usage": 70, "past_usage": 117, "activity_score": -0.5260174244526608, "repo_count": 117, "earliest_commit": "2013-08-11T14:18:08+00:00", "latest_commit": "2025-10-21T19:59:03+00:00", "average_stars": 418}, {"name": "coroutine2", "created_version": "1.59.0", "removed_version": "", "total_usage": 68, "recent_usage": 59, "past_usage": 9, "activity_score": 4.159098182593189, "repo_count": 38, "earliest_commit": "2017-01-08T02:47:19+00:00", "latest_commit": "2025-12-15T09:20:18+00:00", "average_stars": 1146}, {"name": "crc", "created_version": "1.22.0", "removed_version": "", "total_usage": 573, "recent_usage": 387, "past_usage": 186, "activity_score": 0.9483665904473961, "repo_count": 294, "earliest_commit": "2008-07-07T23:21:20Z", "latest_commit": "2025-12-16T03:19:10+00:00", "average_stars": 915}, {"name": "date_time", "created_version": "1.29.0", "removed_version": "", "total_usage": 8392, "recent_usage": 3736, "past_usage": 4656, "activity_score": 1.0178114962252256, "repo_count": 1862, "earliest_commit": "2007-09-16T15:20:23+00:00", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 406}, {"name": "describe", "created_version": "1.77.0", "removed_version": "", "total_usage": 98, "recent_usage": 98, "past_usage": 0, "activity_score": 7.106022534162215, "repo_count": 18, "earliest_commit": "2022-04-03T12:03:14+00:00", "latest_commit": "2025-12-15T17:39:46+00:00", "average_stars": 251}, {"name": "detail", "created_version": "1.18.0", "removed_version": "", "total_usage": 404, "recent_usage": 85, "past_usage": 319, "activity_score": -0.168548927390301, "repo_count": 159, "earliest_commit": "2007-11-01T18:09:00Z", "latest_commit": "2025-12-22T12:28:57+00:00", "average_stars": 333}, {"name": "dll", "created_version": "1.62.0", "removed_version": "", "total_usage": 747, "recent_usage": 676, "past_usage": 71, "activity_score": 4.418237458468455, "repo_count": 165, "earliest_commit": "2017-02-28T09:14:25Z", "latest_commit": "2025-12-16T16:31:06+00:00", "average_stars": 757}, {"name": "dynamic_bitset", "created_version": "1.29.0", "removed_version": "", "total_usage": 1510, "recent_usage": 951, "past_usage": 559, "activity_score": 2.219861253702955, "repo_count": 613, "earliest_commit": "2007-11-01T18:09:00Z", "latest_commit": "2025-12-17T22:53:16+00:00", "average_stars": 684}, {"name": "enable_if", "created_version": "1.56.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "endian", "created_version": "1.58.0", "removed_version": "", "total_usage": 678, "recent_usage": 603, "past_usage": 75, "activity_score": 3.8838939423370755, "repo_count": 214, "earliest_commit": "2012-02-23T20:42:33Z", "latest_commit": "2025-12-14T22:13:00+00:00", "average_stars": 821}, {"name": "exception", "created_version": "1.29.0", "removed_version": "", "total_usage": 1436, "recent_usage": 643, "past_usage": 793, "activity_score": 0.46310152310996033, "repo_count": 341, "earliest_commit": "2009-05-30T07:14:14Z", "latest_commit": "2025-12-16T16:05:19+00:00", "average_stars": 492}, {"name": "fiber", "created_version": "1.62.0", "removed_version": "", "total_usage": 730, "recent_usage": 553, "past_usage": 177, "activity_score": 5.045549017843868, "repo_count": 59, "earliest_commit": "2015-09-22T19:10:14+00:00", "latest_commit": "2025-12-15T14:03:45+00:00", "average_stars": 421}, {"name": "filesystem", "created_version": "1.30.0", "removed_version": "", "total_usage": 30490, "recent_usage": 16278, "past_usage": 14212, "activity_score": 2.3562878596432517, "repo_count": 3290, "earliest_commit": "2005-11-13T01:24:01Z", "latest_commit": "2025-12-25T10:02:35+00:00", "average_stars": 526}, {"name": "flyweight", "created_version": "1.38.0", "removed_version": "", "total_usage": 206, "recent_usage": 78, "past_usage": 128, "activity_score": -0.9346672597724566, "repo_count": 28, "earliest_commit": "2012-07-02T07:03:55Z", "latest_commit": "2024-04-17T21:18:02+00:00", "average_stars": 791}, {"name": "foreach", "created_version": "1.34.0", "removed_version": "", "total_usage": 12895, "recent_usage": 3337, "past_usage": 9558, "activity_score": -0.3205692054549977, "repo_count": 1483, "earliest_commit": "2007-11-25T18:38:02+00:00", "latest_commit": "2025-12-21T13:59:01+00:00", "average_stars": 227}, {"name": "format", "created_version": "1.29.0", "removed_version": "", "total_usage": 7832, "recent_usage": 4997, "past_usage": 2835, "activity_score": 3.521866495057275, "repo_count": 1419, "earliest_commit": "2008-04-22T21:24:32Z", "latest_commit": "2025-12-23T15:26:03+00:00", "average_stars": 530}, {"name": "function", "created_version": "1.23.0", "removed_version": "", "total_usage": 5379, "recent_usage": 1815, "past_usage": 3564, "activity_score": 0.08749874074765984, "repo_count": 1368, "earliest_commit": "2003-03-20T17:54:09Z", "latest_commit": "2025-12-20T00:52:16+00:00", "average_stars": 295}, {"name": "function_types", "created_version": "1.35.0", "removed_version": "", "total_usage": 406, "recent_usage": 99, "past_usage": 307, "activity_score": -0.22204852566103367, "repo_count": 73, "earliest_commit": "2010-09-10T12:13:55Z", "latest_commit": "2025-12-17T19:23:43+00:00", "average_stars": 318}, {"name": "functional", "created_version": "1.16.1", "removed_version": "", "total_usage": 199, "recent_usage": 90, "past_usage": 109, "activity_score": 1.0900183561915684, "repo_count": 81, "earliest_commit": "2007-12-22T21:48:23+00:00", "latest_commit": "2025-12-06T23:18:04+00:00", "average_stars": 193}, {"name": "functional_factory", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "functional_forward", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "functional_overloaded_function", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "fusion", "created_version": "1.35.0", "removed_version": "", "total_usage": 6791, "recent_usage": 2435, "past_usage": 4356, "activity_score": 0.09321556888352141, "repo_count": 408, "earliest_commit": "2009-12-13T20:55:03Z", "latest_commit": "2025-12-08T12:10:03+00:00", "average_stars": 346}, {"name": "geometry", "created_version": "1.47.0", "removed_version": "", "total_usage": 9128, "recent_usage": 5552, "past_usage": 3576, "activity_score": 1.9153412478552827, "repo_count": 320, "earliest_commit": "2012-01-09T21:56:08+00:00", "latest_commit": "2025-12-22T12:28:57+00:00", "average_stars": 452}, {"name": "gil", "created_version": "1.35.0", "removed_version": "", "total_usage": 671, "recent_usage": 225, "past_usage": 446, "activity_score": -0.03595644305479437, "repo_count": 38, "earliest_commit": "2008-08-19T15:55:28Z", "latest_commit": "2025-11-08T01:47:58+00:00", "average_stars": 232}, {"name": "graph", "created_version": "1.18.0", "removed_version": "", "total_usage": 8578, "recent_usage": 4176, "past_usage": 4402, "activity_score": 3.295904690596696, "repo_count": 680, "earliest_commit": "2002-07-19T20:16:22+00:00", "latest_commit": "2025-12-21T21:35:57+00:00", "average_stars": 320}, {"name": "graph_parallel", "created_version": "1.34.0", "removed_version": "", "total_usage": 301, "recent_usage": 104, "past_usage": 197, "activity_score": -0.996077270128193, "repo_count": 9, "earliest_commit": "2009-04-11T01:33:02+00:00", "latest_commit": "2023-03-31T14:29:50+00:00", "average_stars": 102}, {"name": "hana", "created_version": "1.66.0", "removed_version": "", "total_usage": 6347, "recent_usage": 5063, "past_usage": 1284, "activity_score": 0.599843260617273, "repo_count": 498, "earliest_commit": "2004-08-20T11:10:24+00:00", "latest_commit": "2025-12-19T08:05:00+00:00", "average_stars": 708}, {"name": "hash2", "created_version": "1.88.0", "removed_version": "", "total_usage": 309, "recent_usage": 309, "past_usage": 0, "activity_score": 10.058446782729133, "repo_count": 2, "earliest_commit": "2023-12-11T18:17:25+00:00", "latest_commit": "2025-10-02T16:37:43+00:00", "average_stars": 46}, {"name": "heap", "created_version": "1.49.0", "removed_version": "", "total_usage": 350, "recent_usage": 261, "past_usage": 89, "activity_score": 0.8993104286787648, "repo_count": 171, "earliest_commit": "2012-11-15T19:18:16Z", "latest_commit": "2025-12-06T11:37:36+00:00", "average_stars": 423}, {"name": "histogram", "created_version": "1.70.0", "removed_version": "", "total_usage": 281, "recent_usage": 261, "past_usage": 20, "activity_score": -0.9211686344317659, "repo_count": 7, "earliest_commit": "2019-08-01T18:41:08+00:00", "latest_commit": "2025-05-02T01:17:14+00:00", "average_stars": 38}, {"name": "hof", "created_version": "1.67.0", "removed_version": "", "total_usage": 95, "recent_usage": 93, "past_usage": 2, "activity_score": 3.7950534921338805, "repo_count": 10, "earliest_commit": "2019-08-01T18:41:08+00:00", "latest_commit": "2025-12-06T23:18:04+00:00", "average_stars": 69}, {"name": "icl", "created_version": "1.46.0", "removed_version": "", "total_usage": 644, "recent_usage": 312, "past_usage": 332, "activity_score": 0.6148121627069051, "repo_count": 109, "earliest_commit": "2013-05-06T15:43:08+00:00", "latest_commit": "2025-12-04T13:23:04+00:00", "average_stars": 836}, {"name": "in_place_factory", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "integer", "created_version": "1.16.1", "removed_version": "", "total_usage": 524, "recent_usage": 209, "past_usage": 315, "activity_score": 0.11402216875776791, "repo_count": 193, "earliest_commit": "2009-01-25T16:06:30Z", "latest_commit": "2025-12-04T10:41:35+00:00", "average_stars": 317}, {"name": "interprocess", "created_version": "1.35.0", "removed_version": "", "total_usage": 7354, "recent_usage": 4884, "past_usage": 2470, "activity_score": 0.5911317966539789, "repo_count": 829, "earliest_commit": "2009-12-16T00:18:21Z", "latest_commit": "2025-12-22T22:55:05+00:00", "average_stars": 255}, {"name": "interval", "created_version": "1.30.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "intrusive", "created_version": "1.35.0", "removed_version": "", "total_usage": 1705, "recent_usage": 1051, "past_usage": 654, "activity_score": 1.1416919720529555, "repo_count": 209, "earliest_commit": "2009-05-30T07:14:14Z", "latest_commit": "2025-12-18T14:50:26+00:00", "average_stars": 1424}, {"name": "io", "created_version": "1.28.0", "removed_version": "", "total_usage": 404, "recent_usage": 260, "past_usage": 144, "activity_score": 0.2788341397761433, "repo_count": 134, "earliest_commit": "2009-09-21T20:31:11Z", "latest_commit": "2025-12-17T13:59:11+00:00", "average_stars": 387}, {"name": "iostreams", "created_version": "1.33.0", "removed_version": "", "total_usage": 7373, "recent_usage": 3502, "past_usage": 3871, "activity_score": 0.779736224479535, "repo_count": 1098, "earliest_commit": "2006-04-02T08:50:16Z", "latest_commit": "2025-12-18T16:50:34+00:00", "average_stars": 350}, {"name": "iterator", "created_version": "1.16.1", "removed_version": "", "total_usage": 3903, "recent_usage": 2015, "past_usage": 1888, "activity_score": 2.4162461364891854, "repo_count": 847, "earliest_commit": "2004-08-20T11:10:24+00:00", "latest_commit": "2025-12-19T16:37:15+00:00", "average_stars": 567}, {"name": "json", "created_version": "1.75.0", "removed_version": "", "total_usage": 986, "recent_usage": 986, "past_usage": 0, "activity_score": 8.715356748271738, "repo_count": 103, "earliest_commit": "2020-04-30T13:52:50+00:00", "latest_commit": "2025-12-25T10:22:40+00:00", "average_stars": 502}, {"name": "lambda", "created_version": "1.28.0", "removed_version": "", "total_usage": 1269, "recent_usage": 606, "past_usage": 663, "activity_score": 0.6120664365884185, "repo_count": 253, "earliest_commit": "2009-05-30T07:14:14Z", "latest_commit": "2025-12-10T15:24:58+00:00", "average_stars": 244}, {"name": "lambda2", "created_version": "1.77.0", "removed_version": "", "total_usage": 12, "recent_usage": 12, "past_usage": 0, "activity_score": -0.43726047780237287, "repo_count": 1, "earliest_commit": "2021-06-27T00:42:02+00:00", "latest_commit": "2022-08-15T16:22:35+00:00", "average_stars": 25}, {"name": "leaf", "created_version": "1.75.0", "removed_version": "", "total_usage": 71, "recent_usage": 71, "past_usage": 0, "activity_score": -0.3880497572584461, "repo_count": 7, "earliest_commit": "2021-01-19T01:29:09Z", "latest_commit": "2025-12-17T00:56:10+00:00", "average_stars": 477}, {"name": "lexical_cast", "created_version": "1.56.0", "removed_version": "", "total_usage": 12252, "recent_usage": 6075, "past_usage": 6177, "activity_score": 3.1631133066464128, "repo_count": 2401, "earliest_commit": "2006-02-20T15:45:40+00:00", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 362}, {"name": "local_function", "created_version": "1.50.0", "removed_version": "", "total_usage": 105, "recent_usage": 10, "past_usage": 95, "activity_score": -0.8160502736996044, "repo_count": 4, "earliest_commit": "2013-05-06T15:43:08+00:00", "latest_commit": "2023-03-31T14:29:50+00:00", "average_stars": 83}, {"name": "locale", "created_version": "1.48.0", "removed_version": "", "total_usage": 1092, "recent_usage": 581, "past_usage": 511, "activity_score": 3.081585673096094, "repo_count": 316, "earliest_commit": "2012-06-02T17:40:57+00:00", "latest_commit": "2025-12-21T19:54:14+00:00", "average_stars": 1146}, {"name": "lockfree", "created_version": "1.53.0", "removed_version": "", "total_usage": 563, "recent_usage": 387, "past_usage": 176, "activity_score": 1.9885261098182359, "repo_count": 274, "earliest_commit": "2012-02-03T10:03:35Z", "latest_commit": "2025-12-16T06:06:12+00:00", "average_stars": 819}, {"name": "log", "created_version": "1.16.1", "removed_version": "", "total_usage": 7753, "recent_usage": 5090, "past_usage": 2663, "activity_score": 4.001229190658583, "repo_count": 325, "earliest_commit": "2010-09-26T17:04:37Z", "latest_commit": "2025-12-17T01:16:11+00:00", "average_stars": 844}, {"name": "math", "created_version": "1.23.0", "removed_version": "", "total_usage": 8328, "recent_usage": 4004, "past_usage": 4324, "activity_score": 0.4994684024295107, "repo_count": 1548, "earliest_commit": "2009-09-30T06:37:33Z", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 294}, {"name": "metaparse", "created_version": "1.66.0", "removed_version": "", "total_usage": 57, "recent_usage": 31, "past_usage": 26, "activity_score": -0.49693223792864627, "repo_count": 3, "earliest_commit": "2016-10-28T14:49:29+00:00", "latest_commit": "2025-04-02T15:03:03+00:00", "average_stars": 42}, {"name": "minmax", "created_version": "1.32.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "move", "created_version": "1.48.0", "removed_version": "", "total_usage": 852, "recent_usage": 486, "past_usage": 366, "activity_score": 0.7785898253842394, "repo_count": 98, "earliest_commit": "2013-12-24T16:26:59Z", "latest_commit": "2025-12-18T14:23:56+00:00", "average_stars": 323}, {"name": "mp11", "created_version": "1.66.0", "removed_version": "", "total_usage": 568, "recent_usage": 551, "past_usage": 17, "activity_score": 6.744548518502974, "repo_count": 67, "earliest_commit": "2018-02-12T15:50:47Z", "latest_commit": "2025-12-13T00:09:41+00:00", "average_stars": 985}, {"name": "mpi", "created_version": "1.35.0", "removed_version": "", "total_usage": 1650, "recent_usage": 792, "past_usage": 858, "activity_score": 0.7826142669457603, "repo_count": 114, "earliest_commit": "2007-11-25T18:38:02+00:00", "latest_commit": "2025-12-20T10:44:20+00:00", "average_stars": 105}, {"name": "mpl", "created_version": "1.29.0", "removed_version": "", "total_usage": 15918, "recent_usage": 6622, "past_usage": 9296, "activity_score": 1.2352416597594564, "repo_count": 588, "earliest_commit": "2003-07-04T12:28:27Z", "latest_commit": "2025-12-19T09:47:25+00:00", "average_stars": 301}, {"name": "mqtt5", "created_version": "1.88.0", "removed_version": "", "total_usage": 127, "recent_usage": 127, "past_usage": 0, "activity_score": 12.822070040059053, "repo_count": 2, "earliest_commit": "2025-02-12T14:54:14+00:00", "latest_commit": "2025-12-11T06:22:29+00:00", "average_stars": 198}, {"name": "msm", "created_version": "1.44.0", "removed_version": "", "total_usage": 707, "recent_usage": 152, "past_usage": 555, "activity_score": -0.6255660888275855, "repo_count": 34, "earliest_commit": "2013-05-06T15:43:08+00:00", "latest_commit": "2025-12-18T16:05:39+00:00", "average_stars": 328}, {"name": "multi_array", "created_version": "1.29.0", "removed_version": "", "total_usage": 876, "recent_usage": 476, "past_usage": 400, "activity_score": 1.880911394026497, "repo_count": 236, "earliest_commit": "2007-04-26T17:34:58Z", "latest_commit": "2025-12-17T13:22:48+00:00", "average_stars": 332}, {"name": "multi_index", "created_version": "1.32.0", "removed_version": "", "total_usage": 6567, "recent_usage": 3919, "past_usage": 2648, "activity_score": 1.695760086386545, "repo_count": 555, "earliest_commit": "2008-04-22T21:24:32Z", "latest_commit": "2025-12-09T10:09:03+00:00", "average_stars": 679}, {"name": "multiprecision", "created_version": "1.53.0", "removed_version": "", "total_usage": 2234, "recent_usage": 1463, "past_usage": 771, "activity_score": 0.8766211416091259, "repo_count": 437, "earliest_commit": "2013-07-15T23:34:58Z", "latest_commit": "2025-12-21T19:25:15+00:00", "average_stars": 377}, {"name": "mysql", "created_version": "1.82.0", "removed_version": "", "total_usage": 44, "recent_usage": 44, "past_usage": 0, "activity_score": 5.167025615806143, "repo_count": 5, "earliest_commit": "2022-07-08T21:31:56+00:00", "latest_commit": "2025-10-14T12:34:57+00:00", "average_stars": 54}, {"name": "nowide", "created_version": "1.73.0", "removed_version": "", "total_usage": 1965, "recent_usage": 1891, "past_usage": 74, "activity_score": 7.5960869876321055, "repo_count": 48, "earliest_commit": "2015-07-14T22:33:16+00:00", "latest_commit": "2025-12-25T10:02:35+00:00", "average_stars": 1942}, {"name": "numeric_conversion", "created_version": "1.32.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "odeint", "created_version": "1.53.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "open_method", "created_version": "1.90.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "operators", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "optional", "created_version": "1.30.0", "removed_version": "", "total_usage": 10016, "recent_usage": 6501, "past_usage": 3515, "activity_score": 2.646862249242801, "repo_count": 1465, "earliest_commit": "2006-06-21T03:57:14+00:00", "latest_commit": "2025-12-25T07:34:59+00:00", "average_stars": 527}, {"name": "outcome", "created_version": "1.70.0", "removed_version": "", "total_usage": 255, "recent_usage": 254, "past_usage": 1, "activity_score": 12.867767065017114, "repo_count": 20, "earliest_commit": "2018-05-26T13:21:43+00:00", "latest_commit": "2025-12-16T21:35:09+00:00", "average_stars": 1732}, {"name": "parameter", "created_version": "1.33.0", "removed_version": "", "total_usage": 159, "recent_usage": 60, "past_usage": 99, "activity_score": 0.7257264084460807, "repo_count": 28, "earliest_commit": "2010-03-28T19:27:31Z", "latest_commit": "2025-11-23T20:11:34+00:00", "average_stars": 256}, {"name": "parameter_python", "created_version": "1.19.0", "removed_version": "", "total_usage": 7, "recent_usage": 6, "past_usage": 1, "activity_score": 2.1503388647620407, "repo_count": 2, "earliest_commit": "2014-12-24T04:14:55Z", "latest_commit": "2025-09-10T14:08:38+00:00", "average_stars": 292}, {"name": "parser", "created_version": "1.87.0", "removed_version": "", "total_usage": 73, "recent_usage": 73, "past_usage": 0, "activity_score": 3.2327487629891145, "repo_count": 2, "earliest_commit": "2020-08-30T02:09:50+00:00", "latest_commit": "2025-11-25T18:02:18+00:00", "average_stars": 131}, {"name": "pfr", "created_version": "1.75.0", "removed_version": "", "total_usage": 260, "recent_usage": 258, "past_usage": 2, "activity_score": 11.374444620029578, "repo_count": 51, "earliest_commit": "2018-06-14T20:41:05Z", "latest_commit": "2025-12-02T18:57:11+00:00", "average_stars": 463}, {"name": "phoenix", "created_version": "1.47.0", "removed_version": "", "total_usage": 2040, "recent_usage": 1003, "past_usage": 1037, "activity_score": 0.7850538271868815, "repo_count": 187, "earliest_commit": "2012-08-16T17:31:08+00:00", "latest_commit": "2025-12-18T14:44:37+00:00", "average_stars": 329}, {"name": "poly_collection", "created_version": "1.65.0", "removed_version": "", "total_usage": 5, "recent_usage": 4, "past_usage": 1, "activity_score": -0.30747016961059714, "repo_count": 5, "earliest_commit": "2019-04-19T01:33:11+00:00", "latest_commit": "2024-10-03T10:17:37+00:00", "average_stars": 410}, {"name": "polygon", "created_version": "1.44.0", "removed_version": "", "total_usage": 349, "recent_usage": 254, "past_usage": 95, "activity_score": 2.558003829049435, "repo_count": 75, "earliest_commit": "2014-01-01T22:52:53Z", "latest_commit": "2025-12-16T17:44:40+00:00", "average_stars": 1299}, {"name": "pool", "created_version": "1.21.0", "removed_version": "", "total_usage": 616, "recent_usage": 321, "past_usage": 295, "activity_score": 1.50897147442787, "repo_count": 248, "earliest_commit": "2008-02-17T18:15:56Z", "latest_commit": "2025-12-25T12:04:41+00:00", "average_stars": 707}, {"name": "predef", "created_version": "1.55.0", "removed_version": "", "total_usage": 999, "recent_usage": 315, "past_usage": 684, "activity_score": 0.09208982882635854, "repo_count": 173, "earliest_commit": "2014-06-06T09:15:18Z", "latest_commit": "2025-12-17T17:48:09+00:00", "average_stars": 501}, {"name": "preprocessor", "created_version": "1.26.0", "removed_version": "", "total_usage": 10315, "recent_usage": 5502, "past_usage": 4813, "activity_score": 2.5139727232917375, "repo_count": 1188, "earliest_commit": "2005-11-28T20:55:34Z", "latest_commit": "2025-12-12T08:47:48+00:00", "average_stars": 353}, {"name": "process", "created_version": "1.64.0", "removed_version": "", "total_usage": 1458, "recent_usage": 1325, "past_usage": 133, "activity_score": 5.37433503547309, "repo_count": 328, "earliest_commit": "2009-05-28T17:12:13Z", "latest_commit": "2025-12-20T03:03:05+00:00", "average_stars": 1036}, {"name": "program_options", "created_version": "1.32.0", "removed_version": "", "total_usage": 12056, "recent_usage": 7081, "past_usage": 4975, "activity_score": 2.6496947536131183, "repo_count": 2418, "earliest_commit": "2008-06-23T06:31:56Z", "latest_commit": "2025-12-25T10:02:35+00:00", "average_stars": 476}, {"name": "property_map", "created_version": "1.18.0", "removed_version": "", "total_usage": 855, "recent_usage": 338, "past_usage": 517, "activity_score": 0.83690848566444, "repo_count": 217, "earliest_commit": "2008-08-22T17:59:40Z", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 282}, {"name": "property_map_parallel", "created_version": "1.77.0", "removed_version": "", "total_usage": 41, "recent_usage": 14, "past_usage": 27, "activity_score": -0.6553849147569634, "repo_count": 8, "earliest_commit": "2011-01-15T08:11:51+00:00", "latest_commit": "2023-03-31T14:29:50+00:00", "average_stars": 109}, {"name": "property_tree", "created_version": "1.41.0", "removed_version": "", "total_usage": 7340, "recent_usage": 5021, "past_usage": 2319, "activity_score": 2.6659344799557094, "repo_count": 872, "earliest_commit": "2010-09-17T16:01:57Z", "latest_commit": "2025-12-16T21:25:32+00:00", "average_stars": 716}, {"name": "proto", "created_version": "1.37.0", "removed_version": "", "total_usage": 655, "recent_usage": 90, "past_usage": 565, "activity_score": -0.9407224846167106, "repo_count": 30, "earliest_commit": "2012-06-22T08:50:26Z", "latest_commit": "2025-08-13T13:34:38+00:00", "average_stars": 206}, {"name": "ptr_container", "created_version": "1.16.1", "removed_version": "", "total_usage": 861, "recent_usage": 276, "past_usage": 585, "activity_score": -0.3917710259177983, "repo_count": 234, "earliest_commit": "2008-06-02T17:48:18+00:00", "latest_commit": "2025-09-15T17:54:17+00:00", "average_stars": 291}, {"name": "python", "created_version": "1.19.0", "removed_version": "", "total_usage": 15500, "recent_usage": 7571, "past_usage": 7929, "activity_score": -0.1044160543627252, "repo_count": 712, "earliest_commit": "2004-07-26T00:32:12+00:00", "latest_commit": "2025-12-14T23:19:24+00:00", "average_stars": 266}, {"name": "qvm", "created_version": "1.62.0", "removed_version": "", "total_usage": 137, "recent_usage": 111, "past_usage": 26, "activity_score": 1.3687354851957196, "repo_count": 13, "earliest_commit": "2016-10-28T14:49:29+00:00", "latest_commit": "2025-12-20T10:39:04+00:00", "average_stars": 99}, {"name": "random", "created_version": "1.16.1", "removed_version": "", "total_usage": 7646, "recent_usage": 3117, "past_usage": 4529, "activity_score": 0.7042443902484109, "repo_count": 1105, "earliest_commit": "2007-10-03T06:20:06Z", "latest_commit": "2025-12-20T13:46:18+00:00", "average_stars": 426}, {"name": "range", "created_version": "1.32.0", "removed_version": "", "total_usage": 10016, "recent_usage": 6072, "past_usage": 3944, "activity_score": 2.550770405873089, "repo_count": 1155, "earliest_commit": "2007-09-28T16:22:55+00:00", "latest_commit": "2025-12-25T12:04:41+00:00", "average_stars": 1118}, {"name": "ratio", "created_version": "1.47.0", "removed_version": "", "total_usage": 119, "recent_usage": 37, "past_usage": 82, "activity_score": -0.7208842594590045, "repo_count": 12, "earliest_commit": "2012-04-06T23:45:38+00:00", "latest_commit": "2025-02-16T05:15:39+00:00", "average_stars": 103}, {"name": "rational", "created_version": "1.16.1", "removed_version": "", "total_usage": 464, "recent_usage": 192, "past_usage": 272, "activity_score": 0.5085913602701526, "repo_count": 124, "earliest_commit": "2009-09-30T06:37:33Z", "latest_commit": "2025-12-12T12:01:35+00:00", "average_stars": 530}, {"name": "redis", "created_version": "1.84.0", "removed_version": "", "total_usage": 11, "recent_usage": 11, "past_usage": 0, "activity_score": 5.282991408477693, "repo_count": 2, "earliest_commit": "2024-05-15T11:14:21+00:00", "latest_commit": "2025-10-29T14:59:15+00:00", "average_stars": 75}, {"name": "ref", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "regex", "created_version": "1.18.0", "removed_version": "", "total_usage": 4075, "recent_usage": 2346, "past_usage": 1729, "activity_score": 2.39876632768749, "repo_count": 1174, "earliest_commit": "2005-11-28T20:55:34Z", "latest_commit": "2025-12-25T10:02:35+00:00", "average_stars": 487}, {"name": "result_of", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "safe_numerics", "created_version": "1.69.0", "removed_version": "", "total_usage": 18, "recent_usage": 18, "past_usage": 0, "activity_score": 1.324810856163532, "repo_count": 10, "earliest_commit": "2020-08-25T09:15:57+00:00", "latest_commit": "2025-12-08T13:06:01+00:00", "average_stars": 230}, {"name": "scope", "created_version": "1.85.0", "removed_version": "", "total_usage": 47, "recent_usage": 47, "past_usage": 0, "activity_score": 4.180714189025837, "repo_count": 6, "earliest_commit": "2023-02-24T16:30:55+00:00", "latest_commit": "2025-12-14T12:29:09+00:00", "average_stars": 519}, {"name": "scope_exit", "created_version": "1.38.0", "removed_version": "", "total_usage": 555, "recent_usage": 389, "past_usage": 166, "activity_score": 1.581406355019128, "repo_count": 169, "earliest_commit": "2010-08-31T17:42:18Z", "latest_commit": "2025-12-15T14:03:45+00:00", "average_stars": 505}, {"name": "serialization", "created_version": "1.32.0", "removed_version": "", "total_usage": 24506, "recent_usage": 16475, "past_usage": 8031, "activity_score": 3.171896818769729, "repo_count": 1031, "earliest_commit": "2007-11-07T12:23:48Z", "latest_commit": "2025-12-20T10:44:20+00:00", "average_stars": 430}, {"name": "signals2", "created_version": "1.29.0", "removed_version": "", "total_usage": 4747, "recent_usage": 2644, "past_usage": 2103, "activity_score": 1.1882691572607427, "repo_count": 731, "earliest_commit": "2010-08-25T19:36:28Z", "latest_commit": "2025-12-21T19:23:39+00:00", "average_stars": 544}, {"name": "smart_ptr", "created_version": "1.16.1", "removed_version": "", "total_usage": 31849, "recent_usage": 11210, "past_usage": 20639, "activity_score": 0.6925689166169463, "repo_count": 3137, "earliest_commit": "2003-03-20T17:54:09Z", "latest_commit": "2025-12-23T23:36:53+00:00", "average_stars": 296}, {"name": "sort", "created_version": "1.58.0", "removed_version": "", "total_usage": 434, "recent_usage": 427, "past_usage": 7, "activity_score": 13.997539216729807, "repo_count": 42, "earliest_commit": "2016-09-05T21:03:39+00:00", "latest_commit": "2025-09-30T08:51:45+00:00", "average_stars": 174}, {"name": "spirit", "created_version": "1.30.0", "removed_version": "", "total_usage": 10415, "recent_usage": 2706, "past_usage": 7709, "activity_score": -0.02230192479792623, "repo_count": 730, "earliest_commit": "2008-07-07T23:21:20Z", "latest_commit": "2025-12-21T08:29:36+00:00", "average_stars": 292}, {"name": "stacktrace", "created_version": "1.65.0", "removed_version": "", "total_usage": 310, "recent_usage": 289, "past_usage": 21, "activity_score": 4.981001979845031, "repo_count": 197, "earliest_commit": "2017-07-08T21:15:08+00:00", "latest_commit": "2025-12-16T20:27:52+00:00", "average_stars": 1056}, {"name": "statechart", "created_version": "1.34.0", "removed_version": "", "total_usage": 462, "recent_usage": 179, "past_usage": 283, "activity_score": -0.33018146576856233, "repo_count": 25, "earliest_commit": "2012-08-16T17:31:08+00:00", "latest_commit": "2025-12-17T19:23:43+00:00", "average_stars": 104}, {"name": "static_assert", "created_version": "1.19.0", "removed_version": "", "total_usage": 2424, "recent_usage": 743, "past_usage": 1681, "activity_score": 0.1606016145606986, "repo_count": 598, "earliest_commit": "2003-03-20T17:54:09Z", "latest_commit": "2025-12-21T21:35:57+00:00", "average_stars": 247}, {"name": "static_string", "created_version": "1.73.0", "removed_version": "", "total_usage": 9, "recent_usage": 9, "past_usage": 0, "activity_score": 4.636682578087398, "repo_count": 6, "earliest_commit": "2020-11-23T02:26:26Z", "latest_commit": "2025-12-19T18:32:30+00:00", "average_stars": 1250}, {"name": "stl_interfaces", "created_version": "1.74.0", "removed_version": "", "total_usage": 26, "recent_usage": 26, "past_usage": 0, "activity_score": 0.4957821166045136, "repo_count": 11, "earliest_commit": "2020-07-01T16:27:30+00:00", "latest_commit": "2025-10-10T14:31:00+00:00", "average_stars": 988}, {"name": "string_algo", "created_version": "1.32.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "string_view", "created_version": "1.78.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "swap", "created_version": "1.56.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "system", "created_version": "1.35.0", "removed_version": "", "total_usage": 2237, "recent_usage": 1490, "past_usage": 747, "activity_score": 3.1724907333438956, "repo_count": 528, "earliest_commit": "2008-07-07T23:21:20Z", "latest_commit": "2025-12-20T03:03:05+00:00", "average_stars": 651}, {"name": "test", "created_version": "1.21.0", "removed_version": "", "total_usage": 52947, "recent_usage": 28441, "past_usage": 24506, "activity_score": 1.1745204542571765, "repo_count": 1631, "earliest_commit": "2007-03-01T02:29:00Z", "latest_commit": "2025-12-20T15:05:04+00:00", "average_stars": 629}, {"name": "thread", "created_version": "1.23.0", "removed_version": "", "total_usage": 25210, "recent_usage": 9911, "past_usage": 15299, "activity_score": 0.3337490003942249, "repo_count": 2873, "earliest_commit": "2007-10-16T04:38:04+00:00", "latest_commit": "2025-12-23T00:12:37+00:00", "average_stars": 373}, {"name": "throw_exception", "created_version": "1.56.0", "removed_version": "", "total_usage": 1584, "recent_usage": 805, "past_usage": 779, "activity_score": 0.5726649641245809, "repo_count": 300, "earliest_commit": "2008-04-22T21:24:32Z", "latest_commit": "2025-12-12T21:52:15+00:00", "average_stars": 390}, {"name": "timer", "created_version": "1.16.1", "removed_version": "", "total_usage": 2096, "recent_usage": 828, "past_usage": 1268, "activity_score": 0.8475857973752698, "repo_count": 633, "earliest_commit": "2006-08-05T03:53:36Z", "latest_commit": "2025-12-15T23:52:47+00:00", "average_stars": 351}, {"name": "tokenizer", "created_version": "1.23.0", "removed_version": "", "total_usage": 1972, "recent_usage": 1041, "past_usage": 931, "activity_score": 1.9002974695519512, "repo_count": 769, "earliest_commit": "2007-11-01T18:09:00Z", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 398}, {"name": "tribool", "created_version": "1.32.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "tti", "created_version": "1.54.0", "removed_version": "", "total_usage": 41, "recent_usage": 16, "past_usage": 25, "activity_score": 0.11384234345112938, "repo_count": 16, "earliest_commit": "2014-06-30T11:46:36+00:00", "latest_commit": "2025-10-10T13:18:20+00:00", "average_stars": 326}, {"name": "tuple", "created_version": "1.24.0", "removed_version": "", "total_usage": 3827, "recent_usage": 1257, "past_usage": 2570, "activity_score": -0.06945182013322092, "repo_count": 924, "earliest_commit": "2006-06-21T03:57:14+00:00", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 231}, {"name": "type_erasure", "created_version": "1.54.0", "removed_version": "", "total_usage": 429, "recent_usage": 52, "past_usage": 377, "activity_score": -0.3048700981104438, "repo_count": 13, "earliest_commit": "2013-07-21T14:34:14+00:00", "latest_commit": "2025-08-17T16:04:42+00:00", "average_stars": 112}, {"name": "type_index", "created_version": "1.56.0", "removed_version": "", "total_usage": 236, "recent_usage": 178, "past_usage": 58, "activity_score": 4.192290267764095, "repo_count": 101, "earliest_commit": "2014-12-24T04:14:55Z", "latest_commit": "2025-12-19T23:55:10+00:00", "average_stars": 173}, {"name": "type_traits", "created_version": "1.16.1", "removed_version": "", "total_usage": 11058, "recent_usage": 3362, "past_usage": 7696, "activity_score": 0.31261685057703864, "repo_count": 1006, "earliest_commit": "2003-07-04T12:28:27Z", "latest_commit": "2025-12-13T09:08:48+00:00", "average_stars": 245}, {"name": "typeof", "created_version": "1.34.0", "removed_version": "", "total_usage": 487, "recent_usage": 147, "past_usage": 340, "activity_score": -0.658586119881348, "repo_count": 106, "earliest_commit": "2010-01-31T10:57:29Z", "latest_commit": "2025-11-27T07:23:43+00:00", "average_stars": 398}, {"name": "ublas", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "units", "created_version": "1.36.0", "removed_version": "", "total_usage": 3320, "recent_usage": 2526, "past_usage": 794, "activity_score": 1.2096438117401984, "repo_count": 118, "earliest_commit": "2012-01-30T11:00:07Z", "latest_commit": "2025-12-06T11:37:36+00:00", "average_stars": 291}, {"name": "unordered", "created_version": "1.36.0", "removed_version": "", "total_usage": 4280, "recent_usage": 2100, "past_usage": 2180, "activity_score": 2.022202463201282, "repo_count": 803, "earliest_commit": "2009-11-25T06:06:20Z", "latest_commit": "2025-12-25T12:04:41+00:00", "average_stars": 334}, {"name": "url", "created_version": "1.81.0", "removed_version": "", "total_usage": 143, "recent_usage": 143, "past_usage": 0, "activity_score": 6.556859597526548, "repo_count": 35, "earliest_commit": "2023-01-31T17:43:07+00:00", "latest_commit": "2025-12-25T10:02:35+00:00", "average_stars": 119}, {"name": "utility", "created_version": "1.16.1", "removed_version": "", "total_usage": 4727, "recent_usage": 2532, "past_usage": 2195, "activity_score": 1.1618644879788549, "repo_count": 989, "earliest_commit": "2005-10-14T15:54:12+00:00", "latest_commit": "2025-12-16T07:48:53+00:00", "average_stars": 545}, {"name": "uuid", "created_version": "1.42.0", "removed_version": "", "total_usage": 4375, "recent_usage": 3186, "past_usage": 1189, "activity_score": 4.249292723189066, "repo_count": 615, "earliest_commit": "2009-05-04T16:00:02Z", "latest_commit": "2025-12-25T10:02:35+00:00", "average_stars": 614}, {"name": "value_initialized", "created_version": "1.29.0", "removed_version": "", "total_usage": 0, "recent_usage": 0, "past_usage": 0, "activity_score": 0.0, "repo_count": 0, "earliest_commit": "", "latest_commit": "", "average_stars": 0}, {"name": "variant", "created_version": "1.31.0", "removed_version": "", "total_usage": 4735, "recent_usage": 2366, "past_usage": 2369, "activity_score": 1.4805114860600008, "repo_count": 1251, "earliest_commit": "2006-08-10T16:05:45Z", "latest_commit": "2025-12-23T19:18:33+00:00", "average_stars": 475}, {"name": "variant2", "created_version": "1.71.0", "removed_version": "", "total_usage": 82, "recent_usage": 80, "past_usage": 2, "activity_score": 4.5293680937257275, "repo_count": 25, "earliest_commit": "2019-11-13T19:30:27Z", "latest_commit": "2025-12-14T23:19:24+00:00", "average_stars": 235}, {"name": "vmd", "created_version": "1.60.0", "removed_version": "", "total_usage": 75, "recent_usage": 40, "past_usage": 35, "activity_score": -0.7513417648783055, "repo_count": 10, "earliest_commit": "2016-05-10T21:17:38+00:00", "latest_commit": "2024-11-19T15:26:16+00:00", "average_stars": 47}, {"name": "wave", "created_version": "1.33.0", "removed_version": "", "total_usage": 520, "recent_usage": 106, "past_usage": 414, "activity_score": -0.950696517244614, "repo_count": 26, "earliest_commit": "2009-05-24T10:15:52Z", "latest_commit": "2025-07-30T08:12:12+00:00", "average_stars": 271}, {"name": "winapi", "created_version": "1.56.0", "removed_version": "", "total_usage": 347, "recent_usage": 233, "past_usage": 114, "activity_score": 0.04403327453218592, "repo_count": 33, "earliest_commit": "2009-05-30T07:14:14Z", "latest_commit": "2025-12-14T12:29:09+00:00", "average_stars": 354}, {"name": "xpressive", "created_version": "1.34.0", "removed_version": "", "total_usage": 272, "recent_usage": 65, "past_usage": 207, "activity_score": -0.7524768783591281, "repo_count": 104, "earliest_commit": "2010-08-15T13:06:04Z", "latest_commit": "2025-12-04T13:15:58+00:00", "average_stars": 370}, {"name": "yap", "created_version": "1.68.0", "removed_version": "", "total_usage": 6, "recent_usage": 5, "past_usage": 1, "activity_score": -0.3235317349879395, "repo_count": 2, "earliest_commit": "2019-08-01T18:41:08+00:00", "latest_commit": "2024-01-22T15:34:29+00:00", "average_stars": 16}];
+        let currentPage = 1;
+        const itemsPerPage = 20;
+        let currentSortField = 'name';
+        let currentSortOrder = 'desc';
+        let filteredData = [...libraryData];
+
+        function sortData(field) {
+            if (currentSortField === field) {
+                currentSortOrder = currentSortOrder === 'asc' ? 'desc' : 'asc';
+            } else {
+                currentSortField = field;
+                currentSortOrder = 'asc';
+            }
+
+            filteredData.sort((a, b) => {
+                let aVal = a[field] || '';
+                let bVal = b[field] || '';
+
+                // Handle numeric fields
+                if (['repo_count', 'total_usage', 'recent_usage', 'activity_score'].includes(field)) {
+                    aVal = Number(aVal) || 0;
+                    bVal = Number(bVal) || 0;
+                }
+
+                // Handle version strings
+                if (field === 'created_version') {
+                    aVal = aVal.toString();
+                    bVal = bVal.toString();
+                }
+
+                if (currentSortOrder === 'asc') {
+                    return aVal > bVal ? 1 : aVal < bVal ? -1 : 0;
+                } else {
+                    return aVal < bVal ? 1 : aVal > bVal ? -1 : 0;
+                }
+            });
+
+            updateTable();
+            updateSortIndicators();
+        }
+
+        function updateSortIndicators() {
+            document.querySelectorAll('.sort-indicator').forEach(ind => {
+                ind.textContent = '↕';
+            });
+            const activeHeader = document.querySelector(`th[data-sort="${currentSortField}"] .sort-indicator`);
+            if (activeHeader) {
+                activeHeader.textContent = currentSortOrder === 'asc' ? '↑' : '↓';
+            }
+        }
+
+        function filterData(searchTerm) {
+            const term = searchTerm.toLowerCase();
+            filteredData = libraryData.filter(lib => {
+                const name = (lib.name || '').toLowerCase();
+                const created = (lib.created_version || '').toLowerCase();
+                return name.includes(term) || created.includes(term);
+            });
+            currentPage = 1;
+            sortData(currentSortField);
+        }
+
+        function updateTable() {
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const pageData = filteredData.slice(start, end);
+
+            const tbody = document.getElementById('library-overview-tbody');
+            tbody.innerHTML = pageData.map(lib => {
+                const name = lib.name || 'N/A';
+                const created = lib.created_version || 'N/A';
+                const repoCount = (lib.repo_count || 0).toLocaleString();
+                const totalUsage = (lib.total_usage || 0).toLocaleString();
+                const recentUsage = (lib.recent_usage || 0).toLocaleString();
+                const activityScore = (lib.activity_score || 0).toFixed(3);
+                const averageStars = (lib.average_stars || 0).toLocaleString();
+
+                return `
+                    <tr>
+                        <td><a href="libraries/${name}.html">${name}</a></td>
+                        <td>${created}</td>
+                        <td>${repoCount}</td>
+                        <td>${totalUsage}</td>
+                        <td>${recentUsage}</td>
+                        <td>${activityScore}</td>
+                        <td>${averageStars}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            updatePaginationInfo();
+            updatePaginationButtons();
+        }
+
+        function updatePaginationInfo() {
+            const start = (currentPage - 1) * itemsPerPage + 1;
+            const end = Math.min(currentPage * itemsPerPage, filteredData.length);
+            const total = filteredData.length;
+            document.getElementById('library-pagination-info').textContent =
+                `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updatePaginationButtons() {
+            const prevBtn = document.getElementById('library-prev-btn');
+            const nextBtn = document.getElementById('library-next-btn');
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage >= totalPages;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        // Initialize
+        document.querySelectorAll('.sortable').forEach(header => {
+            header.style.cursor = 'pointer';
+            header.addEventListener('click', () => {
+                sortData(header.dataset.sort);
+            });
+        });
+
+        document.getElementById('library-search').addEventListener('input', (e) => {
+            filterData(e.target.value);
+        });
+
+        document.getElementById('library-prev-btn').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updateTable();
+            }
+        });
+
+        document.getElementById('library-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                updateTable();
+            }
+        });
+
+        // Initial sort and display
+        sortData('name');
 
     </script>
 </body>

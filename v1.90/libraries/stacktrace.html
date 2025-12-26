@@ -154,27 +154,75 @@
     </div>
     <h1>stacktrace</h1>
 
+    <!-- Panel 0: Overview -->
+    <div class="panel">
+        <h2>Overview</h2>
+        <div class="overview-container">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Created Version:</td>
+                                <td style="padding: 8px;">1.65.0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
+                                <td style="padding: 8px;">197</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
+                                <td style="padding: 8px;">1,056</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
+                                <td style="padding: 8px;">4.981</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; color: #2d3748; font-size: 1.2em;">Library Information</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    Gather, store, copy and print backtraces.
+                </p>
+                <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version where this library was first introduced.</li>
+                    <li><strong>Total Repositories:</strong> Number of repositories (>10 stars) using this library.</li>
+                    <li><strong>Average Stars:</strong> Average GitHub stars across repositories using this library.</li>
+                    <li><strong>Activity Score:</strong> Measures adoption trends by comparing recent usage (last 5 years) to historical usage. Higher scores indicate growing adoption.</li>
+                </ul>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
         <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
-            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Showing all consumers for the latest version.
             Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
             <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
-            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3)</span> = Third level,
+            <span style="color: #ef4444; font-weight: 600;">Red (d4+)</span> = Deeper levels.
         </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries</th>
                         </tr>
                     </thead>
                     <tbody>
 
                 <tr>
-                    <td colspan="4">No consumer libraries found</td>
+                    <td colspan="4">No dependencies found</td>
                 </tr>
 
                     </tbody>
@@ -196,7 +244,9 @@
                         <tr>
                             <th>Repository</th>
                             <th>Stars</th>
-                            <th>Usage Count</th>
+                            <th>Total Usage</th>
+                            <th>Created</th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
 
@@ -206,60 +256,80 @@
                     <td><a href="https://github.com/swoole/swoole-src" target="_blank">swoole/swoole-src</a></td>
                     <td>18,809</td>
                     <td>1</td>
+                    <td>2012-07-21</td>
+                    <td>2025-12-09</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/organicmaps/organicmaps" target="_blank">organicmaps/organicmaps</a></td>
-                    <td>12,282</td>
+                    <td>12,335</td>
                     <td>1</td>
+                    <td>2020-12-27</td>
+                    <td>2025-12-18</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/vesoft-inc/nebula" target="_blank">vesoft-inc/nebula</a></td>
+                    <td>11,910</td>
+                    <td>5</td>
+                    <td>2018-08-28</td>
+                    <td>2025-10-22</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/manticoresoftware/manticore" target="_blank">manticoresoftware/manticore</a></td>
                     <td>11,486</td>
                     <td>1</td>
+                    <td>2017-06-28</td>
+                    <td>2025-12-19</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/TrinityCore/TrinityCore" target="_blank">TrinityCore/TrinityCore</a></td>
                     <td>10,309</td>
                     <td>1</td>
+                    <td>2010-12-28</td>
+                    <td>2025-12-07</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/azerothcore/azerothcore-wotlk" target="_blank">azerothcore/azerothcore-wotlk</a></td>
                     <td>7,797</td>
                     <td>1</td>
+                    <td>2016-06-26</td>
+                    <td>2025-12-10</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/vespa-engine/vespa" target="_blank">vespa-engine/vespa</a></td>
                     <td>6,677</td>
                     <td>2</td>
+                    <td>2016-06-03</td>
+                    <td>2025-12-19</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/facebook/redex" target="_blank">facebook/redex</a></td>
-                    <td>6,228</td>
+                    <td>6,235</td>
                     <td>1</td>
+                    <td>2016-03-24</td>
+                    <td>2025-12-22</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/azahar-emu/azahar" target="_blank">azahar-emu/azahar</a></td>
                     <td>5,989</td>
                     <td>1</td>
+                    <td>2024-03-04</td>
+                    <td>2025-12-09</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/arrayfire/arrayfire" target="_blank">arrayfire/arrayfire</a></td>
                     <td>4,837</td>
-                    <td>2</td>
-                </tr>
-
-                <tr>
-                    <td><a href="https://github.com/mapsme/omim" target="_blank">mapsme/omim</a></td>
-                    <td>4,602</td>
                     <td>1</td>
+                    <td>2014-10-28</td>
+                    <td>2025-09-05</td>
                 </tr>
 
                     </tbody>
@@ -277,24 +347,29 @@
         <h2>Contribution</h2>
         <div class="panel-row">
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contributor</th>
-                            <th>Commit Count</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                <tr>
-                    <td>Antony Polukhin</td>
-                    <td>1</td>
-                </tr>
-
-                    </tbody>
-
-                </table>
+                <div id="contributor-table-container">
+                    <table id="contributor-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Contributor</th>
+                                <th>Email</th>
+                                <th>Commit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contributor-table-tbody">
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span id="contributor-pagination-info">Showing 1-10 of 68</span>
+                        </div>
+                        <div>
+                            <button id="contributor-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                            <button id="contributor-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="chart-container">
                 <canvas id="commitChart"></canvas>
@@ -303,7 +378,7 @@
     </div>
 
     <script>
-        
+
         new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
@@ -316,7 +391,7 @@
                     borderWidth: 2,
                     borderRadius: 4
                 }, {
-                    label: 'Secondary Consumers',
+                    label: 'Transitive Consumers',
                     data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     backgroundColor: 'rgba(16, 185, 129, 0.7)',
                     borderColor: 'rgba(16, 185, 129, 1)',
@@ -410,15 +485,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
-                labels: ["2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+                labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
-                    label: 'Usage Count',
-                    data: [1, 5, 14, 11, 37, 41, 29, 31, 102],
+                    label: 'Total Usage',
+                    data: [0, 0, 0, 0, 0, 0, 0, 1, 5, 15, 12, 39, 44, 41, 38, 115],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -438,15 +513,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.61", "1.62", "1.63", "1.64", "1.65", "1.66", "1.67", "1.68", "1.69", "1.70", "1.71", "1.72", "1.73", "1.75", "1.76", "1.77", "1.78", "1.80", "1.81", "1.82", "1.83", "1.84", "1.85", "1.86", "1.87", "1.88", "1.89", "1.90"],
+                labels: ["1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [19, 100, 85, 83, 13, 21, 5, 27, 9, 18, 13, 4, 2, 11, 14, 3, 3, 10, 5, 3, 15, 15, 32, 17, 13, 1, 2, 1],
+                    data: [83, 13, 0, 21, 5, 27, 9, 18, 13, 4, 2, 0, 11, 14, 3, 3, 0, 10, 5, 3, 15, 15, 32, 17, 13, 1, 2],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -466,7 +541,82 @@
                 }
             }
         });
-    
+
+
+        const contributorData = [{"version": "1.90.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 1}, {"version": "1.90.0", "person": "Jonathan Wakely", "email_address": "github@kayari.org", "commit_count": 1}, {"version": "1.89.0", "person": "Orgad Shaneh", "email_address": "orgads@gmail.com", "commit_count": 1}, {"version": "1.88.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 10}, {"version": "1.88.0", "person": "drgler", "email_address": "daniel.kruegler@gmail.com", "commit_count": 1}, {"version": "1.88.0", "person": "Maciej Czarnecki", "email_address": "mcczarny@gmail.com", "commit_count": 1}, {"version": "1.88.0", "person": "Uilian Ries", "email_address": "uilianries@gmail.com", "commit_count": 1}, {"version": "1.87.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 10}, {"version": "1.87.0", "person": "int mian", "email_address": "36444200+void-mian@users.noreply.github.com", "commit_count": 1}, {"version": "1.87.0", "person": "Jaroslaw Pelczar", "email_address": "47525085+jarekpelczar@users.noreply.github.com", "commit_count": 1}, {"version": "1.87.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 1}, {"version": "1.87.0", "person": "Dmitry Arkhipov", "email_address": "grisumbras@yandex.ru", "commit_count": 1}, {"version": "1.87.0", "person": "huangqinjin", "email_address": "huangqinjin@gmail.com", "commit_count": 1}, {"version": "1.87.0", "person": "Mats Taraldsvik", "email_address": "mats.taraldsvik@gmail.com", "commit_count": 1}, {"version": "1.87.0", "person": "Julien Schueller", "email_address": "schueller@phimeca.com", "commit_count": 1}, {"version": "1.86.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 23}, {"version": "1.86.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 5}, {"version": "1.86.0", "person": "leha-bot", "email_address": "leha-bot@users.noreply.github.com", "commit_count": 2}, {"version": "1.86.0", "person": "Marat Abrarov", "email_address": "abrarov@gmail.com", "commit_count": 1}, {"version": "1.86.0", "person": "huangqinjin", "email_address": "huangqinjin@gmail.com", "commit_count": 1}, {"version": "1.85.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 14}, {"version": "1.85.0", "person": "Andrey Semashev", "email_address": "andrey.semashev@gmail.com", "commit_count": 1}, {"version": "1.84.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 10}, {"version": "1.84.0", "person": "Francesco Ballarin", "email_address": "francesco.ballarin@unicatt.it", "commit_count": 1}, {"version": "1.84.0", "person": "leha-bot", "email_address": "leha-bot@users.noreply.github.com", "commit_count": 1}, {"version": "1.84.0", "person": "ja2142", "email_address": "radoslaw.olko@gmail.com", "commit_count": 1}, {"version": "1.84.0", "person": "Mohammad Nejati", "email_address": "tufanpc@gmail.com", "commit_count": 1}, {"version": "1.84.0", "person": "yhsb2k", "email_address": "yhsb2k@outlook.com", "commit_count": 1}, {"version": "1.83.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 3}, {"version": "1.82.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 4}, {"version": "1.82.0", "person": "Chocobo1", "email_address": "Chocobo1@users.noreply.github.com", "commit_count": 1}, {"version": "1.81.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 10}, {"version": "1.79.0", "person": "Alex Guteniev", "email_address": "gutenev@gmail.com", "commit_count": 2}, {"version": "1.79.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 1}, {"version": "1.78.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 2}, {"version": "1.78.0", "person": "Cl\u00c3\u00a9ment Chigot", "email_address": "clement.chigot@atos.net", "commit_count": 1}, {"version": "1.77.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 8}, {"version": "1.77.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 6}, {"version": "1.76.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 9}, {"version": "1.76.0", "person": "Sam Darwin", "email_address": "samuel.d.darwin@gmail.com", "commit_count": 2}, {"version": "1.74.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 1}, {"version": "1.74.0", "person": "Jeremiah Rodriguez", "email_address": "jeremiah.rodriguez94@gmail.com", "commit_count": 1}, {"version": "1.73.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 4}, {"version": "1.72.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 12}, {"version": "1.72.0", "person": "Dirk Jagdmann", "email_address": "doj@cubic.org", "commit_count": 1}, {"version": "1.71.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 18}, {"version": "1.70.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 7}, {"version": "1.70.0", "person": "Ivan Ponomarev", "email_address": "ivantrue@gmail.com", "commit_count": 2}, {"version": "1.69.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 19}, {"version": "1.69.0", "person": "Jan Eisenhauer", "email_address": "44572464+JanEisenhauer@users.noreply.github.com", "commit_count": 5}, {"version": "1.69.0", "person": "Dries Deschout", "email_address": "ddes@newtec.eu", "commit_count": 3}, {"version": "1.68.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 5}, {"version": "1.67.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 19}, {"version": "1.67.0", "person": "Daniela Engert", "email_address": "dani@ngrt.de", "commit_count": 1}, {"version": "1.67.0", "person": "Peter Dimov", "email_address": "pdimov@pdimov.com", "commit_count": 1}, {"version": "1.65.1", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 11}, {"version": "1.65.1", "person": "Andrey Semashev", "email_address": "andrey.semashev@gmail.com", "commit_count": 1}, {"version": "1.65.1", "person": "bebuch", "email_address": "bebuch@users.noreply.github.com", "commit_count": 1}, {"version": "1.65.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 78}, {"version": "1.65.0", "person": "Andrey Semashev", "email_address": "andrey.semashev@gmail.com", "commit_count": 2}, {"version": "1.65.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 2}, {"version": "1.65.0", "person": "Lastique", "email_address": "Lastique@users.noreply.github.com", "commit_count": 1}, {"version": "1.64.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 85}, {"version": "1.63.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 98}, {"version": "1.63.0", "person": "Jon Kalb", "email_address": "jon@kalbweb.com", "commit_count": 1}, {"version": "1.63.0", "person": "Marek Kurdej", "email_address": "marek@quasardb.net", "commit_count": 1}, {"version": "1.62.0", "person": "Antony Polukhin", "email_address": "antoshkka@gmail.com", "commit_count": 18}, {"version": "1.62.0", "person": "Akira Takahashi", "email_address": "faithandbrave@gmail.com", "commit_count": 1}];
+        let contributorCurrentPage = 1;
+        const contributorItemsPerPage = 10;
+
+        function updateContributorTable() {
+            const start = (contributorCurrentPage - 1) * contributorItemsPerPage;
+            const end = start + contributorItemsPerPage;
+            const pageData = contributorData.slice(start, end);
+
+            const tbody = document.getElementById('contributor-table-tbody');
+            if (contributorData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No commit data available (boost_commit table not yet populated)</td></tr>';
+            } else {
+                tbody.innerHTML = pageData.map(contrib => {
+                    const version = contrib.version || 'N/A';
+                    const person = contrib.person || contrib.email_address || 'N/A';
+                    const email = contrib.email_address || 'N/A';
+                    const commitCount = (contrib.commit_count || 0).toLocaleString();
+
+                    return `
+                        <tr>
+                            <td>${version}</td>
+                            <td>${person}</td>
+                            <td>${email}</td>
+                            <td>${commitCount}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateContributorPaginationInfo();
+            updateContributorPaginationButtons();
+        }
+
+        function updateContributorPaginationInfo() {
+            const start = contributorData.length === 0 ? 0 : (contributorCurrentPage - 1) * contributorItemsPerPage + 1;
+            const end = Math.min(contributorCurrentPage * contributorItemsPerPage, contributorData.length);
+            const total = contributorData.length;
+            document.getElementById('contributor-pagination-info').textContent =
+                total === 0 ? 'No data available' : `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updateContributorPaginationButtons() {
+            const prevBtn = document.getElementById('contributor-prev-btn');
+            const nextBtn = document.getElementById('contributor-next-btn');
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+
+            prevBtn.disabled = contributorCurrentPage === 1 || contributorData.length === 0;
+            nextBtn.disabled = contributorCurrentPage >= totalPages || contributorData.length === 0;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        document.getElementById('contributor-prev-btn').addEventListener('click', () => {
+            if (contributorCurrentPage > 1) {
+                contributorCurrentPage--;
+                updateContributorTable();
+            }
+        });
+
+        document.getElementById('contributor-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+            if (contributorCurrentPage < totalPages) {
+                contributorCurrentPage++;
+                updateContributorTable();
+            }
+        });
+
+        // Initial display
+        updateContributorTable();
+
     </script>
 </body>
 </html>

@@ -154,33 +154,81 @@
     </div>
     <h1>rational</h1>
 
+    <!-- Panel 0: Overview -->
+    <div class="panel">
+        <h2>Overview</h2>
+        <div class="overview-container">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Created Version:</td>
+                                <td style="padding: 8px;">1.16.1</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
+                                <td style="padding: 8px;">124</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
+                                <td style="padding: 8px;">530</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
+                                <td style="padding: 8px;">0.509</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; color: #2d3748; font-size: 1.2em;">Library Information</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    A rational number class.
+                </p>
+                <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version where this library was first introduced.</li>
+                    <li><strong>Total Repositories:</strong> Number of repositories (>10 stars) using this library.</li>
+                    <li><strong>Average Stars:</strong> Average GitHub stars across repositories using this library.</li>
+                    <li><strong>Activity Score:</strong> Measures adoption trends by comparing recent usage (last 5 years) to historical usage. Higher scores indicate growing adoption.</li>
+                </ul>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
         <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
-            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Showing all consumers for the latest version.
             Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
             <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
-            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3)</span> = Third level,
+            <span style="color: #ef4444; font-weight: 600;">Red (d4+)</span> = Deeper levels.
         </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries</th>
                         </tr>
                     </thead>
                     <tbody>
 <tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="geometry.html" style="color: #3b82f6; font-weight: bold;">geometry</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="icl.html" style="color: #3b82f6; font-weight: bold;">icl</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="graph.html" style="color: #10b981; font-weight: normal;">graph</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="graph_parallel.html" style="color: #f59e0b; font-weight: normal;">graph_parallel</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
 <tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="mpi.html" style="color: #f59e0b; font-weight: normal;">mpi</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="python.html" style="color: #f59e0b; font-weight: normal;">python</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="numeric_conversion.html" style="color: #ef4444; font-weight: normal;">numeric_conversion</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="parameter_python.html" style="color: #ef4444; font-weight: normal;">parameter_python</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td></tr>
 <tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="property_map_parallel.html" style="color: #ef4444; font-weight: normal;">property_map_parallel</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="accumulators.html" style="color: #ef4444; font-weight: normal;">accumulators</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="date_time.html" style="color: #ef4444; font-weight: normal;">date_time</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="iostreams.html" style="color: #ef4444; font-weight: normal;">iostreams</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td></tr>
-<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="test.html" style="color: #ef4444; font-weight: normal;">test</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="xpressive.html" style="color: #ef4444; font-weight: normal;">xpressive</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="asio.html" style="color: #ef4444; font-weight: normal;">asio</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="log.html" style="color: #ef4444; font-weight: normal;">log</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td></tr>
-<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="thread.html" style="color: #ef4444; font-weight: normal;">thread</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="beast.html" style="color: #ef4444; font-weight: normal;">beast</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="cobalt.html" style="color: #ef4444; font-weight: normal;">cobalt</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="compute.html" style="color: #ef4444; font-weight: normal;">compute</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td></tr>
-<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="contract.html" style="color: #ef4444; font-weight: normal;">contract</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="locale.html" style="color: #ef4444; font-weight: normal;">locale</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="mqtt5.html" style="color: #ef4444; font-weight: normal;">mqtt5</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="mysql.html" style="color: #ef4444; font-weight: normal;">mysql</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td></tr>
-<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="process.html" style="color: #ef4444; font-weight: normal;">process</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="redis.html" style="color: #ef4444; font-weight: normal;">redis</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="spirit.html" style="color: #ef4444; font-weight: normal;">spirit</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="statechart.html" style="color: #ef4444; font-weight: normal;">statechart</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td></tr>
-<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="type_erasure.html" style="color: #ef4444; font-weight: normal;">type_erasure</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="convert.html" style="color: #ef4444; font-weight: normal;">convert</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="poly_collection.html" style="color: #ef4444; font-weight: normal;">poly_collection</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="serialization.html" style="color: #ef4444; font-weight: normal;">serialization</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td></tr>
-<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="wave.html" style="color: #ef4444; font-weight: normal;">wave</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="histogram.html" style="color: #ef4444; font-weight: normal;">histogram</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d9)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="msm.html" style="color: #ef4444; font-weight: normal;">msm</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d9)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="property_tree.html" style="color: #ef4444; font-weight: normal;">property_tree</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d9)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="test.html" style="color: #ef4444; font-weight: normal;">test</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="xpressive.html" style="color: #ef4444; font-weight: normal;">xpressive</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="asio.html" style="color: #ef4444; font-weight: normal;">asio</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="thread.html" style="color: #ef4444; font-weight: normal;">thread</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d6)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="beast.html" style="color: #ef4444; font-weight: normal;">beast</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="cobalt.html" style="color: #ef4444; font-weight: normal;">cobalt</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="compute.html" style="color: #ef4444; font-weight: normal;">compute</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="contract.html" style="color: #ef4444; font-weight: normal;">contract</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="locale.html" style="color: #ef4444; font-weight: normal;">locale</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="log.html" style="color: #ef4444; font-weight: normal;">log</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="mysql.html" style="color: #ef4444; font-weight: normal;">mysql</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="process.html" style="color: #ef4444; font-weight: normal;">process</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="redis.html" style="color: #ef4444; font-weight: normal;">redis</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="spirit.html" style="color: #ef4444; font-weight: normal;">spirit</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="statechart.html" style="color: #ef4444; font-weight: normal;">statechart</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="type_erasure.html" style="color: #ef4444; font-weight: normal;">type_erasure</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d7)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="convert.html" style="color: #ef4444; font-weight: normal;">convert</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="mqtt5.html" style="color: #ef4444; font-weight: normal;">mqtt5</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="poly_collection.html" style="color: #ef4444; font-weight: normal;">poly_collection</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="serialization.html" style="color: #ef4444; font-weight: normal;">serialization</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d8)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="histogram.html" style="color: #ef4444; font-weight: normal;">histogram</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d9)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="msm.html" style="color: #ef4444; font-weight: normal;">msm</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d9)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="property_tree.html" style="color: #ef4444; font-weight: normal;">property_tree</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d9)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="wave.html" style="color: #ef4444; font-weight: normal;">wave</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d9)</span></td></tr>
 
                     </tbody>
                 </table>
@@ -201,7 +249,9 @@
                         <tr>
                             <th>Repository</th>
                             <th>Stars</th>
-                            <th>Usage Count</th>
+                            <th>Total Usage</th>
+                            <th>Created</th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
 
@@ -211,60 +261,80 @@
                     <td><a href="https://github.com/ethereum/solidity" target="_blank">ethereum/solidity</a></td>
                     <td>25,442</td>
                     <td>2</td>
+                    <td>2015-08-17</td>
+                    <td>2025-12-17</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/OrcaSlicer/OrcaSlicer" target="_blank">OrcaSlicer/OrcaSlicer</a></td>
                     <td>11,737</td>
                     <td>3</td>
+                    <td>2022-07-16</td>
+                    <td>2025-12-10</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/EOSIO/eos" target="_blank">EOSIO/eos</a></td>
                     <td>11,243</td>
                     <td>1</td>
+                    <td>2017-04-05</td>
+                    <td>2022-07-27</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/prusa3d/PrusaSlicer" target="_blank">prusa3d/PrusaSlicer</a></td>
+                    <td>8,735</td>
+                    <td>2</td>
+                    <td>2016-03-01</td>
+                    <td>2025-11-07</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/prusa3d/Slic3r" target="_blank">prusa3d/Slic3r</a></td>
                     <td>8,720</td>
                     <td>3</td>
+                    <td>2016-03-01</td>
+                    <td>2025-11-07</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/Ardour/ardour" target="_blank">Ardour/ardour</a></td>
-                    <td>4,596</td>
+                    <td>4,607</td>
                     <td>1</td>
+                    <td>2013-03-13</td>
+                    <td>2025-12-20</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/bambulab/BambuStudio" target="_blank">bambulab/BambuStudio</a></td>
                     <td>3,517</td>
                     <td>3</td>
+                    <td>2022-07-08</td>
+                    <td>2025-12-09</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/LibreOffice/core" target="_blank">LibreOffice/core</a></td>
                     <td>3,509</td>
                     <td>5</td>
+                    <td>2013-10-31</td>
+                    <td>2025-12-10</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/rdkit/rdkit" target="_blank">rdkit/rdkit</a></td>
                     <td>3,213</td>
                     <td>2</td>
+                    <td>2013-05-12</td>
+                    <td>2025-12-15</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/chdb-io/chdb" target="_blank">chdb-io/chdb</a></td>
                     <td>2,543</td>
-                    <td>2</td>
-                </tr>
-
-                <tr>
-                    <td><a href="https://github.com/ByConity/ByConity" target="_blank">ByConity/ByConity</a></td>
-                    <td>2,223</td>
-                    <td>2</td>
+                    <td>1</td>
+                    <td>2023-02-25</td>
+                    <td>2025-12-08</td>
                 </tr>
 
                     </tbody>
@@ -282,23 +352,29 @@
         <h2>Contribution</h2>
         <div class="panel-row">
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contributor</th>
-                            <th>Commit Count</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
-                </tr>
-
-                    </tbody>
-
-                </table>
+                <div id="contributor-table-container">
+                    <table id="contributor-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Contributor</th>
+                                <th>Email</th>
+                                <th>Commit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contributor-table-tbody">
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span id="contributor-pagination-info">Showing 1-10 of 42</span>
+                        </div>
+                        <div>
+                            <button id="contributor-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                            <button id="contributor-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="chart-container">
                 <canvas id="commitChart"></canvas>
@@ -307,7 +383,7 @@
     </div>
 
     <script>
-        
+
         new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
@@ -320,7 +396,7 @@
                     borderWidth: 2,
                     borderRadius: 4
                 }, {
-                    label: 'Secondary Consumers',
+                    label: 'Transitive Consumers',
                     data: [63, 63, 63, 55, 56, 55, 54, 61, 61, 62, 62, 55, 54, 51, 50, 50, 44, 43, 2, 2, 2, 2, 36, 36, 36],
                     backgroundColor: 'rgba(16, 185, 129, 0.7)',
                     borderColor: 'rgba(16, 185, 129, 1)',
@@ -414,15 +490,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
-                labels: ["2009", "2010", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+                labels: ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
-                    label: 'Usage Count',
-                    data: [1, 1, 2, 8, 13, 8, 7, 7, 10, 15, 28, 15, 30, 19, 27, 29],
+                    label: 'Total Usage',
+                    data: [1, 1, 0, 2, 8, 13, 8, 7, 10, 12, 210, 33, 22, 40, 26, 31, 40],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -442,15 +518,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.54", "1.55", "1.56", "1.57", "1.58", "1.59", "1.61", "1.63", "1.64", "1.65", "1.67", "1.68", "1.70", "1.72", "1.74", "1.75", "1.76", "1.84", "1.85", "1.86", "1.87", "1.88"],
+                labels: ["1.17.0", "1.18.0", "1.18.2", "1.18.3", "1.19.0", "1.20.0", "1.20.1", "1.20.2", "1.21.0", "1.21.1", "1.21.2", "1.22.0", "1.23.0", "1.24.0", "1.25.0", "1.25.1", "1.26.0", "1.27.0", "1.28.0", "1.29.0", "1.30.0", "1.30.1", "1.30.2", "1.31.0", "1.32.0", "1.33.0", "1.33.1", "1.34.0", "1.34.1", "1.35.0", "1.36.0", "1.37.0", "1.38.0", "1.39.0", "1.40.0", "1.41.0", "1.42.0", "1.43.0", "1.44.0", "1.45.0", "1.46.0", "1.46.1", "1.47.0", "1.48.0", "1.49.0", "1.50.0", "1.51.0", "1.52.0", "1.53.0", "1.54.0", "1.55.0", "1.56.0", "1.57.0", "1.58.0", "1.59.0", "1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [12, 5, 1, 18, 1, 7, 1, 12, 2, 1, 7, 4, 4, 1, 3, 1, 2, 2, 5, 2, 3, 1],
+                    data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 5, 1, 18, 1, 7, 0, 1, 0, 12, 2, 1, 0, 0, 7, 4, 0, 4, 0, 1, 0, 3, 1, 2, 0, 0, 0, 0, 0, 0, 0, 2, 5, 2, 3, 1, 0],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -470,7 +546,82 @@
                 }
             }
         });
-    
+
+
+        const contributorData = [{"version": "1.89.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 1}, {"version": "1.88.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 2}, {"version": "1.88.0", "person": "Flamefire", "email_address": "Flamefire@users.noreply.github.com", "commit_count": 1}, {"version": "1.87.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 1}, {"version": "1.87.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 1}, {"version": "1.86.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 5}, {"version": "1.85.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 2}, {"version": "1.77.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 2}, {"version": "1.76.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 1}, {"version": "1.75.0", "person": "Glen Fernandes", "email_address": "glen.fernandes@gmail.com", "commit_count": 3}, {"version": "1.73.0", "person": "Philip Savoulidis", "email_address": "psavouli@amazon.co.uk", "commit_count": 1}, {"version": "1.71.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 2}, {"version": "1.71.0", "person": "Mike-Devel", "email_address": "mike.dev@gmx.de", "commit_count": 1}, {"version": "1.71.0", "person": "Aleksander", "email_address": "spider.ch@gmail.com", "commit_count": 1}, {"version": "1.69.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 2}, {"version": "1.69.0", "person": "tonyelewis", "email_address": "tonyelewis@users.noreply.github.com", "commit_count": 2}, {"version": "1.68.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 6}, {"version": "1.68.0", "person": "James E. King III", "email_address": "jking@apache.org\u001b[H", "commit_count": 1}, {"version": "1.65.1", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 1}, {"version": "1.65.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 1}, {"version": "1.65.0", "person": "John Maddock", "email_address": "john@johnmaddock.co.uk", "commit_count": 1}, {"version": "1.64.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 4}, {"version": "1.64.0", "person": "John Maddock", "email_address": "john@johnmaddock.co.uk", "commit_count": 3}, {"version": "1.64.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 2}, {"version": "1.64.0", "person": "Kohei Takahashi", "email_address": "flast@flast.jp", "commit_count": 2}, {"version": "1.64.0", "person": "Marshall Clow", "email_address": "marshall@idio.com", "commit_count": 1}, {"version": "1.62.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 1}, {"version": "1.60.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 3}, {"version": "1.60.0", "person": "Marshall Clow", "email_address": "marshall@idio.com", "commit_count": 2}, {"version": "1.60.0", "person": "Edward Diener", "email_address": "eld@tropicsoft.com", "commit_count": 1}, {"version": "1.60.0", "person": "Geoff Romer", "email_address": "gromer@google.com", "commit_count": 1}, {"version": "1.59.0", "person": "MarcelRaad", "email_address": "MarcelRaad@users.noreply.github.com", "commit_count": 1}, {"version": "1.58.0", "person": "Peter Dimov", "email_address": "pdimov@pdimov.com", "commit_count": 7}, {"version": "1.58.0", "person": "Mario Lang", "email_address": "mlang@delysid.org", "commit_count": 5}, {"version": "1.58.0", "person": "Marshall Clow", "email_address": "marshall@idio.com", "commit_count": 3}, {"version": "1.58.0", "person": "John Maddock", "email_address": "john@johnmaddock.co.uk", "commit_count": 2}, {"version": "1.58.0", "person": "Adam Wulkiewicz", "email_address": "adam.wulkiewicz@gmail.com", "commit_count": 1}, {"version": "1.57.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 1}, {"version": "1.56.0", "person": "jzmaddock", "email_address": "jzmaddock@gmail.com", "commit_count": 4}, {"version": "1.56.0", "person": "John Maddock", "email_address": "john@johnmaddock.co.uk", "commit_count": 1}, {"version": "1.55.0", "person": "Daryle Walker", "email_address": "dwalker07@yahoo.com", "commit_count": 11}, {"version": "1.55.0", "person": "Stephen Kelly", "email_address": "steveire@gmail.com", "commit_count": 1}];
+        let contributorCurrentPage = 1;
+        const contributorItemsPerPage = 10;
+
+        function updateContributorTable() {
+            const start = (contributorCurrentPage - 1) * contributorItemsPerPage;
+            const end = start + contributorItemsPerPage;
+            const pageData = contributorData.slice(start, end);
+
+            const tbody = document.getElementById('contributor-table-tbody');
+            if (contributorData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No commit data available (boost_commit table not yet populated)</td></tr>';
+            } else {
+                tbody.innerHTML = pageData.map(contrib => {
+                    const version = contrib.version || 'N/A';
+                    const person = contrib.person || contrib.email_address || 'N/A';
+                    const email = contrib.email_address || 'N/A';
+                    const commitCount = (contrib.commit_count || 0).toLocaleString();
+
+                    return `
+                        <tr>
+                            <td>${version}</td>
+                            <td>${person}</td>
+                            <td>${email}</td>
+                            <td>${commitCount}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateContributorPaginationInfo();
+            updateContributorPaginationButtons();
+        }
+
+        function updateContributorPaginationInfo() {
+            const start = contributorData.length === 0 ? 0 : (contributorCurrentPage - 1) * contributorItemsPerPage + 1;
+            const end = Math.min(contributorCurrentPage * contributorItemsPerPage, contributorData.length);
+            const total = contributorData.length;
+            document.getElementById('contributor-pagination-info').textContent =
+                total === 0 ? 'No data available' : `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updateContributorPaginationButtons() {
+            const prevBtn = document.getElementById('contributor-prev-btn');
+            const nextBtn = document.getElementById('contributor-next-btn');
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+
+            prevBtn.disabled = contributorCurrentPage === 1 || contributorData.length === 0;
+            nextBtn.disabled = contributorCurrentPage >= totalPages || contributorData.length === 0;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        document.getElementById('contributor-prev-btn').addEventListener('click', () => {
+            if (contributorCurrentPage > 1) {
+                contributorCurrentPage--;
+                updateContributorTable();
+            }
+        });
+
+        document.getElementById('contributor-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+            if (contributorCurrentPage < totalPages) {
+                contributorCurrentPage++;
+                updateContributorTable();
+            }
+        });
+
+        // Initial display
+        updateContributorTable();
+
     </script>
 </body>
 </html>

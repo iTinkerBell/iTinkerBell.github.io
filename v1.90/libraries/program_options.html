@@ -154,27 +154,75 @@
     </div>
     <h1>program_options</h1>
 
+    <!-- Panel 0: Overview -->
+    <div class="panel">
+        <h2>Overview</h2>
+        <div class="overview-container">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Created Version:</td>
+                                <td style="padding: 8px;">1.32.0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
+                                <td style="padding: 8px;">2,418</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
+                                <td style="padding: 8px;">476</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
+                                <td style="padding: 8px;">2.650</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; color: #2d3748; font-size: 1.2em;">Library Information</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    The program_options library allows program developers to obtain program options, that is (name, value) pairs from the user, via conventional methods such as command line and config file.
+                </p>
+                <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version where this library was first introduced.</li>
+                    <li><strong>Total Repositories:</strong> Number of repositories (>10 stars) using this library.</li>
+                    <li><strong>Average Stars:</strong> Average GitHub stars across repositories using this library.</li>
+                    <li><strong>Activity Score:</strong> Measures adoption trends by comparing recent usage (last 5 years) to historical usage. Higher scores indicate growing adoption.</li>
+                </ul>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
         <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
-            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Showing all consumers for the latest version.
             Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
             <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
-            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3)</span> = Third level,
+            <span style="color: #ef4444; font-weight: 600;">Red (d4+)</span> = Deeper levels.
         </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries</th>
                         </tr>
                     </thead>
                     <tbody>
 
                 <tr>
-                    <td colspan="4">No consumer libraries found</td>
+                    <td colspan="4">No dependencies found</td>
                 </tr>
 
                     </tbody>
@@ -196,7 +244,9 @@
                         <tr>
                             <th>Repository</th>
                             <th>Stars</th>
-                            <th>Usage Count</th>
+                            <th>Total Usage</th>
+                            <th>Created</th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
 
@@ -206,60 +256,80 @@
                     <td><a href="https://github.com/LizardByte/Sunshine" target="_blank">LizardByte/Sunshine</a></td>
                     <td>32,204</td>
                     <td>2</td>
+                    <td>2021-12-15</td>
+                    <td>2025-12-10</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/facebook/folly" target="_blank">facebook/folly</a></td>
                     <td>30,136</td>
                     <td>1</td>
+                    <td>2012-06-01</td>
+                    <td>2025-12-11</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/ApolloAuto/apollo" target="_blank">ApolloAuto/apollo</a></td>
                     <td>26,290</td>
                     <td>8</td>
+                    <td>2017-07-04</td>
+                    <td>2025-08-18</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/ethereum/solidity" target="_blank">ethereum/solidity</a></td>
                     <td>25,442</td>
                     <td>9</td>
+                    <td>2015-08-17</td>
+                    <td>2025-12-17</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/trojan-gfw/trojan" target="_blank">trojan-gfw/trojan</a></td>
+                    <td>19,579</td>
+                    <td>1</td>
+                    <td>2017-10-21</td>
+                    <td>2024-08-21</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/GreaterFire/trojan" target="_blank">GreaterFire/trojan</a></td>
                     <td>19,571</td>
                     <td>1</td>
+                    <td>2017-10-21</td>
+                    <td>2024-08-21</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/k4yt3x/video2x" target="_blank">k4yt3x/video2x</a></td>
                     <td>16,330</td>
                     <td>2</td>
+                    <td>2018-02-24</td>
+                    <td>2025-11-23</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/chenshuo/muduo" target="_blank">chenshuo/muduo</a></td>
                     <td>15,786</td>
                     <td>3</td>
+                    <td>2010-05-05</td>
+                    <td>2025-02-28</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/apache/hadoop" target="_blank">apache/hadoop</a></td>
                     <td>15,414</td>
                     <td>22</td>
+                    <td>2014-08-28</td>
+                    <td>2025-12-15</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/scylladb/scylla" target="_blank">scylladb/scylla</a></td>
                     <td>15,146</td>
-                    <td>7</td>
-                </tr>
-
-                <tr>
-                    <td><a href="https://github.com/dogecoin/dogecoin" target="_blank">dogecoin/dogecoin</a></td>
-                    <td>15,117</td>
-                    <td>2</td>
+                    <td>4</td>
+                    <td>2014-12-24</td>
+                    <td>2025-12-19</td>
                 </tr>
 
                     </tbody>
@@ -277,24 +347,29 @@
         <h2>Contribution</h2>
         <div class="panel-row">
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contributor</th>
-                            <th>Commit Count</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                <tr>
-                    <td>Copilot</td>
-                    <td>1</td>
-                </tr>
-
-                    </tbody>
-
-                </table>
+                <div id="contributor-table-container">
+                    <table id="contributor-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Contributor</th>
+                                <th>Email</th>
+                                <th>Commit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contributor-table-tbody">
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span id="contributor-pagination-info">Showing 1-10 of 65</span>
+                        </div>
+                        <div>
+                            <button id="contributor-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                            <button id="contributor-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="chart-container">
                 <canvas id="commitChart"></canvas>
@@ -303,7 +378,7 @@
     </div>
 
     <script>
-        
+
         new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
@@ -316,7 +391,7 @@
                     borderWidth: 2,
                     borderRadius: 4
                 }, {
-                    label: 'Secondary Consumers',
+                    label: 'Transitive Consumers',
                     data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     backgroundColor: 'rgba(16, 185, 129, 0.7)',
                     borderColor: 'rgba(16, 185, 129, 1)',
@@ -410,15 +485,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
                 labels: ["2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
-                    label: 'Usage Count',
-                    data: [17, 13, 25, 83, 192, 436, 715, 639, 765, 677, 629, 584, 548, 923, 1135, 1083, 907, 1368],
+                    label: 'Total Usage',
+                    data: [17, 13, 26, 83, 195, 442, 729, 645, 775, 704, 679, 667, 680, 1055, 1259, 1251, 1090, 1746],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -438,15 +513,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.53", "1.54", "1.55", "1.56", "1.57", "1.58", "1.59", "1.60", "1.62", "1.63", "1.64", "1.65", "1.66", "1.67", "1.70", "1.72", "1.74", "1.75", "1.76", "1.81", "1.83", "1.84", "1.85", "1.88", "1.89", "1.90"],
+                labels: ["1.32.0", "1.33.0", "1.33.1", "1.34.0", "1.34.1", "1.35.0", "1.36.0", "1.37.0", "1.38.0", "1.39.0", "1.40.0", "1.41.0", "1.42.0", "1.43.0", "1.44.0", "1.45.0", "1.46.0", "1.46.1", "1.47.0", "1.48.0", "1.49.0", "1.50.0", "1.51.0", "1.52.0", "1.53.0", "1.54.0", "1.55.0", "1.56.0", "1.57.0", "1.58.0", "1.59.0", "1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [1, 4, 10, 1, 16, 5, 5, 1, 3, 1, 11, 4, 12, 9, 1, 1, 1, 6, 7, 1, 8, 12, 10, 7, 6, 1],
+                    data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4, 10, 1, 16, 5, 5, 1, 0, 3, 1, 11, 4, 0, 12, 9, 0, 0, 1, 0, 1, 0, 1, 6, 7, 0, 0, 0, 0, 1, 0, 8, 12, 10, 0, 0, 7, 6],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -466,7 +541,82 @@
                 }
             }
         });
-    
+
+
+        const contributorData = [{"version": "1.90.0", "person": "bmagistro", "email_address": "koncept1@gmail.com", "commit_count": 2}, {"version": "1.90.0", "person": "Flamefire", "email_address": "Flamefire@users.noreply.github.com", "commit_count": 1}, {"version": "1.90.0", "person": "ivanpanch", "email_address": "ivanpan3@gmail.com", "commit_count": 1}, {"version": "1.90.0", "person": "Marcos Simental", "email_address": "marcos.simental.magana@intel.com", "commit_count": 1}, {"version": "1.90.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 1}, {"version": "1.89.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 6}, {"version": "1.89.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 1}, {"version": "1.86.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 9}, {"version": "1.86.0", "person": "Lukas Friembichler", "email_address": "76054616+appcodegen@users.noreply.github.com", "commit_count": 1}, {"version": "1.85.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 5}, {"version": "1.85.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 3}, {"version": "1.85.0", "person": "Andrey Semashev", "email_address": "andrey.semashev@gmail.com", "commit_count": 2}, {"version": "1.85.0", "person": "Sylvain Joubert", "email_address": "joubert.sy@gmail.com", "commit_count": 1}, {"version": "1.85.0", "person": "Markus Klemm", "email_address": "markus@markusklemm.net", "commit_count": 1}, {"version": "1.84.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 8}, {"version": "1.82.0", "person": "Ed Catmur", "email_address": "ed@catmur.uk", "commit_count": 1}, {"version": "1.77.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 6}, {"version": "1.77.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 1}, {"version": "1.76.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 6}, {"version": "1.75.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 1}, {"version": "1.73.0", "person": "Mateusz Loskot", "email_address": "mateusz@loskot.net", "commit_count": 1}, {"version": "1.71.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 1}, {"version": "1.68.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 7}, {"version": "1.68.0", "person": "Eyal Rozenberg", "email_address": "eyalroz@technion.ac.il", "commit_count": 1}, {"version": "1.68.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 1}, {"version": "1.67.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 7}, {"version": "1.67.0", "person": "Emre Turkay", "email_address": "emreturkay@gmail.com", "commit_count": 2}, {"version": "1.67.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 1}, {"version": "1.67.0", "person": "James E. King III", "email_address": "jking@apache.org", "commit_count": 1}, {"version": "1.67.0", "person": "Thomas Kent", "email_address": "teeks99@yahoo.com", "commit_count": 1}, {"version": "1.65.1", "person": "Kohei Takahashi", "email_address": "flast@flast.jp", "commit_count": 1}, {"version": "1.65.1", "person": "Sylvain Joubert", "email_address": "joubert.sy@gmail.com", "commit_count": 1}, {"version": "1.65.1", "person": "Peter Dimov", "email_address": "pdimov@pdimov.com", "commit_count": 1}, {"version": "1.65.1", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 1}, {"version": "1.65.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 9}, {"version": "1.65.0", "person": "Johannes Spangenberg", "email_address": "johannes.spangenberg@hotmail.de", "commit_count": 1}, {"version": "1.65.0", "person": "John Maddock", "email_address": "john@johnmaddock.co.uk", "commit_count": 1}, {"version": "1.64.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 1}, {"version": "1.63.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 2}, {"version": "1.63.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 1}, {"version": "1.61.0", "person": "Tatsuyuki Ishi", "email_address": "ishitatsuyuki@gmail.com", "commit_count": 1}, {"version": "1.60.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 2}, {"version": "1.60.0", "person": "Isaac Dupree", "email_address": "antispam@idupree.com", "commit_count": 1}, {"version": "1.60.0", "person": "Ed Catmur", "email_address": "edward.catmur@mavensecurities.com", "commit_count": 1}, {"version": "1.60.0", "person": "Gaurav", "email_address": "g.gupta@samsung.com", "commit_count": 1}, {"version": "1.59.0", "person": "Vladimir Prus", "email_address": "vladimir@codesourcery.com", "commit_count": 3}, {"version": "1.59.0", "person": "Minmin Gong", "email_address": "gongminmin@msn.com", "commit_count": 1}, {"version": "1.59.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 1}, {"version": "1.58.0", "person": "Jurko Gospodneti\u00c4\u2021", "email_address": "jurko.gospodnetic@pke.hr", "commit_count": 5}, {"version": "1.58.0", "person": "Michael John Decker", "email_address": "mdecker6@kent.edu", "commit_count": 2}, {"version": "1.58.0", "person": "Zoey Greer", "email_address": "tempozrene@gmail.com", "commit_count": 2}, {"version": "1.58.0", "person": "Vladimir Prus", "email_address": "vladimir.prus@gmail.com", "commit_count": 2}, {"version": "1.58.0", "person": "Vladimir Prus", "email_address": "vladimir@codesourcery.com", "commit_count": 2}, {"version": "1.58.0", "person": "MarcelRaad", "email_address": "MarcelRaad@users.noreply.github.com", "commit_count": 1}, {"version": "1.58.0", "person": "Hans Hohenfeld", "email_address": "hans.hohenfeld@posteo.de", "commit_count": 1}, {"version": "1.58.0", "person": "Lauri Nurmi", "email_address": "lanurmi@iki.fi", "commit_count": 1}, {"version": "1.57.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 1}, {"version": "1.56.0", "person": "Vladimir Prus", "email_address": "vladimir@codesourcery.com", "commit_count": 6}, {"version": "1.56.0", "person": "Daniela Engert", "email_address": "dani@ngrt.de", "commit_count": 2}, {"version": "1.56.0", "person": "Michel Morin", "email_address": "mimomorin@gmail.com", "commit_count": 1}, {"version": "1.56.0", "person": "Marcel Raad", "email_address": "raad@teamviewer.com", "commit_count": 1}, {"version": "1.55.0", "person": "Stephen Kelly", "email_address": "steveire@gmail.com", "commit_count": 2}, {"version": "1.55.0", "person": "Vladimir Prus", "email_address": "ghost@cs.msu.su", "commit_count": 1}, {"version": "1.55.0", "person": "Michel Morin", "email_address": "mimomorin@gmail.com", "commit_count": 1}, {"version": "1.54.0", "person": "Vladimir Prus", "email_address": "ghost@cs.msu.su", "commit_count": 1}];
+        let contributorCurrentPage = 1;
+        const contributorItemsPerPage = 10;
+
+        function updateContributorTable() {
+            const start = (contributorCurrentPage - 1) * contributorItemsPerPage;
+            const end = start + contributorItemsPerPage;
+            const pageData = contributorData.slice(start, end);
+
+            const tbody = document.getElementById('contributor-table-tbody');
+            if (contributorData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No commit data available (boost_commit table not yet populated)</td></tr>';
+            } else {
+                tbody.innerHTML = pageData.map(contrib => {
+                    const version = contrib.version || 'N/A';
+                    const person = contrib.person || contrib.email_address || 'N/A';
+                    const email = contrib.email_address || 'N/A';
+                    const commitCount = (contrib.commit_count || 0).toLocaleString();
+
+                    return `
+                        <tr>
+                            <td>${version}</td>
+                            <td>${person}</td>
+                            <td>${email}</td>
+                            <td>${commitCount}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateContributorPaginationInfo();
+            updateContributorPaginationButtons();
+        }
+
+        function updateContributorPaginationInfo() {
+            const start = contributorData.length === 0 ? 0 : (contributorCurrentPage - 1) * contributorItemsPerPage + 1;
+            const end = Math.min(contributorCurrentPage * contributorItemsPerPage, contributorData.length);
+            const total = contributorData.length;
+            document.getElementById('contributor-pagination-info').textContent =
+                total === 0 ? 'No data available' : `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updateContributorPaginationButtons() {
+            const prevBtn = document.getElementById('contributor-prev-btn');
+            const nextBtn = document.getElementById('contributor-next-btn');
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+
+            prevBtn.disabled = contributorCurrentPage === 1 || contributorData.length === 0;
+            nextBtn.disabled = contributorCurrentPage >= totalPages || contributorData.length === 0;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        document.getElementById('contributor-prev-btn').addEventListener('click', () => {
+            if (contributorCurrentPage > 1) {
+                contributorCurrentPage--;
+                updateContributorTable();
+            }
+        });
+
+        document.getElementById('contributor-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+            if (contributorCurrentPage < totalPages) {
+                contributorCurrentPage++;
+                updateContributorTable();
+            }
+        });
+
+        // Initial display
+        updateContributorTable();
+
     </script>
 </body>
 </html>

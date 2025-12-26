@@ -154,21 +154,69 @@
     </div>
     <h1>vmd</h1>
 
+    <!-- Panel 0: Overview -->
+    <div class="panel">
+        <h2>Overview</h2>
+        <div class="overview-container">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Created Version:</td>
+                                <td style="padding: 8px;">1.60.0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
+                                <td style="padding: 8px;">10</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
+                                <td style="padding: 8px;">47</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
+                                <td style="padding: 8px;">-0.751</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; color: #2d3748; font-size: 1.2em;">Library Information</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    Variadic Macro Data library.
+                </p>
+                <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version where this library was first introduced.</li>
+                    <li><strong>Total Repositories:</strong> Number of repositories (>10 stars) using this library.</li>
+                    <li><strong>Average Stars:</strong> Average GitHub stars across repositories using this library.</li>
+                    <li><strong>Activity Score:</strong> Measures adoption trends by comparing recent usage (last 5 years) to historical usage. Higher scores indicate growing adoption.</li>
+                </ul>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
         <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
-            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Showing all consumers for the latest version.
             Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
             <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
-            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3)</span> = Third level,
+            <span style="color: #ef4444; font-weight: 600;">Red (d4+)</span> = Deeper levels.
         </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -193,7 +241,9 @@
                         <tr>
                             <th>Repository</th>
                             <th>Stars</th>
-                            <th>Usage Count</th>
+                            <th>Total Usage</th>
+                            <th>Created</th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
 
@@ -203,42 +253,80 @@
                     <td><a href="https://github.com/precice/precice" target="_blank">precice/precice</a></td>
                     <td>862</td>
                     <td>1</td>
+                    <td>2015-05-22</td>
+                    <td>2025-12-17</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/think-cell/think-cell-library" target="_blank">think-cell/think-cell-library</a></td>
+                    <td>451</td>
+                    <td>1</td>
+                    <td>2014-03-03</td>
+                    <td>2024-04-26</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/sxs-collaboration/spectre" target="_blank">sxs-collaboration/spectre</a></td>
+                    <td>180</td>
+                    <td>1</td>
+                    <td>2017-04-07</td>
+                    <td>2025-12-19</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/tdv/mif" target="_blank">tdv/mif</a></td>
                     <td>48</td>
                     <td>2</td>
+                    <td>2016-08-17</td>
+                    <td>2024-04-25</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/steinwurf/boost" target="_blank">steinwurf/boost</a></td>
                     <td>36</td>
                     <td>35</td>
+                    <td>2013-05-06</td>
+                    <td>2023-08-23</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/microcai/boost" target="_blank">microcai/boost</a></td>
                     <td>23</td>
                     <td>28</td>
+                    <td>2016-08-10</td>
+                    <td>2023-03-31</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/XZiar/RayRenderer" target="_blank">XZiar/RayRenderer</a></td>
                     <td>23</td>
                     <td>1</td>
+                    <td>2017-02-05</td>
+                    <td>2025-10-13</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/koinos/koinos-chain" target="_blank">koinos/koinos-chain</a></td>
                     <td>15</td>
                     <td>1</td>
+                    <td>2020-04-28</td>
+                    <td>2025-10-30</td>
+                </tr>
+
+                <tr>
+                    <td><a href="https://github.com/usnistgov/REFPROP-manager" target="_blank">usnistgov/REFPROP-manager</a></td>
+                    <td>14</td>
+                    <td>1</td>
+                    <td>2018-02-28</td>
+                    <td>2024-11-19</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/ousttrue/usd_cpp_samples" target="_blank">ousttrue/usd_cpp_samples</a></td>
                     <td>13</td>
                     <td>4</td>
+                    <td>2020-09-25</td>
+                    <td>2023-07-18</td>
                 </tr>
 
                     </tbody>
@@ -256,23 +344,29 @@
         <h2>Contribution</h2>
         <div class="panel-row">
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contributor</th>
-                            <th>Commit Count</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
-                </tr>
-
-                    </tbody>
-
-                </table>
+                <div id="contributor-table-container">
+                    <table id="contributor-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Contributor</th>
+                                <th>Email</th>
+                                <th>Commit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contributor-table-tbody">
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span id="contributor-pagination-info">Showing 1-10 of 33</span>
+                        </div>
+                        <div>
+                            <button id="contributor-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                            <button id="contributor-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="chart-container">
                 <canvas id="commitChart"></canvas>
@@ -281,7 +375,7 @@
     </div>
 
     <script>
-        
+
         new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
@@ -294,7 +388,7 @@
                     borderWidth: 2,
                     borderRadius: 4
                 }, {
-                    label: 'Secondary Consumers',
+                    label: 'Transitive Consumers',
                     data: [0, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
                     backgroundColor: 'rgba(16, 185, 129, 0.7)',
                     borderColor: 'rgba(16, 185, 129, 1)',
@@ -388,15 +482,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
-                labels: ["2016", "2021", "2022", "2023", "2024"],
+                labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
-                    label: 'Usage Count',
-                    data: [35, 3, 1, 32, 1],
+                    label: 'Total Usage',
+                    data: [0, 0, 0, 0, 0, 0, 35, 0, 0, 0, 0, 3, 1, 32, 4, 0],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -416,15 +510,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.54", "1.55", "1.56", "1.57", "1.58", "1.59", "1.60", "1.62", "1.63", "1.65", "1.68", "1.69", "1.71", "1.72", "1.73", "1.74", "1.75", "1.76", "1.84", "1.85", "1.86", "1.88"],
+                labels: ["1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [30, 89, 32, 147, 19, 19, 5, 3, 5, 9, 4, 1, 11, 2, 3, 11, 3, 1, 2, 6, 1, 2],
+                    data: [19, 5, 0, 3, 5, 0, 9, 0, 0, 0, 4, 1, 0, 11, 2, 3, 11, 3, 1, 0, 0, 0, 0, 0, 0, 0, 2, 6, 1, 0, 2, 0],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -444,7 +538,82 @@
                 }
             }
         });
-    
+
+
+        const contributorData = [{"version": "1.89.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 1}, {"version": "1.89.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 1}, {"version": "1.87.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 1}, {"version": "1.86.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 6}, {"version": "1.85.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 2}, {"version": "1.77.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 1}, {"version": "1.76.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 2}, {"version": "1.76.0", "person": "Sam Darwin", "email_address": "samuel.d.darwin@gmail.com", "commit_count": 1}, {"version": "1.75.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 11}, {"version": "1.74.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 2}, {"version": "1.74.0", "person": "Sam Darwin", "email_address": "samuel.d.darwin@gmail.com", "commit_count": 1}, {"version": "1.73.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 2}, {"version": "1.72.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 11}, {"version": "1.70.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 1}, {"version": "1.69.0", "person": "Mike-Devel", "email_address": "mike.dev@gmx.de", "commit_count": 3}, {"version": "1.69.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 1}, {"version": "1.65.1", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 7}, {"version": "1.65.1", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 2}, {"version": "1.64.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 5}, {"version": "1.63.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 2}, {"version": "1.63.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 1}, {"version": "1.61.0", "person": "Edward Diener", "email_address": "eld@tropicsoft.com", "commit_count": 5}, {"version": "1.60.0", "person": "Edward Diener", "email_address": "eld@tropicsoft.com", "commit_count": 10}, {"version": "1.60.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 8}, {"version": "1.60.0", "person": "Michel Morin", "email_address": "mimomorin@gmail.com", "commit_count": 1}, {"version": "1.59.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 19}, {"version": "1.58.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 146}, {"version": "1.58.0", "person": "Edward Diener", "email_address": "eld@tropicsoft.com", "commit_count": 1}, {"version": "1.57.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 32}, {"version": "1.56.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 77}, {"version": "1.56.0", "person": "eldiener", "email_address": "xf235zn", "commit_count": 12}, {"version": "1.55.0", "person": "eldiener", "email_address": "xf235zn", "commit_count": 29}, {"version": "1.55.0", "person": "Edward Diener", "email_address": "eld@tropicsoft.com", "commit_count": 1}];
+        let contributorCurrentPage = 1;
+        const contributorItemsPerPage = 10;
+
+        function updateContributorTable() {
+            const start = (contributorCurrentPage - 1) * contributorItemsPerPage;
+            const end = start + contributorItemsPerPage;
+            const pageData = contributorData.slice(start, end);
+
+            const tbody = document.getElementById('contributor-table-tbody');
+            if (contributorData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No commit data available (boost_commit table not yet populated)</td></tr>';
+            } else {
+                tbody.innerHTML = pageData.map(contrib => {
+                    const version = contrib.version || 'N/A';
+                    const person = contrib.person || contrib.email_address || 'N/A';
+                    const email = contrib.email_address || 'N/A';
+                    const commitCount = (contrib.commit_count || 0).toLocaleString();
+
+                    return `
+                        <tr>
+                            <td>${version}</td>
+                            <td>${person}</td>
+                            <td>${email}</td>
+                            <td>${commitCount}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateContributorPaginationInfo();
+            updateContributorPaginationButtons();
+        }
+
+        function updateContributorPaginationInfo() {
+            const start = contributorData.length === 0 ? 0 : (contributorCurrentPage - 1) * contributorItemsPerPage + 1;
+            const end = Math.min(contributorCurrentPage * contributorItemsPerPage, contributorData.length);
+            const total = contributorData.length;
+            document.getElementById('contributor-pagination-info').textContent =
+                total === 0 ? 'No data available' : `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updateContributorPaginationButtons() {
+            const prevBtn = document.getElementById('contributor-prev-btn');
+            const nextBtn = document.getElementById('contributor-next-btn');
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+
+            prevBtn.disabled = contributorCurrentPage === 1 || contributorData.length === 0;
+            nextBtn.disabled = contributorCurrentPage >= totalPages || contributorData.length === 0;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        document.getElementById('contributor-prev-btn').addEventListener('click', () => {
+            if (contributorCurrentPage > 1) {
+                contributorCurrentPage--;
+                updateContributorTable();
+            }
+        });
+
+        document.getElementById('contributor-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+            if (contributorCurrentPage < totalPages) {
+                contributorCurrentPage++;
+                updateContributorTable();
+            }
+        });
+
+        // Initial display
+        updateContributorTable();
+
     </script>
 </body>
 </html>

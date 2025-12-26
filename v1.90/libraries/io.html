@@ -154,46 +154,94 @@
     </div>
     <h1>io</h1>
 
+    <!-- Panel 0: Overview -->
+    <div class="panel">
+        <h2>Overview</h2>
+        <div class="overview-container">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Created Version:</td>
+                                <td style="padding: 8px;">1.28.0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
+                                <td style="padding: 8px;">134</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
+                                <td style="padding: 8px;">387</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
+                                <td style="padding: 8px;">0.279</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; color: #2d3748; font-size: 1.2em;">Library Information</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    Utilities for the standard I/O library.
+                </p>
+                <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version where this library was first introduced.</li>
+                    <li><strong>Total Repositories:</strong> Number of repositories (>10 stars) using this library.</li>
+                    <li><strong>Average Stars:</strong> Average GitHub stars across repositories using this library.</li>
+                    <li><strong>Activity Score:</strong> Measures adoption trends by comparing recent usage (last 5 years) to historical usage. Higher scores indicate growing adoption.</li>
+                </ul>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
         <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
-            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Showing all consumers for the latest version.
             Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
             <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
-            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3)</span> = Third level,
+            <span style="color: #ef4444; font-weight: 600;">Red (d4+)</span> = Deeper levels.
         </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries</th>
                         </tr>
                     </thead>
                     <tbody>
-<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="date_time.html" style="color: #3b82f6; font-weight: bold;">date_time</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="filesystem.html" style="color: #3b82f6; font-weight: bold;">filesystem</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="log.html" style="color: #3b82f6; font-weight: bold;">log</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="process.html" style="color: #3b82f6; font-weight: bold;">process</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
-<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="random.html" style="color: #3b82f6; font-weight: bold;">random</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="serialization.html" style="color: #3b82f6; font-weight: bold;">serialization</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="spirit.html" style="color: #3b82f6; font-weight: bold;">spirit</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="test.html" style="color: #3b82f6; font-weight: bold;">test</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
-<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="thread.html" style="color: #3b82f6; font-weight: bold;">thread</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="timer.html" style="color: #3b82f6; font-weight: bold;">timer</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="units.html" style="color: #3b82f6; font-weight: bold;">units</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="utility.html" style="color: #3b82f6; font-weight: bold;">utility</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="accumulators.html" style="color: #10b981; font-weight: normal;">accumulators</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="asio.html" style="color: #10b981; font-weight: normal;">asio</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="bimap.html" style="color: #10b981; font-weight: normal;">bimap</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="chrono.html" style="color: #10b981; font-weight: normal;">chrono</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="compute.html" style="color: #10b981; font-weight: normal;">compute</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="container.html" style="color: #10b981; font-weight: normal;">container</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="contract.html" style="color: #10b981; font-weight: normal;">contract</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="convert.html" style="color: #10b981; font-weight: normal;">convert</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="coroutine.html" style="color: #10b981; font-weight: normal;">coroutine</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="dll.html" style="color: #10b981; font-weight: normal;">dll</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="fiber.html" style="color: #10b981; font-weight: normal;">fiber</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="format.html" style="color: #10b981; font-weight: normal;">format</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="functional.html" style="color: #10b981; font-weight: normal;">functional</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="fusion.html" style="color: #10b981; font-weight: normal;">fusion</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="geometry.html" style="color: #10b981; font-weight: normal;">geometry</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="gil.html" style="color: #10b981; font-weight: normal;">gil</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="graph.html" style="color: #10b981; font-weight: normal;">graph</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="graph_parallel.html" style="color: #10b981; font-weight: normal;">graph_parallel</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="histogram.html" style="color: #10b981; font-weight: normal;">histogram</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="icl.html" style="color: #10b981; font-weight: normal;">icl</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="iostreams.html" style="color: #10b981; font-weight: normal;">iostreams</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="iterator.html" style="color: #10b981; font-weight: normal;">iterator</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="lambda.html" style="color: #10b981; font-weight: normal;">lambda</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="local_function.html" style="color: #10b981; font-weight: normal;">local_function</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="locale.html" style="color: #10b981; font-weight: normal;">locale</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="math.html" style="color: #10b981; font-weight: normal;">math</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="mpi.html" style="color: #10b981; font-weight: normal;">mpi</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="mpl.html" style="color: #10b981; font-weight: normal;">mpl</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="mqtt5.html" style="color: #10b981; font-weight: normal;">mqtt5</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="msm.html" style="color: #10b981; font-weight: normal;">msm</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="multi_index.html" style="color: #10b981; font-weight: normal;">multi_index</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="multiprecision.html" style="color: #10b981; font-weight: normal;">multiprecision</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="nowide.html" style="color: #10b981; font-weight: normal;">nowide</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="numeric_conversion.html" style="color: #10b981; font-weight: normal;">numeric_conversion</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="parameter.html" style="color: #10b981; font-weight: normal;">parameter</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="phoenix.html" style="color: #10b981; font-weight: normal;">phoenix</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="property_map.html" style="color: #10b981; font-weight: normal;">property_map</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="property_map_parallel.html" style="color: #10b981; font-weight: normal;">property_map_parallel</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="property_tree.html" style="color: #10b981; font-weight: normal;">property_tree</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="proto.html" style="color: #10b981; font-weight: normal;">proto</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="python.html" style="color: #10b981; font-weight: normal;">python</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="range.html" style="color: #10b981; font-weight: normal;">range</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="rational.html" style="color: #10b981; font-weight: normal;">rational</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="statechart.html" style="color: #10b981; font-weight: normal;">statechart</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="static_string.html" style="color: #10b981; font-weight: normal;">static_string</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="type_erasure.html" style="color: #10b981; font-weight: normal;">type_erasure</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="variant.html" style="color: #10b981; font-weight: normal;">variant</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="wave.html" style="color: #10b981; font-weight: normal;">wave</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
-<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="xpressive.html" style="color: #10b981; font-weight: normal;">xpressive</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="algorithm.html" style="color: #f59e0b; font-weight: normal;">algorithm</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="assign.html" style="color: #f59e0b; font-weight: normal;">assign</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="beast.html" style="color: #f59e0b; font-weight: normal;">beast</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
-<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="cobalt.html" style="color: #f59e0b; font-weight: normal;">cobalt</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="flyweight.html" style="color: #f59e0b; font-weight: normal;">flyweight</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="foreach.html" style="color: #f59e0b; font-weight: normal;">foreach</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="function_types.html" style="color: #f59e0b; font-weight: normal;">function_types</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
-<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="hana.html" style="color: #f59e0b; font-weight: normal;">hana</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="heap.html" style="color: #f59e0b; font-weight: normal;">heap</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="interprocess.html" style="color: #f59e0b; font-weight: normal;">interprocess</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="json.html" style="color: #f59e0b; font-weight: normal;">json</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
-<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="lexical_cast.html" style="color: #f59e0b; font-weight: normal;">lexical_cast</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="lockfree.html" style="color: #f59e0b; font-weight: normal;">lockfree</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="metaparse.html" style="color: #f59e0b; font-weight: normal;">metaparse</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="multi_array.html" style="color: #f59e0b; font-weight: normal;">multi_array</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
-<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="mysql.html" style="color: #f59e0b; font-weight: normal;">mysql</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="parameter_python.html" style="color: #f59e0b; font-weight: normal;">parameter_python</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="poly_collection.html" style="color: #f59e0b; font-weight: normal;">poly_collection</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="program_options.html" style="color: #f59e0b; font-weight: normal;">program_options</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
-<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="redis.html" style="color: #f59e0b; font-weight: normal;">redis</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="signals2.html" style="color: #f59e0b; font-weight: normal;">signals2</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="sort.html" style="color: #f59e0b; font-weight: normal;">sort</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="tokenizer.html" style="color: #f59e0b; font-weight: normal;">tokenizer</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
-<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="tti.html" style="color: #f59e0b; font-weight: normal;">tti</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="parser.html" style="color: #ef4444; font-weight: normal;">parser</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="yap.html" style="color: #ef4444; font-weight: normal;">yap</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="date_time.html" style="color: #3b82f6; font-weight: bold;">date_time</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="filesystem.html" style="color: #3b82f6; font-weight: bold;">filesystem</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="random.html" style="color: #3b82f6; font-weight: bold;">random</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="serialization.html" style="color: #3b82f6; font-weight: bold;">serialization</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="spirit.html" style="color: #3b82f6; font-weight: bold;">spirit</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="test.html" style="color: #3b82f6; font-weight: bold;">test</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="timer.html" style="color: #3b82f6; font-weight: bold;">timer</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="units.html" style="color: #3b82f6; font-weight: bold;">units</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td></tr>
+<tr><td style="background-color: #3b82f620; border-left: 3px solid #3b82f6;"><a href="utility.html" style="color: #3b82f6; font-weight: bold;">utility</a> <span style="color: #3b82f6; font-size: 0.85em; opacity: 0.7;">(d1)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="accumulators.html" style="color: #10b981; font-weight: normal;">accumulators</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="asio.html" style="color: #10b981; font-weight: normal;">asio</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="bimap.html" style="color: #10b981; font-weight: normal;">bimap</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="chrono.html" style="color: #10b981; font-weight: normal;">chrono</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="coroutine.html" style="color: #10b981; font-weight: normal;">coroutine</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="dll.html" style="color: #10b981; font-weight: normal;">dll</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="fiber.html" style="color: #10b981; font-weight: normal;">fiber</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="format.html" style="color: #10b981; font-weight: normal;">format</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="functional.html" style="color: #10b981; font-weight: normal;">functional</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="gil.html" style="color: #10b981; font-weight: normal;">gil</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="graph.html" style="color: #10b981; font-weight: normal;">graph</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="graph_parallel.html" style="color: #10b981; font-weight: normal;">graph_parallel</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="icl.html" style="color: #10b981; font-weight: normal;">icl</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="iostreams.html" style="color: #10b981; font-weight: normal;">iostreams</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="local_function.html" style="color: #10b981; font-weight: normal;">local_function</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="log.html" style="color: #10b981; font-weight: normal;">log</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="math.html" style="color: #10b981; font-weight: normal;">math</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="mpl.html" style="color: #10b981; font-weight: normal;">mpl</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="msm.html" style="color: #10b981; font-weight: normal;">msm</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="nowide.html" style="color: #10b981; font-weight: normal;">nowide</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="process.html" style="color: #10b981; font-weight: normal;">process</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="property_tree.html" style="color: #10b981; font-weight: normal;">property_tree</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="rational.html" style="color: #10b981; font-weight: normal;">rational</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td></tr>
+<tr><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="static_string.html" style="color: #10b981; font-weight: normal;">static_string</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="thread.html" style="color: #10b981; font-weight: normal;">thread</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #10b98120; border-left: 3px solid #10b981;"><a href="wave.html" style="color: #10b981; font-weight: normal;">wave</a> <span style="color: #10b981; font-size: 0.85em; opacity: 0.7;">(d2)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="beast.html" style="color: #f59e0b; font-weight: normal;">beast</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="cobalt.html" style="color: #f59e0b; font-weight: normal;">cobalt</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="compute.html" style="color: #f59e0b; font-weight: normal;">compute</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="container.html" style="color: #f59e0b; font-weight: normal;">container</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="contract.html" style="color: #f59e0b; font-weight: normal;">contract</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="convert.html" style="color: #f59e0b; font-weight: normal;">convert</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="function_types.html" style="color: #f59e0b; font-weight: normal;">function_types</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="fusion.html" style="color: #f59e0b; font-weight: normal;">fusion</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="geometry.html" style="color: #f59e0b; font-weight: normal;">geometry</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="histogram.html" style="color: #f59e0b; font-weight: normal;">histogram</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="iterator.html" style="color: #f59e0b; font-weight: normal;">iterator</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="lambda.html" style="color: #f59e0b; font-weight: normal;">lambda</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="locale.html" style="color: #f59e0b; font-weight: normal;">locale</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="metaparse.html" style="color: #f59e0b; font-weight: normal;">metaparse</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="mpi.html" style="color: #f59e0b; font-weight: normal;">mpi</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="mqtt5.html" style="color: #f59e0b; font-weight: normal;">mqtt5</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="multi_array.html" style="color: #f59e0b; font-weight: normal;">multi_array</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="multi_index.html" style="color: #f59e0b; font-weight: normal;">multi_index</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="multiprecision.html" style="color: #f59e0b; font-weight: normal;">multiprecision</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="mysql.html" style="color: #f59e0b; font-weight: normal;">mysql</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="numeric_conversion.html" style="color: #f59e0b; font-weight: normal;">numeric_conversion</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="parameter.html" style="color: #f59e0b; font-weight: normal;">parameter</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="phoenix.html" style="color: #f59e0b; font-weight: normal;">phoenix</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="property_map.html" style="color: #f59e0b; font-weight: normal;">property_map</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="property_map_parallel.html" style="color: #f59e0b; font-weight: normal;">property_map_parallel</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="proto.html" style="color: #f59e0b; font-weight: normal;">proto</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="python.html" style="color: #f59e0b; font-weight: normal;">python</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="range.html" style="color: #f59e0b; font-weight: normal;">range</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="redis.html" style="color: #f59e0b; font-weight: normal;">redis</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="statechart.html" style="color: #f59e0b; font-weight: normal;">statechart</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="type_erasure.html" style="color: #f59e0b; font-weight: normal;">type_erasure</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="variant.html" style="color: #f59e0b; font-weight: normal;">variant</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td><td style="background-color: #f59e0b20; border-left: 3px solid #f59e0b;"><a href="xpressive.html" style="color: #f59e0b; font-weight: normal;">xpressive</a> <span style="color: #f59e0b; font-size: 0.85em; opacity: 0.7;">(d3)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="algorithm.html" style="color: #ef4444; font-weight: normal;">algorithm</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="assign.html" style="color: #ef4444; font-weight: normal;">assign</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="flyweight.html" style="color: #ef4444; font-weight: normal;">flyweight</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="foreach.html" style="color: #ef4444; font-weight: normal;">foreach</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="hana.html" style="color: #ef4444; font-weight: normal;">hana</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="heap.html" style="color: #ef4444; font-weight: normal;">heap</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="interprocess.html" style="color: #ef4444; font-weight: normal;">interprocess</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="json.html" style="color: #ef4444; font-weight: normal;">json</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="lexical_cast.html" style="color: #ef4444; font-weight: normal;">lexical_cast</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="lockfree.html" style="color: #ef4444; font-weight: normal;">lockfree</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="parameter_python.html" style="color: #ef4444; font-weight: normal;">parameter_python</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="poly_collection.html" style="color: #ef4444; font-weight: normal;">poly_collection</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="program_options.html" style="color: #ef4444; font-weight: normal;">program_options</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="signals2.html" style="color: #ef4444; font-weight: normal;">signals2</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="sort.html" style="color: #ef4444; font-weight: normal;">sort</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="tokenizer.html" style="color: #ef4444; font-weight: normal;">tokenizer</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td></tr>
+<tr><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="tti.html" style="color: #ef4444; font-weight: normal;">tti</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d4)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="parser.html" style="color: #ef4444; font-weight: normal;">parser</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td style="background-color: #ef444420; border-left: 3px solid #ef4444;"><a href="yap.html" style="color: #ef4444; font-weight: normal;">yap</a> <span style="color: #ef4444; font-size: 0.85em; opacity: 0.7;">(d5)</span></td><td></td></tr>
 
                     </tbody>
                 </table>
@@ -214,7 +262,9 @@
                         <tr>
                             <th>Repository</th>
                             <th>Stars</th>
-                            <th>Usage Count</th>
+                            <th>Total Usage</th>
+                            <th>Created</th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
 
@@ -224,60 +274,80 @@
                     <td><a href="https://github.com/ethereum/solidity" target="_blank">ethereum/solidity</a></td>
                     <td>25,442</td>
                     <td>1</td>
+                    <td>2015-08-17</td>
+                    <td>2025-12-17</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/scylladb/scylla" target="_blank">scylladb/scylla</a></td>
                     <td>15,146</td>
                     <td>2</td>
+                    <td>2014-12-24</td>
+                    <td>2025-12-19</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/android/ndk-samples" target="_blank">android/ndk-samples</a></td>
                     <td>10,424</td>
                     <td>1</td>
+                    <td>2015-05-16</td>
+                    <td>2025-10-03</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/IntelRealSense/librealsense" target="_blank">IntelRealSense/librealsense</a></td>
                     <td>8,399</td>
                     <td>1</td>
+                    <td>2015-11-17</td>
+                    <td>2025-12-16</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/Project-OSRM/osrm-backend" target="_blank">Project-OSRM/osrm-backend</a></td>
                     <td>7,306</td>
                     <td>1</td>
+                    <td>2011-09-22</td>
+                    <td>2025-11-30</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/facebook/redex" target="_blank">facebook/redex</a></td>
-                    <td>6,228</td>
+                    <td>6,235</td>
                     <td>2</td>
+                    <td>2016-03-24</td>
+                    <td>2025-12-22</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/ethz-asl/kalibr" target="_blank">ethz-asl/kalibr</a></td>
                     <td>5,113</td>
                     <td>1</td>
+                    <td>2014-05-29</td>
+                    <td>2024-03-30</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/ethereum/cpp-ethereum" target="_blank">ethereum/cpp-ethereum</a></td>
                     <td>3,981</td>
                     <td>1</td>
+                    <td>2013-12-26</td>
+                    <td>2024-03-05</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/The-OpenROAD-Project/OpenROAD" target="_blank">The-OpenROAD-Project/OpenROAD</a></td>
                     <td>2,326</td>
                     <td>2</td>
+                    <td>2019-10-28</td>
+                    <td>2025-12-17</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/DanielSWolf/rhubarb-lip-sync" target="_blank">DanielSWolf/rhubarb-lip-sync</a></td>
                     <td>2,318</td>
                     <td>1</td>
+                    <td>2015-10-19</td>
+                    <td>2025-10-10</td>
                 </tr>
 
                     </tbody>
@@ -295,23 +365,29 @@
         <h2>Contribution</h2>
         <div class="panel-row">
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contributor</th>
-                            <th>Commit Count</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
-                </tr>
-
-                    </tbody>
-
-                </table>
+                <div id="contributor-table-container">
+                    <table id="contributor-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Contributor</th>
+                                <th>Email</th>
+                                <th>Commit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contributor-table-tbody">
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span id="contributor-pagination-info">Showing 1-10 of 21</span>
+                        </div>
+                        <div>
+                            <button id="contributor-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                            <button id="contributor-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="chart-container">
                 <canvas id="commitChart"></canvas>
@@ -320,20 +396,20 @@
     </div>
 
     <script>
-        
+
         new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
                 labels: ["1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Primary Consumers',
-                    data: [8, 9, 9, 9, 9, 9, 9, 12, 12, 12, 12, 12, 12, 12, 13, 13, 13, 13, 13, 13, 12, 12, 12, 12, 12],
+                    data: [4, 5, 5, 5, 5, 5, 5, 7, 8, 8, 8, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9],
                     backgroundColor: 'rgba(59, 130, 246, 0.7)',
                     borderColor: 'rgba(59, 130, 246, 1)',
                     borderWidth: 2,
                     borderRadius: 4
                 }, {
-                    label: 'Secondary Consumers',
+                    label: 'Transitive Consumers',
                     data: [62, 62, 62, 54, 55, 54, 53, 87, 87, 88, 88, 87, 87, 86, 86, 87, 88, 88, 89, 89, 88, 87, 88, 87, 87],
                     backgroundColor: 'rgba(16, 185, 129, 0.7)',
                     borderColor: 'rgba(16, 185, 129, 1)',
@@ -427,15 +503,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
                 labels: ["2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
-                    label: 'Usage Count',
-                    data: [2, 9, 3, 15, 7, 24, 17, 24, 6, 10, 23, 75, 83, 26, 27, 11, 27],
+                    label: 'Total Usage',
+                    data: [2, 9, 3, 15, 7, 24, 17, 26, 7, 10, 24, 75, 85, 28, 29, 13, 30],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -455,15 +531,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.55", "1.56", "1.62", "1.63", "1.65", "1.68", "1.69", "1.72", "1.73", "1.75", "1.76", "1.78", "1.79", "1.81", "1.83", "1.88"],
+                labels: ["1.28.0", "1.29.0", "1.30.0", "1.30.1", "1.30.2", "1.31.0", "1.32.0", "1.33.0", "1.33.1", "1.34.0", "1.34.1", "1.35.0", "1.36.0", "1.37.0", "1.38.0", "1.39.0", "1.40.0", "1.41.0", "1.42.0", "1.43.0", "1.44.0", "1.45.0", "1.46.0", "1.46.1", "1.47.0", "1.48.0", "1.49.0", "1.50.0", "1.51.0", "1.52.0", "1.53.0", "1.54.0", "1.55.0", "1.56.0", "1.57.0", "1.58.0", "1.59.0", "1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [1, 2, 2, 2, 5, 4, 1, 48, 2, 7, 2, 3, 1, 1, 1, 1],
+                    data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 2, 2, 0, 5, 0, 0, 0, 4, 1, 0, 0, 48, 2, 0, 7, 2, 0, 3, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -483,7 +559,82 @@
                 }
             }
         });
-    
+
+
+        const contributorData = [{"version": "1.89.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 1}, {"version": "1.84.0", "person": "Lastique", "email_address": "Lastique@users.noreply.github.com", "commit_count": 1}, {"version": "1.82.0", "person": "Lastique", "email_address": "Lastique@users.noreply.github.com", "commit_count": 1}, {"version": "1.80.0", "person": "Glen Fernandes", "email_address": "glen.fernandes@gmail.com", "commit_count": 1}, {"version": "1.79.0", "person": "Glen Fernandes", "email_address": "glen.fernandes@gmail.com", "commit_count": 3}, {"version": "1.77.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 2}, {"version": "1.76.0", "person": "Glen Fernandes", "email_address": "glen.fernandes@gmail.com", "commit_count": 6}, {"version": "1.76.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 1}, {"version": "1.74.0", "person": "Glen Fernandes", "email_address": "glen.fernandes@gmail.com", "commit_count": 2}, {"version": "1.73.0", "person": "Glen Fernandes", "email_address": "glen.fernandes@gmail.com", "commit_count": 47}, {"version": "1.73.0", "person": "Michael Caisse", "email_address": "mcaisse@ciere.com", "commit_count": 1}, {"version": "1.70.0", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 1}, {"version": "1.69.0", "person": "Mike-Devel", "email_address": "mike.dev@gmx.de", "commit_count": 3}, {"version": "1.69.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 1}, {"version": "1.65.1", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 3}, {"version": "1.65.1", "person": "Edward Diener", "email_address": "eldlistmailingz@tropicsoft.com", "commit_count": 2}, {"version": "1.64.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 2}, {"version": "1.63.0", "person": "Edward Diener", "email_address": "eldiener@tropicsoft.com", "commit_count": 2}, {"version": "1.57.0", "person": "CTMacUser", "email_address": "CTMacUser@users.noreply.github.com", "commit_count": 1}, {"version": "1.57.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 1}, {"version": "1.56.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 1}];
+        let contributorCurrentPage = 1;
+        const contributorItemsPerPage = 10;
+
+        function updateContributorTable() {
+            const start = (contributorCurrentPage - 1) * contributorItemsPerPage;
+            const end = start + contributorItemsPerPage;
+            const pageData = contributorData.slice(start, end);
+
+            const tbody = document.getElementById('contributor-table-tbody');
+            if (contributorData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No commit data available (boost_commit table not yet populated)</td></tr>';
+            } else {
+                tbody.innerHTML = pageData.map(contrib => {
+                    const version = contrib.version || 'N/A';
+                    const person = contrib.person || contrib.email_address || 'N/A';
+                    const email = contrib.email_address || 'N/A';
+                    const commitCount = (contrib.commit_count || 0).toLocaleString();
+
+                    return `
+                        <tr>
+                            <td>${version}</td>
+                            <td>${person}</td>
+                            <td>${email}</td>
+                            <td>${commitCount}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateContributorPaginationInfo();
+            updateContributorPaginationButtons();
+        }
+
+        function updateContributorPaginationInfo() {
+            const start = contributorData.length === 0 ? 0 : (contributorCurrentPage - 1) * contributorItemsPerPage + 1;
+            const end = Math.min(contributorCurrentPage * contributorItemsPerPage, contributorData.length);
+            const total = contributorData.length;
+            document.getElementById('contributor-pagination-info').textContent =
+                total === 0 ? 'No data available' : `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updateContributorPaginationButtons() {
+            const prevBtn = document.getElementById('contributor-prev-btn');
+            const nextBtn = document.getElementById('contributor-next-btn');
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+
+            prevBtn.disabled = contributorCurrentPage === 1 || contributorData.length === 0;
+            nextBtn.disabled = contributorCurrentPage >= totalPages || contributorData.length === 0;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        document.getElementById('contributor-prev-btn').addEventListener('click', () => {
+            if (contributorCurrentPage > 1) {
+                contributorCurrentPage--;
+                updateContributorTable();
+            }
+        });
+
+        document.getElementById('contributor-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+            if (contributorCurrentPage < totalPages) {
+                contributorCurrentPage++;
+                updateContributorTable();
+            }
+        });
+
+        // Initial display
+        updateContributorTable();
+
     </script>
 </body>
 </html>

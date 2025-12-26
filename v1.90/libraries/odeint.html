@@ -154,27 +154,75 @@
     </div>
     <h1>odeint</h1>
 
+    <!-- Panel 0: Overview -->
+    <div class="panel">
+        <h2>Overview</h2>
+        <div class="overview-container">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Created Version:</td>
+                                <td style="padding: 8px;">1.53.0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
+                                <td style="padding: 8px;">0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
+                                <td style="padding: 8px;">0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
+                                <td style="padding: 8px;">0.000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; color: #2d3748; font-size: 1.2em;">Library Information</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    Solving ordinary differential equations.
+                </p>
+                <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version where this library was first introduced.</li>
+                    <li><strong>Total Repositories:</strong> Number of repositories (>10 stars) using this library.</li>
+                    <li><strong>Average Stars:</strong> Average GitHub stars across repositories using this library.</li>
+                    <li><strong>Activity Score:</strong> Measures adoption trends by comparing recent usage (last 5 years) to historical usage. Higher scores indicate growing adoption.</li>
+                </ul>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
         <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
-            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Showing all consumers for the latest version.
             Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
             <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
-            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3)</span> = Third level,
+            <span style="color: #ef4444; font-weight: 600;">Red (d4+)</span> = Deeper levels.
         </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries</th>
                         </tr>
                     </thead>
                     <tbody>
 
                 <tr>
-                    <td colspan="4">No consumer libraries found</td>
+                    <td colspan="4">No dependencies found</td>
                 </tr>
 
                     </tbody>
@@ -196,14 +244,16 @@
                         <tr>
                             <th>Repository</th>
                             <th>Stars</th>
-                            <th>Usage Count</th>
+                            <th>Total Usage</th>
+                            <th>Created</th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
 
                     <tbody>
 
                 <tr>
-                    <td colspan="3">No repositories found</td>
+                    <td colspan="5">No repositories found</td>
                 </tr>
 
                     </tbody>
@@ -221,23 +271,29 @@
         <h2>Contribution</h2>
         <div class="panel-row">
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contributor</th>
-                            <th>Commit Count</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
-                </tr>
-
-                    </tbody>
-
-                </table>
+                <div id="contributor-table-container">
+                    <table id="contributor-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Contributor</th>
+                                <th>Email</th>
+                                <th>Commit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contributor-table-tbody">
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span id="contributor-pagination-info">Showing 1-10 of 71</span>
+                        </div>
+                        <div>
+                            <button id="contributor-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                            <button id="contributor-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="chart-container">
                 <canvas id="commitChart"></canvas>
@@ -246,7 +302,7 @@
     </div>
 
     <script>
-        
+
         new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
@@ -259,7 +315,7 @@
                     borderWidth: 2,
                     borderRadius: 4
                 }, {
-                    label: 'Secondary Consumers',
+                    label: 'Transitive Consumers',
                     data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     backgroundColor: 'rgba(16, 185, 129, 0.7)',
                     borderColor: 'rgba(16, 185, 129, 1)',
@@ -353,14 +409,14 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
                 labels: [],
                 datasets: [{
-                    label: 'Usage Count',
+                    label: 'Total Usage',
                     data: [],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
@@ -381,15 +437,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.53", "1.54", "1.55", "1.56", "1.57", "1.58", "1.59", "1.60", "1.61", "1.63", "1.64", "1.65", "1.66", "1.69", "1.70", "1.80", "1.83", "1.84", "1.85", "1.86", "1.89"],
+                labels: ["1.53.0", "1.54.0", "1.55.0", "1.56.0", "1.57.0", "1.58.0", "1.59.0", "1.60.0", "1.61.0", "1.62.0", "1.63.0", "1.64.0", "1.65.0", "1.65.1", "1.66.0", "1.67.0", "1.68.0", "1.69.0", "1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [34, 114, 160, 22, 63, 36, 55, 13, 3, 3, 49, 5, 8, 3, 3, 1, 1, 41, 15, 2, 17],
+                    data: [0, 34, 114, 160, 22, 63, 36, 55, 13, 3, 0, 3, 49, 5, 0, 8, 0, 0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 41, 15, 2, 0, 0, 17],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -409,7 +465,82 @@
                 }
             }
         });
-    
+
+
+        const contributorData = [{"version": "1.90.0", "person": "Matt Borland", "email_address": "matt@mattborland.com", "commit_count": 13}, {"version": "1.90.0", "person": "Richard Thomson", "email_address": "legalize@xmission.com", "commit_count": 4}, {"version": "1.87.0", "person": "René Ferdinand Rivera Morell", "email_address": "grafikrobot@gmail.com", "commit_count": 1}, {"version": "1.87.0", "person": "Matt Borland", "email_address": "matt@mattborland.com", "commit_count": 1}, {"version": "1.86.0", "person": "Matt Borland", "email_address": "matt@mattborland.com", "commit_count": 7}, {"version": "1.86.0", "person": "magni-mar", "email_address": "135731785+magni-mar@users.noreply.github.com", "commit_count": 4}, {"version": "1.86.0", "person": "NAThompson", "email_address": "NAThompson@users.noreply.github.com", "commit_count": 4}, {"version": "1.85.0", "person": "Matt Borland", "email_address": "matt@mattborland.com", "commit_count": 39}, {"version": "1.85.0", "person": "\u8d75\u4e30 (Zhao Feng)", "email_address": "616545598@qq.com", "commit_count": 1}, {"version": "1.85.0", "person": "lhofmann", "email_address": "lhofmann@users.noreply.github.com", "commit_count": 1}, {"version": "1.84.0", "person": "Peter Dimov", "email_address": "pdimov@gmail.com", "commit_count": 1}, {"version": "1.81.0", "person": "tnagler", "email_address": "thomas.nagler@tum.de", "commit_count": 1}, {"version": "1.71.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 3}, {"version": "1.70.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 2}, {"version": "1.70.0", "person": "Garret McGraw", "email_address": "jetaimed@gmail.com", "commit_count": 1}, {"version": "1.67.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 5}, {"version": "1.67.0", "person": "Markus Friedrich", "email_address": "friedrich.at.gc@googlemail.com", "commit_count": 2}, {"version": "1.67.0", "person": "Valentin Hartmann", "email_address": "vhartman@student.ethz.ch", "commit_count": 1}, {"version": "1.65.1", "person": "Pavel I. Kryukov", "email_address": "kryukov@frtk.ru", "commit_count": 2}, {"version": "1.65.1", "person": "Valentin Hartmann", "email_address": "vhartman@student.ethz.ch", "commit_count": 2}, {"version": "1.65.1", "person": "corell-hd", "email_address": "32755564+corell-hd@users.noreply.github.com", "commit_count": 1}, {"version": "1.65.0", "person": "Valentin Hartmann", "email_address": "vhartman@student.ethz.ch", "commit_count": 34}, {"version": "1.65.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 11}, {"version": "1.65.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 2}, {"version": "1.65.0", "person": "ds283", "email_address": "D.Seery@sussex.ac.uk", "commit_count": 1}, {"version": "1.65.0", "person": "Denis Demidov", "email_address": "dennis.demidov@gmail.com", "commit_count": 1}, {"version": "1.64.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 2}, {"version": "1.64.0", "person": "Tim Keitt", "email_address": "tkeitt@gmail.com", "commit_count": 1}, {"version": "1.62.0", "person": "Kohei Takahashi", "email_address": "flast@flast.jp", "commit_count": 2}, {"version": "1.62.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 1}, {"version": "1.61.0", "person": "Martin Langer", "email_address": "martinlanger@online.de", "commit_count": 5}, {"version": "1.61.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 3}, {"version": "1.61.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 3}, {"version": "1.61.0", "person": "akumta", "email_address": "aparna.kumta@oracle.com", "commit_count": 1}, {"version": "1.61.0", "person": "OGAWA KenIchi", "email_address": "kenichi@ice.email.ne.jp", "commit_count": 1}, {"version": "1.60.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 43}, {"version": "1.60.0", "person": "Ilja", "email_address": "ilja.j.honkonen@nasa.gov", "commit_count": 5}, {"version": "1.60.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 5}, {"version": "1.60.0", "person": "Bj\u00f6rn Dahlgren", "email_address": "bjodah@gmail.com", "commit_count": 2}, {"version": "1.59.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 28}, {"version": "1.59.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 4}, {"version": "1.59.0", "person": "ds283", "email_address": "D.Seery@sussex.ac.uk", "commit_count": 3}, {"version": "1.59.0", "person": "Arash-codedev", "email_address": "Arash-codedev@users.noreply.github.com", "commit_count": 1}, {"version": "1.58.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 37}, {"version": "1.58.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 16}, {"version": "1.58.0", "person": "GregorDeCillia", "email_address": "de.cillia.gregor@gmail.com", "commit_count": 7}, {"version": "1.58.0", "person": "akumta", "email_address": "aparna.kumta@oracle.com", "commit_count": 3}, {"version": "1.57.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 10}, {"version": "1.57.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 9}, {"version": "1.57.0", "person": "John Maddock", "email_address": "john@johnmaddock.co.uk", "commit_count": 2}, {"version": "1.57.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 1}, {"version": "1.56.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 84}, {"version": "1.56.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 49}, {"version": "1.56.0", "person": "alankelly", "email_address": "alankelly@live.com", "commit_count": 20}, {"version": "1.56.0", "person": "Daniel James", "email_address": "daniel@calamity.org.uk", "commit_count": 2}, {"version": "1.56.0", "person": "Denis Demidov", "email_address": "ddemidov@ksu.ru", "commit_count": 2}, {"version": "1.56.0", "person": "Denis Demidov", "email_address": "dennis.demidov@gmail.com", "commit_count": 1}, {"version": "1.56.0", "person": "slayoo", "email_address": "slayoo@igf.fuw.edu.pl", "commit_count": 1}, {"version": "1.56.0", "person": "wschreyer", "email_address": "w.schreyer@tum.de", "commit_count": 1}, {"version": "1.55.0", "person": "Pascal Germroth", "email_address": "pascal@ensieve.org", "commit_count": 42}, {"version": "1.55.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 39}, {"version": "1.55.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 21}, {"version": "1.55.0", "person": "Denis Demidov", "email_address": "ddemidov@ksu.ru", "commit_count": 6}, {"version": "1.55.0", "person": "Beman Dawes", "email_address": "bdawes@acm.org", "commit_count": 2}, {"version": "1.55.0", "person": "Vladimir Prus", "email_address": "ghost@cs.msu.su", "commit_count": 2}, {"version": "1.55.0", "person": "fix-copyright.py", "email_address": "null@", "commit_count": 1}, {"version": "1.55.0", "person": "Stephen Kelly", "email_address": "steveire@gmail.com", "commit_count": 1}, {"version": "1.54.0", "person": "Mario Mulansky", "email_address": "mario.mulansky@gmx.net", "commit_count": 25}, {"version": "1.54.0", "person": "Pascal Germroth", "email_address": "pascal@ensieve.org", "commit_count": 6}, {"version": "1.54.0", "person": "headmyshoulder", "email_address": "karsten.ahnert@gmx.de", "commit_count": 2}, {"version": "1.54.0", "person": "Kyle Lutz", "email_address": "kyle.r.lutz@gmail.com", "commit_count": 1}];
+        let contributorCurrentPage = 1;
+        const contributorItemsPerPage = 10;
+
+        function updateContributorTable() {
+            const start = (contributorCurrentPage - 1) * contributorItemsPerPage;
+            const end = start + contributorItemsPerPage;
+            const pageData = contributorData.slice(start, end);
+
+            const tbody = document.getElementById('contributor-table-tbody');
+            if (contributorData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No commit data available (boost_commit table not yet populated)</td></tr>';
+            } else {
+                tbody.innerHTML = pageData.map(contrib => {
+                    const version = contrib.version || 'N/A';
+                    const person = contrib.person || contrib.email_address || 'N/A';
+                    const email = contrib.email_address || 'N/A';
+                    const commitCount = (contrib.commit_count || 0).toLocaleString();
+
+                    return `
+                        <tr>
+                            <td>${version}</td>
+                            <td>${person}</td>
+                            <td>${email}</td>
+                            <td>${commitCount}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateContributorPaginationInfo();
+            updateContributorPaginationButtons();
+        }
+
+        function updateContributorPaginationInfo() {
+            const start = contributorData.length === 0 ? 0 : (contributorCurrentPage - 1) * contributorItemsPerPage + 1;
+            const end = Math.min(contributorCurrentPage * contributorItemsPerPage, contributorData.length);
+            const total = contributorData.length;
+            document.getElementById('contributor-pagination-info').textContent =
+                total === 0 ? 'No data available' : `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updateContributorPaginationButtons() {
+            const prevBtn = document.getElementById('contributor-prev-btn');
+            const nextBtn = document.getElementById('contributor-next-btn');
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+
+            prevBtn.disabled = contributorCurrentPage === 1 || contributorData.length === 0;
+            nextBtn.disabled = contributorCurrentPage >= totalPages || contributorData.length === 0;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        document.getElementById('contributor-prev-btn').addEventListener('click', () => {
+            if (contributorCurrentPage > 1) {
+                contributorCurrentPage--;
+                updateContributorTable();
+            }
+        });
+
+        document.getElementById('contributor-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+            if (contributorCurrentPage < totalPages) {
+                contributorCurrentPage++;
+                updateContributorTable();
+            }
+        });
+
+        // Initial display
+        updateContributorTable();
+
     </script>
 </body>
 </html>

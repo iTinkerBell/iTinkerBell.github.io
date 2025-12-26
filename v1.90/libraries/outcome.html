@@ -154,27 +154,75 @@
     </div>
     <h1>outcome</h1>
 
+    <!-- Panel 0: Overview -->
+    <div class="panel">
+        <h2>Overview</h2>
+        <div class="overview-container">
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start;">
+                <div>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Created Version:</td>
+                                <td style="padding: 8px;">1.70.0</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
+                                <td style="padding: 8px;">20</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
+                                <td style="padding: 8px;">1,732</td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
+                                <td style="padding: 8px;">12.868</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            <div style="padding: 20px;">
+                <h3 style="margin-top: 0; color: #2d3748; font-size: 1.2em;">Library Information</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    A deterministic failure handling library partially simulating lightweight exceptions.
+                </p>
+                <ul style="color: #666; line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Created Version:</strong> The Boost version where this library was first introduced.</li>
+                    <li><strong>Total Repositories:</strong> Number of repositories (>10 stars) using this library.</li>
+                    <li><strong>Average Stars:</strong> Average GitHub stars across repositories using this library.</li>
+                    <li><strong>Activity Score:</strong> Measures adoption trends by comparing recent usage (last 5 years) to historical usage. Higher scores indicate growing adoption.</li>
+                </ul>
+            </div>
+
+            </div>
+
+        </div>
+    </div>
+
     <!-- Panel 1: Internal Consumers -->
     <div class="panel">
         <h2>Internal Consumers</h2>
         <p style="color: #666; margin-top: 0; margin-bottom: 15px;">
-            Showing all dependencies (direct and transitive) for the latest version with consumers.
+            Showing all consumers for the latest version.
             Colors indicate depth: <span style="color: #3b82f6; font-weight: 600;">Blue (d1)</span> = Direct,
             <span style="color: #10b981; font-weight: 600;">Green (d2)</span> = Second level,
-            <span style="color: #f59e0b; font-weight: 600;">Orange (d3+)</span> = Deeper levels.
+            <span style="color: #f59e0b; font-weight: 600;">Orange (d3)</span> = Third level,
+            <span style="color: #ef4444; font-weight: 600;">Red (d4+)</span> = Deeper levels.
         </p>
         <div class="panel-row">
             <div>
                 <table>
                     <thead>
                         <tr>
-                            <th colspan="4">Consumer Libraries (Latest Version: 1.90.0)</th>
+                            <th colspan="4">Consumer Libraries</th>
                         </tr>
                     </thead>
                     <tbody>
 
                 <tr>
-                    <td colspan="4">No consumer libraries found</td>
+                    <td colspan="4">No dependencies found</td>
                 </tr>
 
                     </tbody>
@@ -196,7 +244,9 @@
                         <tr>
                             <th>Repository</th>
                             <th>Stars</th>
-                            <th>Usage Count</th>
+                            <th>Total Usage</th>
+                            <th>Created</th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
 
@@ -206,60 +256,80 @@
                     <td><a href="https://github.com/scylladb/scylla" target="_blank">scylladb/scylla</a></td>
                     <td>15,146</td>
                     <td>6</td>
+                    <td>2014-12-24</td>
+                    <td>2025-12-19</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/redpanda-data/redpanda" target="_blank">redpanda-data/redpanda</a></td>
                     <td>11,421</td>
                     <td>19</td>
+                    <td>2020-11-02</td>
+                    <td>2025-12-10</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/google/orbit" target="_blank">google/orbit</a></td>
                     <td>4,308</td>
                     <td>4</td>
+                    <td>2017-09-21</td>
+                    <td>2025-01-31</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/derceg/explorerplusplus" target="_blank">derceg/explorerplusplus</a></td>
                     <td>3,022</td>
                     <td>1</td>
+                    <td>2013-08-23</td>
+                    <td>2025-12-06</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/primihub/primihub" target="_blank">primihub/primihub</a></td>
                     <td>1,361</td>
                     <td>3</td>
+                    <td>2022-03-14</td>
+                    <td>2025-10-22</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/category-labs/monad" target="_blank">category-labs/monad</a></td>
                     <td>1,162</td>
                     <td>82</td>
+                    <td>2022-12-14</td>
+                    <td>2025-12-11</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/y-scope/clp" target="_blank">y-scope/clp</a></td>
-                    <td>1,017</td>
+                    <td>1,021</td>
                     <td>2</td>
+                    <td>2021-05-31</td>
+                    <td>2025-12-21</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/lix-project/lix" target="_blank">lix-project/lix</a></td>
                     <td>482</td>
                     <td>7</td>
+                    <td>2024-02-26</td>
+                    <td>2025-12-09</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/DFIR-ORC/dfir-orc" target="_blank">DFIR-ORC/dfir-orc</a></td>
                     <td>427</td>
                     <td>1</td>
+                    <td>2019-09-20</td>
+                    <td>2025-03-26</td>
                 </tr>
 
                 <tr>
                     <td><a href="https://github.com/dpaulat/supercell-wx" target="_blank">dpaulat/supercell-wx</a></td>
-                    <td>309</td>
-                    <td>2</td>
+                    <td>310</td>
+                    <td>1</td>
+                    <td>2021-06-02</td>
+                    <td>2025-12-19</td>
                 </tr>
 
                     </tbody>
@@ -277,23 +347,29 @@
         <h2>Contribution</h2>
         <div class="panel-row">
             <div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Contributor</th>
-                            <th>Commit Count</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-
-                <tr>
-                    <td colspan="2">No commit data available (boost_commit table not yet populated)</td>
-                </tr>
-
-                    </tbody>
-
-                </table>
+                <div id="contributor-table-container">
+                    <table id="contributor-table">
+                        <thead>
+                            <tr>
+                                <th>Version</th>
+                                <th>Contributor</th>
+                                <th>Email</th>
+                                <th>Commit Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="contributor-table-tbody">
+                        </tbody>
+                    </table>
+                    <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <span id="contributor-pagination-info">Showing 1-10 of 122</span>
+                        </div>
+                        <div>
+                            <button id="contributor-prev-btn" style="padding: 8px 16px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
+                            <button id="contributor-next-btn" style="padding: 8px 16px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Next</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="chart-container">
                 <canvas id="commitChart"></canvas>
@@ -302,7 +378,7 @@
     </div>
 
     <script>
-        
+
         new Chart(document.getElementById('dependentsChart'), {
             type: 'bar',
             data: {
@@ -315,7 +391,7 @@
                     borderWidth: 2,
                     borderRadius: 4
                 }, {
-                    label: 'Secondary Consumers',
+                    label: 'Transitive Consumers',
                     data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                     backgroundColor: 'rgba(16, 185, 129, 0.7)',
                     borderColor: 'rgba(16, 185, 129, 1)',
@@ -409,15 +485,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
-                labels: ["2018", "2021", "2022", "2023", "2024", "2025"],
+                labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
                 datasets: [{
-                    label: 'Usage Count',
-                    data: [1, 1, 12, 3, 11, 217],
+                    label: 'Total Usage',
+                    data: [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 12, 3, 12, 226],
                     backgroundColor: 'rgba(54, 162, 235, 0.6)',
                     borderColor: 'rgba(54, 162, 235, 1)',
                     borderWidth: 1
@@ -437,15 +513,15 @@
                 }
             }
         });
-    
-        
+
+
         new Chart(document.getElementById('commitChart'), {
             type: 'bar',
             data: {
-                labels: ["1.55", "1.56", "1.57", "1.58", "1.59", "1.60", "1.61", "1.62", "1.63", "1.64", "1.65", "1.66", "1.67", "1.68", "1.69", "1.70", "1.71", "1.72", "1.73", "1.74", "1.75", "1.76", "1.77", "1.78", "1.79", "1.80", "1.81", "1.82", "1.83", "1.84", "1.85", "1.86", "1.87", "1.88", "1.89"],
+                labels: ["1.70.0", "1.71.0", "1.72.0", "1.73.0", "1.74.0", "1.75.0", "1.76.0", "1.77.0", "1.78.0", "1.79.0", "1.80.0", "1.81.0", "1.82.0", "1.83.0", "1.84.0", "1.85.0", "1.86.0", "1.87.0", "1.88.0", "1.89.0", "1.90.0"],
                 datasets: [{
                     label: 'Commit Count',
-                    data: [81, 95, 50, 229, 29, 37, 176, 51, 217, 250, 216, 125, 31, 83, 460, 205, 226, 236, 247, 107, 161, 70, 68, 52, 72, 60, 21, 104, 70, 32, 22, 44, 9, 22, 3],
+                    data: [460, 205, 226, 236, 247, 107, 161, 70, 68, 52, 72, 60, 21, 104, 70, 32, 22, 44, 9, 22, 3],
                     backgroundColor: 'rgba(255, 99, 132, 0.6)',
                     borderColor: 'rgba(255, 99, 132, 1)',
                     borderWidth: 1
@@ -465,7 +541,82 @@
                 }
             }
         });
-    
+
+
+        const contributorData = [{"version": "1.90.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 2}, {"version": "1.90.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 1}, {"version": "1.89.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 20}, {"version": "1.89.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 2}, {"version": "1.88.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 8}, {"version": "1.88.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 1}, {"version": "1.87.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 39}, {"version": "1.87.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 3}, {"version": "1.87.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 2}, {"version": "1.86.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 20}, {"version": "1.86.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 2}, {"version": "1.85.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 22}, {"version": "1.85.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 10}, {"version": "1.84.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 55}, {"version": "1.84.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 11}, {"version": "1.84.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 3}, {"version": "1.84.0", "person": "Henrik S. Ga\u00dfmann", "email_address": "henrik.gassmann@adesso.de", "commit_count": 1}, {"version": "1.83.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 71}, {"version": "1.83.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 26}, {"version": "1.83.0", "person": "alandefreitas", "email_address": "alandefreitas@gmail.com", "commit_count": 3}, {"version": "1.83.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 3}, {"version": "1.83.0", "person": "Nico Rieck", "email_address": "nico.rieck@gmail.com", "commit_count": 1}, {"version": "1.82.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 12}, {"version": "1.82.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 5}, {"version": "1.82.0", "person": "BurningEnlightenment", "email_address": "BurningEnlightenment@users.noreply.github.com", "commit_count": 3}, {"version": "1.82.0", "person": "Alex Merry", "email_address": "alex.merry@nanoporetech.com", "commit_count": 1}, {"version": "1.81.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 42}, {"version": "1.81.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 9}, {"version": "1.81.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 9}, {"version": "1.80.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 53}, {"version": "1.80.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 14}, {"version": "1.80.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 3}, {"version": "1.80.0", "person": "Henrik S. Ga\u00dfmann", "email_address": "henrik.gassmann@adesso.de", "commit_count": 2}, {"version": "1.79.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 32}, {"version": "1.79.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 13}, {"version": "1.79.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 4}, {"version": "1.79.0", "person": "Henrik S. Ga\u00dfmann", "email_address": "henrik@gassmann.onl", "commit_count": 3}, {"version": "1.78.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 43}, {"version": "1.78.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 25}, {"version": "1.77.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 45}, {"version": "1.77.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 25}, {"version": "1.76.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 106}, {"version": "1.76.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 44}, {"version": "1.76.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 6}, {"version": "1.76.0", "person": "nobody", "email_address": "nobody@localhost", "commit_count": 3}, {"version": "1.76.0", "person": "Ed Catmur", "email_address": "ed@catmur.uk", "commit_count": 1}, {"version": "1.76.0", "person": "Sam Darwin", "email_address": "samuel.d.darwin@gmail.com", "commit_count": 1}, {"version": "1.75.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 76}, {"version": "1.75.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 31}, {"version": "1.74.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 111}, {"version": "1.74.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 92}, {"version": "1.74.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe5.nedproductions.biz", "commit_count": 44}, {"version": "1.73.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 109}, {"version": "1.73.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 83}, {"version": "1.73.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe5.nedproductions.biz", "commit_count": 44}, {"version": "1.72.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 104}, {"version": "1.72.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 72}, {"version": "1.72.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe5.nedproductions.biz", "commit_count": 45}, {"version": "1.72.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 4}, {"version": "1.72.0", "person": "gusrb406", "email_address": "gusrb406@naver.com", "commit_count": 1}, {"version": "1.71.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 75}, {"version": "1.71.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 66}, {"version": "1.71.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe5.nedproductions.biz", "commit_count": 45}, {"version": "1.71.0", "person": "Christos Stratopoulos", "email_address": "c.stratopoulos@gmail.com", "commit_count": 16}, {"version": "1.71.0", "person": "Andrzej Krzemie\u00c5\u201eski", "email_address": "akrzemi1@gmail.com", "commit_count": 2}, {"version": "1.71.0", "person": "cstratopoulos", "email_address": "cstratopoulos@users.noreply.github.com", "commit_count": 1}, {"version": "1.70.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 221}, {"version": "1.70.0", "person": "Jenkins nedprod CI", "email_address": "foo@nowhere", "commit_count": 122}, {"version": "1.70.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe5.nedproductions.biz", "commit_count": 95}, {"version": "1.70.0", "person": "Andrzej Krzemie\u00c5\u201eski", "email_address": "akrzemi1@gmail.com", "commit_count": 12}, {"version": "1.70.0", "person": "Luke Peterson", "email_address": "hazelnusse@gmail.com", "commit_count": 7}, {"version": "1.70.0", "person": "Ivan Matek", "email_address": "libbooze@gmail.com", "commit_count": 2}, {"version": "1.70.0", "person": "johnthagen", "email_address": "johnthagen@users.noreply.github.com", "commit_count": 1}, {"version": "1.69.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 36}, {"version": "1.69.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe5.nedproductions.biz", "commit_count": 25}, {"version": "1.69.0", "person": "Andrzej Krzemie\u00c5\u201eski", "email_address": "akrzemi1@gmail.com", "commit_count": 18}, {"version": "1.69.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 3}, {"version": "1.69.0", "person": "johnthagen", "email_address": "johnthagen@users.noreply.github.com", "commit_count": 1}, {"version": "1.68.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 21}, {"version": "1.68.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe5.nedproductions.biz", "commit_count": 8}, {"version": "1.68.0", "person": "andoks", "email_address": "andoks@users.noreply.github.com", "commit_count": 1}, {"version": "1.68.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 1}, {"version": "1.67.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 103}, {"version": "1.67.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe4.nedproductions.biz", "commit_count": 14}, {"version": "1.67.0", "person": "Andrzej Krzemie\u00c5\u201eski", "email_address": "akrzemi1@gmail.com", "commit_count": 3}, {"version": "1.67.0", "person": "menuet", "email_address": "menuet@users.noreply.github.com", "commit_count": 2}, {"version": "1.67.0", "person": "catskul", "email_address": "catskul@users.noreply.github.com", "commit_count": 1}, {"version": "1.67.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 1}, {"version": "1.67.0", "person": "Vin\u00edcius dos Santos Oliveira", "email_address": "vini.ipsmaker@gmail.com", "commit_count": 1}, {"version": "1.65.1", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 155}, {"version": "1.65.1", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe4.nedproductions.biz", "commit_count": 51}, {"version": "1.65.1", "person": "Andrzej Krzemie\u00c5\u201eski", "email_address": "akrzemi1@gmail.com", "commit_count": 7}, {"version": "1.65.1", "person": "Krzemienski", "email_address": "sg0897542@global.ad.sabre.com", "commit_count": 3}, {"version": "1.65.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 190}, {"version": "1.65.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe4.nedproductions.biz", "commit_count": 49}, {"version": "1.65.0", "person": "Andrzej Krzemie\u00c5\u201eski", "email_address": "akrzemi1@gmail.com", "commit_count": 9}, {"version": "1.65.0", "person": "Norbert Wenzel", "email_address": "norbert.wenzel@gmail.com", "commit_count": 1}, {"version": "1.65.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 1}, {"version": "1.64.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 164}, {"version": "1.64.0", "person": "Jenkins nedprod CI", "email_address": "jenkins-nedprod@europe4.nedproductions.biz", "commit_count": 49}, {"version": "1.64.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 3}, {"version": "1.64.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spam@nowhere", "commit_count": 1}, {"version": "1.63.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 48}, {"version": "1.63.0", "person": "Niall Douglas", "email_address": "s_github@nedprod.com", "commit_count": 2}, {"version": "1.63.0", "person": "Niall Douglas", "email_address": "ned@milla.nedland", "commit_count": 1}, {"version": "1.62.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 175}, {"version": "1.62.0", "person": "Niall Douglas", "email_address": "ned@milla.nedland", "commit_count": 1}, {"version": "1.61.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 24}, {"version": "1.61.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spam@nowhere", "commit_count": 13}, {"version": "1.60.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nowhere.com", "commit_count": 21}, {"version": "1.60.0", "person": "Niall Douglas", "email_address": "ned@jenkins64.nedland", "commit_count": 3}, {"version": "1.60.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nedprod.com", "commit_count": 3}, {"version": "1.60.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spam@nowhere", "commit_count": 2}, {"version": "1.59.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spam@nowhere", "commit_count": 134}, {"version": "1.59.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nowhere.com", "commit_count": 86}, {"version": "1.59.0", "person": "Niall Douglas", "email_address": "ned@jenkins64.nedland", "commit_count": 9}, {"version": "1.58.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spam@nowhere", "commit_count": 37}, {"version": "1.58.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nowhere.com", "commit_count": 13}, {"version": "1.57.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spam@nowhere", "commit_count": 94}, {"version": "1.57.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spamtrap@nowhere.com", "commit_count": 1}, {"version": "1.56.0", "person": "Niall Douglas (s [underscore] sourceforge {at} nedprod [dot] com)", "email_address": "spam@nowhere", "commit_count": 80}, {"version": "1.56.0", "person": "ned Productions Jenkins build bot", "email_address": "s_jenkins@nedprod.com", "commit_count": 1}];
+        let contributorCurrentPage = 1;
+        const contributorItemsPerPage = 10;
+
+        function updateContributorTable() {
+            const start = (contributorCurrentPage - 1) * contributorItemsPerPage;
+            const end = start + contributorItemsPerPage;
+            const pageData = contributorData.slice(start, end);
+
+            const tbody = document.getElementById('contributor-table-tbody');
+            if (contributorData.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4">No commit data available (boost_commit table not yet populated)</td></tr>';
+            } else {
+                tbody.innerHTML = pageData.map(contrib => {
+                    const version = contrib.version || 'N/A';
+                    const person = contrib.person || contrib.email_address || 'N/A';
+                    const email = contrib.email_address || 'N/A';
+                    const commitCount = (contrib.commit_count || 0).toLocaleString();
+
+                    return `
+                        <tr>
+                            <td>${version}</td>
+                            <td>${person}</td>
+                            <td>${email}</td>
+                            <td>${commitCount}</td>
+                        </tr>
+                    `;
+                }).join('');
+            }
+
+            updateContributorPaginationInfo();
+            updateContributorPaginationButtons();
+        }
+
+        function updateContributorPaginationInfo() {
+            const start = contributorData.length === 0 ? 0 : (contributorCurrentPage - 1) * contributorItemsPerPage + 1;
+            const end = Math.min(contributorCurrentPage * contributorItemsPerPage, contributorData.length);
+            const total = contributorData.length;
+            document.getElementById('contributor-pagination-info').textContent =
+                total === 0 ? 'No data available' : `Showing ${start}-${end} of ${total}`;
+        }
+
+        function updateContributorPaginationButtons() {
+            const prevBtn = document.getElementById('contributor-prev-btn');
+            const nextBtn = document.getElementById('contributor-next-btn');
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+
+            prevBtn.disabled = contributorCurrentPage === 1 || contributorData.length === 0;
+            nextBtn.disabled = contributorCurrentPage >= totalPages || contributorData.length === 0;
+
+            prevBtn.style.opacity = prevBtn.disabled ? '0.5' : '1';
+            nextBtn.style.opacity = nextBtn.disabled ? '0.5' : '1';
+            prevBtn.style.cursor = prevBtn.disabled ? 'not-allowed' : 'pointer';
+            nextBtn.style.cursor = nextBtn.disabled ? 'not-allowed' : 'pointer';
+        }
+
+        document.getElementById('contributor-prev-btn').addEventListener('click', () => {
+            if (contributorCurrentPage > 1) {
+                contributorCurrentPage--;
+                updateContributorTable();
+            }
+        });
+
+        document.getElementById('contributor-next-btn').addEventListener('click', () => {
+            const totalPages = Math.ceil(contributorData.length / contributorItemsPerPage);
+            if (contributorCurrentPage < totalPages) {
+                contributorCurrentPage++;
+                updateContributorTable();
+            }
+        });
+
+        // Initial display
+        updateContributorTable();
+
     </script>
 </body>
 </html>
