@@ -141,37 +141,9 @@
         <h1>Boost Library Usage Analysis</h1>
         <p class="subtitle">Comprehensive analysis and statistics of Boost C++ Library usage across GitHub repositories</p>
 
-        <div class="version-list">
-            <a href="v1.90/index.html" class="version-card latest">
-                <div class="version-header">
-                    <span class="version-number">Boost 1.90</span>
-                    <span class="version-badge latest">Latest</span>
-                </div>
-                <div class="version-description">
-                    View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost 1.90.
-                </div>
-            </a>
-
-            <!-- Future versions will be added here -->
-            <!-- Example for when 1.91 is available:
-            <a href="v1.91/index.html" class="version-card latest">
-                <div class="version-header">
-                    <span class="version-number">Boost 1.91</span>
-                    <span class="version-badge latest">Latest</span>
-                </div>
-                <div class="version-description">
-                    View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost 1.91.
-                </div>
-            </a>
-            <a href="v1.90/index.html" class="version-card">
-                <div class="version-header">
-                    <span class="version-number">Boost 1.90</span>
-                </div>
-                <div class="version-description">
-                    View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost 1.90.
-                </div>
-            </a>
-            -->
+        <div class="version-list" id="versionList">
+            <!-- Versions will be dynamically loaded here -->
+            <div style="color: #718096; padding: 20px;">Loading versions...</div>
         </div>
 
         <div class="footer">
@@ -180,18 +152,146 @@
     </div>
 
     <script>
+        // Dynamically load and display all version folders
+        async function loadVersions() {
+            const versionList = document.getElementById('versionList');
+
+            try {
+                // Extract owner and repo from the current URL
+                // For GitHub Pages, the URL is typically: username.github.io/repo-name or custom domain
+                const pathParts = window.location.pathname.split('/').filter(p => p && p !== 'index.html');
+
+                // Try to fetch from GitHub API
+                // Adjust these values based on your repository
+                const owner = 'iTinkerBell';  // Replace with your GitHub username
+                const repo = 'iTinkerBell.github.io';  // Replace with your repository name
+
+                const apiUrl = `https://api.github.com/repos/${owner}/${repo}/contents/`;
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch repository contents');
+                }
+
+                const contents = await response.json();
+
+                // Check for development/unreleased version
+                const developDir = contents.find(item => item.type === 'dir' && item.name === 'develop');
+
+                // Filter for released version directories (folders starting with 'v' followed by numbers)
+                const versionDirs = contents
+                    .filter(item => item.type === 'dir' && /^v\d+\.\d+/.test(item.name))
+                    .map(item => item.name);
+
+                // Sort released versions in descending order
+                const sortedVersions = versionDirs.sort((a, b) => {
+                    const versionA = a.replace('v', '').split('.').map(Number);
+                    const versionB = b.replace('v', '').split('.').map(Number);
+
+                    for (let i = 0; i < Math.max(versionA.length, versionB.length); i++) {
+                        const numA = versionA[i] || 0;
+                        const numB = versionB[i] || 0;
+                        if (numA !== numB) {
+                            return numB - numA;  // Descending order
+                        }
+                    }
+                    return 0;
+                });
+
+                // Generate version cards
+                if (sortedVersions.length === 0 && !developDir) {
+                    versionList.innerHTML = '<div style="color: #718096; padding: 20px;">No versions found</div>';
+                    return;
+                }
+
+                let html = '';
+
+                // Add development version card if it exists
+                if (developDir) {
+                    html += `
+                        <a href="develop/index.html" class="version-card" style="border-color: #f6ad55; background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%);">
+                            <div class="version-header">
+                                <span class="version-number">Development Version</span>
+                                <span class="version-badge" style="background: #ed8936;">In Progress</span>
+                            </div>
+                            <div class="version-description">
+                                View the latest unreleased development statistics. This will become the next official release.
+                            </div>
+                        </a>
+                    `;
+                }
+
+                // Add released versions
+                html += sortedVersions.map((version, index) => {
+                    const isLatest = index === 0;
+                    const versionNumber = version.replace('v', '');
+                    const latestClass = isLatest ? ' latest' : '';
+                    const latestBadge = isLatest ? '<span class="version-badge latest">Latest Release</span>' : '';
+
+                    return `
+                        <a href="${version}/index.html" class="version-card${latestClass}">
+                            <div class="version-header">
+                                <span class="version-number">Boost ${versionNumber}</span>
+                                ${latestBadge}
+                            </div>
+                            <div class="version-description">
+                                View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost ${versionNumber}.
+                            </div>
+                        </a>
+                    `;
+                }).join('');
+
+                versionList.innerHTML = html;
+
+            } catch (error) {
+                console.error('Error loading versions:', error);
+
+                // Fallback: try to detect versions from the current page structure
+                // This is a simpler approach that doesn't rely on the API
+                versionList.innerHTML = `
+                    <a href="develop/index.html" class="version-card" style="border-color: #f6ad55; background: linear-gradient(135deg, #fffaf0 0%, #feebc8 100%);">
+                        <div class="version-header">
+                            <span class="version-number">Development Version</span>
+                            <span class="version-badge" style="background: #ed8936;">In Progress</span>
+                        </div>
+                        <div class="version-description">
+                            View the latest unreleased development statistics. This will become the next official release.
+                        </div>
+                    </a>
+                    <a href="v1.90/index.html" class="version-card latest">
+                        <div class="version-header">
+                            <span class="version-number">Boost 1.90</span>
+                            <span class="version-badge latest">Latest Release</span>
+                        </div>
+                        <div class="version-description">
+                            View usage statistics, library popularity, repository analysis, and BSL-1.0 license adoption for Boost 1.90.
+                        </div>
+                    </a>
+                `;
+            }
+        }
+
+        // Load versions when page loads
+        document.addEventListener('DOMContentLoaded', loadVersions);
+
         // Auto-redirect to latest version (optional - comment out if you want users to choose)
         // Uncomment the following lines to enable auto-redirect:
         /*
-        const latestVersion = 'v1.90';
-        const currentPath = window.location.pathname;
-        if (currentPath === '/' || currentPath.endsWith('/index.html')) {
-            // Only redirect if we're at the root index
-            const pathParts = currentPath.split('/').filter(p => p);
-            if (pathParts.length === 0 || (pathParts.length === 1 && pathParts[0] === 'index.html')) {
-                window.location.href = latestVersion + '/index.html';
+        window.addEventListener('load', () => {
+            const currentPath = window.location.pathname;
+            if (currentPath === '/' || currentPath.endsWith('/index.html')) {
+                const pathParts = currentPath.split('/').filter(p => p);
+                if (pathParts.length === 0 || (pathParts.length === 1 && pathParts[0] === 'index.html')) {
+                    // Wait a moment to let versions load, then redirect to the first one
+                    setTimeout(() => {
+                        const firstLink = document.querySelector('.version-card');
+                        if (firstLink) {
+                            window.location.href = firstLink.getAttribute('href');
+                        }
+                    }, 500);
+                }
             }
-        }
+        });
         */
     </script>
 </body>
