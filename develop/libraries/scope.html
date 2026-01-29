@@ -202,19 +202,19 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Most Recent Year Repository Count:</td>
-                                <td style="padding: 8px;">0 (2025)</td>
+                                <td style="padding: 8px;">1 (2025)</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Most Used Year:</td>
-                                <td style="padding: 8px;">2013 (1 repos)</td>
+                                <td style="padding: 8px;">2016 (1 repos)</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
-                                <td style="padding: 8px;">226</td>
+                                <td style="padding: 8px;">1,442</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
-                                <td style="padding: 8px;">-0.630 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
+                                <td style="padding: 8px;">-0.290 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Internal Consumers:</td>
@@ -248,7 +248,7 @@
                     </table>
                     <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <span id="headers-pagination-info">Showing 1-10 of 12</span>
+                            <span id="headers-pagination-info">Showing 1-10 of 13</span>
                         </div>
                         <div>
                             <button id="headers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -259,7 +259,7 @@
             </div>
             <script>
                 
-        const headersData = [{"name": "boost/scope/unique_resource.hpp", "count": 13}, {"name": "boost/scope/unique_fd.hpp", "count": 5}, {"name": "boost/scope/scope_exit.hpp", "count": 4}, {"name": "boost/scope/scope_fail.hpp", "count": 3}, {"name": "boost/scope/error_code_checker.hpp", "count": 3}, {"name": "boost/scope/defer.hpp", "count": 3}, {"name": "boost/scope/detail/footer.hpp", "count": 2}, {"name": "boost/scope/detail/header.hpp", "count": 2}, {"name": "boost/scope/scope_success.hpp", "count": 2}, {"name": "boost/scope/detail/config.hpp", "count": 1}, {"name": "boost/scope/detail/type_traits/is_invocable.hpp", "count": 1}, {"name": "boost/scope/exception_checker.hpp", "count": 1}];
+        const headersData = [{"name": "boost/scope/detail/config.hpp", "count": 7}, {"name": "boost/scope/detail/footer.hpp", "count": 4}, {"name": "boost/scope/detail/header.hpp", "count": 4}, {"name": "boost/scope/scope_exit.hpp", "count": 4}, {"name": "boost/scope/unique_resource.hpp", "count": 3}, {"name": "boost/scope/unique_fd.hpp", "count": 2}, {"name": "boost/scope/detail/type_traits/conjunction.hpp", "count": 1}, {"name": "boost/scope/detail/type_traits/is_final.hpp", "count": 1}, {"name": "boost/scope/detail/type_traits/is_invocable.hpp", "count": 1}, {"name": "boost/scope/detail/type_traits/negation.hpp", "count": 1}, {"name": "boost/scope/fd_deleter.hpp", "count": 1}, {"name": "boost/scope/fd_resource_traits.hpp", "count": 1}, {"name": "boost/scope/scope_fail.hpp", "count": 1}];
         let headersCurrentPage = 1;
         const headersItemsPerPage = 10;
         let headersFilteredData = [...headersData];
@@ -573,7 +573,7 @@
                     {
                         label: 'Created Repositories',
                         type: 'line',
-                        data: [0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 0],
+                        data: [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0],
                         borderColor: 'rgba(255, 99, 132, 1)',
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -590,7 +590,7 @@
                     {
                         label: 'Header Includes (New Repos)',
                         type: 'bar',
-                        data: [0, 0, 0, 2, 0, 0, 4, 0, 1, 0, 2, 2, 0, 29, 0, 0, 0],
+                        data: [0, 0, 0, 0, 0, 0, 22, 0, 1, 0, 2, 2, 0, 0, 3, 1, 0],
                         backgroundColor: 'rgba(54, 162, 235, 0.6)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
@@ -600,7 +600,7 @@
                     {
                         label: 'Header Includes (Updated Repos)',
                         type: 'bar',
-                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 17, 12, 2],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 27, 3],
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
@@ -743,7 +743,7 @@
         });
     
         
-        const externalConsumersData = [{"name": "kismetwireless/kismet", "stars": 2024, "usage_count": 4, "created_at": "2016-09-20", "updated_at": "2026-01-19"}, {"name": "boostorg/filesystem", "stars": 173, "usage_count": 2, "created_at": "2013-01-13", "updated_at": "2025-12-30"}, {"name": "pavel-pimenov/flylinkdc-r6xx", "stars": 29, "usage_count": 2, "created_at": "2020-04-04", "updated_at": "2025-09-03"}, {"name": "cppalliance/beast2", "stars": 19, "usage_count": 2, "created_at": "2021-07-24", "updated_at": "2026-01-21"}, {"name": "boostorg/scope", "stars": 17, "usage_count": 29, "created_at": "2023-01-09", "updated_at": "2025-12-13"}, {"name": "Twon/Morpheus", "stars": 14, "usage_count": 1, "created_at": "2018-10-20", "updated_at": "2025-12-10"}];
+        const externalConsumersData = [{"name": "kismetwireless/kismet", "stars": 2024, "usage_count": 22, "created_at": "2016-09-20", "updated_at": "2026-01-19"}, {"name": "pavel-pimenov/flylinkdc-r6xx", "stars": 29, "usage_count": 2, "created_at": "2020-04-04", "updated_at": "2025-09-03"}, {"name": "cppalliance/beast2", "stars": 20, "usage_count": 2, "created_at": "2021-07-24", "updated_at": "2026-01-23"}, {"name": "LizardByte/libdisplaydevice", "stars": 17, "usage_count": 3, "created_at": "2024-04-13", "updated_at": "2026-01-17"}, {"name": "Twon/Morpheus", "stars": 14, "usage_count": 1, "created_at": "2018-10-20", "updated_at": "2025-12-10"}, {"name": "Tearnote/Playnote", "stars": 13, "usage_count": 1, "created_at": "2025-05-12", "updated_at": "2026-01-04"}];
         let externalConsumersCurrentPage = 1;
         const externalConsumersItemsPerPage = 10;
         let externalConsumersSortField = 'stars';

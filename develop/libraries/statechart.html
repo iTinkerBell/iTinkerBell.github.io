@@ -194,7 +194,7 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
-                                <td style="padding: 8px;">30</td>
+                                <td style="padding: 8px;">32</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average New Repositories Per Year:</td>
@@ -210,11 +210,11 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
-                                <td style="padding: 8px;">1,738</td>
+                                <td style="padding: 8px;">1,673</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
-                                <td style="padding: 8px;">-1.117 <span style="color: #666; font-size: 0.9em;">(declining adoption)</span></td>
+                                <td style="padding: 8px;">-1.124 <span style="color: #666; font-size: 0.9em;">(very low)</span></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Internal Consumers:</td>
@@ -259,7 +259,7 @@
             </div>
             <script>
                 
-        const headersData = [{"name": "boost/statechart/event.hpp", "count": 107}, {"name": "boost/statechart/state_machine.hpp", "count": 99}, {"name": "boost/statechart/simple_state.hpp", "count": 88}, {"name": "boost/statechart/transition.hpp", "count": 69}, {"name": "boost/statechart/custom_reaction.hpp", "count": 61}, {"name": "boost/statechart/state.hpp", "count": 56}, {"name": "boost/statechart/event_base.hpp", "count": 19}, {"name": "boost/statechart/deferral.hpp", "count": 18}, {"name": "boost/statechart/in_state_reaction.hpp", "count": 14}, {"name": "boost/statechart/deep_history.hpp", "count": 11}, {"name": "boost/statechart/asynchronous_state_machine.hpp", "count": 7}, {"name": "boost/statechart/fifo_scheduler.hpp", "count": 5}, {"name": "boost/statechart/result.hpp", "count": 5}, {"name": "boost/statechart/shallow_history.hpp", "count": 4}, {"name": "boost/statechart/fifo_worker.hpp", "count": 3}, {"name": "boost/statechart/exception_translator.hpp", "count": 3}, {"name": "boost/statechart/termination.hpp", "count": 3}, {"name": "boost/statechart/detail/memory.hpp", "count": 1}, {"name": "boost/statechart/detail/rtti_policy.hpp", "count": 1}, {"name": "boost/statechart/detail/avoid_unused_warning.hpp", "count": 1}, {"name": "boost/statechart/null_exception_translator.hpp", "count": 1}];
+        const headersData = [{"name": "boost/statechart/event.hpp", "count": 110}, {"name": "boost/statechart/state_machine.hpp", "count": 103}, {"name": "boost/statechart/simple_state.hpp", "count": 91}, {"name": "boost/statechart/transition.hpp", "count": 72}, {"name": "boost/statechart/custom_reaction.hpp", "count": 64}, {"name": "boost/statechart/state.hpp", "count": 59}, {"name": "boost/statechart/event_base.hpp", "count": 20}, {"name": "boost/statechart/deferral.hpp", "count": 18}, {"name": "boost/statechart/in_state_reaction.hpp", "count": 16}, {"name": "boost/statechart/deep_history.hpp", "count": 12}, {"name": "boost/statechart/asynchronous_state_machine.hpp", "count": 7}, {"name": "boost/statechart/result.hpp", "count": 7}, {"name": "boost/statechart/fifo_scheduler.hpp", "count": 5}, {"name": "boost/statechart/shallow_history.hpp", "count": 4}, {"name": "boost/statechart/fifo_worker.hpp", "count": 3}, {"name": "boost/statechart/exception_translator.hpp", "count": 3}, {"name": "boost/statechart/termination.hpp", "count": 3}, {"name": "boost/statechart/detail/memory.hpp", "count": 1}, {"name": "boost/statechart/detail/rtti_policy.hpp", "count": 1}, {"name": "boost/statechart/detail/avoid_unused_warning.hpp", "count": 1}, {"name": "boost/statechart/null_exception_translator.hpp", "count": 1}];
         let headersCurrentPage = 1;
         const headersItemsPerPage = 10;
         let headersFilteredData = [...headersData];
@@ -393,7 +393,7 @@
                 </table>
                 <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span id="external-consumers-pagination-info">Showing 1-10 of 30</span>
+                        <span id="external-consumers-pagination-info">Showing 1-10 of 32</span>
                     </div>
                     <div>
                         <button id="external-consumers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -566,7 +566,7 @@
                     {
                         label: 'Created Repositories',
                         type: 'line',
-                        data: [0, 5, 2, 1, 2, 5, 1, 2, 2, 3, 4, 1, 1, 1, 0, 0, 0],
+                        data: [0, 5, 2, 1, 2, 5, 3, 2, 2, 3, 4, 1, 1, 1, 0, 0, 0],
                         borderColor: 'rgba(255, 99, 132, 1)',
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -583,7 +583,7 @@
                     {
                         label: 'Header Includes (New Repos)',
                         type: 'bar',
-                        data: [0, 257, 14, 17, 11, 84, 6, 16, 28, 59, 42, 26, 7, 9, 0, 0, 0],
+                        data: [0, 257, 14, 17, 11, 84, 31, 16, 28, 59, 42, 26, 7, 9, 0, 0, 0],
                         backgroundColor: 'rgba(54, 162, 235, 0.6)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
@@ -593,7 +593,7 @@
                     {
                         label: 'Header Includes (Updated Repos)',
                         type: 'bar',
-                        data: [0, 20, 3, 24, 188, 10, 22, 16, 7, 19, 13, 15, 45, 48, 19, 100, 27],
+                        data: [0, 20, 3, 24, 188, 16, 22, 16, 7, 19, 13, 15, 45, 58, 19, 109, 27],
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
@@ -736,7 +736,7 @@
         });
     
         
-        const externalConsumersData = [{"name": "FreeCAD/FreeCAD", "stars": 27801, "usage_count": 10, "created_at": "2012-09-09", "updated_at": "2025-12-29"}, {"name": "ceph/ceph", "stars": 16032, "usage_count": 39, "created_at": "2011-09-01", "updated_at": "2026-01-02"}, {"name": "freeorion/freeorion", "stars": 962, "usage_count": 50, "created_at": "2015-03-29", "updated_at": "2026-01-12"}, {"name": "bumptop/BumpTop", "stars": 617, "usage_count": 3, "created_at": "2014-10-25", "updated_at": "2024-01-08"}, {"name": "lidaohang/ceph_study", "stars": 454, "usage_count": 7, "created_at": "2018-04-11", "updated_at": "2020-09-27"}, {"name": "robosoft-ai/SMACC2", "stars": 326, "usage_count": 21, "created_at": "2020-09-30", "updated_at": "2026-01-06"}, {"name": "robosoft-ai/SMACC", "stars": 324, "usage_count": 21, "created_at": "2018-08-10", "updated_at": "2023-04-24"}, {"name": "erikzenker/hsm", "stars": 203, "usage_count": 12, "created_at": "2019-03-18", "updated_at": "2022-12-23"}, {"name": "Eoinocal/Halite", "stars": 182, "usage_count": 8, "created_at": "2015-03-20", "updated_at": "2017-06-05"}, {"name": "byrnexu/betterquant2", "stars": 172, "usage_count": 9, "created_at": "2023-09-11", "updated_at": "2024-06-06"}, {"name": "YuvalNirkin/find_face_landmarks", "stars": 145, "usage_count": 6, "created_at": "2016-03-26", "updated_at": "2018-02-21"}, {"name": "SCIInstitute/SCIRun", "stars": 134, "usage_count": 4, "created_at": "2012-02-16", "updated_at": "2025-05-09"}, {"name": "MisterTea/HyperNEAT", "stars": 98, "usage_count": 188, "created_at": "2011-08-23", "updated_at": "2017-09-12"}, {"name": "tornadoSemi/HsmsCpp", "stars": 64, "usage_count": 7, "created_at": "2020-12-12", "updated_at": "2024-09-27"}, {"name": "Arteris-IP/tlm2-interfaces", "stars": 63, "usage_count": 5, "created_at": "2020-02-26", "updated_at": "2026-01-12"}, {"name": "tungstenfabric/tf-controller", "stars": 61, "usage_count": 32, "created_at": "2019-12-31", "updated_at": "2024-04-29"}, {"name": "OpenMPDK/KVCeph", "stars": 57, "usage_count": 15, "created_at": "2019-04-19", "updated_at": "2022-12-26"}, {"name": "cpreh/fcppt", "stars": 33, "usage_count": 2, "created_at": "2011-01-06", "updated_at": "2025-12-31"}, {"name": "kanje/bosce", "stars": 29, "usage_count": 9, "created_at": "2017-11-30", "updated_at": "2023-11-19"}, {"name": "homer6/c_reading", "stars": 25, "usage_count": 20, "created_at": "2011-04-30", "updated_at": "2011-04-30"}, {"name": "NaturalSelect/Notes", "stars": 23, "usage_count": 7, "created_at": "2022-12-10", "updated_at": "2024-11-05"}, {"name": "edubois/mvp-player", "stars": 19, "usage_count": 8, "created_at": "2014-11-23", "updated_at": "2015-09-09"}, {"name": "antonvw/wex", "stars": 15, "usage_count": 8, "created_at": "2011-04-28", "updated_at": "2026-01-18"}, {"name": "edubois/kaliscope", "stars": 15, "usage_count": 2, "created_at": "2015-03-24", "updated_at": "2015-10-29"}, {"name": "proxmox/ceph", "stars": 14, "usage_count": 9, "created_at": "2020-09-08", "updated_at": "2025-12-17"}, {"name": "Juniper/contrail-sandesh", "stars": 12, "usage_count": 17, "created_at": "2013-08-27", "updated_at": "2022-03-24"}, {"name": "sangwook236/SWL", "stars": 12, "usage_count": 12, "created_at": "2015-07-15", "updated_at": "2025-08-14"}, {"name": "sangwook236/sangwook-library", "stars": 12, "usage_count": 12, "created_at": "2015-07-15", "updated_at": "2025-08-14"}, {"name": "opencsd/csd-filesystem", "stars": 11, "usage_count": 26, "created_at": "2021-11-04", "updated_at": "2023-12-13"}, {"name": "shreaker/V2I-Traffic-Light-Demonstrator", "stars": 10, "usage_count": 7, "created_at": "2017-01-19", "updated_at": "2017-05-14"}];
+        const externalConsumersData = [{"name": "FreeCAD/FreeCAD", "stars": 27801, "usage_count": 10, "created_at": "2012-09-09", "updated_at": "2025-12-29"}, {"name": "ceph/ceph", "stars": 16032, "usage_count": 39, "created_at": "2011-09-01", "updated_at": "2026-01-02"}, {"name": "freeorion/freeorion", "stars": 962, "usage_count": 50, "created_at": "2015-03-29", "updated_at": "2026-01-12"}, {"name": "rburkholder/trade-frame", "stars": 631, "usage_count": 6, "created_at": "2016-07-24", "updated_at": "2026-01-19"}, {"name": "bumptop/BumpTop", "stars": 617, "usage_count": 3, "created_at": "2014-10-25", "updated_at": "2024-01-08"}, {"name": "lidaohang/ceph_study", "stars": 454, "usage_count": 7, "created_at": "2018-04-11", "updated_at": "2020-09-27"}, {"name": "robosoft-ai/SMACC2", "stars": 326, "usage_count": 21, "created_at": "2020-09-30", "updated_at": "2026-01-06"}, {"name": "robosoft-ai/SMACC", "stars": 324, "usage_count": 21, "created_at": "2018-08-10", "updated_at": "2023-04-24"}, {"name": "erikzenker/hsm", "stars": 203, "usage_count": 12, "created_at": "2019-03-18", "updated_at": "2022-12-23"}, {"name": "Eoinocal/Halite", "stars": 182, "usage_count": 8, "created_at": "2015-03-20", "updated_at": "2017-06-05"}, {"name": "byrnexu/betterquant2", "stars": 172, "usage_count": 9, "created_at": "2023-09-11", "updated_at": "2024-06-06"}, {"name": "YuvalNirkin/find_face_landmarks", "stars": 145, "usage_count": 6, "created_at": "2016-03-26", "updated_at": "2018-02-21"}, {"name": "SCIInstitute/SCIRun", "stars": 134, "usage_count": 4, "created_at": "2012-02-16", "updated_at": "2026-01-26"}, {"name": "MisterTea/HyperNEAT", "stars": 98, "usage_count": 188, "created_at": "2011-08-23", "updated_at": "2017-09-12"}, {"name": "tornadoSemi/HsmsCpp", "stars": 64, "usage_count": 7, "created_at": "2020-12-12", "updated_at": "2024-09-27"}, {"name": "Arteris-IP/tlm2-interfaces", "stars": 63, "usage_count": 5, "created_at": "2020-02-26", "updated_at": "2026-01-12"}, {"name": "tungstenfabric/tf-controller", "stars": 61, "usage_count": 32, "created_at": "2019-12-31", "updated_at": "2024-04-29"}, {"name": "OpenMPDK/KVCeph", "stars": 57, "usage_count": 15, "created_at": "2019-04-19", "updated_at": "2022-12-26"}, {"name": "cpreh/fcppt", "stars": 33, "usage_count": 2, "created_at": "2011-01-06", "updated_at": "2025-12-31"}, {"name": "GobySoft/goby3", "stars": 32, "usage_count": 19, "created_at": "2016-11-06", "updated_at": "2026-01-14"}, {"name": "kanje/bosce", "stars": 29, "usage_count": 9, "created_at": "2017-11-30", "updated_at": "2023-11-19"}, {"name": "homer6/c_reading", "stars": 25, "usage_count": 20, "created_at": "2011-04-30", "updated_at": "2011-04-30"}, {"name": "NaturalSelect/Notes", "stars": 23, "usage_count": 7, "created_at": "2022-12-10", "updated_at": "2024-11-05"}, {"name": "edubois/mvp-player", "stars": 19, "usage_count": 8, "created_at": "2014-11-23", "updated_at": "2015-09-09"}, {"name": "antonvw/wex", "stars": 15, "usage_count": 8, "created_at": "2011-04-28", "updated_at": "2026-01-25"}, {"name": "edubois/kaliscope", "stars": 15, "usage_count": 2, "created_at": "2015-03-24", "updated_at": "2015-10-29"}, {"name": "proxmox/ceph", "stars": 14, "usage_count": 9, "created_at": "2020-09-08", "updated_at": "2025-12-17"}, {"name": "Juniper/contrail-sandesh", "stars": 12, "usage_count": 17, "created_at": "2013-08-27", "updated_at": "2022-03-24"}, {"name": "sangwook236/SWL", "stars": 12, "usage_count": 12, "created_at": "2015-07-15", "updated_at": "2025-08-14"}, {"name": "sangwook236/sangwook-library", "stars": 12, "usage_count": 12, "created_at": "2015-07-15", "updated_at": "2025-08-14"}, {"name": "opencsd/csd-filesystem", "stars": 11, "usage_count": 26, "created_at": "2021-11-04", "updated_at": "2023-12-13"}, {"name": "shreaker/V2I-Traffic-Light-Demonstrator", "stars": 10, "usage_count": 7, "created_at": "2017-01-19", "updated_at": "2017-05-14"}];
         let externalConsumersCurrentPage = 1;
         const externalConsumersItemsPerPage = 10;
         let externalConsumersSortField = 'stars';

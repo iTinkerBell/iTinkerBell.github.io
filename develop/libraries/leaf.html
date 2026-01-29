@@ -210,11 +210,11 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
-                                <td style="padding: 8px;">370</td>
+                                <td style="padding: 8px;">480</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
-                                <td style="padding: 8px;">-0.881 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
+                                <td style="padding: 8px;">-0.735 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Internal Consumers:</td>
@@ -248,7 +248,7 @@
                     </table>
                     <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <span id="headers-pagination-info">Showing 1-10 of 12</span>
+                            <span id="headers-pagination-info">Showing 1-10 of 9</span>
                         </div>
                         <div>
                             <button id="headers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -259,7 +259,7 @@
             </div>
             <script>
                 
-        const headersData = [{"name": "boost/leaf/config.hpp", "count": 39}, {"name": "boost/leaf/exception.hpp", "count": 27}, {"name": "boost/leaf.hpp", "count": 26}, {"name": "boost/leaf/error.hpp", "count": 13}, {"name": "boost/leaf/pred.hpp", "count": 13}, {"name": "boost/leaf/handle_errors.hpp", "count": 12}, {"name": "boost/leaf/result.hpp", "count": 12}, {"name": "boost/leaf/on_error.hpp", "count": 7}, {"name": "boost/leaf/common.hpp", "count": 3}, {"name": "boost/leaf/context.hpp", "count": 3}, {"name": "boost/leaf/diagnostics.hpp", "count": 1}, {"name": "boost/leaf/to_variant.hpp", "count": 1}];
+        const headersData = [{"name": "boost/leaf/exception.hpp", "count": 24}, {"name": "boost/leaf.hpp", "count": 13}, {"name": "boost/leaf/error.hpp", "count": 9}, {"name": "boost/leaf/pred.hpp", "count": 8}, {"name": "boost/leaf/on_error.hpp", "count": 6}, {"name": "boost/leaf/result.hpp", "count": 4}, {"name": "boost/leaf/common.hpp", "count": 2}, {"name": "boost/leaf/context.hpp", "count": 2}, {"name": "boost/leaf/config.hpp", "count": 2}];
         let headersCurrentPage = 1;
         const headersItemsPerPage = 10;
         let headersFilteredData = [...headersData];
@@ -566,7 +566,7 @@
                     {
                         label: 'Created Repositories',
                         type: 'line',
-                        data: [0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0],
+                        data: [0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0],
                         borderColor: 'rgba(255, 99, 132, 1)',
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -583,7 +583,7 @@
                     {
                         label: 'Header Includes (New Repos)',
                         type: 'bar',
-                        data: [0, 0, 0, 4, 0, 0, 1, 0, 88, 59, 3, 0, 0, 2, 0, 0, 0],
+                        data: [0, 0, 0, 4, 0, 0, 1, 1, 0, 59, 3, 0, 0, 2, 0, 0, 0],
                         backgroundColor: 'rgba(54, 162, 235, 0.6)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
@@ -593,7 +593,7 @@
                     {
                         label: 'Header Includes (Updated Repos)',
                         type: 'bar',
-                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 61, 6, 44, 42, 3],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 62, 6, 0, 1, 0],
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
@@ -736,7 +736,7 @@
         });
     
         
-        const externalConsumersData = [{"name": "alibaba/GraphScope", "stars": 3511, "usage_count": 3, "created_at": "2020-10-28", "updated_at": "2025-12-19"}, {"name": "boostorg/leaf", "stars": 338, "usage_count": 88, "created_at": "2018-09-16", "updated_at": "2026-01-14"}, {"name": "nelhage/rules_boost", "stars": 301, "usage_count": 1, "created_at": "2016-08-14", "updated_at": "2025-12-18"}, {"name": "vector-of-bool/bpt", "stars": 295, "usage_count": 59, "created_at": "2019-10-13", "updated_at": "2022-12-08"}, {"name": "sanguinariojoe/aquagpusph", "stars": 39, "usage_count": 4, "created_at": "2013-11-26", "updated_at": "2025-12-21"}, {"name": "GraphScope/GART", "stars": 20, "usage_count": 2, "created_at": "2023-05-17", "updated_at": "2024-10-30"}];
+        const externalConsumersData = [{"name": "lief-project/LIEF", "stars": 5169, "usage_count": 1, "created_at": "2017-03-16", "updated_at": "2025-11-12"}, {"name": "alibaba/GraphScope", "stars": 3511, "usage_count": 3, "created_at": "2020-10-28", "updated_at": "2025-12-19"}, {"name": "nelhage/rules_boost", "stars": 301, "usage_count": 1, "created_at": "2016-08-14", "updated_at": "2025-12-18"}, {"name": "vector-of-bool/bpt", "stars": 295, "usage_count": 59, "created_at": "2019-10-13", "updated_at": "2022-12-08"}, {"name": "sanguinariojoe/aquagpusph", "stars": 39, "usage_count": 4, "created_at": "2013-11-26", "updated_at": "2025-12-21"}, {"name": "GraphScope/GART", "stars": 20, "usage_count": 2, "created_at": "2023-05-17", "updated_at": "2024-10-30"}];
         let externalConsumersCurrentPage = 1;
         const externalConsumersItemsPerPage = 10;
         let externalConsumersSortField = 'stars';

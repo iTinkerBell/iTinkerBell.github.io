@@ -194,7 +194,7 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
-                                <td style="padding: 8px;">28</td>
+                                <td style="padding: 8px;">27</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average New Repositories Per Year:</td>
@@ -210,11 +210,11 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
-                                <td style="padding: 8px;">151</td>
+                                <td style="padding: 8px;">277</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
-                                <td style="padding: 8px;">-0.123 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
+                                <td style="padding: 8px;">0.373 <span style="color: #666; font-size: 0.9em;">(high)</span></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Internal Consumers:</td>
@@ -259,7 +259,7 @@
             </div>
             <script>
                 
-        const headersData = [{"name": "boost/variant2/variant.hpp", "count": 137}, {"name": "boost/variant2.hpp", "count": 13}];
+        const headersData = [{"name": "boost/variant2/variant.hpp", "count": 73}, {"name": "boost/variant2.hpp", "count": 14}];
         let headersCurrentPage = 1;
         const headersItemsPerPage = 10;
         let headersFilteredData = [...headersData];
@@ -402,7 +402,7 @@
                 </table>
                 <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span id="external-consumers-pagination-info">Showing 1-10 of 28</span>
+                        <span id="external-consumers-pagination-info">Showing 1-10 of 27</span>
                     </div>
                     <div>
                         <button id="external-consumers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -575,7 +575,7 @@
                     {
                         label: 'Created Repositories',
                         type: 'line',
-                        data: [1, 0, 0, 3, 2, 3, 1, 2, 3, 2, 3, 1, 2, 3, 1, 1, 0],
+                        data: [1, 0, 0, 3, 2, 3, 2, 1, 3, 1, 2, 1, 2, 3, 2, 1, 0],
                         borderColor: 'rgba(255, 99, 132, 1)',
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -592,7 +592,7 @@
                     {
                         label: 'Header Includes (New Repos)',
                         type: 'bar',
-                        data: [1, 0, 0, 5, 2, 4, 1, 74, 25, 4, 9, 3, 4, 9, 1, 8, 0],
+                        data: [1, 0, 0, 5, 2, 4, 2, 1, 27, 2, 8, 3, 4, 9, 11, 8, 0],
                         backgroundColor: 'rgba(54, 162, 235, 0.6)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
@@ -602,7 +602,7 @@
                     {
                         label: 'Header Includes (Updated Repos)',
                         type: 'bar',
-                        data: [0, 0, 0, 0, 0, 0, 0, 13, 7, 13, 7, 12, 12, 29, 19, 35, 3],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 9, 22, 10, 36, 5],
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
@@ -745,7 +745,7 @@
         });
     
         
-        const externalConsumersData = [{"name": "KDE/krita", "stars": 9121, "usage_count": 1, "created_at": "2015-10-09", "updated_at": "2025-12-11"}, {"name": "renatoGarcia/icecream-cpp", "stars": 732, "usage_count": 2, "created_at": "2019-02-03", "updated_at": "2025-08-07"}, {"name": "celtera/libremidi", "stars": 640, "usage_count": 1, "created_at": "2018-04-27", "updated_at": "2026-01-18"}, {"name": "Return-To-The-Roots/s25client", "stars": 548, "usage_count": 1, "created_at": "2013-07-07", "updated_at": "2026-01-13"}, {"name": "boostorg/json", "stars": 469, "usage_count": 2, "created_at": "2019-09-12", "updated_at": "2026-01-05"}, {"name": "celtera/avendish", "stars": 461, "usage_count": 3, "created_at": "2021-10-23", "updated_at": "2026-01-16"}, {"name": "chronolaw/boost_guide", "stars": 427, "usage_count": 1, "created_at": "2014-09-25", "updated_at": "2021-01-12"}, {"name": "wernerturing/multi-delogo", "stars": 343, "usage_count": 1, "created_at": "2018-02-13", "updated_at": "2025-12-07"}, {"name": "nelhage/rules_boost", "stars": 301, "usage_count": 1, "created_at": "2016-08-14", "updated_at": "2025-12-18"}, {"name": "Jackarain/proxy", "stars": 278, "usage_count": 1, "created_at": "2013-02-27", "updated_at": "2026-01-09"}, {"name": "ossia/libossia", "stars": 225, "usage_count": 1, "created_at": "2014-02-04", "updated_at": "2026-01-16"}, {"name": "boostorg/parser", "stars": 161, "usage_count": 1, "created_at": "2020-08-29", "updated_at": "2025-12-12"}, {"name": "anarthal/servertech-chat", "stars": 89, "usage_count": 7, "created_at": "2023-07-14", "updated_at": "2025-12-09"}, {"name": "boostorg/variant2", "stars": 71, "usage_count": 73, "created_at": "2017-05-29", "updated_at": "2026-01-04"}, {"name": "ecorm/cppwamp", "stars": 37, "usage_count": 2, "created_at": "2015-01-28", "updated_at": "2024-05-24"}, {"name": "victor-smirnov/memoria", "stars": 37, "usage_count": 5, "created_at": "2020-03-05", "updated_at": "2025-07-02"}, {"name": "steinwurf/boost", "stars": 36, "usage_count": 3, "created_at": "2013-05-06", "updated_at": "2023-08-23"}, {"name": "DLR-RY/outpost-core", "stars": 36, "usage_count": 1, "created_at": "2017-06-26", "updated_at": "2025-12-02"}, {"name": "klemens-morgenstern/sqlite", "stars": 24, "usage_count": 2, "created_at": "2022-12-21", "updated_at": "2025-11-19"}, {"name": "avplayer/proxy", "stars": 20, "usage_count": 1, "created_at": "2023-01-24", "updated_at": "2026-01-09"}, {"name": "swiss-seismological-service/scdetect", "stars": 20, "usage_count": 3, "created_at": "2020-08-07", "updated_at": "2025-12-03"}, {"name": "TankerHQ/sdk-native", "stars": 19, "usage_count": 23, "created_at": "2018-12-03", "updated_at": "2025-06-04"}, {"name": "Sudo-Rahman/Iridium", "stars": 18, "usage_count": 1, "created_at": "2023-01-09", "updated_at": "2024-08-04"}, {"name": "yielding/code", "stars": 17, "usage_count": 1, "created_at": "2010-10-11", "updated_at": "2026-01-10"}, {"name": "EternalSaga/RGL", "stars": 14, "usage_count": 1, "created_at": "2024-07-22", "updated_at": "2025-07-12"}, {"name": "Arech/nntl", "stars": 14, "usage_count": 1, "created_at": "2015-11-21", "updated_at": "2023-12-16"}, {"name": "Jackarain/animals", "stars": 11, "usage_count": 2, "created_at": "2022-11-23", "updated_at": "2023-11-11"}, {"name": "carla-simulator/carla-digitaltwins", "stars": 10, "usage_count": 8, "created_at": "2025-05-07", "updated_at": "2025-10-21"}];
+        const externalConsumersData = [{"name": "KDE/krita", "stars": 9121, "usage_count": 1, "created_at": "2015-10-09", "updated_at": "2025-12-11"}, {"name": "kismetwireless/kismet", "stars": 2024, "usage_count": 1, "created_at": "2016-09-20", "updated_at": "2026-01-19"}, {"name": "renatoGarcia/icecream-cpp", "stars": 732, "usage_count": 2, "created_at": "2019-02-03", "updated_at": "2025-08-07"}, {"name": "celtera/libremidi", "stars": 644, "usage_count": 3, "created_at": "2018-04-27", "updated_at": "2026-01-25"}, {"name": "Return-To-The-Roots/s25client", "stars": 553, "usage_count": 1, "created_at": "2013-07-07", "updated_at": "2026-01-24"}, {"name": "celtera/avendish", "stars": 461, "usage_count": 3, "created_at": "2021-10-23", "updated_at": "2026-01-16"}, {"name": "OpenHUTB/hutb", "stars": 433, "usage_count": 10, "created_at": "2024-05-05", "updated_at": "2026-01-15"}, {"name": "chronolaw/boost_guide", "stars": 427, "usage_count": 1, "created_at": "2014-09-25", "updated_at": "2021-01-12"}, {"name": "wernerturing/multi-delogo", "stars": 343, "usage_count": 1, "created_at": "2018-02-13", "updated_at": "2025-12-07"}, {"name": "nelhage/rules_boost", "stars": 301, "usage_count": 1, "created_at": "2016-08-14", "updated_at": "2025-12-18"}, {"name": "Jackarain/proxy", "stars": 278, "usage_count": 1, "created_at": "2013-02-27", "updated_at": "2026-01-09"}, {"name": "ossia/libossia", "stars": 225, "usage_count": 1, "created_at": "2014-02-04", "updated_at": "2026-01-26"}, {"name": "anarthal/servertech-chat", "stars": 89, "usage_count": 7, "created_at": "2023-07-14", "updated_at": "2025-12-09"}, {"name": "ecorm/cppwamp", "stars": 37, "usage_count": 2, "created_at": "2015-01-28", "updated_at": "2024-05-24"}, {"name": "victor-smirnov/memoria", "stars": 37, "usage_count": 5, "created_at": "2020-03-05", "updated_at": "2025-07-02"}, {"name": "steinwurf/boost", "stars": 36, "usage_count": 3, "created_at": "2013-05-06", "updated_at": "2023-08-23"}, {"name": "DLR-RY/outpost-core", "stars": 36, "usage_count": 1, "created_at": "2017-06-26", "updated_at": "2025-12-02"}, {"name": "klemens-morgenstern/sqlite", "stars": 24, "usage_count": 2, "created_at": "2022-12-21", "updated_at": "2025-11-19"}, {"name": "avplayer/proxy", "stars": 20, "usage_count": 1, "created_at": "2023-01-24", "updated_at": "2026-01-09"}, {"name": "swiss-seismological-service/scdetect", "stars": 20, "usage_count": 3, "created_at": "2020-08-07", "updated_at": "2025-12-03"}, {"name": "TankerHQ/sdk-native", "stars": 19, "usage_count": 23, "created_at": "2018-12-03", "updated_at": "2025-06-04"}, {"name": "Sudo-Rahman/Iridium", "stars": 18, "usage_count": 1, "created_at": "2023-01-09", "updated_at": "2024-08-04"}, {"name": "yielding/code", "stars": 17, "usage_count": 1, "created_at": "2010-10-11", "updated_at": "2026-01-24"}, {"name": "EternalSaga/RGL", "stars": 14, "usage_count": 1, "created_at": "2024-07-22", "updated_at": "2025-07-12"}, {"name": "Arech/nntl", "stars": 14, "usage_count": 1, "created_at": "2015-11-21", "updated_at": "2023-12-16"}, {"name": "Jackarain/animals", "stars": 11, "usage_count": 2, "created_at": "2022-11-23", "updated_at": "2023-11-11"}, {"name": "carla-simulator/carla-digitaltwins", "stars": 10, "usage_count": 8, "created_at": "2025-05-07", "updated_at": "2025-10-21"}];
         let externalConsumersCurrentPage = 1;
         const externalConsumersItemsPerPage = 10;
         let externalConsumersSortField = 'stars';

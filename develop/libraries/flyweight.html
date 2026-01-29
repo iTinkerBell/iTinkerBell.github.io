@@ -194,11 +194,11 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
-                                <td style="padding: 8px;">33</td>
+                                <td style="padding: 8px;">36</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average New Repositories Per Year:</td>
-                                <td style="padding: 8px;">1.00</td>
+                                <td style="padding: 8px;">2.00</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Most Recent Year Repository Count:</td>
@@ -206,15 +206,15 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Most Used Year:</td>
-                                <td style="padding: 8px;">2013 (6 repos)</td>
+                                <td style="padding: 8px;">2012 (6 repos)</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
-                                <td style="padding: 8px;">578</td>
+                                <td style="padding: 8px;">854</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
-                                <td style="padding: 8px;">-1.011 <span style="color: #666; font-size: 0.9em;">(declining adoption)</span></td>
+                                <td style="padding: 8px;">-0.959 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Internal Consumers:</td>
@@ -248,7 +248,7 @@
                     </table>
                     <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <span id="headers-pagination-info">Showing 1-10 of 18</span>
+                            <span id="headers-pagination-info">Showing 1-10 of 16</span>
                         </div>
                         <div>
                             <button id="headers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -259,7 +259,7 @@
             </div>
             <script>
                 
-        const headersData = [{"name": "boost/flyweight.hpp", "count": 94}, {"name": "boost/flyweight/key_value.hpp", "count": 37}, {"name": "boost/flyweight/no_tracking.hpp", "count": 37}, {"name": "boost/flyweight/flyweight.hpp", "count": 20}, {"name": "boost/flyweight/refcounted.hpp", "count": 18}, {"name": "boost/flyweight/simple_locking.hpp", "count": 18}, {"name": "boost/flyweight/static_holder.hpp", "count": 18}, {"name": "boost/flyweight/no_locking.hpp", "count": 10}, {"name": "boost/flyweight/hashed_factory.hpp", "count": 10}, {"name": "boost/flyweight/set_factory.hpp", "count": 9}, {"name": "boost/flyweight/serialize.hpp", "count": 5}, {"name": "boost/flyweight/factory_tag.hpp", "count": 3}, {"name": "boost/flyweight/intermodule_holder.hpp", "count": 3}, {"name": "boost/flyweight/flyweight_fwd.hpp", "count": 2}, {"name": "boost/flyweight/assoc_container_factory.hpp", "count": 2}, {"name": "boost/flyweight/concurrent_factory.hpp", "count": 2}, {"name": "boost/flyweight/detail/perfect_fwd.hpp", "count": 1}, {"name": "boost/flyweight/detail/is_placeholder_expr.hpp", "count": 1}];
+        const headersData = [{"name": "boost/flyweight.hpp", "count": 90}, {"name": "boost/flyweight/key_value.hpp", "count": 35}, {"name": "boost/flyweight/no_tracking.hpp", "count": 33}, {"name": "boost/flyweight/flyweight.hpp", "count": 11}, {"name": "boost/flyweight/refcounted.hpp", "count": 10}, {"name": "boost/flyweight/simple_locking.hpp", "count": 10}, {"name": "boost/flyweight/static_holder.hpp", "count": 10}, {"name": "boost/flyweight/no_locking.hpp", "count": 8}, {"name": "boost/flyweight/set_factory.hpp", "count": 8}, {"name": "boost/flyweight/hashed_factory.hpp", "count": 6}, {"name": "boost/flyweight/serialize.hpp", "count": 3}, {"name": "boost/flyweight/factory_tag.hpp", "count": 3}, {"name": "boost/flyweight/flyweight_fwd.hpp", "count": 2}, {"name": "boost/flyweight/intermodule_holder.hpp", "count": 2}, {"name": "boost/flyweight/detail/perfect_fwd.hpp", "count": 1}, {"name": "boost/flyweight/assoc_container_factory.hpp", "count": 1}];
         let headersCurrentPage = 1;
         const headersItemsPerPage = 10;
         let headersFilteredData = [...headersData];
@@ -393,7 +393,7 @@
                 </table>
                 <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span id="external-consumers-pagination-info">Showing 1-10 of 33</span>
+                        <span id="external-consumers-pagination-info">Showing 1-10 of 36</span>
                     </div>
                     <div>
                         <button id="external-consumers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -561,12 +561,12 @@
         new Chart(document.getElementById('usageChart'), {
             type: 'bar',
             data: {
-                labels: ["2008", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
+                labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
                 datasets: [
                     {
                         label: 'Created Repositories',
                         type: 'line',
-                        data: [0, 3, 2, 5, 6, 4, 1, 2, 0, 4, 1, 1, 2, 1, 1, 0, 0, 0],
+                        data: [3, 2, 6, 5, 5, 1, 3, 0, 4, 1, 2, 2, 1, 1, 0, 0, 0],
                         borderColor: 'rgba(255, 99, 132, 1)',
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -583,7 +583,7 @@
                     {
                         label: 'Header Includes (New Repos)',
                         type: 'bar',
-                        data: [0, 10, 66, 35, 116, 11, 1, 6, 0, 18, 7, 3, 8, 8, 1, 0, 0, 0],
+                        data: [10, 66, 36, 46, 14, 1, 12, 0, 18, 7, 6, 8, 8, 1, 0, 0, 0],
                         backgroundColor: 'rgba(54, 162, 235, 0.6)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
@@ -593,7 +593,7 @@
                     {
                         label: 'Header Includes (Updated Repos)',
                         type: 'bar',
-                        data: [32, 1, 8, 11, 18, 76, 17, 10, 0, 15, 3, 14, 18, 34, 6, 20, 7, 0],
+                        data: [1, 8, 11, 13, 72, 17, 10, 0, 4, 3, 14, 18, 41, 4, 2, 13, 2],
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
@@ -736,7 +736,7 @@
         });
     
         
-        const externalConsumersData = [{"name": "rdkit/rdkit", "stars": 3213, "usage_count": 40, "created_at": "2013-05-12", "updated_at": "2025-12-15"}, {"name": "TypesettingTools/Aegisub", "stars": 1496, "usage_count": 6, "created_at": "2018-03-29", "updated_at": "2026-01-11"}, {"name": "POV-Ray/povray", "stars": 1450, "usage_count": 2, "created_at": "2013-11-06", "updated_at": "2025-12-09"}, {"name": "Cyberbeing/xy-VSFilter", "stars": 923, "usage_count": 6, "created_at": "2012-08-20", "updated_at": "2023-12-08"}, {"name": "pinterf/xy-VSFilter", "stars": 666, "usage_count": 6, "created_at": "2018-04-05", "updated_at": "2024-01-23"}, {"name": "Masaiki/xy-VSFilter", "stars": 620, "usage_count": 6, "created_at": "2021-05-02", "updated_at": "2025-10-10"}, {"name": "bumptop/BumpTop", "stars": 617, "usage_count": 1, "created_at": "2014-10-25", "updated_at": "2024-01-08"}, {"name": "Apress/design-patterns-in-modern-cpp", "stars": 568, "usage_count": 3, "created_at": "2018-04-17", "updated_at": "2023-02-05"}, {"name": "nelhage/rules_boost", "stars": 301, "usage_count": 1, "created_at": "2016-08-14", "updated_at": "2025-12-18"}, {"name": "myiosemail/ShowTimeVideoLive", "stars": 253, "usage_count": 5, "created_at": "2016-06-22", "updated_at": "2016-07-07"}, {"name": "GaloisInc/cclyzerpp", "stars": 149, "usage_count": 8, "created_at": "2022-08-10", "updated_at": "2025-01-30"}, {"name": "polserver/polserver", "stars": 143, "usage_count": 3, "created_at": "2014-08-11", "updated_at": "2026-01-12"}, {"name": "MisterTea/HyperNEAT", "stars": 98, "usage_count": 58, "created_at": "2011-08-23", "updated_at": "2017-09-12"}, {"name": "wdkk/iSuperColliderKit", "stars": 95, "usage_count": 1, "created_at": "2015-02-02", "updated_at": "2025-02-11"}, {"name": "dns-groot/groot", "stars": 80, "usage_count": 3, "created_at": "2020-02-01", "updated_at": "2023-01-08"}, {"name": "beaumontlab/antonie", "stars": 61, "usage_count": 1, "created_at": "2013-11-05", "updated_at": "2019-05-19"}, {"name": "i-s-m-mipt/Education", "stars": 51, "usage_count": 1, "created_at": "2023-07-18", "updated_at": "2026-01-19"}, {"name": "ccf19881030/Cplus_libs_wrapper", "stars": 38, "usage_count": 7, "created_at": "2019-03-31", "updated_at": "2024-01-23"}, {"name": "sdottaka/winmerge-v2-jp", "stars": 38, "usage_count": 3, "created_at": "2018-03-04", "updated_at": "2025-12-28"}, {"name": "dcjones/isolator", "stars": 32, "usage_count": 2, "created_at": "2012-10-30", "updated_at": "2016-04-16"}, {"name": "scientific-coder/Computer-Languages", "stars": 26, "usage_count": 1, "created_at": "2010-11-09", "updated_at": "2010-12-29"}, {"name": "homer6/c_reading", "stars": 25, "usage_count": 8, "created_at": "2011-04-30", "updated_at": "2011-04-30"}, {"name": "rdkit/rdkit-orig", "stars": 23, "usage_count": 16, "created_at": "2012-08-17", "updated_at": "2018-07-24"}, {"name": "synogate/gatery", "stars": 22, "usage_count": 2, "created_at": "2021-04-08", "updated_at": "2024-12-09"}, {"name": "tgoyne/aegisub", "stars": 21, "usage_count": 6, "created_at": "2010-09-20", "updated_at": "2022-11-24"}, {"name": "UberPOV/UberPOV", "stars": 20, "usage_count": 2, "created_at": "2013-11-17", "updated_at": "2016-11-21"}, {"name": "Sciss/supercollider", "stars": 19, "usage_count": 1, "created_at": "2014-02-21", "updated_at": "2023-07-10"}, {"name": "kasicass/kasicass", "stars": 17, "usage_count": 3, "created_at": "2010-09-02", "updated_at": "2022-11-22"}, {"name": "sensestage/supercollider", "stars": 15, "usage_count": 1, "created_at": "2013-02-20", "updated_at": "2025-10-25"}, {"name": "boostorg/flyweight", "stars": 14, "usage_count": 70, "created_at": "2013-01-13", "updated_at": "2025-12-21"}, {"name": "chardmeier/docent", "stars": 12, "usage_count": 4, "created_at": "2012-09-04", "updated_at": "2017-11-16"}, {"name": "sequoia-mso/sequoia-core", "stars": 12, "usage_count": 7, "created_at": "2012-07-17", "updated_at": "2016-11-13"}, {"name": "msimic/MediaPoint", "stars": 10, "usage_count": 6, "created_at": "2014-02-04", "updated_at": "2020-03-29"}];
+        const externalConsumersData = [{"name": "WinMerge/winmerge", "stars": 8396, "usage_count": 3, "created_at": "2014-11-11", "updated_at": "2026-01-19"}, {"name": "supercollider/supercollider", "stars": 6364, "usage_count": 1, "created_at": "2012-05-04", "updated_at": "2026-01-21"}, {"name": "rdkit/rdkit", "stars": 3213, "usage_count": 40, "created_at": "2013-05-12", "updated_at": "2025-12-15"}, {"name": "TypesettingTools/Aegisub", "stars": 1519, "usage_count": 6, "created_at": "2018-03-29", "updated_at": "2026-01-21"}, {"name": "POV-Ray/povray", "stars": 1450, "usage_count": 2, "created_at": "2013-11-06", "updated_at": "2025-12-09"}, {"name": "Cyberbeing/xy-VSFilter", "stars": 923, "usage_count": 6, "created_at": "2012-08-20", "updated_at": "2023-12-08"}, {"name": "pinterf/xy-VSFilter", "stars": 666, "usage_count": 6, "created_at": "2018-04-05", "updated_at": "2024-01-23"}, {"name": "Masaiki/xy-VSFilter", "stars": 620, "usage_count": 6, "created_at": "2021-05-02", "updated_at": "2025-10-10"}, {"name": "bumptop/BumpTop", "stars": 617, "usage_count": 1, "created_at": "2014-10-25", "updated_at": "2024-01-08"}, {"name": "Apress/design-patterns-in-modern-cpp", "stars": 568, "usage_count": 3, "created_at": "2018-04-17", "updated_at": "2023-02-05"}, {"name": "nelhage/rules_boost", "stars": 301, "usage_count": 1, "created_at": "2016-08-14", "updated_at": "2025-12-18"}, {"name": "myiosemail/ShowTimeVideoLive", "stars": 253, "usage_count": 5, "created_at": "2016-06-22", "updated_at": "2016-07-07"}, {"name": "GaloisInc/cclyzerpp", "stars": 149, "usage_count": 8, "created_at": "2022-08-10", "updated_at": "2025-01-30"}, {"name": "polserver/polserver", "stars": 143, "usage_count": 3, "created_at": "2014-08-11", "updated_at": "2026-01-26"}, {"name": "bjakja/Kainote", "stars": 110, "usage_count": 6, "created_at": "2016-11-18", "updated_at": "2026-01-18"}, {"name": "MisterTea/HyperNEAT", "stars": 98, "usage_count": 58, "created_at": "2011-08-23", "updated_at": "2017-09-12"}, {"name": "wdkk/iSuperColliderKit", "stars": 95, "usage_count": 1, "created_at": "2015-02-02", "updated_at": "2025-02-11"}, {"name": "dns-groot/groot", "stars": 80, "usage_count": 3, "created_at": "2020-02-01", "updated_at": "2023-01-08"}, {"name": "beaumontlab/antonie", "stars": 61, "usage_count": 1, "created_at": "2013-11-05", "updated_at": "2019-05-19"}, {"name": "i-s-m-mipt/Education", "stars": 51, "usage_count": 1, "created_at": "2023-07-18", "updated_at": "2026-01-19"}, {"name": "ccf19881030/Cplus_libs_wrapper", "stars": 38, "usage_count": 7, "created_at": "2019-03-31", "updated_at": "2024-01-23"}, {"name": "sdottaka/winmerge-v2-jp", "stars": 38, "usage_count": 3, "created_at": "2018-03-04", "updated_at": "2025-12-28"}, {"name": "dcjones/isolator", "stars": 32, "usage_count": 2, "created_at": "2012-10-30", "updated_at": "2016-04-16"}, {"name": "scientific-coder/Computer-Languages", "stars": 26, "usage_count": 1, "created_at": "2010-11-09", "updated_at": "2010-12-29"}, {"name": "homer6/c_reading", "stars": 25, "usage_count": 8, "created_at": "2011-04-30", "updated_at": "2011-04-30"}, {"name": "rdkit/rdkit-orig", "stars": 23, "usage_count": 16, "created_at": "2012-08-17", "updated_at": "2018-07-24"}, {"name": "synogate/gatery", "stars": 22, "usage_count": 2, "created_at": "2021-04-08", "updated_at": "2024-12-09"}, {"name": "tgoyne/aegisub", "stars": 21, "usage_count": 6, "created_at": "2010-09-20", "updated_at": "2022-11-24"}, {"name": "UberPOV/UberPOV", "stars": 20, "usage_count": 2, "created_at": "2013-11-17", "updated_at": "2016-11-21"}, {"name": "Sciss/supercollider", "stars": 19, "usage_count": 1, "created_at": "2014-02-21", "updated_at": "2023-07-10"}, {"name": "kasicass/kasicass", "stars": 17, "usage_count": 3, "created_at": "2010-09-02", "updated_at": "2022-11-22"}, {"name": "centreon/centreon-collect", "stars": 16, "usage_count": 3, "created_at": "2020-05-05", "updated_at": "2026-01-26"}, {"name": "sensestage/supercollider", "stars": 15, "usage_count": 1, "created_at": "2013-02-20", "updated_at": "2025-10-25"}, {"name": "chardmeier/docent", "stars": 12, "usage_count": 4, "created_at": "2012-09-04", "updated_at": "2017-11-16"}, {"name": "sequoia-mso/sequoia-core", "stars": 12, "usage_count": 7, "created_at": "2012-07-17", "updated_at": "2016-11-13"}, {"name": "msimic/MediaPoint", "stars": 10, "usage_count": 6, "created_at": "2014-02-04", "updated_at": "2020-03-29"}];
         let externalConsumersCurrentPage = 1;
         const externalConsumersItemsPerPage = 10;
         let externalConsumersSortField = 'stars';

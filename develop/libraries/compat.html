@@ -194,7 +194,7 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Total Repositories:</td>
-                                <td style="padding: 8px;">3</td>
+                                <td style="padding: 8px;">1</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average New Repositories Per Year:</td>
@@ -206,15 +206,15 @@
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Most Used Year:</td>
-                                <td style="padding: 8px;">2023 (2 repos)</td>
+                                <td style="padding: 8px;">2023 (1 repos)</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Average Stars:</td>
-                                <td style="padding: 8px;">53</td>
+                                <td style="padding: 8px;">31</td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Activity Score:</td>
-                                <td style="padding: 8px;">-0.506 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
+                                <td style="padding: 8px;">-0.364 <span style="color: #666; font-size: 0.9em;">(low)</span></td>
                             </tr>
                             <tr>
                                 <td style="font-weight: 600; padding: 8px;">Internal Consumers:</td>
@@ -248,7 +248,7 @@
                     </table>
                     <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                         <div>
-                            <span id="headers-pagination-info">Showing 1-10 of 4</span>
+                            <span id="headers-pagination-info">Showing 1-10 of 2</span>
                         </div>
                         <div>
                             <button id="headers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -259,7 +259,7 @@
             </div>
             <script>
                 
-        const headersData = [{"name": "boost/compat/shared_lock.hpp", "count": 10}, {"name": "boost/compat/latch.hpp", "count": 6}, {"name": "boost/compat/detail/nontype.hpp", "count": 1}, {"name": "boost/compat/bind_front.hpp", "count": 1}];
+        const headersData = [{"name": "boost/compat/shared_lock.hpp", "count": 5}, {"name": "boost/compat/latch.hpp", "count": 3}];
         let headersCurrentPage = 1;
         const headersItemsPerPage = 10;
         let headersFilteredData = [...headersData];
@@ -390,7 +390,7 @@
                 </table>
                 <div style="margin-top: 15px; display: flex; justify-content: space-between; align-items: center;">
                     <div>
-                        <span id="external-consumers-pagination-info">Showing 1-10 of 3</span>
+                        <span id="external-consumers-pagination-info">Showing 1-10 of 1</span>
                     </div>
                     <div>
                         <button id="external-consumers-prev-btn" style="padding: 6px 12px; margin-right: 10px; cursor: pointer; border: 1px solid #ddd; border-radius: 4px; background: white;">Previous</button>
@@ -563,7 +563,7 @@
                     {
                         label: 'Created Repositories',
                         type: 'line',
-                        data: [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
                         borderColor: 'rgba(255, 99, 132, 1)',
                         backgroundColor: 'transparent',
                         borderWidth: 3,
@@ -580,7 +580,7 @@
                     {
                         label: 'Header Includes (New Repos)',
                         type: 'bar',
-                        data: [0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0],
                         backgroundColor: 'rgba(54, 162, 235, 0.6)',
                         borderColor: 'rgba(54, 162, 235, 1)',
                         borderWidth: 2,
@@ -590,7 +590,7 @@
                     {
                         label: 'Header Includes (Updated Repos)',
                         type: 'bar',
-                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 3, 9, 0],
+                        data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0],
                         backgroundColor: 'rgba(75, 192, 192, 0.6)',
                         borderColor: 'rgba(75, 192, 192, 1)',
                         borderWidth: 2,
@@ -733,7 +733,7 @@
         });
     
         
-        const externalConsumersData = [{"name": "boostorg/unordered", "stars": 86, "usage_count": 8, "created_at": "2013-01-13", "updated_at": "2026-01-08"}, {"name": "MikePopoloski/boost_unordered", "stars": 31, "usage_count": 8, "created_at": "2023-07-02", "updated_at": "2025-07-31"}, {"name": "boostorg/compat", "stars": 11, "usage_count": 2, "created_at": "2023-05-13", "updated_at": "2026-01-16"}];
+        const externalConsumersData = [{"name": "MikePopoloski/boost_unordered", "stars": 31, "usage_count": 8, "created_at": "2023-07-02", "updated_at": "2025-07-31"}];
         let externalConsumersCurrentPage = 1;
         const externalConsumersItemsPerPage = 10;
         let externalConsumersSortField = 'stars';
